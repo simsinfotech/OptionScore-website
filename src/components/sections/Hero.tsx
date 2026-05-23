@@ -69,9 +69,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            <div className="shadow-glow-lg">
-              <PhoneMockup src="/images/app-screenshot-1.jpg" alt="OptionScore command center" className="w-[180px] md:w-[260px]" />
-            </div>
+            <PhoneMockup src="/images/app-screenshot-1.jpg" alt="OptionScore command center" className="w-[180px] md:w-[260px]" />
           </motion.div>
 
           {/* Right phone */}
