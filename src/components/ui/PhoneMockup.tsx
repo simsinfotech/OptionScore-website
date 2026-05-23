@@ -10,45 +10,151 @@ interface PhoneMockupProps {
 
 export function PhoneMockup({ src, alt = "App screenshot", className = "" }: PhoneMockupProps) {
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative ${className}`} style={{ filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.6))" }}>
+      {/* Outer iPhone body */}
       <div
-        className="phone-frame relative overflow-hidden"
         style={{
-          borderRadius: "36px",
+          borderRadius: "44px",
           aspectRatio: "9 / 19.5",
-          border: "3px solid #333",
+          padding: "12px",
+          background: "linear-gradient(145deg, #2a2a2e 0%, #1a1a1e 50%, #0f0f12 100%)",
+          border: "1px solid rgba(255,255,255,0.1)",
+          boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.3)",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        {/* Dynamic Island */}
-        <div className="absolute top-0 left-0 right-0 z-10 flex justify-center pt-[8px]">
-          <div
-            className="w-[70px] h-[20px] bg-black"
-            style={{ borderRadius: "20px" }}
-          />
-        </div>
+        {/* Edge highlight (left) */}
+        <div
+          style={{
+            position: "absolute",
+            top: "10%",
+            left: 0,
+            bottom: "10%",
+            width: "1px",
+            background: "linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.15) 30%, rgba(255,255,255,0.15) 70%, transparent 100%)",
+          }}
+        />
 
-        {/* Screenshot */}
-        {src ? (
-          <Image
-            src={src}
-            alt={alt}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 50vw, 300px"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center bg-background">
-            <span className="text-text-muted text-xs uppercase tracking-heading">
-              Screenshot
-            </span>
-          </div>
-        )}
+        {/* Edge highlight (right) */}
+        <div
+          style={{
+            position: "absolute",
+            top: "10%",
+            right: 0,
+            bottom: "10%",
+            width: "1px",
+            background: "linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.08) 70%, transparent 100%)",
+          }}
+        />
 
-        {/* Home indicator */}
-        <div className="absolute bottom-[6px] left-0 right-0 flex justify-center z-10">
+        {/* Side button — power (right) */}
+        <div
+          style={{
+            position: "absolute",
+            right: "-2px",
+            top: "22%",
+            width: "3px",
+            height: "44px",
+            background: "linear-gradient(90deg, #333, #444)",
+            borderRadius: "0 2px 2px 0",
+          }}
+        />
+
+        {/* Side buttons — volume (left) */}
+        <div
+          style={{
+            position: "absolute",
+            left: "-2px",
+            top: "18%",
+            width: "3px",
+            height: "28px",
+            background: "linear-gradient(270deg, #333, #444)",
+            borderRadius: "2px 0 0 2px",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            left: "-2px",
+            top: "26%",
+            width: "3px",
+            height: "28px",
+            background: "linear-gradient(270deg, #333, #444)",
+            borderRadius: "2px 0 0 2px",
+          }}
+        />
+
+        {/* Silent switch (left) */}
+        <div
+          style={{
+            position: "absolute",
+            left: "-2px",
+            top: "13%",
+            width: "3px",
+            height: "16px",
+            background: "linear-gradient(270deg, #333, #444)",
+            borderRadius: "2px 0 0 2px",
+          }}
+        />
+
+        {/* Screen area */}
+        <div
+          style={{
+            borderRadius: "32px",
+            width: "100%",
+            height: "100%",
+            overflow: "hidden",
+            position: "relative",
+            background: "#0D0D12",
+          }}
+        >
+          {/* Dynamic Island */}
           <div
-            className="w-[80px] h-[4px] bg-white/40"
-            style={{ borderRadius: "4px" }}
+            style={{
+              position: "absolute",
+              top: "10px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "72px",
+              height: "20px",
+              background: "#000",
+              borderRadius: "20px",
+              zIndex: 10,
+            }}
+          />
+
+          {/* Screenshot */}
+          {src ? (
+            <Image
+              src={src}
+              alt={alt}
+              fill
+              className="object-cover"
+              style={{ borderRadius: "32px" }}
+              sizes="(max-width: 768px) 50vw, 300px"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center">
+              <span className="text-text-muted text-xs uppercase tracking-heading">
+                Screenshot
+              </span>
+            </div>
+          )}
+
+          {/* Home indicator */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: "8px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "80px",
+              height: "4px",
+              background: "rgba(255,255,255,0.4)",
+              borderRadius: "4px",
+              zIndex: 10,
+            }}
           />
         </div>
       </div>
