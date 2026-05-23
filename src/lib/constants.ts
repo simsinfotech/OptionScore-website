@@ -11,31 +11,26 @@ export const FEATURES = [
     title: "Market Scoring",
     description:
       "Real-time proprietary scoring algorithm that rates market conditions from 0-100, helping you identify optimal entry and exit points.",
-    icon: "📊",
   },
   {
     title: "ScoreAI",
     description:
       "AI-powered analysis engine that processes thousands of data points to deliver actionable trading insights in seconds.",
-    icon: "🤖",
   },
   {
     title: "Trading Tools",
     description:
       "Professional-grade charting, options flow tracking, and risk calculators — all optimized for mobile.",
-    icon: "⚡",
   },
   {
     title: "Community",
     description:
       "Connect with thousands of traders sharing strategies, alerts, and real-time market commentary.",
-    icon: "👥",
   },
   {
     title: "Broker Integration",
     description:
       "Seamlessly connect your brokerage account to execute trades directly from OptionScore with one tap.",
-    icon: "🔗",
   },
 ];
 

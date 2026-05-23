@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { SOCIAL_LINKS, NAV_LINKS } from "@/lib/constants";
+import { FaXTwitter, FaDiscord, FaInstagram } from "react-icons/fa6";
 
 export function Footer() {
   return (
@@ -58,20 +59,27 @@ export function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-heading text-text-primary mb-4">
               Connect
             </h4>
-            <ul className="space-y-2">
-              {SOCIAL_LINKS.map((link) => (
-                <li key={link.href}>
+            <div className="flex gap-4">
+              {SOCIAL_LINKS.map((link) => {
+                const icons: Record<string, React.ReactNode> = {
+                  Twitter: <FaXTwitter size={20} />,
+                  Discord: <FaDiscord size={20} />,
+                  Instagram: <FaInstagram size={20} />,
+                };
+                return (
                   <a
+                    key={link.href}
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-text-muted hover:text-accent-cyan transition-colors"
+                    className="text-text-muted hover:text-accent-cyan transition-colors"
+                    aria-label={link.label}
                   >
-                    {link.label}
+                    {icons[link.label]}
                   </a>
-                </li>
-              ))}
-            </ul>
+                );
+              })}
+            </div>
           </div>
         </div>
 

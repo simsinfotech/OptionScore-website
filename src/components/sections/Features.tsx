@@ -3,6 +3,19 @@
 import { FEATURES } from "@/lib/constants";
 import { Card } from "@/components/ui/Card";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { HiChartBar } from "react-icons/hi2";
+import { RiBrainFill } from "react-icons/ri";
+import { BsLightningChargeFill } from "react-icons/bs";
+import { HiUsers } from "react-icons/hi2";
+import { FiLink } from "react-icons/fi";
+
+const FEATURE_ICONS = [
+  HiChartBar,
+  RiBrainFill,
+  BsLightningChargeFill,
+  HiUsers,
+  FiLink,
+];
 
 export function Features() {
   return (
@@ -19,19 +32,24 @@ export function Features() {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {FEATURES.map((feature, index) => (
-            <AnimatedSection key={feature.title} delay={index * 0.1}>
-              <Card className="h-full">
-                <div className="text-3xl mb-4">{feature.icon}</div>
-                <h3 className="heading text-lg text-text-primary mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-text-secondary text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </Card>
-            </AnimatedSection>
-          ))}
+          {FEATURES.map((feature, index) => {
+            const Icon = FEATURE_ICONS[index];
+            return (
+              <AnimatedSection key={feature.title} delay={index * 0.1}>
+                <Card className="h-full">
+                  <div className="text-accent-cyan text-3xl mb-4">
+                    <Icon />
+                  </div>
+                  <h3 className="heading text-lg text-text-primary mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-text-secondary text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
+                </Card>
+              </AnimatedSection>
+            );
+          })}
         </div>
       </div>
     </section>
