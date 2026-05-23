@@ -34,7 +34,7 @@ export function HowItWorks() {
                 </p>
 
                 <div className="mt-8 flex justify-center">
-                  <PhoneMockup className="w-[160px]" />
+                  <PhoneMockup src="/images/app-screenshot-1.jpg" alt="OptionScore app screenshot" className="w-[160px]" />
                 </div>
               </div>
             </AnimatedSection>
