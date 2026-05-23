@@ -80,8 +80,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9 }}
-            whileHover={{ y: -10, transition: { duration: 0.3 } }}
-            className="self-end mt-12 animate-float-delayed cursor-pointer"
+            className="self-end mt-12 animate-float-delayed"
           >
             <PhoneMockup src="/images/app-screenshot-2.jpg" alt="OptionScore market overview" className="w-[140px] md:w-[200px]" />
           </motion.div>
@@ -91,8 +90,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
-            whileHover={{ y: -14, transition: { duration: 0.3 } }}
-            className="animate-float cursor-pointer"
+            className="animate-float"
           >
             <PhoneMockup src="/images/app-screenshot-1.jpg" alt="OptionScore command center" className="w-[180px] md:w-[260px]" />
           </motion.div>
@@ -102,8 +100,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9 }}
-            whileHover={{ y: -10, transition: { duration: 0.3 } }}
-            className="self-end mt-12 animate-float-delayed cursor-pointer"
+            className="self-end mt-12 animate-float-delayed"
             style={{ animationDelay: "1s" }}
           >
             <PhoneMockup src="/images/app-screenshot-3.jpg" alt="OptionScore AI stock insights" className="w-[140px] md:w-[200px]" />
