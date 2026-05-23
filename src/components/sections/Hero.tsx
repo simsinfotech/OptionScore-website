@@ -13,7 +13,29 @@ export function Hero() {
     >
       {/* Gradient overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-cyan/5 blur-[120px] rounded-full" />
+
+      {/* Animated cyan glow blob */}
+      <motion.div
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.04, 0.08, 0.04],
+        }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-cyan blur-[120px] rounded-full"
+      />
+
+      {/* Orbiting dots */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0">
+        <div className="orbit-dot">
+          <div className="w-1 h-1 bg-accent-cyan/30 rounded-full" />
+        </div>
+        <div className="orbit-dot-reverse">
+          <div className="w-1.5 h-1.5 bg-accent-cyan/20 rounded-full" />
+        </div>
+      </div>
+
+      {/* Scanning line */}
+      <div className="scan-line" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center">
         <motion.h1
@@ -58,7 +80,8 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9 }}
-            className="self-end mt-12"
+            whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            className="self-end mt-12 animate-float-delayed cursor-pointer"
           >
             <PhoneMockup src="/images/app-screenshot-2.jpg" alt="OptionScore market overview" className="w-[140px] md:w-[200px]" />
           </motion.div>
@@ -68,6 +91,8 @@ export function Hero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
+            whileHover={{ y: -14, transition: { duration: 0.3 } }}
+            className="animate-float cursor-pointer"
           >
             <PhoneMockup src="/images/app-screenshot-1.jpg" alt="OptionScore command center" className="w-[180px] md:w-[260px]" />
           </motion.div>
@@ -77,7 +102,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9 }}
-            className="self-end mt-12"
+            whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            className="self-end mt-12 animate-float-delayed cursor-pointer"
+            style={{ animationDelay: "1s" }}
           >
             <PhoneMockup src="/images/app-screenshot-3.jpg" alt="OptionScore AI stock insights" className="w-[140px] md:w-[200px]" />
           </motion.div>

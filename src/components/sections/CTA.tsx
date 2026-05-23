@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/Button";
 import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
@@ -7,10 +8,29 @@ import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
 export function CTA() {
   return (
     <section className="py-24 px-6 relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-[800px] h-[400px] bg-accent-cyan/5 blur-[100px]" />
-      </div>
+      {/* Animated background glow */}
+      <motion.div
+        animate={{
+          scale: [1, 1.3, 1],
+          opacity: [0.03, 0.08, 0.03],
+        }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute inset-0 flex items-center justify-center"
+      >
+        <div className="w-[800px] h-[400px] bg-accent-cyan blur-[100px]" />
+      </motion.div>
+
+      {/* Secondary glow */}
+      <motion.div
+        animate={{
+          scale: [1.2, 1, 1.2],
+          opacity: [0.02, 0.05, 0.02],
+        }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/2 left-1/4 -translate-y-1/2"
+      >
+        <div className="w-[400px] h-[400px] bg-accent-lime blur-[120px]" />
+      </motion.div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <AnimatedSection>
@@ -30,12 +50,16 @@ export function CTA() {
 
         <AnimatedSection delay={0.2}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" href={APP_STORE_URL}>
-              App Store
-            </Button>
-            <Button size="lg" variant="secondary" href={PLAY_STORE_URL}>
-              Google Play
-            </Button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+              <Button size="lg" href={APP_STORE_URL} className="animate-pulse-glow">
+                App Store
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+              <Button size="lg" variant="secondary" href={PLAY_STORE_URL}>
+                Google Play
+              </Button>
+            </motion.div>
           </div>
         </AnimatedSection>
       </div>

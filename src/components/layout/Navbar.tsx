@@ -47,9 +47,10 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm uppercase tracking-heading text-text-secondary hover:text-accent-cyan transition-colors"
+              className="relative text-sm uppercase tracking-heading text-text-secondary hover:text-accent-cyan transition-colors group"
             >
               {link.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent-cyan transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
           <Button size="sm" href="#download">
