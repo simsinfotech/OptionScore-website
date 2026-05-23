@@ -2,6 +2,7 @@
 
 import { STEPS } from "@/lib/constants";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { PhoneMockup } from "@/components/ui/PhoneMockup";
 
 export function HowItWorks() {
   return (
@@ -32,11 +33,8 @@ export function HowItWorks() {
                   {step.description}
                 </p>
 
-                {/* Phone frame placeholder */}
-                <div className="mt-8 mx-auto w-40 h-72 border border-card-border bg-card/50 flex items-center justify-center">
-                  <span className="text-text-muted text-xs uppercase tracking-heading">
-                    Screenshot
-                  </span>
+                <div className="mt-8 flex justify-center">
+                  <PhoneMockup className="w-[160px]" />
                 </div>
               </div>
             </AnimatedSection>

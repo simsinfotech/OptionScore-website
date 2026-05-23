@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import { PhoneMockup } from "@/components/ui/PhoneMockup";
 import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
 
 export function Hero() {
@@ -50,17 +51,44 @@ export function Hero() {
           </Button>
         </motion.div>
 
-        {/* Phone mockup placeholder */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="mt-16 mx-auto w-64 h-[500px] border-2 border-accent-cyan/30 bg-card/50 flex items-center justify-center"
-        >
-          <span className="text-text-muted text-sm uppercase tracking-heading">
-            App Preview
-          </span>
-        </motion.div>
+        {/* Three-phone mockup layout */}
+        <div className="mt-20 relative flex items-end justify-center h-[520px] md:h-[580px]">
+          {/* Left phone */}
+          <motion.div
+            initial={{ opacity: 0, x: -60, y: 40 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 1, delay: 0.9 }}
+            className="absolute left-1/2 -translate-x-[calc(50%+140px)] md:-translate-x-[calc(50%+180px)] bottom-0 z-0"
+          >
+            <div className="origin-bottom -rotate-6 opacity-70">
+              <PhoneMockup className="w-[180px] md:w-[220px]" />
+            </div>
+          </motion.div>
+
+          {/* Center phone (main) */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="relative z-20"
+          >
+            <div className="shadow-glow-lg">
+              <PhoneMockup className="w-[220px] md:w-[260px]" />
+            </div>
+          </motion.div>
+
+          {/* Right phone */}
+          <motion.div
+            initial={{ opacity: 0, x: 60, y: 40 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 1, delay: 0.9 }}
+            className="absolute left-1/2 translate-x-[calc(50%-40px)] md:translate-x-[calc(50%-40px)] bottom-0 z-0"
+          >
+            <div className="origin-bottom rotate-6 opacity-70">
+              <PhoneMockup className="w-[180px] md:w-[220px]" />
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
