@@ -61,7 +61,7 @@ export function Hero() {
             className="absolute left-1/2 -translate-x-[calc(50%+140px)] md:-translate-x-[calc(50%+180px)] bottom-0 z-0"
           >
             <div className="origin-bottom -rotate-6 opacity-70">
-              <PhoneMockup src="/images/app-screenshot-1.jpg" alt="OptionScore app screenshot" className="w-[180px] md:w-[220px]" />
+              <PhoneMockup src="/images/app-screenshot-2.jpg" alt="OptionScore market overview" className="w-[180px] md:w-[220px]" />
             </div>
           </motion.div>
 
@@ -85,7 +85,7 @@ export function Hero() {
             className="absolute left-1/2 translate-x-[calc(50%-40px)] md:translate-x-[calc(50%-40px)] bottom-0 z-0"
           >
             <div className="origin-bottom rotate-6 opacity-70">
-              <PhoneMockup src="/images/app-screenshot-1.jpg" alt="OptionScore app screenshot" className="w-[180px] md:w-[220px]" />
+              <PhoneMockup src="/images/app-screenshot-3.jpg" alt="OptionScore AI stock insights" className="w-[180px] md:w-[220px]" />
             </div>
           </motion.div>
         </div>

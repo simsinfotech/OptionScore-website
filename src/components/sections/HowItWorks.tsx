@@ -4,6 +4,12 @@ import { STEPS } from "@/lib/constants";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
 
+const STEP_SCREENSHOTS = [
+  { src: "/images/app-screenshot-1.jpg", alt: "OptionScore command center" },
+  { src: "/images/app-screenshot-2.jpg", alt: "OptionScore market overview" },
+  { src: "/images/app-screenshot-3.jpg", alt: "OptionScore AI stock insights" },
+];
+
 export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-24 px-6 bg-card/30">
@@ -34,7 +40,7 @@ export function HowItWorks() {
                 </p>
 
                 <div className="mt-8 flex justify-center">
-                  <PhoneMockup src="/images/app-screenshot-1.jpg" alt="OptionScore app screenshot" className="w-[160px]" />
+                  <PhoneMockup src={STEP_SCREENSHOTS[index].src} alt={STEP_SCREENSHOTS[index].alt} className="w-[160px]" />
                 </div>
               </div>
             </AnimatedSection>
