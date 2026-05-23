@@ -52,41 +52,36 @@ export function Hero() {
         </motion.div>
 
         {/* Three-phone mockup layout */}
-        <div className="mt-20 relative flex items-end justify-center h-[520px] md:h-[580px]">
+        <div className="mt-20 flex items-end justify-center gap-6 md:gap-10">
           {/* Left phone */}
           <motion.div
-            initial={{ opacity: 0, x: -60, y: 40 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9 }}
-            className="absolute left-1/2 -translate-x-[calc(50%+140px)] md:-translate-x-[calc(50%+180px)] bottom-0 z-0"
+            className="self-end mt-12"
           >
-            <div className="origin-bottom -rotate-6 opacity-70">
-              <PhoneMockup src="/images/app-screenshot-2.jpg" alt="OptionScore market overview" className="w-[180px] md:w-[220px]" />
-            </div>
+            <PhoneMockup src="/images/app-screenshot-2.jpg" alt="OptionScore market overview" className="w-[140px] md:w-[200px]" />
           </motion.div>
 
-          {/* Center phone (main) */}
+          {/* Center phone (main, elevated) */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="relative z-20"
           >
             <div className="shadow-glow-lg">
-              <PhoneMockup src="/images/app-screenshot-1.jpg" alt="OptionScore command center" className="w-[220px] md:w-[260px]" />
+              <PhoneMockup src="/images/app-screenshot-1.jpg" alt="OptionScore command center" className="w-[180px] md:w-[260px]" />
             </div>
           </motion.div>
 
           {/* Right phone */}
           <motion.div
-            initial={{ opacity: 0, x: 60, y: 40 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9 }}
-            className="absolute left-1/2 translate-x-[calc(50%-40px)] md:translate-x-[calc(50%-40px)] bottom-0 z-0"
+            className="self-end mt-12"
           >
-            <div className="origin-bottom rotate-6 opacity-70">
-              <PhoneMockup src="/images/app-screenshot-3.jpg" alt="OptionScore AI stock insights" className="w-[180px] md:w-[220px]" />
-            </div>
+            <PhoneMockup src="/images/app-screenshot-3.jpg" alt="OptionScore AI stock insights" className="w-[140px] md:w-[200px]" />
           </motion.div>
         </div>
       </div>
