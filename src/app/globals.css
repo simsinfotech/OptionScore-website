@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  * {
+  *:not(.phone-frame):not(.phone-frame *) {
     border-radius: 0px !important;
   }
 

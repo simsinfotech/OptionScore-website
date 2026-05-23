@@ -11,15 +11,47 @@ interface PhoneMockupProps {
 export function PhoneMockup({ src, alt = "App screenshot", className = "" }: PhoneMockupProps) {
   return (
     <div className={`relative ${className}`}>
-      {/* iPhone frame */}
-      <div className="relative bg-[#1a1a1a] border-[3px] border-[#333] overflow-hidden" style={{ borderRadius: "36px", aspectRatio: "9/19.5" }}>
-        {/* Notch / Dynamic Island */}
-        <div className="absolute top-0 left-0 right-0 z-10 flex justify-center pt-2">
-          <div className="w-[90px] h-[25px] bg-black" style={{ borderRadius: "0 0 16px 16px" }} />
-        </div>
+      {/* iPhone outer shell */}
+      <div
+        className="phone-frame relative bg-[#1c1c1e] overflow-hidden"
+        style={{
+          borderRadius: "40px",
+          aspectRatio: "9 / 19.5",
+          padding: "10px",
+          boxShadow:
+            "0 0 0 2px #333, 0 0 0 4px #1a1a1a, 0 20px 60px rgba(0,0,0,0.5)",
+        }}
+      >
+        {/* Side button — right (power) */}
+        <div
+          className="absolute -right-[3px] top-[25%] w-[3px] h-[40px] bg-[#333]"
+          style={{ borderRadius: "0 2px 2px 0" }}
+        />
 
-        {/* Screen content */}
-        <div className="w-full h-full overflow-hidden bg-background">
+        {/* Side buttons — left (volume) */}
+        <div
+          className="absolute -left-[3px] top-[20%] w-[3px] h-[24px] bg-[#333]"
+          style={{ borderRadius: "2px 0 0 2px" }}
+        />
+        <div
+          className="absolute -left-[3px] top-[28%] w-[3px] h-[24px] bg-[#333]"
+          style={{ borderRadius: "2px 0 0 2px" }}
+        />
+
+        {/* Screen area */}
+        <div
+          className="relative w-full h-full overflow-hidden bg-background"
+          style={{ borderRadius: "30px" }}
+        >
+          {/* Dynamic Island */}
+          <div className="absolute top-0 left-0 right-0 z-10 flex justify-center pt-[8px]">
+            <div
+              className="w-[80px] h-[22px] bg-black"
+              style={{ borderRadius: "20px" }}
+            />
+          </div>
+
+          {/* Screenshot */}
           {src ? (
             <Image
               src={src}
@@ -35,11 +67,14 @@ export function PhoneMockup({ src, alt = "App screenshot", className = "" }: Pho
               </span>
             </div>
           )}
-        </div>
 
-        {/* Bottom bar */}
-        <div className="absolute bottom-1 left-0 right-0 flex justify-center pb-1 z-10">
-          <div className="w-[100px] h-[4px] bg-white/30" style={{ borderRadius: "4px" }} />
+          {/* Home indicator */}
+          <div className="absolute bottom-[6px] left-0 right-0 flex justify-center z-10">
+            <div
+              className="w-[90px] h-[4px] bg-white/40"
+              style={{ borderRadius: "4px" }}
+            />
+          </div>
         </div>
       </div>
     </div>
