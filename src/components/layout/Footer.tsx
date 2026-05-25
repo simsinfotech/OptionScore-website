@@ -6,7 +6,7 @@ const BRAND_TAGS = ["AI-Powered", "Real-Time Scores", "Mobile-First"];
 
 export function Footer() {
   return (
-    <footer className="bg-background relative">
+    <footer className="bg-background/90 relative">
       {/* Shimmer divider at top */}
       <div className="divider-shimmer" />
 

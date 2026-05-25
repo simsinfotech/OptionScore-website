@@ -187,14 +187,14 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* Section mesh backgrounds */
+/* Section mesh backgrounds — semi-transparent so global effects show through */
 .section-mesh-cyan {
   background:
     radial-gradient(ellipse 70% 50% at 15% 50%, rgba(0, 188, 212, 0.08) 0%, transparent 70%),
     radial-gradient(ellipse 50% 50% at 85% 20%, rgba(124, 58, 237, 0.06) 0%, transparent 70%),
     radial-gradient(ellipse 40% 30% at 50% 90%, rgba(236, 255, 140, 0.03) 0%, transparent 70%),
     linear-gradient(180deg, rgba(0, 188, 212, 0.02) 0%, transparent 40%, transparent 60%, rgba(124, 58, 237, 0.02) 100%),
-    #0D0D12;
+    rgba(13, 13, 18, 0.85);
 }
 
 .section-mesh-violet {
@@ -203,7 +203,7 @@
     radial-gradient(ellipse 50% 50% at 15% 70%, rgba(0, 188, 212, 0.06) 0%, transparent 70%),
     radial-gradient(ellipse 40% 30% at 50% 10%, rgba(236, 255, 140, 0.03) 0%, transparent 70%),
     linear-gradient(180deg, rgba(124, 58, 237, 0.02) 0%, transparent 40%, transparent 60%, rgba(0, 188, 212, 0.02) 100%),
-    #0D0D12;
+    rgba(13, 13, 18, 0.85);
 }
 
 .section-mesh-alt {
@@ -212,7 +212,7 @@
     radial-gradient(ellipse 50% 40% at 85% 100%, rgba(236, 255, 140, 0.05) 0%, transparent 70%),
     radial-gradient(ellipse 40% 40% at 10% 60%, rgba(124, 58, 237, 0.04) 0%, transparent 70%),
     linear-gradient(180deg, transparent 0%, rgba(0, 188, 212, 0.015) 50%, transparent 100%),
-    #0D0D12;
+    rgba(13, 13, 18, 0.85);
 }
 
 /* Icon gradient backgrounds */
@@ -331,10 +331,6 @@
   overflow: hidden;
 }
 
-main > *:not(.bg-effects):not(.noise-overlay) {
-  position: relative;
-  z-index: 1;
-}
 
 /* Noise texture overlay */
 .noise-overlay {
