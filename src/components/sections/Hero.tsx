@@ -151,8 +151,8 @@ export function Hero() {
         <div className="md:hidden mt-12 -mx-6">
           <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory px-[calc(50vw-90px)] pb-4 scrollbar-hide">
             {[
-              { src: "/images/app-screenshot-2.jpg", alt: "OptionScore market overview" },
               { src: "/images/app-screenshot-1.jpg", alt: "OptionScore command center" },
+              { src: "/images/app-screenshot-2.jpg", alt: "OptionScore market overview" },
               { src: "/images/app-screenshot-3.jpg", alt: "OptionScore AI stock insights" },
             ].map((phone, index) => (
               <motion.div
@@ -168,8 +168,8 @@ export function Hero() {
           </div>
           {/* Scroll indicator dots */}
           <div className="flex items-center justify-center gap-2 mt-4">
-            <div className="w-1.5 h-1.5 rounded-full bg-accent-cyan/40" />
             <div className="w-1.5 h-1.5 rounded-full bg-accent-cyan" />
+            <div className="w-1.5 h-1.5 rounded-full bg-accent-cyan/40" />
             <div className="w-1.5 h-1.5 rounded-full bg-accent-cyan/40" />
           </div>
         </div>
