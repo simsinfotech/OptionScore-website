@@ -36,7 +36,7 @@ export function Navbar() {
             height={36}
             className="w-9 h-9"
           />
-          <span className="text-xl font-bold tracking-heading uppercase text-accent-cyan">
+          <span className="text-xl font-light tracking-[0.25em] uppercase text-accent-cyan">
             OptionScore
           </span>
         </a>
