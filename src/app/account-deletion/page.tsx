@@ -28,7 +28,7 @@ export default function AccountDeletion() {
               height={32}
               className="w-8 h-8"
             />
-            <span className="text-lg font-bold tracking-heading uppercase text-accent-cyan">
+            <span className="text-lg font-light tracking-[0.25em] uppercase text-accent-cyan">
               OptionScore
             </span>
           </a>
