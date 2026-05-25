@@ -61,5 +61,6 @@ export const SOCIAL_LINKS = [
   { label: "Instagram", href: "https://instagram.com/optionscore" },
 ];
 
-export const APP_STORE_URL = "#";
-export const PLAY_STORE_URL = "#";
+// Replace these with your actual store URLs once the app is published
+export const APP_STORE_URL = "https://apps.apple.com/app/optionscore/id0000000000";
+export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.optionscore.app";

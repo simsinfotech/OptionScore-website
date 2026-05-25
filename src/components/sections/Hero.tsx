@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FaApple, FaGooglePlay } from "react-icons/fa";
 import { Button } from "@/components/ui/Button";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
 import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
@@ -66,9 +67,11 @@ export function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button size="lg" href={APP_STORE_URL}>
+            <FaApple className="mr-2 text-xl" />
             App Store
           </Button>
           <Button size="lg" variant="secondary" href={PLAY_STORE_URL}>
+            <FaGooglePlay className="mr-2 text-lg" />
             Google Play
           </Button>
         </motion.div>

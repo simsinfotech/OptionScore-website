@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FaApple, FaGooglePlay } from "react-icons/fa";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/Button";
 import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
@@ -52,11 +53,13 @@ export function CTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
               <Button size="lg" href={APP_STORE_URL} className="animate-pulse-glow">
+                <FaApple className="mr-2 text-xl" />
                 App Store
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
               <Button size="lg" variant="secondary" href={PLAY_STORE_URL}>
+                <FaGooglePlay className="mr-2 text-lg" />
                 Google Play
               </Button>
             </motion.div>
