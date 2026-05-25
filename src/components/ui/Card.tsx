@@ -30,15 +30,14 @@ export function Card({ children, className, hover = true, variant = "default" }:
     <motion.div
       whileHover={{
         y: -6,
-        borderColor: "rgba(0, 188, 212, 0.4)",
-        boxShadow: "0 0 30px rgba(0, 188, 212, 0.2), 0 20px 40px rgba(0, 0, 0, 0.3)",
+        boxShadow: "0 0 30px rgba(0, 188, 212, 0.3), 0 0 60px rgba(0, 188, 212, 0.1), 0 20px 40px rgba(0, 0, 0, 0.3)",
       }}
       transition={{ duration: 0.3 }}
       className={twMerge(
         clsx(
           variantClasses[variant],
           "p-6 cursor-pointer",
-          "transition-colors duration-300",
+          "transition-all duration-300",
           className
         )
       )}
