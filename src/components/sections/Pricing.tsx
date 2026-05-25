@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/Button";
-import { APP_STORE_URL } from "@/lib/constants";
+import { getStoreUrl } from "@/lib/constants";
 import { HiCheck } from "react-icons/hi2";
 import { HiStar } from "react-icons/hi2";
 
@@ -196,7 +196,7 @@ export function Pricing() {
                   <Button
                     size="md"
                     variant={isPopular ? "gradient" : "secondary"}
-                    href={APP_STORE_URL}
+                    onClick={() => { window.location.href = getStoreUrl(); }}
                     className="w-full mt-auto"
                   >
                     Start Free Trial

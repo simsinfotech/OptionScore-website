@@ -64,3 +64,16 @@ export const SOCIAL_LINKS = [
 
 export const APP_STORE_URL = "https://apps.apple.com/in/app/optionscore/id6764321805";
 export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.maheshsimsinfotech.optionscore";
+
+export function getStoreUrl(): string {
+  if (typeof navigator === "undefined") return APP_STORE_URL;
+  const ua = navigator.userAgent.toLowerCase();
+  if (/iphone|ipad|ipod|macintosh/.test(ua) && "ontouchend" in document) {
+    return APP_STORE_URL;
+  }
+  if (/android/.test(ua)) {
+    return PLAY_STORE_URL;
+  }
+  // Desktop — scroll to download section
+  return "#download";
+}
