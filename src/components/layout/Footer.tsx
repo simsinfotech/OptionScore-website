@@ -59,14 +59,6 @@ export function Footer() {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href="/account-deletion"
-                  className="text-sm text-text-muted hover:text-accent-cyan transition-colors"
-                >
-                  Account Deletion
-                </a>
-              </li>
             </ul>
           </div>
 
