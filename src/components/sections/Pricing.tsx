@@ -103,14 +103,25 @@ export function Pricing() {
           </div>
         </AnimatedSection>
 
+        {/* 7-day free trial banner */}
+        <AnimatedSection delay={0.1} className="mb-8">
+          <div className="text-center">
+            <span className="inline-flex items-center gap-2 px-4 py-2 border border-accent-lime/30 bg-accent-lime/5 text-accent-lime text-sm font-semibold">
+              <HiStar className="text-base" />
+              7-Day Free Trial on All Plans
+              <HiStar className="text-base" />
+            </span>
+          </div>
+        </AnimatedSection>
+
         {/* Plan cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {PLANS.map((plan, index) => {
             const isPopular = plan.badge === "POPULAR";
             const isBest = plan.badge === "BEST VALUE";
 
             return (
-              <AnimatedSection key={plan.name} delay={index * 0.15}>
+              <AnimatedSection key={plan.name} delay={index * 0.15} className="flex">
                 <motion.div
                   whileHover={{
                     y: -8,
@@ -119,7 +130,7 @@ export function Pricing() {
                       : "0 0 30px rgba(0,188,212,0.15), 0 20px 40px rgba(0,0,0,0.3)",
                   }}
                   transition={{ duration: 0.3 }}
-                  className={`relative p-6 border cursor-pointer ${
+                  className={`relative p-6 border cursor-pointer flex flex-col w-full ${
                     isPopular
                       ? "border-accent-cyan bg-card"
                       : "border-card-border bg-card/80"
@@ -144,11 +155,16 @@ export function Pricing() {
                     {plan.name}
                   </h3>
 
+                  {/* Free trial note */}
+                  <p className="text-center text-xs text-accent-lime mb-2">
+                    7 days free trial
+                  </p>
+
                   {/* Divider */}
                   <div className="border-t border-card-border my-4" />
 
                   {/* Features */}
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-3 mb-8 flex-1">
                     {plan.features.map((feature) => (
                       <li
                         key={feature}
@@ -165,9 +181,9 @@ export function Pricing() {
                     size="md"
                     variant={isPopular ? "primary" : "secondary"}
                     href={APP_STORE_URL}
-                    className="w-full"
+                    className="w-full mt-auto"
                   >
-                    Get {plan.name}
+                    Start Free Trial
                   </Button>
                 </motion.div>
               </AnimatedSection>
