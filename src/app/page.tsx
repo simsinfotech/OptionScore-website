@@ -13,17 +13,20 @@ import { CTA } from "@/components/sections/CTA";
 export default function Home() {
   return (
     <div className="relative">
-      {/* Global background effects — covers entire page */}
-      <div className="bg-effects" aria-hidden="true">
-        <div className="particle particle-1" />
-        <div className="particle particle-2" />
-        <div className="particle particle-3" />
-        <div className="particle particle-4" />
-        <div className="particle particle-5" />
-        <div className="particle particle-6" />
-        <div className="aurora aurora-cyan" />
-        <div className="aurora aurora-violet" />
-        <div className="aurora aurora-lime" />
+      {/* Starfield background — covers entire page */}
+      <div className="starfield" aria-hidden="true">
+        {/* Star layers at different depths */}
+        <div className="stars stars-small" />
+        <div className="stars stars-medium" />
+        <div className="stars stars-large" />
+        {/* Nebula clouds */}
+        <div className="nebula nebula-1" />
+        <div className="nebula nebula-2" />
+        <div className="nebula nebula-3" />
+        {/* Shooting stars */}
+        <div className="shooting-star shooting-star-1" />
+        <div className="shooting-star shooting-star-2" />
+        <div className="shooting-star shooting-star-3" />
       </div>
       <div className="noise-overlay" aria-hidden="true" />
 
