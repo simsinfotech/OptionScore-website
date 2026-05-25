@@ -166,8 +166,8 @@
 
 /* Static gradient border */
 .grad-border-static {
-  border: 1px solid transparent;
-  background-image: linear-gradient(#1C1C24, #1C1C24), linear-gradient(135deg, #00BCD4, #7C3AED);
+  border: 2px solid transparent;
+  background-image: linear-gradient(#1C1C24, #1C1C24), linear-gradient(135deg, #00BCD4, #7C3AED, #ECFF8C);
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }

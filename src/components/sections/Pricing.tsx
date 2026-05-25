@@ -139,7 +139,7 @@ export function Pricing() {
                       ? "grad-border-card"
                       : isBest
                       ? "grad-border-static"
-                      : "glass"
+                      : "glass border border-card-border hover:border-accent-cyan/40 transition-colors duration-300"
                   }`}
                 >
                   {/* Badge */}
