@@ -153,14 +153,9 @@
   position: relative;
   background: #1C1C24;
   border: 1px solid transparent;
-}
-
-.grad-border-card::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  z-index: -1;
-  background: conic-gradient(from var(--border-angle), #00BCD4, #7C3AED, #ECFF8C, #00BCD4);
+  background-image: linear-gradient(#1C1C24, #1C1C24), conic-gradient(from var(--border-angle, 0deg), #00BCD4, #7C3AED, #ECFF8C, #00BCD4);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
   animation: border-spin 4s linear infinite;
 }
 
