@@ -115,38 +115,63 @@ export function Hero() {
           })}
         </motion.div>
 
-        {/* Three-phone mockup layout */}
-        <div className="mt-12 md:mt-20 flex items-end justify-center gap-3 sm:gap-6 md:gap-10">
-          {/* Left phone */}
+        {/* Phone mockups — slider on mobile, flex on desktop */}
+        {/* Desktop: 3-phone staggered layout */}
+        <div className="hidden md:flex mt-20 items-end justify-center gap-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9 }}
-            className="self-end mt-6 md:mt-12 animate-float-delayed"
+            className="self-end mt-12 animate-float-delayed"
           >
-            <PhoneMockup src="/images/app-screenshot-2.jpg" alt="OptionScore market overview" className="w-[100px] sm:w-[140px] md:w-[200px]" />
+            <PhoneMockup src="/images/app-screenshot-2.jpg" alt="OptionScore market overview" className="w-[200px]" />
           </motion.div>
 
-          {/* Center phone (main, elevated) */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
             className="animate-float"
           >
-            <PhoneMockup src="/images/app-screenshot-1.jpg" alt="OptionScore command center" className="w-[130px] sm:w-[180px] md:w-[260px]" />
+            <PhoneMockup src="/images/app-screenshot-1.jpg" alt="OptionScore command center" className="w-[260px]" />
           </motion.div>
 
-          {/* Right phone */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9 }}
-            className="self-end mt-6 md:mt-12 animate-float-delayed"
+            className="self-end mt-12 animate-float-delayed"
             style={{ animationDelay: "1s" }}
           >
-            <PhoneMockup src="/images/app-screenshot-3.jpg" alt="OptionScore AI stock insights" className="w-[100px] sm:w-[140px] md:w-[200px]" />
+            <PhoneMockup src="/images/app-screenshot-3.jpg" alt="OptionScore AI stock insights" className="w-[200px]" />
           </motion.div>
+        </div>
+
+        {/* Mobile: horizontal snap slider */}
+        <div className="md:hidden mt-12 -mx-4">
+          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory px-[calc(50%-90px)] pb-4 scrollbar-hide">
+            {[
+              { src: "/images/app-screenshot-2.jpg", alt: "OptionScore market overview" },
+              { src: "/images/app-screenshot-1.jpg", alt: "OptionScore command center" },
+              { src: "/images/app-screenshot-3.jpg", alt: "OptionScore AI stock insights" },
+            ].map((phone, index) => (
+              <motion.div
+                key={phone.alt}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.8 + index * 0.1 }}
+                className="flex-shrink-0 snap-center"
+              >
+                <PhoneMockup src={phone.src} alt={phone.alt} className="w-[180px]" />
+              </motion.div>
+            ))}
+          </div>
+          {/* Scroll indicator dots */}
+          <div className="flex items-center justify-center gap-2 mt-4">
+            <div className="w-1.5 h-1.5 rounded-full bg-accent-cyan/40" />
+            <div className="w-1.5 h-1.5 rounded-full bg-accent-cyan" />
+            <div className="w-1.5 h-1.5 rounded-full bg-accent-cyan/40" />
+          </div>
         </div>
       </div>
 
