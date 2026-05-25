@@ -45,7 +45,7 @@ export function Features() {
           {FEATURES.map((feature, index) => {
             const Icon = FEATURE_ICONS[index];
             const color = ICON_COLORS[index];
-            const cardVariant = index === 0 ? "gradient-border" as const : "glass" as const;
+            const cardVariant = index % 2 === 0 ? "gradient-border" as const : "glass" as const;
             return (
               <AnimatedSection key={feature.title} delay={index * 0.1}>
                 <Card className="h-full group relative overflow-hidden" variant={cardVariant}>
