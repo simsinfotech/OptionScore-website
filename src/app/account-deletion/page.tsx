@@ -24,9 +24,9 @@ export default function AccountDeletion() {
             <Image
               src="/images/logo.png"
               alt="OptionScore logo"
-              width={140}
-              height={40}
-              className="h-10 w-auto"
+              width={180}
+              height={50}
+              className="h-14 w-auto"
             />
           </a>
         </div>
