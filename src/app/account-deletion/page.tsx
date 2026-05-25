@@ -24,13 +24,10 @@ export default function AccountDeletion() {
             <Image
               src="/images/logo.png"
               alt="OptionScore logo"
-              width={32}
-              height={32}
-              className="w-8 h-8"
+              width={140}
+              height={40}
+              className="h-10 w-auto"
             />
-            <span className="text-lg font-light tracking-[0.25em] uppercase text-accent-cyan">
-              OptionScore
-            </span>
           </a>
         </div>
       </header>

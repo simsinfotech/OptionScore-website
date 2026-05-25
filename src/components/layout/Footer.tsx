@@ -14,17 +14,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center mb-4">
               <Image
                 src="/images/logo.png"
                 alt="OptionScore logo"
-                width={32}
-                height={32}
-                className="w-8 h-8"
+                width={140}
+                height={40}
+                className="h-10 w-auto"
               />
-              <h3 className="text-xl font-bold tracking-heading uppercase text-accent-cyan">
-                OptionScore
-              </h3>
             </div>
             <p className="text-text-muted text-sm leading-relaxed mb-4">
               AI-powered trading analysis for the modern trader. Make smarter

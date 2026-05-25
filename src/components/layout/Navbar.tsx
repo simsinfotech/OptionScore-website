@@ -32,13 +32,10 @@ export function Navbar() {
           <Image
             src="/images/logo.png"
             alt="OptionScore logo"
-            width={36}
-            height={36}
-            className="w-9 h-9"
+            width={140}
+            height={40}
+            className="h-10 w-auto"
           />
-          <span className="text-xl font-light tracking-[0.25em] uppercase text-accent-cyan">
-            OptionScore
-          </span>
         </a>
 
         {/* Desktop links */}
