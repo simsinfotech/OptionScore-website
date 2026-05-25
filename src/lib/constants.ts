@@ -74,6 +74,6 @@ export function getStoreUrl(): string {
   if (/android/.test(ua)) {
     return PLAY_STORE_URL;
   }
-  // Desktop — scroll to download section
-  return "#download";
+  // Desktop — default to App Store
+  return APP_STORE_URL;
 }
