@@ -12,6 +12,8 @@ const PLANS = [
   {
     name: "Starter",
     badge: null,
+    monthlyPrice: "₹299",
+    annualPrice: "₹2,999",
     features: [
       "Full Command Center",
       "Score Engine (all instruments)",
@@ -23,6 +25,8 @@ const PLANS = [
   {
     name: "Intermediate",
     badge: "POPULAR",
+    monthlyPrice: "₹699",
+    annualPrice: "₹6,799",
     features: [
       "Everything in Starter",
       "Alpha Stocks Zones",
@@ -35,6 +39,8 @@ const PLANS = [
   {
     name: "Pro",
     badge: "BEST VALUE",
+    monthlyPrice: "₹1,499",
+    annualPrice: "₹14,999",
     features: [
       "Everything in Intermediate",
       "Smart Money & Dealer Flow",
@@ -154,6 +160,16 @@ export function Pricing() {
                   <h3 className="heading text-xl text-text-primary mb-2 mt-2 text-center">
                     {plan.name}
                   </h3>
+
+                  {/* Price */}
+                  <div className="text-center mb-1">
+                    <span className="text-3xl font-bold text-text-primary">
+                      {annual ? plan.annualPrice : plan.monthlyPrice}
+                    </span>
+                    <span className="text-text-muted text-sm ml-1">
+                      /{annual ? "year" : "month"}
+                    </span>
+                  </div>
 
                   {/* Free trial note */}
                   <p className="text-center text-xs text-accent-lime mb-2">
