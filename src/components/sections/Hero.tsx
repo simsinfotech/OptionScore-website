@@ -59,7 +59,7 @@ export function Hero() {
       {/* Scanning line */}
       <div className="scan-line" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-32 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-32 text-center overflow-hidden">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-text-secondary text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 md:mb-10 px-2"
+          className="text-text-secondary text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 md:mb-10 px-4 sm:px-2"
         >
           Real-time market scoring, AI-driven insights, and professional trading
           tools — all in one powerful mobile app.
@@ -148,8 +148,8 @@ export function Hero() {
         </div>
 
         {/* Mobile: horizontal snap slider */}
-        <div className="md:hidden mt-12 -mx-4">
-          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory px-[calc(50%-90px)] pb-4 scrollbar-hide">
+        <div className="md:hidden mt-12 -mx-6">
+          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory px-[calc(50vw-90px)] pb-4 scrollbar-hide">
             {[
               { src: "/images/app-screenshot-2.jpg", alt: "OptionScore market overview" },
               { src: "/images/app-screenshot-1.jpg", alt: "OptionScore command center" },
