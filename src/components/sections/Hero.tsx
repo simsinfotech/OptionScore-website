@@ -5,6 +5,13 @@ import { FaApple, FaGooglePlay } from "react-icons/fa";
 import { Button } from "@/components/ui/Button";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
 import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
+import { HiUsers, HiStar, HiBolt } from "react-icons/hi2";
+
+const TRUST_BADGES = [
+  { icon: HiUsers, label: "10,000+ Traders" },
+  { icon: HiStar, label: "4.8★ Rating" },
+  { icon: HiBolt, label: "Real-Time AI" },
+];
 
 export function Hero() {
   return (
@@ -25,6 +32,16 @@ export function Hero() {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-cyan blur-[120px] rounded-full"
       />
 
+      {/* Violet glow blob */}
+      <motion.div
+        animate={{
+          scale: [1.1, 0.9, 1.1],
+          opacity: [0.03, 0.06, 0.03],
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-accent-violet blur-[120px] rounded-full"
+      />
+
       {/* Orbiting dots */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0">
         <div className="orbit-dot">
@@ -32,6 +49,10 @@ export function Hero() {
         </div>
         <div className="orbit-dot-reverse">
           <div className="w-1.5 h-1.5 bg-accent-cyan/20 rounded-full" />
+        </div>
+        {/* Additional violet orbit dot */}
+        <div className="orbit-dot" style={{ animationDuration: "25s", animationDirection: "reverse" }}>
+          <div className="w-1 h-1 bg-accent-violet/25 rounded-full" />
         </div>
       </div>
 
@@ -47,7 +68,7 @@ export function Hero() {
         >
           Trade Smarter
           <br />
-          <span className="text-accent-cyan">With AI</span>
+          <span className="gradient-text-cyan-violet">With AI</span>
         </motion.h1>
 
         <motion.p
@@ -66,7 +87,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button size="lg" href={APP_STORE_URL}>
+          <Button size="lg" variant="gradient" href={APP_STORE_URL}>
             <FaApple className="mr-2 text-xl" />
             App Store
           </Button>
@@ -74,6 +95,24 @@ export function Hero() {
             <FaGooglePlay className="mr-2 text-lg" />
             Google Play
           </Button>
+        </motion.div>
+
+        {/* Trust badge strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="flex items-center justify-center gap-6 mt-8"
+        >
+          {TRUST_BADGES.map((badge) => {
+            const Icon = badge.icon;
+            return (
+              <div key={badge.label} className="flex items-center gap-1.5 text-text-muted text-xs">
+                <Icon className="text-accent-cyan text-sm" />
+                {badge.label}
+              </div>
+            );
+          })}
         </motion.div>
 
         {/* Three-phone mockup layout */}
@@ -110,6 +149,9 @@ export function Hero() {
           </motion.div>
         </div>
       </div>
+
+      {/* Shimmer divider at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 divider-shimmer" />
     </section>
   );
 }

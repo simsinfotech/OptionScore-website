@@ -8,12 +8,19 @@ interface CardProps {
   children: React.ReactNode;
   className?: string;
   hover?: boolean;
+  variant?: "default" | "gradient-border" | "glass";
 }
 
-export function Card({ children, className, hover = true }: CardProps) {
+export function Card({ children, className, hover = true, variant = "default" }: CardProps) {
+  const variantClasses = {
+    default: "bg-card border border-card-border",
+    "gradient-border": "grad-border-card",
+    glass: "glass",
+  };
+
   if (!hover) {
     return (
-      <div className={twMerge(clsx("bg-card border border-card-border p-6", className))}>
+      <div className={twMerge(clsx(variantClasses[variant], "p-6", className))}>
         {children}
       </div>
     );
@@ -29,7 +36,8 @@ export function Card({ children, className, hover = true }: CardProps) {
       transition={{ duration: 0.3 }}
       className={twMerge(
         clsx(
-          "bg-card border border-card-border p-6 cursor-pointer",
+          variantClasses[variant],
+          "p-6 cursor-pointer",
           "transition-colors duration-300",
           className
         )

@@ -23,7 +23,7 @@ export function Navbar() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/90 backdrop-blur-md border-b border-card-border"
+          ? "glass-strong shadow-[0_4px_20px_rgba(0,188,212,0.06)]"
           : "bg-transparent"
       }`}
     >
@@ -50,10 +50,13 @@ export function Navbar() {
               className="relative text-sm uppercase tracking-heading text-text-secondary hover:text-accent-cyan transition-colors group"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent-cyan transition-all duration-300 group-hover:w-full" />
+              <span
+                className="absolute -bottom-1 left-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full"
+                style={{ background: "linear-gradient(90deg, #00BCD4, #7C3AED)" }}
+              />
             </a>
           ))}
-          <Button size="sm" href="#download">
+          <Button size="sm" variant="gradient" href="#download">
             Download
           </Button>
         </div>
@@ -79,7 +82,7 @@ export function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-background/95 backdrop-blur-md border-b border-card-border px-6 pb-6"
+          className="md:hidden glass-strong px-6 pb-6"
         >
           {NAV_LINKS.map((link) => (
             <a
@@ -91,7 +94,7 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
-          <Button size="sm" href="#download" className="mt-4 w-full">
+          <Button size="sm" variant="gradient" href="#download" className="mt-4 w-full">
             Download
           </Button>
         </motion.div>

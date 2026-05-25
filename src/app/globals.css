@@ -117,3 +117,176 @@
 .orbit-dot-reverse {
   animation: orbit-reverse 15s linear infinite;
 }
+
+/* ===== VISUAL REDESIGN UTILITIES ===== */
+
+/* Gradient text effects */
+.gradient-text-cyan-violet {
+  background: linear-gradient(135deg, #00BCD4, #7C3AED);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-cyan-lime {
+  background: linear-gradient(135deg, #00BCD4, #ECFF8C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-violet-lime {
+  background: linear-gradient(135deg, #7C3AED, #ECFF8C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated conic-gradient spinning border */
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.grad-border-card {
+  position: relative;
+  background: #1C1C24;
+  border: 1px solid transparent;
+}
+
+.grad-border-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  background: conic-gradient(from var(--border-angle), #00BCD4, #7C3AED, #ECFF8C, #00BCD4);
+  animation: border-spin 4s linear infinite;
+}
+
+@keyframes border-spin {
+  0% { --border-angle: 0deg; }
+  100% { --border-angle: 360deg; }
+}
+
+/* Static gradient border */
+.grad-border-static {
+  border: 1px solid transparent;
+  background-image: linear-gradient(#1C1C24, #1C1C24), linear-gradient(135deg, #00BCD4, #7C3AED);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(28, 28, 36, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-strong {
+  background: rgba(28, 28, 36, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Section mesh backgrounds */
+.section-mesh-cyan {
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 50%, rgba(0, 188, 212, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 80% 20%, rgba(124, 58, 237, 0.04) 0%, transparent 70%),
+    #0D0D12;
+}
+
+.section-mesh-violet {
+  background:
+    radial-gradient(ellipse 60% 40% at 70% 50%, rgba(124, 58, 237, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(0, 188, 212, 0.04) 0%, transparent 70%),
+    #0D0D12;
+}
+
+.section-mesh-alt {
+  background:
+    radial-gradient(ellipse 50% 40% at 50% 0%, rgba(0, 188, 212, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 80% 100%, rgba(236, 255, 140, 0.03) 0%, transparent 70%),
+    #0D0D12;
+}
+
+/* Icon gradient backgrounds */
+.icon-bg-cyan {
+  background: rgba(0, 188, 212, 0.1);
+  border: 1px solid rgba(0, 188, 212, 0.2);
+}
+
+.icon-bg-violet {
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.icon-bg-lime {
+  background: rgba(236, 255, 140, 0.1);
+  border: 1px solid rgba(236, 255, 140, 0.2);
+}
+
+/* Section dividers */
+.divider-gradient {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 188, 212, 0.3), rgba(124, 58, 237, 0.3), transparent);
+}
+
+.divider-shimmer {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, transparent 40%, rgba(0, 188, 212, 0.6) 50%, transparent 60%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Gradient button */
+.btn-gradient {
+  background: linear-gradient(135deg, #00BCD4, #7C3AED);
+  color: #0D0D12;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  box-shadow: 0 0 30px rgba(0, 188, 212, 0.3), 0 0 30px rgba(124, 58, 237, 0.2);
+}
+
+/* Section label chip */
+.section-chip {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid rgba(0, 188, 212, 0.3);
+  color: #00BCD4;
+  background: rgba(0, 188, 212, 0.05);
+  margin-bottom: 1rem;
+}
+
+/* Badge shimmer */
+.badge-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shimmer 3s linear infinite;
+}

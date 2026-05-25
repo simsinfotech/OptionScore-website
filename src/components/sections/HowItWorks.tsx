@@ -36,14 +36,12 @@ const STEPS = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 px-6 bg-card/30 relative overflow-hidden">
-      {/* Background accents */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent-cyan/3 blur-[150px]" />
-
+    <section id="how-it-works" className="py-24 px-6 section-mesh-alt relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         <AnimatedSection className="text-center mb-20">
+          <span className="section-chip">Getting Started</span>
           <h2 className="heading text-3xl md:text-4xl text-text-primary mb-4">
-            How It <span className="text-accent-cyan">Works</span>
+            How It <span className="gradient-text-cyan-violet">Works</span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
             Get started in three simple steps.
@@ -52,7 +50,7 @@ export function HowItWorks() {
 
         {/* Steps */}
         <div className="relative">
-          {/* Connecting line (desktop) */}
+          {/* Connecting line (desktop) - gradient */}
           <div className="hidden md:block absolute top-[60px] left-[16%] right-[16%] h-[1px]">
             <motion.div
               initial={{ scaleX: 0 }}
@@ -61,7 +59,7 @@ export function HowItWorks() {
               transition={{ duration: 1.2, delay: 0.5 }}
               className="w-full h-full origin-left"
               style={{
-                background: "linear-gradient(90deg, rgba(0,188,212,0.1), rgba(0,188,212,0.4), rgba(0,188,212,0.1))",
+                background: "linear-gradient(90deg, rgba(0,188,212,0.1), rgba(124,58,237,0.4), rgba(0,188,212,0.1))",
               }}
             />
           </div>
@@ -77,13 +75,14 @@ export function HowItWorks() {
                       boxShadow: "0 0 40px rgba(0,188,212,0.15), 0 20px 40px rgba(0,0,0,0.3)",
                     }}
                     transition={{ duration: 0.3 }}
-                    className="relative text-center border border-card-border bg-card/80 backdrop-blur-sm p-8 cursor-pointer group"
+                    className="relative text-center glass p-8 cursor-pointer group"
                   >
-                    {/* Step number badge */}
+                    {/* Step number badge - gradient */}
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                       <motion.div
                         whileHover={{ scale: 1.1 }}
-                        className="w-8 h-8 bg-accent-cyan text-background text-sm font-bold flex items-center justify-center"
+                        className="w-8 h-8 text-background text-sm font-bold flex items-center justify-center"
+                        style={{ background: "linear-gradient(135deg, #00BCD4, #7C3AED)" }}
                       >
                         {step.step}
                       </motion.div>
@@ -93,7 +92,7 @@ export function HowItWorks() {
                     <motion.div
                       whileHover={{ scale: 1.15, rotate: -5 }}
                       transition={{ type: "spring", stiffness: 300 }}
-                      className="inline-flex items-center justify-center w-16 h-16 border border-accent-cyan/20 bg-accent-cyan/5 text-accent-cyan text-3xl mb-6 mt-4 group-hover:border-accent-cyan/50 transition-colors duration-300"
+                      className="inline-flex items-center justify-center w-16 h-16 icon-bg-cyan text-accent-cyan text-3xl mb-6 mt-4 group-hover:border-accent-cyan/50 transition-colors duration-300"
                     >
                       <Icon />
                     </motion.div>
@@ -110,7 +109,7 @@ export function HowItWorks() {
 
                     {/* Stat highlight */}
                     <div className="border-t border-card-border pt-4">
-                      <div className="text-2xl font-bold text-accent-cyan glow-text">
+                      <div className="text-2xl font-bold gradient-text-cyan-violet glow-text">
                         {step.stat}
                       </div>
                       <div className="text-xs text-text-muted uppercase tracking-heading mt-1">
@@ -120,7 +119,8 @@ export function HowItWorks() {
 
                     {/* Bottom accent line */}
                     <div
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-accent-cyan/0 group-hover:bg-accent-cyan transition-all duration-500"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-all duration-500"
+                      style={{ background: "linear-gradient(90deg, #00BCD4, #7C3AED)" }}
                     />
                   </motion.div>
                 </AnimatedSection>
@@ -129,6 +129,9 @@ export function HowItWorks() {
           </div>
         </div>
       </div>
+
+      {/* Shimmer divider at bottom */}
+      <div className="divider-shimmer mt-24" />
     </section>
   );
 }

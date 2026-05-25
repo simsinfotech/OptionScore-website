@@ -2,9 +2,14 @@ import Image from "next/image";
 import { SOCIAL_LINKS, NAV_LINKS } from "@/lib/constants";
 import { FaXTwitter, FaDiscord, FaInstagram } from "react-icons/fa6";
 
+const BRAND_TAGS = ["AI-Powered", "Real-Time Scores", "Mobile-First"];
+
 export function Footer() {
   return (
-    <footer className="border-t border-card-border bg-background">
+    <footer className="bg-background relative">
+      {/* Shimmer divider at top */}
+      <div className="divider-shimmer" />
+
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
@@ -21,10 +26,21 @@ export function Footer() {
                 OptionScore
               </h3>
             </div>
-            <p className="text-text-muted text-sm leading-relaxed">
+            <p className="text-text-muted text-sm leading-relaxed mb-4">
               AI-powered trading analysis for the modern trader. Make smarter
               decisions with real-time market scoring.
             </p>
+            {/* Brand tags */}
+            <div className="flex flex-wrap gap-2">
+              {BRAND_TAGS.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-[10px] uppercase tracking-heading px-2 py-1 border border-card-border text-text-muted"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* Navigation */}
@@ -62,9 +78,9 @@ export function Footer() {
             <div className="flex gap-4">
               {SOCIAL_LINKS.map((link) => {
                 const icons: Record<string, React.ReactNode> = {
-                  Twitter: <FaXTwitter size={20} />,
-                  Discord: <FaDiscord size={20} />,
-                  Instagram: <FaInstagram size={20} />,
+                  Twitter: <FaXTwitter size={18} />,
+                  Discord: <FaDiscord size={18} />,
+                  Instagram: <FaInstagram size={18} />,
                 };
                 return (
                   <a
@@ -72,7 +88,7 @@ export function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-text-muted hover:text-accent-cyan transition-colors"
+                    className="inline-flex items-center justify-center w-9 h-9 icon-bg-cyan text-accent-cyan hover:bg-accent-cyan/20 transition-colors"
                     aria-label={link.label}
                   >
                     {icons[link.label]}
@@ -85,7 +101,9 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-card-border text-center">
           <p className="text-text-muted text-xs">
-            &copy; {new Date().getFullYear()} OptionScore. All rights reserved.
+            &copy; {new Date().getFullYear()}{" "}
+            <span className="gradient-text-cyan-violet font-semibold">OptionScore</span>
+            . All rights reserved.
           </p>
         </div>
       </div>

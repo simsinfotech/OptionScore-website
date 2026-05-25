@@ -4,7 +4,7 @@ import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "gradient";
   size?: "sm" | "md" | "lg";
   href?: string;
 }
@@ -26,6 +26,7 @@ export function Button({
         "border border-accent-cyan text-accent-cyan hover:bg-accent-cyan/10":
           variant === "secondary",
         "text-text-secondary hover:text-accent-cyan": variant === "ghost",
+        "btn-gradient": variant === "gradient",
       },
       {
         "px-4 py-2 text-xs": size === "sm",

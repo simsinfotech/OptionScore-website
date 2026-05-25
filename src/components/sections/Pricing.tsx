@@ -56,14 +56,12 @@ export function Pricing() {
   const [annual, setAnnual] = useState(false);
 
   return (
-    <section id="pricing" className="py-24 px-6 relative overflow-hidden">
-      {/* Background accents */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent-cyan/3 blur-[150px]" />
-
+    <section id="pricing" className="py-24 px-6 relative overflow-hidden section-mesh-violet">
       <div className="max-w-6xl mx-auto relative z-10">
         <AnimatedSection className="text-center mb-12">
+          <span className="section-chip">Transparent Pricing</span>
           <h2 className="heading text-3xl md:text-4xl text-text-primary mb-4">
-            Choose Your <span className="text-accent-cyan">Plan</span>
+            Choose Your <span className="gradient-text-violet-lime">Plan</span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto mb-8">
             Start free and upgrade as you grow. All plans include core market
@@ -112,7 +110,7 @@ export function Pricing() {
         {/* 7-day free trial banner */}
         <AnimatedSection delay={0.1} className="mb-8">
           <div className="text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-2 border border-accent-lime/30 bg-accent-lime/5 text-accent-lime text-sm font-semibold">
+            <span className="inline-flex items-center gap-2 px-4 py-2 border border-accent-lime/30 bg-accent-lime/5 text-accent-lime text-sm font-semibold badge-shimmer">
               <HiStar className="text-base" />
               7-Day Free Trial on All Plans
               <HiStar className="text-base" />
@@ -132,20 +130,22 @@ export function Pricing() {
                   whileHover={{
                     y: -8,
                     boxShadow: isPopular
-                      ? "0 0 50px rgba(0,188,212,0.25), 0 20px 40px rgba(0,0,0,0.3)"
+                      ? "0 0 50px rgba(0,188,212,0.25), 0 0 30px rgba(124,58,237,0.15), 0 20px 40px rgba(0,0,0,0.3)"
                       : "0 0 30px rgba(0,188,212,0.15), 0 20px 40px rgba(0,0,0,0.3)",
                   }}
                   transition={{ duration: 0.3 }}
-                  className={`relative p-6 border cursor-pointer flex flex-col w-full ${
+                  className={`relative p-6 cursor-pointer flex flex-col w-full ${
                     isPopular
-                      ? "border-accent-cyan bg-card"
-                      : "border-card-border bg-card/80"
+                      ? "grad-border-card"
+                      : isBest
+                      ? "grad-border-static"
+                      : "border border-card-border bg-card/80"
                   }`}
                 >
                   {/* Badge */}
                   {plan.badge && (
                     <div
-                      className={`absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 text-[10px] font-bold uppercase tracking-heading flex items-center gap-1 ${
+                      className={`absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 text-[10px] font-bold uppercase tracking-heading flex items-center gap-1 badge-shimmer ${
                         isPopular
                           ? "bg-accent-cyan text-background"
                           : "bg-accent-lime text-background"
@@ -177,7 +177,7 @@ export function Pricing() {
                   </p>
 
                   {/* Divider */}
-                  <div className="border-t border-card-border my-4" />
+                  <div className="divider-gradient my-4" />
 
                   {/* Features */}
                   <ul className="space-y-3 mb-8 flex-1">
@@ -195,7 +195,7 @@ export function Pricing() {
                   {/* CTA */}
                   <Button
                     size="md"
-                    variant={isPopular ? "primary" : "secondary"}
+                    variant={isPopular ? "gradient" : "secondary"}
                     href={APP_STORE_URL}
                     className="w-full mt-auto"
                   >
@@ -209,11 +209,11 @@ export function Pricing() {
 
         {/* Credits info */}
         <AnimatedSection delay={0.5} className="mt-16">
-          <div className="border border-card-border bg-card/50 p-8">
+          <div className="glass p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h3 className="heading text-base text-text-primary mb-4">
-                  Credit-Based <span className="text-accent-cyan">AI Features</span>
+                  Credit-Based <span className="gradient-text-cyan-violet">AI Features</span>
                 </h3>
                 <p className="text-text-secondary text-sm leading-relaxed mb-4">
                   AI-powered features like ScoreAI, Heatmaps, and Market Analysis
@@ -221,20 +221,20 @@ export function Pricing() {
                   get started.
                 </p>
                 <div className="grid grid-cols-2 gap-3 text-sm">
-                  <div className="border border-card-border p-3 text-center">
+                  <div className="glass p-3 text-center">
                     <div className="text-accent-cyan font-bold">1 credit</div>
                     <div className="text-text-muted text-xs mt-1">ScoreAI Chat</div>
                   </div>
-                  <div className="border border-card-border p-3 text-center">
+                  <div className="glass p-3 text-center">
                     <div className="text-accent-cyan font-bold">1 credit</div>
                     <div className="text-text-muted text-xs mt-1">Market Heatmap</div>
                   </div>
-                  <div className="border border-card-border p-3 text-center">
-                    <div className="text-accent-cyan font-bold">2 credits</div>
+                  <div className="glass p-3 text-center">
+                    <div className="text-accent-violet font-bold">2 credits</div>
                     <div className="text-text-muted text-xs mt-1">Image Analysis</div>
                   </div>
-                  <div className="border border-card-border p-3 text-center">
-                    <div className="text-accent-cyan font-bold">FREE</div>
+                  <div className="glass p-3 text-center">
+                    <div className="text-accent-lime font-bold">FREE</div>
                     <div className="text-text-muted text-xs mt-1">Trade Journal</div>
                   </div>
                 </div>
@@ -242,33 +242,33 @@ export function Pricing() {
 
               <div>
                 <h3 className="heading text-base text-text-primary mb-4">
-                  Refer & <span className="text-accent-lime">Earn</span>
+                  Refer & <span className="gradient-text-cyan-lime">Earn</span>
                 </h3>
                 <p className="text-text-secondary text-sm leading-relaxed mb-4">
                   Invite friends and earn bonus credits. The more you refer, the
                   more you unlock.
                 </p>
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between border border-card-border p-3">
+                  <div className="flex items-center justify-between glass p-3">
                     <div>
                       <span className="text-text-primary text-sm font-semibold">Bronze</span>
                       <span className="text-text-muted text-xs ml-2">1 referral</span>
                     </div>
                     <span className="text-accent-cyan text-sm font-bold">+50 credits</span>
                   </div>
-                  <div className="flex items-center justify-between border border-card-border p-3">
+                  <div className="flex items-center justify-between glass p-3">
                     <div>
                       <span className="text-text-primary text-sm font-semibold">Silver</span>
                       <span className="text-text-muted text-xs ml-2">3 referrals</span>
                     </div>
                     <span className="text-accent-cyan text-sm font-bold">+100 credits</span>
                   </div>
-                  <div className="flex items-center justify-between border border-card-border p-3">
+                  <div className="flex items-center justify-between glass p-3">
                     <div>
                       <span className="text-text-primary text-sm font-semibold">Gold</span>
                       <span className="text-text-muted text-xs ml-2">6 referrals</span>
                     </div>
-                    <span className="text-accent-cyan text-sm font-bold">+150 credits</span>
+                    <span className="text-accent-violet text-sm font-bold">+150 credits</span>
                   </div>
                   <div className="flex items-center justify-between border border-accent-lime/30 bg-accent-lime/5 p-3">
                     <div>
@@ -283,6 +283,9 @@ export function Pricing() {
           </div>
         </AnimatedSection>
       </div>
+
+      {/* Shimmer divider at bottom */}
+      <div className="divider-shimmer mt-24" />
     </section>
   );
 }
