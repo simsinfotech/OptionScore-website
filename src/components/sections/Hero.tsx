@@ -59,7 +59,7 @@ export function Hero() {
       {/* Scanning line */}
       <div className="scan-line" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-32 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-text-secondary text-lg md:text-xl max-w-2xl mx-auto mb-10"
+          className="text-text-secondary text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 md:mb-10 px-2"
         >
           Real-time market scoring, AI-driven insights, and professional trading
           tools — all in one powerful mobile app.
@@ -102,7 +102,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex items-center justify-center gap-6 mt-8"
+          className="flex items-center justify-center gap-3 sm:gap-6 mt-8 flex-wrap"
         >
           {TRUST_BADGES.map((badge) => {
             const Icon = badge.icon;
@@ -116,15 +116,15 @@ export function Hero() {
         </motion.div>
 
         {/* Three-phone mockup layout */}
-        <div className="mt-20 flex items-end justify-center gap-6 md:gap-10">
+        <div className="mt-12 md:mt-20 flex items-end justify-center gap-3 sm:gap-6 md:gap-10">
           {/* Left phone */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9 }}
-            className="self-end mt-12 animate-float-delayed"
+            className="self-end mt-6 md:mt-12 animate-float-delayed"
           >
-            <PhoneMockup src="/images/app-screenshot-2.jpg" alt="OptionScore market overview" className="w-[140px] md:w-[200px]" />
+            <PhoneMockup src="/images/app-screenshot-2.jpg" alt="OptionScore market overview" className="w-[100px] sm:w-[140px] md:w-[200px]" />
           </motion.div>
 
           {/* Center phone (main, elevated) */}
@@ -134,7 +134,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.8 }}
             className="animate-float"
           >
-            <PhoneMockup src="/images/app-screenshot-1.jpg" alt="OptionScore command center" className="w-[180px] md:w-[260px]" />
+            <PhoneMockup src="/images/app-screenshot-1.jpg" alt="OptionScore command center" className="w-[130px] sm:w-[180px] md:w-[260px]" />
           </motion.div>
 
           {/* Right phone */}
@@ -142,10 +142,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9 }}
-            className="self-end mt-12 animate-float-delayed"
+            className="self-end mt-6 md:mt-12 animate-float-delayed"
             style={{ animationDelay: "1s" }}
           >
-            <PhoneMockup src="/images/app-screenshot-3.jpg" alt="OptionScore AI stock insights" className="w-[140px] md:w-[200px]" />
+            <PhoneMockup src="/images/app-screenshot-3.jpg" alt="OptionScore AI stock insights" className="w-[100px] sm:w-[140px] md:w-[200px]" />
           </motion.div>
         </div>
       </div>

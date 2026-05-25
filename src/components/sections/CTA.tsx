@@ -73,7 +73,7 @@ export function CTA() {
 
           {/* Stats strip */}
           <AnimatedSection delay={0.15}>
-            <div className="flex items-center justify-center gap-8 mb-10">
+            <div className="flex items-center justify-center gap-4 sm:gap-8 mb-10">
               {STATS.map((stat, index) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-xl font-bold text-accent-cyan">{stat.value}</div>

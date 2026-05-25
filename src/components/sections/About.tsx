@@ -83,15 +83,15 @@ export function About() {
 
         {/* Trust badges */}
         <AnimatedSection delay={0.3} className="mt-16">
-          <div className="flex flex-wrap items-center justify-center gap-6">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-3 sm:gap-6">
             {TRUST_BADGES.map((badge) => {
               const Icon = badge.icon;
               return (
                 <div
                   key={badge.label}
-                  className="flex items-center gap-2 px-4 py-2 glass text-text-secondary text-sm"
+                  className="flex items-center gap-2 px-3 py-2 glass text-text-secondary text-xs sm:text-sm"
                 >
-                  <Icon className="text-accent-cyan text-base" />
+                  <Icon className="text-accent-cyan text-base flex-shrink-0" />
                   {badge.label}
                 </div>
               );
