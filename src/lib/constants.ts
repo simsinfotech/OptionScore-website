@@ -62,5 +62,4 @@ export const SOCIAL_LINKS = [
 ];
 
 export const APP_STORE_URL = "https://apps.apple.com/in/app/optionscore/id6764321805";
-// Replace with your actual Play Store URL once published
-export const PLAY_STORE_URL = "#download";
+export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.maheshsimsinfotech.optionscore";
