@@ -28,20 +28,20 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3">
+        <a href="#" className="flex items-center gap-2 md:gap-3">
           <Image
             src="/images/logo.png"
             alt="OptionScore icon"
             width={40}
             height={40}
-            className="h-10 w-10"
+            className="h-7 w-7 md:h-10 md:w-10"
           />
           <Image
             src="/images/logo-text.png"
             alt="OptionScore"
             width={160}
             height={28}
-            className="h-6 w-auto"
+            className="h-4 w-auto md:h-6"
           />
         </a>
 
