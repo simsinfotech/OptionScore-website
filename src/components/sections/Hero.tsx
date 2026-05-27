@@ -161,31 +161,33 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Mobile: horizontal snap slider */}
-        <div className="md:hidden mt-12 -mx-6">
-          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory px-[calc(50vw-90px)] pb-4 scrollbar-hide">
-            {[
-              { src: "/images/preview-1.png", alt: "OptionScore command center" },
-              { src: "/images/preview-2.png", alt: "OptionScore market overview" },
-              { src: "/images/preview-3.png", alt: "OptionScore options intelligence" },
-            ].map((phone, index) => (
-              <motion.div
-                key={phone.alt}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.8 + index * 0.1 }}
-                className="flex-shrink-0 snap-center"
-              >
-                <PhoneMockup src={phone.src} alt={phone.alt} className="w-[180px]" />
-              </motion.div>
-            ))}
-          </div>
-          {/* Scroll indicator dots */}
-          <div className="flex items-center justify-center gap-2 mt-4">
-            <div className="w-1.5 h-1.5 rounded-full bg-accent-cyan" />
-            <div className="w-1.5 h-1.5 rounded-full bg-accent-cyan/40" />
-            <div className="w-1.5 h-1.5 rounded-full bg-accent-cyan/40" />
-          </div>
+        {/* Mobile: 3-phone staggered layout */}
+        <div className="md:hidden mt-12 flex items-end justify-center gap-3">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.9 }}
+            className="self-end mt-8"
+          >
+            <PhoneMockup src="/images/preview-2.png" alt="OptionScore market overview" className="w-[100px]" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.8 }}
+          >
+            <PhoneMockup src="/images/preview-1.png" alt="OptionScore command center" className="w-[140px]" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.9 }}
+            className="self-end mt-8"
+          >
+            <PhoneMockup src="/images/preview-3.png" alt="OptionScore options intelligence" className="w-[100px]" />
+          </motion.div>
         </div>
       </div>
 
