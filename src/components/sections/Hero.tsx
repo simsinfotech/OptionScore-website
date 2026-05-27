@@ -161,33 +161,36 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Mobile: 3-phone staggered layout */}
-        <div className="md:hidden mt-12 flex items-end justify-center gap-3">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.9 }}
-            className="self-end mt-8"
-          >
-            <PhoneMockup src="/images/preview-2.png" alt="OptionScore market overview" className="w-[100px]" />
-          </motion.div>
+        {/* Mobile: horizontal snap slider — center card default */}
+        <div className="md:hidden mt-12 -mx-6">
+          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory px-[calc(50vw-120px)] pb-4 scrollbar-hide">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.9 }}
+              className="flex-shrink-0 snap-center"
+            >
+              <PhoneMockup src="/images/preview-2.png" alt="OptionScore market overview" className="w-[240px]" />
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
-          >
-            <PhoneMockup src="/images/preview-1.png" alt="OptionScore command center" className="w-[140px]" />
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="flex-shrink-0 snap-center"
+            >
+              <PhoneMockup src="/images/preview-1.png" alt="OptionScore command center" className="w-[240px]" />
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.9 }}
-            className="self-end mt-8"
-          >
-            <PhoneMockup src="/images/preview-3.png" alt="OptionScore options intelligence" className="w-[100px]" />
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.9 }}
+              className="flex-shrink-0 snap-center"
+            >
+              <PhoneMockup src="/images/preview-3.png" alt="OptionScore options intelligence" className="w-[240px]" />
+            </motion.div>
+          </div>
         </div>
       </div>
 
