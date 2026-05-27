@@ -24,7 +24,7 @@ export function PhoneMockup({ src, alt = "App screenshot", className = "" }: Pho
           src={src}
           alt={alt}
           className="w-full h-auto"
-          style={{ borderRadius: "28px", overflow: "hidden" }}
+          style={{ borderRadius: "18px", overflow: "hidden" }}
         />
       ) : (
         <div className="w-full h-full flex items-center justify-center">
