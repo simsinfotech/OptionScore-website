@@ -61,7 +61,7 @@ export function Privacy() {
                 <motion.div
                   whileHover={{
                     y: -4,
-                    boxShadow: "0 0 20px rgba(0,188,212,0.1), 0 10px 30px rgba(0,0,0,0.2)",
+                    boxShadow: "0 0 20px rgba(11,177,88,0.1), 0 10px 30px rgba(0,0,0,0.2)",
                   }}
                   transition={{ duration: 0.3 }}
                   className="glass p-6 h-full cursor-pointer group relative overflow-hidden"

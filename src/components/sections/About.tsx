@@ -65,7 +65,7 @@ export function About() {
                 return (
                   <motion.div
                     key={stat.label}
-                    whileHover={{ y: -4, boxShadow: "0 0 20px rgba(0,188,212,0.15)" }}
+                    whileHover={{ y: -4, boxShadow: "0 0 20px rgba(11,177,88,0.15)" }}
                     transition={{ duration: 0.3 }}
                     className="glass p-5 text-center cursor-pointer"
                   >

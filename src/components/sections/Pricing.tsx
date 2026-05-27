@@ -130,8 +130,8 @@ export function Pricing() {
                   whileHover={{
                     y: -8,
                     boxShadow: isPopular
-                      ? "0 0 50px rgba(0,188,212,0.25), 0 0 30px rgba(124,58,237,0.15), 0 20px 40px rgba(0,0,0,0.3)"
-                      : "0 0 30px rgba(0,188,212,0.15), 0 20px 40px rgba(0,0,0,0.3)",
+                      ? "0 0 50px rgba(11,177,88,0.25), 0 0 30px rgba(124,58,237,0.15), 0 20px 40px rgba(0,0,0,0.3)"
+                      : "0 0 30px rgba(11,177,88,0.15), 0 20px 40px rgba(0,0,0,0.3)",
                   }}
                   transition={{ duration: 0.3 }}
                   className={`relative p-6 cursor-pointer flex flex-col w-full ${

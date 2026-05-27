@@ -13,7 +13,7 @@ const config: Config = {
         card: "#1C1C24",
         "card-border": "rgba(255,255,255,0.08)",
         accent: {
-          cyan: "#00BCD4",
+          cyan: "#0BB158",
           lime: "#ECFF8C",
           violet: "#7C3AED",
         },
@@ -27,8 +27,8 @@ const config: Config = {
         urbanist: ["var(--font-urbanist)", "sans-serif"],
       },
       boxShadow: {
-        glow: "0 0 20px rgba(0,188,212,0.3)",
-        "glow-lg": "0 0 40px rgba(0,188,212,0.4)",
+        glow: "0 0 20px rgba(11,177,88,0.3)",
+        "glow-lg": "0 0 40px rgba(11,177,88,0.4)",
         "glow-violet": "0 0 20px rgba(124,58,237,0.3)",
         "glow-lime": "0 0 20px rgba(236,255,140,0.3)",
       },

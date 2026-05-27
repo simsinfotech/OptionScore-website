@@ -23,7 +23,7 @@ export function Navbar() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#010101] ${
         scrolled
-          ? "border-b border-white/5 shadow-[0_4px_20px_rgba(0,188,212,0.06)]"
+          ? "border-b border-white/5 shadow-[0_4px_20px_rgba(11,177,88,0.06)]"
           : ""
       }`}
     >
@@ -56,7 +56,7 @@ export function Navbar() {
               {link.label}
               <span
                 className="absolute -bottom-1 left-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full"
-                style={{ background: "linear-gradient(90deg, #00BCD4, #7C3AED)" }}
+                style={{ background: "linear-gradient(90deg, #0BB158, #7C3AED)" }}
               />
             </a>
           ))}
