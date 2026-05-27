@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 import { Button } from "@/components/ui/Button";
@@ -14,6 +15,18 @@ const TRUST_BADGES = [
 ];
 
 export function Hero() {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Scroll to center card (Command Center) on mount
+    const slider = sliderRef.current;
+    if (slider && slider.children.length > 1) {
+      const centerCard = slider.children[1] as HTMLElement;
+      const scrollLeft = centerCard.offsetLeft - slider.offsetWidth / 2 + centerCard.offsetWidth / 2;
+      slider.scrollLeft = scrollLeft;
+    }
+  }, []);
+
   return (
     <section
       id="download"
@@ -161,34 +174,36 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Mobile: 3-phone layout — center prominent, sides peeking */}
-        <div className="md:hidden mt-12 flex items-center justify-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.9 }}
-            className="flex-shrink-0 -mr-8 z-0 opacity-60"
-          >
-            <PhoneMockup src="/images/preview-2.png" alt="OptionScore market overview" className="w-[200px]" />
-          </motion.div>
+        {/* Mobile: swipeable slider with all 3 visible, center default */}
+        <div className="md:hidden mt-12 -mx-6">
+          <div ref={sliderRef} className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-[calc(50vw-90px)] pb-4 scrollbar-hide">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.9 }}
+              className="flex-shrink-0 snap-center"
+            >
+              <PhoneMockup src="/images/preview-2.png" alt="OptionScore market overview" className="w-[180px]" />
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="flex-shrink-0 z-10"
-          >
-            <PhoneMockup src="/images/preview-1.png" alt="OptionScore command center" className="w-[260px]" />
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="flex-shrink-0 snap-center"
+            >
+              <PhoneMockup src="/images/preview-1.png" alt="OptionScore command center" className="w-[180px]" />
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.9 }}
-            className="flex-shrink-0 -ml-8 z-0 opacity-60"
-          >
-            <PhoneMockup src="/images/preview-3.png" alt="OptionScore options intelligence" className="w-[200px]" />
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.9 }}
+              className="flex-shrink-0 snap-center"
+            >
+              <PhoneMockup src="/images/preview-3.png" alt="OptionScore options intelligence" className="w-[180px]" />
+            </motion.div>
+          </div>
         </div>
       </div>
 
