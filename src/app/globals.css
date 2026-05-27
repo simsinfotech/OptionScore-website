@@ -8,7 +8,7 @@
   }
 
   body {
-    background-color: #0D0D12;
+    background-color: #010101;
     color: #F9FAFB;
     font-family: var(--font-urbanist), sans-serif;
   }
@@ -194,7 +194,7 @@
     radial-gradient(ellipse 50% 50% at 85% 20%, rgba(124, 58, 237, 0.06) 0%, transparent 70%),
     radial-gradient(ellipse 40% 30% at 50% 90%, rgba(236, 255, 140, 0.03) 0%, transparent 70%),
     linear-gradient(180deg, rgba(0, 188, 212, 0.02) 0%, transparent 40%, transparent 60%, rgba(124, 58, 237, 0.02) 100%),
-    rgba(13, 13, 18, 0.85);
+    rgba(1, 1, 1, 0.85);
 }
 
 .section-mesh-violet {
@@ -203,7 +203,7 @@
     radial-gradient(ellipse 50% 50% at 15% 70%, rgba(0, 188, 212, 0.06) 0%, transparent 70%),
     radial-gradient(ellipse 40% 30% at 50% 10%, rgba(236, 255, 140, 0.03) 0%, transparent 70%),
     linear-gradient(180deg, rgba(124, 58, 237, 0.02) 0%, transparent 40%, transparent 60%, rgba(0, 188, 212, 0.02) 100%),
-    rgba(13, 13, 18, 0.85);
+    rgba(1, 1, 1, 0.85);
 }
 
 .section-mesh-alt {
@@ -212,7 +212,7 @@
     radial-gradient(ellipse 50% 40% at 85% 100%, rgba(236, 255, 140, 0.05) 0%, transparent 70%),
     radial-gradient(ellipse 40% 40% at 10% 60%, rgba(124, 58, 237, 0.04) 0%, transparent 70%),
     linear-gradient(180deg, transparent 0%, rgba(0, 188, 212, 0.015) 50%, transparent 100%),
-    rgba(13, 13, 18, 0.85);
+    rgba(1, 1, 1, 0.85);
 }
 
 /* Icon gradient backgrounds */
@@ -252,7 +252,7 @@
 /* Gradient button */
 .btn-gradient {
   background: linear-gradient(135deg, #00BCD4, #7C3AED);
-  color: #0D0D12;
+  color: #010101;
   font-weight: 700;
   transition: all 0.3s ease;
 }
@@ -328,7 +328,7 @@
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  background: #0D0D12;
+  background: #010101;
 }
 
 /* Noise texture overlay */

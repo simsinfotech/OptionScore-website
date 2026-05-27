@@ -128,7 +128,7 @@ export function PhoneMockup({ src, alt = "App screenshot", className = "" }: Pho
             height: "100%",
             overflow: "hidden",
             position: "relative",
-            background: "#0D0D12",
+            background: "#010101",
           }}
         >
           {/* Dynamic Island */}
