@@ -17,10 +17,24 @@ export function Hero() {
   return (
     <section
       id="download"
-      className="relative min-h-screen flex items-center justify-center grid-bg overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+      {/* Background video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ zIndex: 0 }}
+      >
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark overlay on top of video */}
+      <div className="absolute inset-0 bg-black/60" style={{ zIndex: 1 }} />
       {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" style={{ zIndex: 2 }} />
 
       {/* Animated cyan glow blob */}
       <motion.div
@@ -59,7 +73,7 @@ export function Hero() {
       {/* Scanning line */}
       <div className="scan-line" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-32 text-center overflow-hidden">
+      <div className="relative z-[10] max-w-7xl mx-auto px-6 py-20 md:py-32 text-center overflow-hidden">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
