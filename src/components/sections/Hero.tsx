@@ -143,7 +143,7 @@ export function Hero() {
             className="self-end mt-12 animate-float-delayed"
             style={{ animationDelay: "1s" }}
           >
-            <PhoneMockup src="/images/app-screenshot-3.jpg" alt="OptionScore AI stock insights" className="w-[200px]" />
+            <PhoneMockup src="/images/app-screenshot-3.jpg" alt="OptionScore options intelligence" className="w-[200px]" />
           </motion.div>
         </div>
 
@@ -153,7 +153,7 @@ export function Hero() {
             {[
               { src: "/images/app-screenshot-1.jpg", alt: "OptionScore command center" },
               { src: "/images/app-screenshot-2.jpg", alt: "OptionScore market overview" },
-              { src: "/images/app-screenshot-3.jpg", alt: "OptionScore AI stock insights" },
+              { src: "/images/app-screenshot-3.jpg", alt: "OptionScore options intelligence" },
             ].map((phone, index) => (
               <motion.div
                 key={phone.alt}
