@@ -31,14 +31,18 @@ export function Navbar() {
         <a href="#" className="flex items-center gap-3">
           <Image
             src="/images/logo.png"
-            alt="OptionScore logo"
+            alt="OptionScore icon"
             width={40}
             height={40}
             className="h-10 w-10"
           />
-          <span className="text-xl font-light tracking-[0.25em] uppercase text-accent-cyan">
-            OptionScore
-          </span>
+          <Image
+            src="/images/logo-text.png"
+            alt="OptionScore"
+            width={160}
+            height={28}
+            className="h-6 w-auto"
+          />
         </a>
 
         {/* Desktop links */}

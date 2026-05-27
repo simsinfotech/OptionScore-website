@@ -17,14 +17,18 @@ export function Footer() {
             <div className="flex items-center mb-4">
               <Image
                 src="/images/logo.png"
-                alt="OptionScore logo"
+                alt="OptionScore icon"
                 width={40}
                 height={40}
                 className="h-10 w-10"
               />
-              <span className="text-xl font-light tracking-[0.25em] uppercase text-accent-cyan">
-                OptionScore
-              </span>
+              <Image
+                src="/images/logo-text.png"
+                alt="OptionScore"
+                width={160}
+                height={28}
+                className="h-6 w-auto"
+              />
             </div>
             <p className="text-text-muted text-sm leading-relaxed mb-4">
               AI-powered trading analysis for the modern trader. Make smarter
