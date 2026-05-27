@@ -23,7 +23,7 @@ export function Navbar() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "glass-strong shadow-[0_4px_20px_rgba(0,188,212,0.06)]"
+          ? "bg-[#010101]/95 backdrop-blur-sm border-b border-white/5 shadow-[0_4px_20px_rgba(0,188,212,0.06)]"
           : "bg-transparent"
       }`}
     >
