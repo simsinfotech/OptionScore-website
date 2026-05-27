@@ -57,7 +57,7 @@ export function CTA() {
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <AnimatedSection>
-            <h2 className="heading text-3xl md:text-5xl text-text-primary mb-6 glow-text">
+            <h2 className="font-bold uppercase tracking-normaltext-3xl md:text-5xl text-text-primary mb-6 glow-text">
               Ready to Trade
               <br />
               <span className="gradient-text-cyan-violet">Smarter?</span>
@@ -77,22 +77,22 @@ export function CTA() {
               {STATS.map((stat, index) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-xl font-bold text-accent-cyan">{stat.value}</div>
-                  <div className="text-xs text-text-muted uppercase tracking-heading">{stat.label}</div>
+                  <div className="text-xs text-text-muted uppercase tracking-normal">{stat.label}</div>
                 </div>
               ))}
             </div>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-                <Button size="lg" variant="gradient" href={APP_STORE_URL} className="animate-pulse-glow">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-xs sm:max-w-none mx-auto">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
+                <Button size="lg" variant="gradient" href={APP_STORE_URL} className="w-full sm:w-auto animate-pulse-glow">
                   <FaApple className="mr-2 text-xl" />
                   App Store
                 </Button>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-                <Button size="lg" variant="secondary" href={PLAY_STORE_URL}>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
+                <Button size="lg" variant="secondary" href={PLAY_STORE_URL} className="w-full sm:w-auto">
                   <FaGooglePlay className="mr-2 text-lg" />
                   Google Play
                 </Button>

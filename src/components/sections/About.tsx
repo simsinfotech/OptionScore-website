@@ -25,7 +25,7 @@ export function About() {
       <div className="max-w-6xl mx-auto relative z-10">
         <AnimatedSection className="text-center mb-16">
           <span className="section-chip">About Us</span>
-          <h2 className="heading text-3xl md:text-4xl text-text-primary mb-4">
+          <h2 className="font-bold uppercase tracking-normaltext-3xl md:text-4xl text-text-primary mb-4">
             About <span className="gradient-text-cyan-violet">OptionScore</span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
@@ -73,7 +73,7 @@ export function About() {
                       <Icon className={`text-xl ${textColor}`} />
                     </div>
                     <div className={`text-2xl font-bold ${textColor} mb-1`}>{stat.value}</div>
-                    <div className="text-text-muted text-xs uppercase tracking-heading">{stat.label}</div>
+                    <div className="text-text-muted text-xs uppercase tracking-normal">{stat.label}</div>
                   </motion.div>
                 );
               })}

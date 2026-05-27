@@ -32,7 +32,7 @@ export function Features() {
       <div className="max-w-7xl mx-auto relative z-10">
         <AnimatedSection className="text-center mb-16">
           <span className="section-chip">Platform Features</span>
-          <h2 className="heading text-3xl md:text-4xl text-text-primary mb-4">
+          <h2 className="font-bold uppercase tracking-normaltext-3xl md:text-4xl text-text-primary mb-4">
             Powerful <span className="gradient-text-cyan-violet">Features</span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
@@ -56,7 +56,7 @@ export function Features() {
                   >
                     <Icon className={`text-2xl ${color.text}`} />
                   </motion.div>
-                  <h3 className="heading text-lg text-text-primary mb-3">
+                  <h3 className="font-bold uppercase tracking-normaltext-lg text-text-primary mb-3">
                     {feature.title}
                   </h3>
                   <p className="text-text-secondary text-sm leading-relaxed">

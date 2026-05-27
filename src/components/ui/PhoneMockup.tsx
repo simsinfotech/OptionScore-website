@@ -30,7 +30,7 @@ export function PhoneMockup({ src, alt = "App screenshot", className = "" }: Pho
         />
       ) : (
         <div className="w-full h-full flex items-center justify-center">
-          <span className="text-text-muted text-xs uppercase tracking-heading">
+          <span className="text-text-muted text-xs uppercase tracking-normal">
             Screenshot
           </span>
         </div>

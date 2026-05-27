@@ -41,7 +41,7 @@ export function Privacy() {
       <div className="max-w-5xl mx-auto">
         <AnimatedSection className="text-center mb-16">
           <span className="section-chip">Trust & Security</span>
-          <h2 className="heading text-3xl md:text-4xl text-text-primary mb-4">
+          <h2 className="font-bold uppercase tracking-normaltext-3xl md:text-4xl text-text-primary mb-4">
             Your <span className="gradient-text-cyan-violet">Privacy</span> Matters
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
@@ -69,7 +69,7 @@ export function Privacy() {
                   <div className={`inline-flex items-center justify-center w-10 h-10 ${iconBg} mb-4`}>
                     <Icon className={`text-xl ${textColor}`} />
                   </div>
-                  <h3 className="heading text-base text-text-primary mb-3">
+                  <h3 className="font-bold uppercase tracking-normaltext-base text-text-primary mb-3">
                     {point.title}
                   </h3>
                   <p className="text-text-secondary text-sm leading-relaxed">

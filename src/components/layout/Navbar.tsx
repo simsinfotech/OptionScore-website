@@ -51,7 +51,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="relative text-sm uppercase tracking-heading text-text-secondary hover:text-accent-cyan transition-colors group"
+              className="relative text-sm uppercase tracking-normal text-text-secondary hover:text-accent-cyan transition-colors group"
             >
               {link.label}
               <span
@@ -93,7 +93,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block py-3 text-sm uppercase tracking-heading text-text-secondary hover:text-accent-cyan"
+              className="block py-3 text-sm uppercase tracking-normal text-text-secondary hover:text-accent-cyan"
             >
               {link.label}
             </a>

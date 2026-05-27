@@ -45,7 +45,7 @@ export default function AccountDeletion() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="heading text-3xl md:text-4xl text-text-primary mb-4">
+          <h1 className="font-bold uppercase tracking-normaltext-3xl md:text-4xl text-text-primary mb-4">
             Account <span className="text-accent-cyan">Deletion</span>
           </h1>
           <p className="text-text-secondary mb-10 leading-relaxed">
@@ -56,7 +56,7 @@ export default function AccountDeletion() {
 
           {/* What gets deleted */}
           <div className="bg-card border border-card-border p-6 mb-10">
-            <h2 className="heading text-base text-text-primary mb-4">
+            <h2 className="font-bold uppercase tracking-normaltext-base text-text-primary mb-4">
               What will be deleted
             </h2>
             <ul className="space-y-3 text-text-secondary text-sm">
@@ -88,7 +88,7 @@ export default function AccountDeletion() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-semibold uppercase tracking-heading text-text-primary mb-2"
+                  className="block text-sm font-semibold uppercase tracking-normal text-text-primary mb-2"
                 >
                   Account Email
                 </label>
@@ -106,7 +106,7 @@ export default function AccountDeletion() {
               <div>
                 <label
                   htmlFor="reason"
-                  className="block text-sm font-semibold uppercase tracking-heading text-text-primary mb-2"
+                  className="block text-sm font-semibold uppercase tracking-normal text-text-primary mb-2"
                 >
                   Reason for leaving{" "}
                   <span className="text-text-muted font-normal normal-case tracking-normal">
@@ -141,7 +141,7 @@ export default function AccountDeletion() {
               className="bg-card border border-accent-cyan/30 p-8 text-center"
             >
               <div className="text-accent-cyan text-4xl mb-4">&#x2713;</div>
-              <h2 className="heading text-xl text-text-primary mb-3">
+              <h2 className="font-bold uppercase tracking-normaltext-xl text-text-primary mb-3">
                 Request Submitted
               </h2>
               <p className="text-text-secondary text-sm leading-relaxed mb-2">

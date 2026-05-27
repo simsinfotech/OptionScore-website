@@ -60,7 +60,7 @@ export function Pricing() {
       <div className="max-w-6xl mx-auto relative z-10">
         <AnimatedSection className="text-center mb-12">
           <span className="section-chip">Transparent Pricing</span>
-          <h2 className="heading text-3xl md:text-4xl text-text-primary mb-4">
+          <h2 className="font-bold uppercase tracking-normaltext-3xl md:text-4xl text-text-primary mb-4">
             Choose Your <span className="gradient-text-violet-lime">Plan</span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto mb-8">
@@ -71,7 +71,7 @@ export function Pricing() {
           {/* Billing toggle */}
           <div className="inline-flex items-center gap-4">
             <span
-              className={`text-sm uppercase tracking-heading transition-colors ${
+              className={`text-sm uppercase tracking-normal transition-colors ${
                 !annual ? "text-text-primary" : "text-text-muted"
               }`}
             >
@@ -89,7 +89,7 @@ export function Pricing() {
               />
             </button>
             <span
-              className={`text-sm uppercase tracking-heading transition-colors ${
+              className={`text-sm uppercase tracking-normal transition-colors ${
                 annual ? "text-text-primary" : "text-text-muted"
               }`}
             >
@@ -145,7 +145,7 @@ export function Pricing() {
                   {/* Badge */}
                   {plan.badge && (
                     <div
-                      className={`absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 text-[10px] font-bold uppercase tracking-heading flex items-center gap-1 badge-shimmer ${
+                      className={`absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 text-[10px] font-bold uppercase tracking-normal flex items-center gap-1 badge-shimmer ${
                         isPopular
                           ? "bg-accent-cyan text-background"
                           : "bg-accent-lime text-background"
@@ -157,7 +157,7 @@ export function Pricing() {
                   )}
 
                   {/* Plan name */}
-                  <h3 className="heading text-xl text-text-primary mb-2 mt-2 text-center">
+                  <h3 className="font-bold uppercase tracking-normaltext-xl text-text-primary mb-2 mt-2 text-center">
                     {plan.name}
                   </h3>
 
@@ -212,7 +212,7 @@ export function Pricing() {
           <div className="glass p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h3 className="heading text-base text-text-primary mb-4">
+                <h3 className="font-bold uppercase tracking-normaltext-base text-text-primary mb-4">
                   Credit-Based <span className="gradient-text-cyan-violet">AI Features</span>
                 </h3>
                 <p className="text-text-secondary text-sm leading-relaxed mb-4">
@@ -241,7 +241,7 @@ export function Pricing() {
               </div>
 
               <div>
-                <h3 className="heading text-base text-text-primary mb-4">
+                <h3 className="font-bold uppercase tracking-normaltext-base text-text-primary mb-4">
                   Refer & <span className="gradient-text-cyan-lime">Earn</span>
                 </h3>
                 <p className="text-text-secondary text-sm leading-relaxed mb-4">
