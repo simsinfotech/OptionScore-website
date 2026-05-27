@@ -112,13 +112,13 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-xs sm:max-w-none mx-auto"
         >
-          <Button size="lg" variant="gradient" href={APP_STORE_URL}>
+          <Button size="lg" variant="gradient" href={APP_STORE_URL} className="w-full sm:w-auto">
             <FaApple className="mr-2 text-xl" />
             App Store
           </Button>
-          <Button size="lg" variant="secondary" href={PLAY_STORE_URL}>
+          <Button size="lg" variant="secondary" href={PLAY_STORE_URL} className="w-full sm:w-auto">
             <FaGooglePlay className="mr-2 text-lg" />
             Google Play
           </Button>
