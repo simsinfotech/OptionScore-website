@@ -18,10 +18,13 @@ export function Footer() {
               <Image
                 src="/images/logo.png"
                 alt="OptionScore logo"
-                width={280}
-                height={80}
-                className="h-24 w-auto"
+                width={40}
+                height={40}
+                className="h-10 w-10"
               />
+              <span className="text-xl font-light tracking-[0.25em] uppercase text-accent-cyan">
+                OptionScore
+              </span>
             </div>
             <p className="text-text-muted text-sm leading-relaxed mb-4">
               AI-powered trading analysis for the modern trader. Make smarter
