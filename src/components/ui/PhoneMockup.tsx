@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 interface PhoneMockupProps {
   src?: string;
@@ -12,8 +11,8 @@ interface PhoneMockupProps {
 export function PhoneMockup({ src, alt = "App screenshot", className = "" }: PhoneMockupProps) {
   return (
     <motion.div
-      className={`relative ${className}`}
-      style={{ aspectRatio: "9 / 19.5", filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.6))" }}
+      className={`${className}`}
+      style={{ filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.6))" }}
       whileHover={{
         y: -16,
         filter: "drop-shadow(0 30px 50px rgba(11,177,88,0.3))",
@@ -21,12 +20,10 @@ export function PhoneMockup({ src, alt = "App screenshot", className = "" }: Pho
       transition={{ duration: 0.35, ease: "easeOut" }}
     >
       {src ? (
-        <Image
+        <img
           src={src}
           alt={alt}
-          fill
-          className="object-contain"
-          sizes="(max-width: 768px) 50vw, 300px"
+          className="w-full h-auto"
         />
       ) : (
         <div className="w-full h-full flex items-center justify-center">
