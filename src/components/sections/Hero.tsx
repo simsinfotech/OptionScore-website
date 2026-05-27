@@ -124,7 +124,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.9 }}
             className="self-end mt-12 animate-float-delayed"
           >
-            <PhoneMockup src="/images/app-screenshot-2.jpg" alt="OptionScore market overview" className="w-[200px]" />
+            <PhoneMockup src="/images/preview-2.png" alt="OptionScore market overview" className="w-[200px]" />
           </motion.div>
 
           <motion.div
@@ -133,7 +133,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.8 }}
             className="animate-float"
           >
-            <PhoneMockup src="/images/app-screenshot-1.jpg" alt="OptionScore command center" className="w-[260px]" />
+            <PhoneMockup src="/images/preview-1.png" alt="OptionScore command center" className="w-[260px]" />
           </motion.div>
 
           <motion.div
@@ -143,7 +143,7 @@ export function Hero() {
             className="self-end mt-12 animate-float-delayed"
             style={{ animationDelay: "1s" }}
           >
-            <PhoneMockup src="/images/app-screenshot-3.jpg" alt="OptionScore options intelligence" className="w-[200px]" />
+            <PhoneMockup src="/images/preview-3.png" alt="OptionScore options intelligence" className="w-[200px]" />
           </motion.div>
         </div>
 
@@ -151,9 +151,9 @@ export function Hero() {
         <div className="md:hidden mt-12 -mx-6">
           <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory px-[calc(50vw-90px)] pb-4 scrollbar-hide">
             {[
-              { src: "/images/app-screenshot-1.jpg", alt: "OptionScore command center" },
-              { src: "/images/app-screenshot-2.jpg", alt: "OptionScore market overview" },
-              { src: "/images/app-screenshot-3.jpg", alt: "OptionScore options intelligence" },
+              { src: "/images/preview-1.png", alt: "OptionScore command center" },
+              { src: "/images/preview-2.png", alt: "OptionScore market overview" },
+              { src: "/images/preview-3.png", alt: "OptionScore options intelligence" },
             ].map((phone, index) => (
               <motion.div
                 key={phone.alt}
