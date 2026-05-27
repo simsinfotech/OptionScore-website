@@ -18,9 +18,9 @@ export function Footer() {
               <Image
                 src="/images/logo.png"
                 alt="OptionScore logo"
-                width={200}
-                height={56}
-                className="h-16 w-auto"
+                width={280}
+                height={80}
+                className="h-24 w-auto"
               />
             </div>
             <p className="text-text-muted text-sm leading-relaxed mb-4">

@@ -19,14 +19,14 @@ export default function AccountDeletion() {
     <div className="min-h-screen bg-background grid-bg">
       {/* Header */}
       <header className="border-b border-card-border">
-        <div className="max-w-4xl mx-auto px-6 h-16 flex items-center">
+        <div className="max-w-4xl mx-auto px-6 h-20 flex items-center">
           <a href="/" className="flex items-center gap-3">
             <Image
               src="/images/logo.png"
               alt="OptionScore logo"
-              width={200}
-              height={56}
-              className="h-16 w-auto"
+              width={280}
+              height={80}
+              className="h-24 w-auto"
             />
           </a>
         </div>

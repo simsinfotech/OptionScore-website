@@ -27,14 +27,14 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3">
           <Image
             src="/images/logo.png"
             alt="OptionScore logo"
-            width={200}
-            height={56}
-            className="h-16 w-auto"
+            width={280}
+            height={80}
+            className="h-24 w-auto"
           />
         </a>
 
