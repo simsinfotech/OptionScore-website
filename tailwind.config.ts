@@ -14,8 +14,8 @@ const config: Config = {
         "card-border": "rgba(255,255,255,0.08)",
         accent: {
           cyan: "#0BB158",
-          lime: "#ECFF8C",
-          violet: "#7C3AED",
+          lime: "#0BB158",
+          violet: "#0BB158",
         },
         text: {
           primary: "#F9FAFB",
@@ -29,8 +29,8 @@ const config: Config = {
       boxShadow: {
         glow: "0 0 20px rgba(11,177,88,0.3)",
         "glow-lg": "0 0 40px rgba(11,177,88,0.4)",
-        "glow-violet": "0 0 20px rgba(124,58,237,0.3)",
-        "glow-lime": "0 0 20px rgba(236,255,140,0.3)",
+        "glow-violet": "0 0 20px rgba(11,177,88,0.3)",
+        "glow-lime": "0 0 20px rgba(11,177,88,0.3)",
       },
       letterSpacing: {
         heading: "0.15em",

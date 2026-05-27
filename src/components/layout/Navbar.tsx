@@ -56,7 +56,7 @@ export function Navbar() {
               {link.label}
               <span
                 className="absolute -bottom-1 left-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full"
-                style={{ background: "linear-gradient(90deg, #0BB158, #7C3AED)" }}
+                style={{ background: "linear-gradient(90deg, #0BB158, #0BB158)" }}
               />
             </a>
           ))}

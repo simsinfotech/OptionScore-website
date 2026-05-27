@@ -59,7 +59,7 @@ export function HowItWorks() {
               transition={{ duration: 1.2, delay: 0.5 }}
               className="w-full h-full origin-left"
               style={{
-                background: "linear-gradient(90deg, rgba(11,177,88,0.1), rgba(124,58,237,0.4), rgba(11,177,88,0.1))",
+                background: "linear-gradient(90deg, rgba(11,177,88,0.1), rgba(11,177,88,0.4), rgba(11,177,88,0.1))",
               }}
             />
           </div>
@@ -82,7 +82,7 @@ export function HowItWorks() {
                       <motion.div
                         whileHover={{ scale: 1.1 }}
                         className="w-8 h-8 text-background text-sm font-bold flex items-center justify-center"
-                        style={{ background: "linear-gradient(135deg, #0BB158, #7C3AED)" }}
+                        style={{ background: "linear-gradient(135deg, #0BB158, #0BB158)" }}
                       >
                         {step.step}
                       </motion.div>
@@ -120,7 +120,7 @@ export function HowItWorks() {
                     {/* Bottom accent line */}
                     <div
                       className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-all duration-500"
-                      style={{ background: "linear-gradient(90deg, #0BB158, #7C3AED)" }}
+                      style={{ background: "linear-gradient(90deg, #0BB158, #0BB158)" }}
                     />
                   </motion.div>
                 </AnimatedSection>
