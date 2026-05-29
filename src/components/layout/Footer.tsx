@@ -30,9 +30,12 @@ export function Footer() {
                 className="h-6 w-auto"
               />
             </div>
-            <p className="text-text-muted text-sm leading-relaxed mb-4">
+            <p className="text-text-muted text-sm leading-relaxed mb-2">
               AI-powered trading analysis for the modern trader. Make smarter
               decisions with real-time market scoring.
+            </p>
+            <p className="text-text-muted text-xs mb-4">
+              SEBI Registration - <span className="text-accent-cyan">Applied For</span>
             </p>
             {/* Brand tags */}
             <div className="flex flex-wrap gap-2">
