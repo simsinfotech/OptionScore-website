@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { HiUsers, HiStar, HiChartBar, HiClock } from "react-icons/hi2";
 import { HiLockClosed, HiGift, HiCurrencyDollar, HiXCircle } from "react-icons/hi2";
+import Image from "next/image";
 
 const STATS = [
   { value: "10K+", label: "Active Traders", icon: HiUsers, color: "cyan" },
@@ -33,14 +34,17 @@ export function About() {
           </p>
         </AnimatedSection>
 
-        {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Copy */}
+        {/* About Company */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           <AnimatedSection delay={0.1}>
             <div>
+              <h3 className="font-bold uppercase tracking-normal text-xl text-text-primary mb-4">
+                The <span className="gradient-text-cyan-violet">Company</span>
+              </h3>
               <p className="text-text-secondary text-lg leading-relaxed mb-6">
-                OptionScore was built by traders, for traders. We believe that
-                everyone deserves access to institutional-grade market analysis —
+                OptionScore is an Indian trading technology company on a mission to
+                democratize institutional-grade market analysis. We believe every
+                trader — from beginners to professionals — deserves powerful tools
                 without the complexity or the price tag.
               </p>
               <p className="text-text-secondary text-lg leading-relaxed mb-6">
@@ -49,8 +53,7 @@ export function About() {
                 No noise. No guesswork. Just clarity.
               </p>
               <p className="text-text-muted text-base">
-                Based in the United States. Trusted by thousands of active traders
-                worldwide.
+                Based in India. Trusted by thousands of active traders across the country.
               </p>
             </div>
           </AnimatedSection>
@@ -58,7 +61,7 @@ export function About() {
           {/* Stats grid */}
           <AnimatedSection delay={0.2}>
             <div className="grid grid-cols-2 gap-4">
-              {STATS.map((stat, index) => {
+              {STATS.map((stat) => {
                 const Icon = stat.icon;
                 const iconBg = stat.color === "cyan" ? "icon-bg-cyan" : stat.color === "violet" ? "icon-bg-violet" : "icon-bg-lime";
                 const textColor = stat.color === "cyan" ? "text-accent-cyan" : stat.color === "violet" ? "text-accent-violet" : "text-accent-lime";
@@ -81,8 +84,55 @@ export function About() {
           </AnimatedSection>
         </div>
 
+        {/* Founder Section */}
+        <AnimatedSection delay={0.3} className="mb-16">
+          <div className="glass p-8 md:p-12">
+            <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-center">
+              {/* Founder Photo */}
+              <div className="flex justify-center">
+                <div className="relative">
+                  <div className="w-48 h-48 md:w-56 md:h-56 overflow-hidden border-2 border-accent-cyan/30">
+                    <Image
+                      src="/images/founder.png"
+                      alt="Shamique Hussain - Founder of OptionScore"
+                      width={224}
+                      height={224}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent-cyan text-background text-xs font-bold uppercase tracking-normal">
+                    Founder
+                  </div>
+                </div>
+              </div>
+
+              {/* Founder Details */}
+              <div>
+                <h3 className="font-bold uppercase tracking-normal text-2xl text-text-primary mb-1 text-center md:text-left">
+                  Shamique Hussain
+                </h3>
+                <p className="text-accent-cyan text-sm font-semibold mb-4 text-center md:text-left">
+                  Founder & CEO, OptionScore
+                </p>
+                <p className="text-text-secondary text-base leading-relaxed mb-4">
+                  Shamique Hussain is the visionary behind OptionScore — driven by
+                  the belief that every Indian trader deserves access to
+                  institutional-grade market intelligence. With a deep passion for
+                  trading and technology, he built OptionScore to bridge the gap
+                  between complex market data and actionable insights.
+                </p>
+                <p className="text-text-secondary text-base leading-relaxed">
+                  His mission is simple: empower traders with AI-driven tools that
+                  cut through the noise and deliver clarity — making smarter
+                  trading decisions accessible to everyone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+
         {/* Trust badges */}
-        <AnimatedSection delay={0.3} className="mt-16">
+        <AnimatedSection delay={0.4} className="mt-16">
           <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-3 sm:gap-6">
             {TRUST_BADGES.map((badge) => {
               const Icon = badge.icon;
