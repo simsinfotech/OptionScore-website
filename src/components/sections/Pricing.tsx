@@ -210,104 +210,31 @@ export function Pricing() {
         {/* Credits info */}
         <AnimatedSection delay={0.5} className="mt-16">
           <div className="glass p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="font-bold uppercase tracking-normal text-base text-text-primary mb-4">
-                  Credit-Based <span className="gradient-text-cyan-violet">AI Features</span>
-                </h3>
-                <p className="text-text-secondary text-sm leading-relaxed mb-4">
-                  AI-powered features like ScoreAI, Heatmaps, and Market Analysis
-                  use credits. All users receive <span className="text-text-primary font-semibold">100 free credits/month</span> to
-                  get started.
-                </p>
-                <div className="grid grid-cols-2 gap-3 text-sm">
-                  <div className="glass p-3 text-center">
-                    <div className="text-accent-cyan font-bold">1 credit</div>
-                    <div className="text-text-muted text-xs mt-1">ScoreAI Chat</div>
-                  </div>
-                  <div className="glass p-3 text-center">
-                    <div className="text-accent-cyan font-bold">1 credit</div>
-                    <div className="text-text-muted text-xs mt-1">Market Heatmap</div>
-                  </div>
-                  <div className="glass p-3 text-center">
-                    <div className="text-accent-violet font-bold">2 credits</div>
-                    <div className="text-text-muted text-xs mt-1">Image Analysis</div>
-                  </div>
-                  <div className="glass p-3 text-center">
-                    <div className="text-accent-lime font-bold">FREE</div>
-                    <div className="text-text-muted text-xs mt-1">Trade Journal</div>
-                  </div>
+            <div>
+              <h3 className="font-bold uppercase tracking-normal text-base text-text-primary mb-4">
+                Credit-Based <span className="gradient-text-cyan-violet">AI Features</span>
+              </h3>
+              <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                AI-powered features like ScoreAI, Heatmaps, and Market Analysis
+                use credits. All users receive <span className="text-text-primary font-semibold">100 free credits/month</span> to
+                get started.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                <div className="glass p-3 text-center">
+                  <div className="text-accent-cyan font-bold">1 credit</div>
+                  <div className="text-text-muted text-xs mt-1">ScoreAI Chat</div>
                 </div>
-              </div>
-
-              <div>
-                <h3 className="font-bold uppercase tracking-normal text-base text-text-primary mb-4">
-                  Partner <span className="gradient-text-cyan-lime">Commission</span>
-                </h3>
-                <p className="text-text-secondary text-sm leading-relaxed mb-4">
-                  Earn recurring monthly commissions + first-month bonuses for every active client you refer.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between glass p-3">
-                    <div>
-                      <span className="text-text-primary text-sm font-semibold">Starter</span>
-                      <span className="text-text-muted text-xs ml-2">1–5 clients</span>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-accent-cyan text-sm font-bold">10%</span>
-                      <span className="text-text-muted text-xs ml-1">recurring</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between glass p-3">
-                    <div>
-                      <span className="text-text-primary text-sm font-semibold">Bronze</span>
-                      <span className="text-text-muted text-xs ml-2">6–15 clients</span>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-accent-cyan text-sm font-bold">15%</span>
-                      <span className="text-text-muted text-xs ml-1">+ 5% bonus</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between glass p-3">
-                    <div>
-                      <span className="text-text-primary text-sm font-semibold">Silver</span>
-                      <span className="text-text-muted text-xs ml-2">16–30 clients</span>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-accent-cyan text-sm font-bold">20%</span>
-                      <span className="text-text-muted text-xs ml-1">+ 10% bonus</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between glass p-3">
-                    <div>
-                      <span className="text-text-primary text-sm font-semibold">Gold</span>
-                      <span className="text-text-muted text-xs ml-2">31–75 clients</span>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-accent-cyan text-sm font-bold">25%</span>
-                      <span className="text-text-muted text-xs ml-1">+ 15% bonus</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between glass p-3">
-                    <div>
-                      <span className="text-text-primary text-sm font-semibold">Platinum</span>
-                      <span className="text-text-muted text-xs ml-2">76–150 clients</span>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-accent-cyan text-sm font-bold">30%</span>
-                      <span className="text-text-muted text-xs ml-1">+ 20% bonus</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between border border-accent-lime/30 bg-accent-lime/5 p-3">
-                    <div>
-                      <span className="text-text-primary text-sm font-semibold">Diamond</span>
-                      <span className="text-text-muted text-xs ml-2">150+ clients</span>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-accent-lime text-sm font-bold">35%</span>
-                      <span className="text-text-muted text-xs ml-1">+ 25% bonus</span>
-                    </div>
-                  </div>
+                <div className="glass p-3 text-center">
+                  <div className="text-accent-cyan font-bold">1 credit</div>
+                  <div className="text-text-muted text-xs mt-1">Market Heatmap</div>
+                </div>
+                <div className="glass p-3 text-center">
+                  <div className="text-accent-violet font-bold">2 credits</div>
+                  <div className="text-text-muted text-xs mt-1">Image Analysis</div>
+                </div>
+                <div className="glass p-3 text-center">
+                  <div className="text-accent-lime font-bold">FREE</div>
+                  <div className="text-text-muted text-xs mt-1">Trade Journal</div>
                 </div>
               </div>
             </div>
