@@ -207,39 +207,6 @@ export function Pricing() {
           })}
         </div>
 
-        {/* Credits info */}
-        <AnimatedSection delay={0.5} className="mt-16">
-          <div className="glass p-8">
-            <div>
-              <h3 className="font-bold uppercase tracking-normal text-base text-text-primary mb-4">
-                Credit-Based <span className="gradient-text-cyan-violet">AI Features</span>
-              </h3>
-              <p className="text-text-secondary text-sm leading-relaxed mb-4">
-                AI-powered features like ScoreAI, Heatmaps, and Market Analysis
-                use credits. All users receive <span className="text-text-primary font-semibold">100 free credits/month</span> to
-                get started.
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-                <div className="glass p-3 text-center">
-                  <div className="text-accent-cyan font-bold">1 credit</div>
-                  <div className="text-text-muted text-xs mt-1">ScoreAI Chat</div>
-                </div>
-                <div className="glass p-3 text-center">
-                  <div className="text-accent-cyan font-bold">1 credit</div>
-                  <div className="text-text-muted text-xs mt-1">Market Heatmap</div>
-                </div>
-                <div className="glass p-3 text-center">
-                  <div className="text-accent-violet font-bold">2 credits</div>
-                  <div className="text-text-muted text-xs mt-1">Image Analysis</div>
-                </div>
-                <div className="glass p-3 text-center">
-                  <div className="text-accent-lime font-bold">FREE</div>
-                  <div className="text-text-muted text-xs mt-1">Trade Journal</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </AnimatedSection>
       </div>
 
       {/* Shimmer divider at bottom */}
