@@ -60,7 +60,7 @@ export function Pricing() {
       <div className="max-w-6xl mx-auto relative z-10">
         <AnimatedSection className="text-center mb-12">
           <span className="section-chip">Transparent Pricing</span>
-          <h2 className="font-bold uppercase tracking-normaltext-3xl md:text-4xl text-text-primary mb-4">
+          <h2 className="font-bold uppercase tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
             Choose Your <span className="gradient-text-violet-lime">Plan</span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto mb-8">
@@ -157,7 +157,7 @@ export function Pricing() {
                   )}
 
                   {/* Plan name */}
-                  <h3 className="font-bold uppercase tracking-normaltext-xl text-text-primary mb-2 mt-2 text-center">
+                  <h3 className="font-bold uppercase tracking-normal text-xl text-text-primary mb-2 mt-2 text-center">
                     {plan.name}
                   </h3>
 
@@ -212,7 +212,7 @@ export function Pricing() {
           <div className="glass p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h3 className="font-bold uppercase tracking-normaltext-base text-text-primary mb-4">
+                <h3 className="font-bold uppercase tracking-normal text-base text-text-primary mb-4">
                   Credit-Based <span className="gradient-text-cyan-violet">AI Features</span>
                 </h3>
                 <p className="text-text-secondary text-sm leading-relaxed mb-4">
@@ -241,41 +241,72 @@ export function Pricing() {
               </div>
 
               <div>
-                <h3 className="font-bold uppercase tracking-normaltext-base text-text-primary mb-4">
-                  Refer & <span className="gradient-text-cyan-lime">Earn</span>
+                <h3 className="font-bold uppercase tracking-normal text-base text-text-primary mb-4">
+                  Partner <span className="gradient-text-cyan-lime">Commission</span>
                 </h3>
                 <p className="text-text-secondary text-sm leading-relaxed mb-4">
-                  Invite friends and earn bonus credits. The more you refer, the
-                  more you unlock.
+                  Earn recurring monthly commissions + first-month bonuses for every active client you refer.
                 </p>
-                <div className="space-y-3">
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between glass p-3">
+                    <div>
+                      <span className="text-text-primary text-sm font-semibold">Starter</span>
+                      <span className="text-text-muted text-xs ml-2">1–5 clients</span>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-accent-cyan text-sm font-bold">10%</span>
+                      <span className="text-text-muted text-xs ml-1">recurring</span>
+                    </div>
+                  </div>
                   <div className="flex items-center justify-between glass p-3">
                     <div>
                       <span className="text-text-primary text-sm font-semibold">Bronze</span>
-                      <span className="text-text-muted text-xs ml-2">1 referral</span>
+                      <span className="text-text-muted text-xs ml-2">6–15 clients</span>
                     </div>
-                    <span className="text-accent-cyan text-sm font-bold">+50 credits</span>
+                    <div className="text-right">
+                      <span className="text-accent-cyan text-sm font-bold">15%</span>
+                      <span className="text-text-muted text-xs ml-1">+ 5% bonus</span>
+                    </div>
                   </div>
                   <div className="flex items-center justify-between glass p-3">
                     <div>
                       <span className="text-text-primary text-sm font-semibold">Silver</span>
-                      <span className="text-text-muted text-xs ml-2">3 referrals</span>
+                      <span className="text-text-muted text-xs ml-2">16–30 clients</span>
                     </div>
-                    <span className="text-accent-cyan text-sm font-bold">+100 credits</span>
+                    <div className="text-right">
+                      <span className="text-accent-cyan text-sm font-bold">20%</span>
+                      <span className="text-text-muted text-xs ml-1">+ 10% bonus</span>
+                    </div>
                   </div>
                   <div className="flex items-center justify-between glass p-3">
                     <div>
                       <span className="text-text-primary text-sm font-semibold">Gold</span>
-                      <span className="text-text-muted text-xs ml-2">6 referrals</span>
+                      <span className="text-text-muted text-xs ml-2">31–75 clients</span>
                     </div>
-                    <span className="text-accent-violet text-sm font-bold">+150 credits</span>
+                    <div className="text-right">
+                      <span className="text-accent-cyan text-sm font-bold">25%</span>
+                      <span className="text-text-muted text-xs ml-1">+ 15% bonus</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between glass p-3">
+                    <div>
+                      <span className="text-text-primary text-sm font-semibold">Platinum</span>
+                      <span className="text-text-muted text-xs ml-2">76–150 clients</span>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-accent-cyan text-sm font-bold">30%</span>
+                      <span className="text-text-muted text-xs ml-1">+ 20% bonus</span>
+                    </div>
                   </div>
                   <div className="flex items-center justify-between border border-accent-lime/30 bg-accent-lime/5 p-3">
                     <div>
-                      <span className="text-text-primary text-sm font-semibold">Platinum</span>
-                      <span className="text-text-muted text-xs ml-2">10 referrals</span>
+                      <span className="text-text-primary text-sm font-semibold">Diamond</span>
+                      <span className="text-text-muted text-xs ml-2">150+ clients</span>
                     </div>
-                    <span className="text-accent-lime text-sm font-bold">Unlimited Access</span>
+                    <div className="text-right">
+                      <span className="text-accent-lime text-sm font-bold">35%</span>
+                      <span className="text-text-muted text-xs ml-1">+ 25% bonus</span>
+                    </div>
                   </div>
                 </div>
               </div>
