@@ -149,9 +149,12 @@ export function Academics() {
                 underperforming and sick business units and engineering their return to profitability
                 in record time.
               </p>
-              <p className="text-text-secondary text-sm leading-relaxed">
+              <p className="text-text-secondary text-sm leading-relaxed mb-4">
                 He has personally trained over 5,000 professionals at the Green Belt and Black Belt
                 levels, many of whom have gone on to lead transformations in their own organisations.
+              </p>
+              <p className="text-accent-cyan text-sm font-semibold">
+                Certified NISM Research Analyst XV
               </p>
             </div>
           </AnimatedSection>
