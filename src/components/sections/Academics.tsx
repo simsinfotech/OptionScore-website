@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { HiBriefcase, HiAcademicCap, HiChartBar, HiUserGroup } from "react-icons/hi2";
+import Image from "next/image";
 
 const HIGHLIGHTS = [
   {
@@ -52,16 +53,32 @@ export function Academics() {
         </AnimatedSection>
 
         {/* Faculty Director Header */}
-        <AnimatedSection delay={0.1} className="text-center mb-12">
-          <h3 className="font-bold uppercase tracking-normal text-xl text-text-primary mb-2">
-            About the <span className="gradient-text-cyan-violet">Faculty Director</span>
-          </h3>
-          <p className="text-2xl md:text-3xl font-bold text-text-primary mb-1">
-            Sathya Narayanan
-          </p>
-          <p className="text-accent-cyan text-sm font-semibold">
-            Master Black Belt | Director of Faculty, OptionScore Academy
-          </p>
+        <AnimatedSection delay={0.1} className="mb-12">
+          <div className="flex flex-col items-center">
+            <h3 className="font-bold uppercase tracking-normal text-xl text-text-primary mb-6 text-center">
+              About the <span className="gradient-text-cyan-violet">Faculty Director</span>
+            </h3>
+            <div className="relative mb-4">
+              <div className="w-48 h-48 md:w-56 md:h-56 overflow-hidden border-2 border-accent-cyan/30 rounded-full">
+                <Image
+                  src="/images/faculty-director.png"
+                  alt="Sathya Narayanan - Faculty Director, OptionScore Academy"
+                  width={224}
+                  height={224}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent-cyan text-background text-xs font-bold uppercase tracking-normal">
+                Faculty Director
+              </div>
+            </div>
+            <p className="text-2xl md:text-3xl font-bold text-text-primary mb-1 mt-4">
+              Sathya Narayanan
+            </p>
+            <p className="text-accent-cyan text-sm font-semibold">
+              Master Black Belt | Director of Faculty, OptionScore Academy
+            </p>
+          </div>
         </AnimatedSection>
 
         {/* Stats */}
