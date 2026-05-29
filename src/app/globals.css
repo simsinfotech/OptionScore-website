@@ -151,9 +151,9 @@
 
 .grad-border-card {
   position: relative;
-  background: #1C1C24;
+  background: #050505;
   border: 1px solid transparent;
-  background-image: linear-gradient(#1C1C24, #1C1C24), conic-gradient(from var(--border-angle, 0deg), #0BB158, #0BB158, #0BB158, #0BB158);
+  background-image: linear-gradient(#050505, #050505), conic-gradient(from var(--border-angle, 0deg), #0BB158, #0BB158, #0BB158, #0BB158);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   animation: border-spin 4s linear infinite;
@@ -167,24 +167,24 @@
 /* Static gradient border */
 .grad-border-static {
   border: 2px solid transparent;
-  background-image: linear-gradient(#1C1C24, #1C1C24), linear-gradient(135deg, #0BB158, #0BB158, #0BB158);
+  background-image: linear-gradient(#050505, #050505), linear-gradient(135deg, #0BB158, #0BB158, #0BB158);
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
 
 /* Glassmorphism */
 .glass {
-  background: rgba(28, 28, 36, 0.6);
+  background: rgba(5, 5, 5, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(11, 177, 88, 0.15);
 }
 
 .glass-strong {
-  background: rgba(28, 28, 36, 0.8);
+  background: rgba(5, 5, 5, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(11, 177, 88, 0.2);
 }
 
 /* Section mesh backgrounds — semi-transparent so global effects show through */
@@ -510,13 +510,13 @@
   .glass {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    background: rgba(28, 28, 36, 0.85);
+    background: rgba(5, 5, 5, 0.9);
   }
 
   .glass-strong {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    background: rgba(28, 28, 36, 0.92);
+    background: rgba(5, 5, 5, 0.95);
   }
 
   /* Pause twinkling animations on mobile — static stars still visible */

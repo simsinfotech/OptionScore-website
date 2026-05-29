@@ -10,8 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         background: "#010101",
-        card: "#1C1C24",
-        "card-border": "rgba(255,255,255,0.08)",
+        card: "#050505",
+        "card-border": "rgba(11,177,88,0.2)",
         accent: {
           cyan: "#0BB158",
           lime: "#0BB158",
