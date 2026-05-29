@@ -68,7 +68,7 @@ export function Academics() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent-cyan text-background text-xs font-bold uppercase tracking-normal">
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent-cyan text-background text-xs font-bold uppercase tracking-normal whitespace-nowrap">
                 Faculty Director
               </div>
             </div>
