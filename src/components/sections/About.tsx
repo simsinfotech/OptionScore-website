@@ -115,11 +115,11 @@ export function About() {
                   Founder & CEO, OptionScore
                 </p>
                 <p className="text-text-secondary text-base leading-relaxed mb-4">
-                  Shamique Hussain is the visionary behind OptionScore — driven by
+                  Shamique Hussain is the visionary behind OptionScore — with over
+                  15 years of experience in trading and technology. Driven by
                   the belief that every Indian trader deserves access to
-                  institutional-grade market intelligence. With a deep passion for
-                  trading and technology, he built OptionScore to bridge the gap
-                  between complex market data and actionable insights.
+                  institutional-grade market intelligence, he built OptionScore to
+                  bridge the gap between complex market data and actionable insights.
                 </p>
                 <p className="text-text-secondary text-base leading-relaxed">
                   His mission is simple: empower traders with AI-driven tools that
