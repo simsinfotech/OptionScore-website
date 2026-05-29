@@ -139,13 +139,8 @@ export function Pricing() {
                       ? "grad-border-card"
                       : isBest
                       ? "grad-border-static"
-                      : "border border-[rgba(11,177,88,0.2)] hover:border-[rgba(11,177,88,0.4)] transition-colors duration-300"
+                      : "grad-border-static"
                   }`}
-                  style={
-                    !isPopular && !isBest
-                      ? { background: "linear-gradient(145deg, rgba(11,177,88,0.1) 0%, #050505 50%, rgba(11,177,88,0.06) 100%)" }
-                      : {}
-                  }
                 >
                   {/* Badge */}
                   {plan.badge && (
