@@ -13,7 +13,7 @@ interface CardProps {
 
 export function Card({ children, className, hover = true, variant = "default" }: CardProps) {
   const variantClasses = {
-    default: "bg-card border border-card-border",
+    default: "bg-gradient-to-br from-[rgba(11,177,88,0.08)] via-[#050505] to-[rgba(11,177,88,0.05)] border border-card-border",
     "gradient-border": "grad-border-card",
     glass: "glass",
   };

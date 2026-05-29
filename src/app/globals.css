@@ -153,7 +153,7 @@
   position: relative;
   background: #050505;
   border: 1px solid transparent;
-  background-image: linear-gradient(#050505, #050505), conic-gradient(from var(--border-angle, 0deg), #0BB158, #0BB158, #0BB158, #0BB158);
+  background-image: linear-gradient(145deg, rgba(11,177,88,0.1), #050505 50%, rgba(11,177,88,0.06)), conic-gradient(from var(--border-angle, 0deg), #0BB158, #0BB158, #0BB158, #0BB158);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   animation: border-spin 4s linear infinite;
@@ -167,17 +167,17 @@
 /* Static gradient border */
 .grad-border-static {
   border: 2px solid transparent;
-  background-image: linear-gradient(#050505, #050505), linear-gradient(135deg, #0BB158, #0BB158, #0BB158);
+  background-image: linear-gradient(145deg, rgba(11,177,88,0.1), #050505 50%, rgba(11,177,88,0.06)), linear-gradient(135deg, #0BB158, #0BB158, #0BB158);
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
 
 /* Glassmorphism */
 .glass {
-  background: rgba(5, 5, 5, 0.7);
+  background: linear-gradient(145deg, rgba(11, 177, 88, 0.08) 0%, rgba(5, 5, 5, 0.9) 50%, rgba(11, 177, 88, 0.05) 100%);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(11, 177, 88, 0.15);
+  border: 1px solid rgba(11, 177, 88, 0.2);
 }
 
 .glass-strong {
@@ -510,7 +510,7 @@
   .glass {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    background: rgba(5, 5, 5, 0.9);
+    background: linear-gradient(145deg, rgba(11,177,88,0.08) 0%, rgba(5,5,5,0.95) 50%, rgba(11,177,88,0.05) 100%);
   }
 
   .glass-strong {
