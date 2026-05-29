@@ -134,9 +134,17 @@ export function Pricing() {
                       : "0 0 30px rgba(11,177,88,0.15), 0 20px 40px rgba(0,0,0,0.3)",
                   }}
                   transition={{ duration: 0.3 }}
-                  className="relative p-6 cursor-pointer flex flex-col w-full border border-[rgba(11,177,88,0.2)] hover:border-[rgba(11,177,88,0.4)] transition-colors duration-300"
+                  className={`relative p-6 cursor-pointer flex flex-col w-full ${
+                    isPopular
+                      ? "grad-border-card"
+                      : isBest
+                      ? "grad-border-static"
+                      : "border border-[rgba(11,177,88,0.2)] hover:border-[rgba(11,177,88,0.4)] transition-colors duration-300"
+                  }`}
                   style={{
-                    background: "linear-gradient(145deg, rgba(11,177,88,0.1) 0%, #050505 50%, rgba(11,177,88,0.06) 100%)",
+                    background: isPopular || isBest
+                      ? undefined
+                      : "linear-gradient(145deg, rgba(11,177,88,0.1) 0%, #050505 50%, rgba(11,177,88,0.06) 100%)",
                   }}
                 >
                   {/* Badge */}
