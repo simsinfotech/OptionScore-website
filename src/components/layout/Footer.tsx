@@ -34,11 +34,8 @@ export function Footer() {
               AI-powered trading analysis for the modern trader. Make smarter
               decisions with real-time market scoring.
             </p>
-            <p className="text-text-muted text-xs mb-4">
-              SEBI Registration - <span className="text-accent-cyan">Applied For</span>
-            </p>
             {/* Brand tags */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mb-4">
               {BRAND_TAGS.map((tag) => (
                 <span
                   key={tag}
@@ -48,6 +45,9 @@ export function Footer() {
                 </span>
               ))}
             </div>
+            <p className="text-text-muted text-sm font-semibold">
+              SEBI Registration - <span className="text-accent-cyan">Applied For</span>
+            </p>
           </div>
 
           {/* Navigation */}
