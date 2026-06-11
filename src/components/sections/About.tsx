@@ -41,13 +41,13 @@ export function About() {
               <h3 className="font-bold uppercase tracking-normal text-xl text-text-primary mb-4">
                 The <span className="gradient-text-cyan-violet">Company</span>
               </h3>
-              <p className="text-text-secondary text-lg leading-relaxed mb-6">
+              <p className="text-text-secondary text-base leading-relaxed mb-6">
                 OptionScore is an Indian trading technology company on a mission to
                 democratize institutional-grade market analysis. We believe every
                 trader — from beginners to professionals — deserves powerful tools
                 without the complexity or the price tag.
               </p>
-              <p className="text-text-secondary text-lg leading-relaxed mb-6">
+              <p className="text-text-secondary text-base leading-relaxed mb-6">
                 Our AI engine processes millions of data points in real-time,
                 distilling complex market dynamics into a single, actionable score.
                 No noise. No guesswork. Just clarity.
