@@ -49,9 +49,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable}`}>
-      <head>
-        <link rel="preload" href="/hero-bg.mp4" as="video" type="video/mp4" />
-      </head>
+      <head />
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

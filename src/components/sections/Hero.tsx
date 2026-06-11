@@ -32,21 +32,6 @@ export function Hero() {
       id="download"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
     >
-      {/* Background video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ zIndex: 0 }}
-      >
-        <source src="/hero-bg.mp4" type="video/mp4" />
-      </video>
-
-      {/* Dark overlay on top of video */}
-      <div className="absolute inset-0 bg-black/60" style={{ zIndex: 1 }} />
       {/* Gradient overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" style={{ zIndex: 2 }} />
 
