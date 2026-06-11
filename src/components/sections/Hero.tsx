@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 import { Button } from "@/components/ui/Button";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
+import { TradingGrid } from "@/components/ui/TradingGrid";
 import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
 import { HiUsers, HiStar, HiBolt } from "react-icons/hi2";
 
@@ -32,45 +33,11 @@ export function Hero() {
       id="download"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
     >
+      {/* Trading grid background animation */}
+      <TradingGrid />
+
       {/* Gradient overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" style={{ zIndex: 2 }} />
-
-      {/* Animated cyan glow blob */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.04, 0.08, 0.04],
-        }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-cyan blur-[120px] rounded-full"
-      />
-
-      {/* Violet glow blob */}
-      <motion.div
-        animate={{
-          scale: [1.1, 0.9, 1.1],
-          opacity: [0.03, 0.06, 0.03],
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-accent-violet blur-[120px] rounded-full"
-      />
-
-      {/* Orbiting dots */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0">
-        <div className="orbit-dot">
-          <div className="w-1 h-1 bg-accent-cyan/30 rounded-full" />
-        </div>
-        <div className="orbit-dot-reverse">
-          <div className="w-1.5 h-1.5 bg-accent-cyan/20 rounded-full" />
-        </div>
-        {/* Additional violet orbit dot */}
-        <div className="orbit-dot" style={{ animationDuration: "25s", animationDirection: "reverse" }}>
-          <div className="w-1 h-1 bg-accent-violet/25 rounded-full" />
-        </div>
-      </div>
-
-      {/* Scanning line */}
-      <div className="scan-line" />
 
       <div className="relative z-[10] w-full mx-auto px-6 lg:px-20 py-20 md:py-32 text-center overflow-hidden">
         <motion.h1
