@@ -12,6 +12,11 @@ export default function AccountDeletion() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = encodeURIComponent(`Account Deletion Request - ${email}`);
+    const body = encodeURIComponent(
+      `Account Deletion Request\n\nUser Email: ${email}\nReason: ${reason || "No reason provided"}\n\nPlease process this account deletion request within 30 days.`
+    );
+    window.open(`mailto:shamique@simsinfotech.com?subject=${subject}&body=${body}`, "_self");
     setSubmitted(true);
   };
 
