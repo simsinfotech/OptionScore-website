@@ -489,6 +489,9 @@
 
 .ticker-scroll {
   animation: ticker-scroll 30s linear infinite;
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .ticker-scroll:hover {
@@ -579,5 +582,17 @@
   .orbit-dot-reverse {
     animation: none;
     display: none;
+  }
+
+  /* Disable ping animation on ticker live dot */
+  .animate-ping {
+    animation: none;
+    display: none;
+  }
+
+  /* GPU-accelerate ticker on mobile */
+  .ticker-scroll {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 }
