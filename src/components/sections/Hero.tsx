@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 import { Button } from "@/components/ui/Button";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
-import { TradingGrid } from "@/components/ui/TradingGrid";
 import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
 import { HiUsers, HiStar, HiBolt } from "react-icons/hi2";
 
@@ -33,11 +32,8 @@ export function Hero() {
       id="download"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
     >
-      {/* Trading grid background animation */}
-      <TradingGrid />
-
       {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background/80" style={{ zIndex: 2 }} />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" style={{ zIndex: 2 }} />
 
       <div className="relative z-[10] w-full mx-auto px-6 lg:px-20 py-20 md:py-32 text-center overflow-hidden">
         <motion.h1
