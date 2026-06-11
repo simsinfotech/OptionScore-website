@@ -26,7 +26,7 @@ export function About() {
       <div className="max-w-6xl mx-auto relative z-10">
         <AnimatedSection className="text-center mb-16">
           <span className="section-chip">About Us</span>
-          <h2 className="font-bold uppercase tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
+          <h2 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
             About <span className="gradient-text-cyan-violet">OptionScore</span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">

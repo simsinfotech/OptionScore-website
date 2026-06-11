@@ -34,7 +34,7 @@ export function Testimonials() {
       <div className="max-w-6xl mx-auto relative z-10">
         <AnimatedSection className="text-center mb-12">
           <span className="section-chip">What Traders Say</span>
-          <h2 className="font-bold uppercase tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
+          <h2 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
             Trusted by{" "}
             <span className="gradient-text-cyan-violet">Traders</span>
           </h2>

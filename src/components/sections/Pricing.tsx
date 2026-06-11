@@ -60,7 +60,7 @@ export function Pricing() {
       <div className="max-w-6xl mx-auto relative z-10">
         <AnimatedSection className="text-center mb-12">
           <span className="section-chip">Transparent Pricing</span>
-          <h2 className="font-bold uppercase tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
+          <h2 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
             Choose Your <span className="gradient-text-violet-lime">Plan</span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto mb-8">

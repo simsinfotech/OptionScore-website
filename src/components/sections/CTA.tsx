@@ -57,7 +57,7 @@ export function CTA() {
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <AnimatedSection>
-            <h2 className="font-bold uppercase tracking-normal text-3xl md:text-5xl text-text-primary mb-6 glow-text">
+            <h2 className="font-bold tracking-normal text-3xl md:text-5xl text-text-primary mb-6 glow-text">
               Ready to Trade
               <br />
               <span className="gradient-text-cyan-violet">Smarter?</span>

@@ -50,7 +50,7 @@ export function FAQ() {
       <div className="max-w-3xl mx-auto relative z-10">
         <AnimatedSection className="text-center mb-12">
           <span className="section-chip">Common Questions</span>
-          <h2 className="font-bold uppercase tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
+          <h2 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
             Frequently Asked{" "}
             <span className="gradient-text-cyan-violet">Questions</span>
           </h2>
