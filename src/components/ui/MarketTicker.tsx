@@ -15,7 +15,7 @@ const MARKET_DATA = [
 
 export function MarketTicker() {
   return (
-    <div className="relative z-[2] h-8 bg-[#0a0a0a] border-b border-white/5 overflow-hidden">
+    <div className="fixed top-16 left-0 right-0 z-40 h-8 bg-[#0a0a0a] border-b border-white/5 overflow-hidden">
       {/* Live indicator */}
       <div className="absolute left-3 top-1/2 -translate-y-1/2 flex items-center gap-1.5 z-10">
         <span className="relative flex h-2 w-2">
