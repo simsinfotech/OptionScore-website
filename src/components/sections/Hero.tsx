@@ -79,8 +79,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-4xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-6 glow-text tracking-normal"
         >
-          Trade Smarter
-          <br />
+          Trade Smarter{" "}
           <span className="gradient-text-cyan-violet">With OptionScore</span>
         </motion.h1>
 
