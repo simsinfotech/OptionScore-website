@@ -481,6 +481,20 @@
   --s-duration: 15s; --s-delay: 10s;
 }
 
+/* Market ticker infinite scroll */
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-scroll {
+  animation: ticker-scroll 30s linear infinite;
+}
+
+.ticker-scroll:hover {
+  animation-play-state: paused;
+}
+
 /* Hide scrollbar for slider */
 .scrollbar-hide {
   -ms-overflow-style: none;
