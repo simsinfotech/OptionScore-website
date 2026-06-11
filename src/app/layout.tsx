@@ -37,6 +37,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={urbanist.variable}>
+      <head>
+        <link rel="preload" href="/hero-bg.mp4" as="video" type="video/mp4" />
+      </head>
       <body className="font-urbanist antialiased">{children}</body>
     </html>
   );
