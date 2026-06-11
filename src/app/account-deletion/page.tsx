@@ -10,14 +10,39 @@ export default function AccountDeletion() {
   const [reason, setReason] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Account Deletion Request - ${email}`);
-    const body = encodeURIComponent(
-      `Account Deletion Request\n\nUser Email: ${email}\nReason: ${reason || "No reason provided"}\n\nPlease process this account deletion request within 30 days.`
-    );
-    window.open(`mailto:shamique@simsinfotech.com?subject=${subject}&body=${body}`, "_self");
-    setSubmitted(true);
+    setSending(true);
+    setError("");
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/shamique@simsinfotech.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `Account Deletion Request - ${email}`,
+          email,
+          reason: reason || "No reason provided",
+          _template: "table",
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setError("Something went wrong. Please try again or email us directly at shamique@simsinfotech.com");
+      }
+    } catch {
+      setError("Network error. Please try again or email us directly at shamique@simsinfotech.com");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -135,8 +160,18 @@ export default function AccountDeletion() {
                 </p>
               </div>
 
-              <Button type="submit" className="bg-red-600 hover:bg-red-700 text-white hover:shadow-none">
-                Request Account Deletion
+              {error && (
+                <div className="bg-card border border-red-500/30 p-4">
+                  <p className="text-sm text-red-400">{error}</p>
+                </div>
+              )}
+
+              <Button
+                type="submit"
+                className="bg-red-600 hover:bg-red-700 text-white hover:shadow-none disabled:opacity-50"
+                disabled={sending}
+              >
+                {sending ? "Submitting..." : "Request Account Deletion"}
               </Button>
             </form>
           ) : (
