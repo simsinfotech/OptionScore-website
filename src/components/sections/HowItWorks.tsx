@@ -68,14 +68,14 @@ export function HowItWorks() {
             {STEPS.map((step, index) => {
               const Icon = step.icon;
               return (
-                <AnimatedSection key={step.step} delay={index * 0.2}>
+                <AnimatedSection key={step.step} delay={index * 0.2} className="h-full">
                   <motion.div
                     whileHover={{
                       y: -8,
                       boxShadow: "0 0 40px rgba(11,177,88,0.15), 0 20px 40px rgba(0,0,0,0.3)",
                     }}
                     transition={{ duration: 0.3 }}
-                    className="relative text-center glass p-8 cursor-pointer group"
+                    className="relative text-center glass p-8 cursor-pointer group h-full flex flex-col"
                   >
                     {/* Step number badge - gradient */}
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2">
@@ -103,12 +103,12 @@ export function HowItWorks() {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                    <p className="text-text-secondary text-sm leading-relaxed mb-6 flex-grow">
                       {step.description}
                     </p>
 
                     {/* Stat highlight */}
-                    <div className="border-t border-card-border pt-4">
+                    <div className="border-t border-card-border pt-4 mt-auto">
                       <div className="text-2xl font-bold gradient-text-cyan-violet glow-text">
                         {step.stat}
                       </div>
