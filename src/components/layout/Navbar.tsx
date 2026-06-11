@@ -34,14 +34,14 @@ export function Navbar() {
             alt="OptionScore icon"
             width={40}
             height={40}
-            className="h-5 w-5 md:h-6 md:w-6"
+            className="h-7 w-7 md:h-9 md:w-9"
           />
           <Image
             src="/images/logo-text.png"
             alt="OptionScore"
             width={160}
             height={28}
-            className="h-2.5 w-auto md:h-4"
+            className="h-4 w-auto md:h-6"
           />
         </a>
 
