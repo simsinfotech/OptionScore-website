@@ -40,7 +40,7 @@ export function TradingGrid() {
       speed: 0.3 + i * 0.15,
       amplitude: 20 + i * 10,
       frequency: 0.008 + i * 0.003,
-      opacity: 0.06 + i * 0.04,
+      opacity: 0.2 + i * 0.1,
       phase: i * 2,
     }));
 
@@ -69,11 +69,11 @@ export function TradingGrid() {
       if (!isMobile) {
         const spacing = 40;
         ctx!.fillStyle = GREEN;
-        ctx!.globalAlpha = 0.06;
+        ctx!.globalAlpha = 0.15;
         for (let x = spacing; x < w; x += spacing) {
           for (let y = spacing; y < h; y += spacing) {
             ctx!.beginPath();
-            ctx!.arc(x, y, 0.8, 0, Math.PI * 2);
+            ctx!.arc(x, y, 1, 0, Math.PI * 2);
             ctx!.fill();
           }
         }
@@ -83,7 +83,7 @@ export function TradingGrid() {
       ctx!.setLineDash([6, 8]);
       ctx!.lineWidth = 1;
       for (const ratio of gridLines) {
-        ctx!.globalAlpha = 0.04;
+        ctx!.globalAlpha = 0.12;
         ctx!.strokeStyle = GREEN;
         ctx!.beginPath();
         ctx!.moveTo(0, h * ratio);
@@ -97,7 +97,7 @@ export function TradingGrid() {
         const yCenter = h * line.yBase;
         ctx!.beginPath();
         ctx!.strokeStyle = GREEN;
-        ctx!.lineWidth = 1.5;
+        ctx!.lineWidth = 2;
         ctx!.globalAlpha = line.opacity;
 
         const offset = time * line.speed * 60;
@@ -125,20 +125,20 @@ export function TradingGrid() {
           Math.sin(tipNoiseX * 0.5 + line.phase * 1.3) * (line.amplitude * 0.6);
 
         // Glow
-        const gradient = ctx!.createRadialGradient(tipX, tipY, 0, tipX, tipY, 12);
+        const gradient = ctx!.createRadialGradient(tipX, tipY, 0, tipX, tipY, 18);
         gradient.addColorStop(0, GREEN);
         gradient.addColorStop(1, "transparent");
-        ctx!.globalAlpha = line.opacity * 2.5;
+        ctx!.globalAlpha = line.opacity * 3;
         ctx!.fillStyle = gradient;
         ctx!.beginPath();
-        ctx!.arc(tipX, tipY, 12, 0, Math.PI * 2);
+        ctx!.arc(tipX, tipY, 18, 0, Math.PI * 2);
         ctx!.fill();
 
         // Bright dot
-        ctx!.globalAlpha = line.opacity * 4;
+        ctx!.globalAlpha = line.opacity * 5;
         ctx!.fillStyle = GREEN;
         ctx!.beginPath();
-        ctx!.arc(tipX, tipY, 2.5, 0, Math.PI * 2);
+        ctx!.arc(tipX, tipY, 3, 0, Math.PI * 2);
         ctx!.fill();
       }
 
@@ -160,7 +160,7 @@ export function TradingGrid() {
           p.fadeDir = 1;
         }
 
-        ctx!.globalAlpha = p.opacity * 0.15;
+        ctx!.globalAlpha = p.opacity * 0.35;
         ctx!.beginPath();
         ctx!.arc(p.x * w, p.y * h, p.size, 0, Math.PI * 2);
         ctx!.fill();

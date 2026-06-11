@@ -37,7 +37,7 @@ export function Hero() {
       <TradingGrid />
 
       {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" style={{ zIndex: 2 }} />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background/80" style={{ zIndex: 2 }} />
 
       <div className="relative z-[10] w-full mx-auto px-6 lg:px-20 py-20 md:py-32 text-center overflow-hidden">
         <motion.h1
