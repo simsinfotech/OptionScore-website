@@ -93,7 +93,7 @@ export function About() {
                 <div className="relative">
                   <div className="w-48 h-48 md:w-56 md:h-56 overflow-hidden border-2 border-accent-cyan/30">
                     <Image
-                      src="/telegram-cloud-photo-size-5-6150174983993364392-y.jpg"
+                      src="/founder.jpg"
                       alt="Shamique Hussain - Founder of OptionScore"
                       width={224}
                       height={224}
