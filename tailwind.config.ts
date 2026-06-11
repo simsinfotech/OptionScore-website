@@ -25,7 +25,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
-        serif: ["var(--font-playfair)", "serif"],
+        serif: ["var(--font-mono)", "monospace"],
         mono: ["var(--font-mono)", "monospace"],
       },
       boxShadow: {
