@@ -9,7 +9,7 @@ import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
 const STATS = [
   { value: "10K+", label: "Traders" },
   { value: "4.8★", label: "Rating" },
-  { value: "7 Day", label: "Free Trial" },
+  { value: "7 Day", label: "Free Trial (iOS)" },
 ];
 
 export function CTA() {

@@ -34,7 +34,7 @@ const FAQ_ITEMS = [
   {
     question: "Is there a free trial?",
     answer:
-      "Yes! Every plan comes with a 7-day free trial so you can explore all features risk-free. No credit card required to start.",
+      "Yes! Every plan comes with a 7-day free trial so you can explore all features risk-free. The free trial is available for iOS users only. No credit card required to start.",
   },
 ];
 

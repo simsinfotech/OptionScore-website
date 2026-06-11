@@ -112,7 +112,7 @@ export function Pricing() {
           <div className="text-center">
             <span className="inline-flex items-center gap-2 px-4 py-2 border border-accent-lime/30 bg-accent-lime/5 text-accent-lime text-sm font-semibold badge-shimmer">
               <HiStar className="text-base" />
-              7-Day Free Trial on All Plans
+              7-Day Free Trial on All Plans (iOS only)
               <HiStar className="text-base" />
             </span>
           </div>
@@ -173,7 +173,7 @@ export function Pricing() {
 
                   {/* Free trial note */}
                   <p className="text-center text-xs text-accent-lime mb-2">
-                    7 days free trial
+                    7 days free trial (iOS only)
                   </p>
 
                   {/* Divider */}

@@ -15,7 +15,7 @@ const STATS = [
 
 const TRUST_BADGES = [
   { icon: HiLockClosed, label: "AES-256 Encrypted" },
-  { icon: HiGift, label: "7-Day Free Trial" },
+  { icon: HiGift, label: "7-Day Free Trial (iOS)" },
   { icon: HiCurrencyDollar, label: "No Hidden Fees" },
   { icon: HiXCircle, label: "Cancel Anytime" },
 ];
