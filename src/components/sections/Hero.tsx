@@ -81,7 +81,7 @@ export function Hero() {
         >
           Trade Smarter
           <br />
-          <span className="gradient-text-cyan-violet">With AI</span>
+          <span className="gradient-text-cyan-violet">With OptionScore</span>
         </motion.h1>
 
         <motion.p
