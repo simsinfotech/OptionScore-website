@@ -3,6 +3,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { MarketTicker } from "@/components/ui/MarketTicker";
+import { ChartBackground } from "@/components/ui/ChartBackground";
 import { Hero } from "@/components/sections/Hero";
 import { Features } from "@/components/sections/Features";
 import { HowItWorks } from "@/components/sections/HowItWorks";
@@ -17,22 +18,7 @@ import { CTA } from "@/components/sections/CTA";
 export default function Home() {
   return (
     <div className="relative">
-      {/* Starfield background — covers entire page */}
-      <div className="starfield" aria-hidden="true">
-        {/* Star layers at different depths */}
-        <div className="stars stars-small" />
-        <div className="stars stars-medium" />
-        <div className="stars stars-large" />
-        {/* Nebula clouds */}
-        <div className="nebula nebula-1" />
-        <div className="nebula nebula-2" />
-        <div className="nebula nebula-3" />
-        {/* Shooting stars */}
-        <div className="shooting-star shooting-star-1" />
-        <div className="shooting-star shooting-star-2" />
-        <div className="shooting-star shooting-star-3" />
-      </div>
-      <div className="noise-overlay" aria-hidden="true" />
+      <ChartBackground />
 
       <Navbar />
       <MarketTicker />
