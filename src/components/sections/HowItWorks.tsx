@@ -37,7 +37,7 @@ const STEPS = [
 export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-24 px-6 section-mesh-alt relative overflow-hidden">
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-6xl lg:max-w-none lg:px-14 mx-auto relative z-10">
         <AnimatedSection className="text-center mb-20">
           <span className="section-chip">Getting Started</span>
           <h2 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-4">

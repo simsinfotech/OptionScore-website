@@ -31,7 +31,7 @@ const TESTIMONIALS = [
 export function Testimonials() {
   return (
     <section className="py-24 px-6 relative overflow-hidden section-mesh-alt">
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-6xl lg:max-w-none lg:px-14 mx-auto relative z-10">
         <AnimatedSection className="text-center mb-12">
           <span className="section-chip">What Traders Say</span>
           <h2 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-4">

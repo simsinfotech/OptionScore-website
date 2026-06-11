@@ -72,7 +72,7 @@ export function Hero() {
       {/* Scanning line */}
       <div className="scan-line" />
 
-      <div className="relative z-[10] max-w-7xl mx-auto px-6 py-20 md:py-32 text-center overflow-hidden">
+      <div className="relative z-[10] w-full mx-auto px-6 lg:px-20 py-20 md:py-32 text-center overflow-hidden">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

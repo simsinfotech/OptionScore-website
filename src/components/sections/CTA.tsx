@@ -55,7 +55,7 @@ export function CTA() {
           <div className="w-[400px] h-[400px] bg-accent-lime blur-[120px]" />
         </motion.div>
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <div className="relative z-10 max-w-4xl lg:max-w-none lg:px-14 mx-auto text-center">
           <AnimatedSection>
             <h2 className="font-bold tracking-normal text-3xl md:text-5xl text-text-primary mb-6 glow-text">
               Ready to Trade

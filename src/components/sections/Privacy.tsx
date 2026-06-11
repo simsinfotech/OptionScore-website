@@ -38,7 +38,7 @@ const PRIVACY_POINTS = [
 export function Privacy() {
   return (
     <section id="privacy" className="py-24 px-6 section-mesh-alt relative overflow-hidden">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl lg:max-w-none lg:px-14 mx-auto">
         <AnimatedSection className="text-center mb-16">
           <span className="section-chip">Trust & Security</span>
           <h2 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-4">

@@ -29,7 +29,7 @@ const ICON_COLORS = [
 export function Features() {
   return (
     <section id="features" className="py-24 px-6 relative overflow-hidden section-mesh-cyan">
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl lg:max-w-none lg:px-14 mx-auto relative z-10">
         <AnimatedSection className="text-center mb-16">
           <span className="section-chip">Platform Features</span>
           <h2 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-4">

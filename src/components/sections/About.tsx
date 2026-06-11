@@ -23,7 +23,7 @@ const TRUST_BADGES = [
 export function About() {
   return (
     <section id="about" className="py-24 px-6 section-mesh-cyan relative overflow-hidden">
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-6xl lg:max-w-none lg:px-14 mx-auto relative z-10">
         <AnimatedSection className="text-center mb-16">
           <span className="section-chip">About Us</span>
           <h2 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
