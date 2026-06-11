@@ -75,7 +75,7 @@ export function HowItWorks() {
                       boxShadow: "0 0 40px rgba(11,177,88,0.15), 0 20px 40px rgba(0,0,0,0.3)",
                     }}
                     transition={{ duration: 0.3 }}
-                    className="relative text-center glass p-8 cursor-pointer group h-full flex flex-col"
+                    className="relative text-center glass p-8 cursor-pointer group h-full flex flex-col items-center"
                   >
                     {/* Step number badge - gradient */}
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2">
@@ -108,7 +108,7 @@ export function HowItWorks() {
                     </p>
 
                     {/* Stat highlight */}
-                    <div className="border-t border-card-border pt-4 mt-auto">
+                    <div className="border-t border-card-border pt-4 mt-auto w-full">
                       <div className="text-2xl font-bold gradient-text-cyan-violet glow-text">
                         {step.stat}
                       </div>
