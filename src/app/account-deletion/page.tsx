@@ -27,6 +27,7 @@ export default function AccountDeletion() {
         },
         body: JSON.stringify({
           _subject: `Account Deletion Request - ${email}`,
+          _replyto: email,
           email,
           reason: reason || "No reason provided",
           _template: "table",
