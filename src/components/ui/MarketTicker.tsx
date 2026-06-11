@@ -22,13 +22,13 @@ export function MarketTicker() {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
         </span>
-        <span className="text-[10px] font-bold text-green-500 uppercase tracking-wider">
+        <span className="font-mono text-[10px] font-bold text-green-500 uppercase tracking-wider">
           Live
         </span>
       </div>
 
       {/* Ticker scroll */}
-      <div className="ticker-scroll flex items-center h-full pl-16">
+      <div className="ticker-scroll flex items-center h-full pl-16 font-mono">
         <div className="ticker-track flex items-center gap-8 whitespace-nowrap">
           {MARKET_DATA.map((item, i) => (
             <div key={i} className="flex items-center gap-2">

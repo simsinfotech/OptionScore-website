@@ -19,7 +19,7 @@ export function Button({
 }: ButtonProps) {
   const classes = twMerge(
     clsx(
-      "inline-flex items-center justify-center font-semibold uppercase tracking-normal transition-all duration-300 hover:scale-105 active:scale-95",
+      "inline-flex items-center justify-center font-mono font-semibold uppercase tracking-normal transition-all duration-300 hover:scale-105 active:scale-95",
       {
         "bg-accent-cyan text-background hover:shadow-glow hover:bg-accent-cyan/90":
           variant === "primary",

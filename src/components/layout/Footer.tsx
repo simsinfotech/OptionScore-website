@@ -39,7 +39,7 @@ export function Footer() {
               {BRAND_TAGS.map((tag) => (
                 <span
                   key={tag}
-                  className="text-[10px] uppercase tracking-normal px-2 py-1 border border-card-border text-text-muted"
+                  className="font-mono text-[10px] uppercase tracking-normal px-2 py-1 border border-card-border text-text-muted"
                 >
                   {tag}
                 </span>
@@ -52,7 +52,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-normal text-text-primary mb-4">
+            <h4 className="font-mono text-sm font-semibold uppercase tracking-normal text-text-primary mb-4">
               Navigation
             </h4>
             <ul className="space-y-2">
@@ -71,7 +71,7 @@ export function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-normal text-text-primary mb-4">
+            <h4 className="font-mono text-sm font-semibold uppercase tracking-normal text-text-primary mb-4">
               Connect
             </h4>
             <div className="flex gap-4">

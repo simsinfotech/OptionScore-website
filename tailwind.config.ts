@@ -26,6 +26,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
         serif: ["var(--font-playfair)", "serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       boxShadow: {
         glow: "0 0 20px rgba(11,177,88,0.3)",
