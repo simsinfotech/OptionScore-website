@@ -17,9 +17,16 @@ import { CTA } from "@/components/sections/CTA";
 
 export default function Home() {
   return (
-    <div className="relative">
-
-
+    <div
+      className="relative"
+      style={{
+        background: `
+          radial-gradient(ellipse at 0% 0%, rgba(11,177,88,0.55) 0%, transparent 50%),
+          radial-gradient(ellipse at 100% 100%, rgba(11,177,88,0.55) 0%, transparent 50%),
+          #050505
+        `,
+      }}
+    >
       <Navbar />
       <MarketTicker />
       <main className="relative z-[1]">
