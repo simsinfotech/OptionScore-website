@@ -32,16 +32,16 @@ export function Hero() {
       id="download"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
     >
-      {/* Card-style background with subtle green gradient */}
+      {/* Card-style background with green gradient glow */}
       <div
         className="absolute inset-0"
         style={{
           zIndex: 1,
-          background: "linear-gradient(145deg, rgba(11,177,88,0.08), #050505 40%, rgba(11,177,88,0.04) 70%, #050505)",
+          background: "linear-gradient(145deg, rgba(11,177,88,0.25) 0%, #050505 35%, rgba(11,177,88,0.12) 65%, #050505 100%)",
         }}
       />
-      {/* Top/bottom fade to background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background" style={{ zIndex: 2 }} />
+      {/* Bottom fade to background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" style={{ zIndex: 2 }} />
 
       <div className="relative z-[10] w-full mx-auto px-6 lg:px-20 py-20 md:py-32 text-center overflow-hidden">
         <motion.h1
