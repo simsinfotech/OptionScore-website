@@ -11,7 +11,7 @@ interface PhoneMockupProps {
 export function PhoneMockup({ src, alt = "App screenshot", className = "" }: PhoneMockupProps) {
   return (
     <motion.div
-      className={`${className}`}
+      className={`${className} overflow-hidden rounded-2xl`}
       style={{ filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.6))" }}
       whileHover={{
         y: -16,
@@ -23,8 +23,7 @@ export function PhoneMockup({ src, alt = "App screenshot", className = "" }: Pho
         <img
           src={src}
           alt={alt}
-          className="w-full h-auto"
-          style={{ borderRadius: "10px", overflow: "hidden" }}
+          className="w-full h-auto rounded-2xl"
         />
       ) : (
         <div className="w-full h-full flex items-center justify-center">
