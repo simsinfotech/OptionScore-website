@@ -32,12 +32,16 @@ export function Hero() {
       id="download"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
     >
-      {/* Card-style background with green gradient glow */}
+      {/* Card-style background with green gradient glow — top-left and bottom-right */}
       <div
         className="absolute inset-0"
         style={{
           zIndex: 1,
-          background: "linear-gradient(145deg, rgba(11,177,88,0.45) 0%, rgba(11,177,88,0.15) 30%, #050505 50%, rgba(11,177,88,0.2) 75%, rgba(11,177,88,0.08) 100%)",
+          background: `
+            radial-gradient(ellipse at 0% 0%, rgba(11,177,88,0.55) 0%, transparent 50%),
+            radial-gradient(ellipse at 100% 100%, rgba(11,177,88,0.55) 0%, transparent 50%),
+            #050505
+          `,
         }}
       />
       {/* Bottom fade to background */}
