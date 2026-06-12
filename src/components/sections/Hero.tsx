@@ -30,7 +30,7 @@ export function Hero() {
   return (
     <section
       id="download"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 section-mesh-cyan"
     >
 
       <div className="relative z-[10] w-full mx-auto px-6 lg:px-20 py-20 md:py-32 text-center overflow-hidden">

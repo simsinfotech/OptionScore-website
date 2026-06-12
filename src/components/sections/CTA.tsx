@@ -14,7 +14,7 @@ const STATS = [
 
 export function CTA() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden section-mesh-cyan">
       {/* Shimmer divider at top */}
       <div className="divider-shimmer" />
 
