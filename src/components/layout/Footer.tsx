@@ -6,7 +6,7 @@ const BRAND_TAGS = ["AI-Powered", "Real-Time Scores", "Mobile-First"];
 
 export function Footer() {
   return (
-    <footer className="section-mesh-cyan relative">
+    <footer className="relative" style={{ background: "radial-gradient(ellipse at 100% 100%, rgba(11,177,88,0.55) 0%, transparent 50%), #050505" }}>
       {/* Shimmer divider at top */}
       <div className="divider-shimmer" />
 
