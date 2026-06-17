@@ -16,7 +16,7 @@ export function Footer() {
           <div>
             <div className="flex items-center mb-4">
               <Image
-                src="/images/logo.png"
+                src="/images/logo.webp"
                 alt="OptionScore icon"
                 width={40}
                 height={40}

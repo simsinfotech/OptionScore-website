@@ -94,7 +94,7 @@ export function About() {
               <div className="relative mb-4">
                 <div className="w-48 h-48 md:w-56 md:h-56 overflow-hidden border-2 border-accent-cyan/30 rounded-full">
                   <Image
-                    src="/founder.jpg"
+                    src="/founder.webp"
                     alt="Shamique Hussain - Founder of OptionScore"
                     width={224}
                     height={224}

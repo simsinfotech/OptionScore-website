@@ -440,4 +440,32 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
+
+  /* Disable float animations on mobile */
+  .animate-float,
+  .animate-float-delayed {
+    animation: none;
+  }
+
+  /* Simplify gradient button on mobile */
+  .btn-gradient {
+    animation: none;
+  }
+  .btn-gradient::after {
+    display: none;
+  }
+
+  /* Disable glow text shadow on mobile */
+  .glow-text {
+    text-shadow: none;
+  }
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
