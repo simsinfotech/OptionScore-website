@@ -52,32 +52,47 @@ export function Academics() {
           </p>
         </AnimatedSection>
 
-        {/* Faculty Director Header */}
+        {/* Faculty Director — side-by-side layout */}
         <AnimatedSection delay={0.1} className="mb-12">
-          <div className="flex flex-col items-center">
-            <h3 className="font-bold uppercase tracking-normal text-xl text-text-primary mb-6 text-center">
-              About the <span className="gradient-text-cyan-violet">Faculty Director</span>
-            </h3>
-            <div className="relative mb-4">
-              <div className="w-48 h-48 md:w-56 md:h-56 overflow-hidden border-2 border-accent-cyan/30 rounded-full">
-                <Image
-                  src="/images/faculty-director.png"
-                  alt="Sathya Narayanan - Faculty Director, OptionScore Academy"
-                  width={224}
-                  height={224}
-                  className="w-full h-full object-cover"
-                />
+          <div className="glass p-8 md:p-12">
+            <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-center">
+              {/* Faculty Director Photo */}
+              <div className="flex justify-center">
+                <div className="relative">
+                  <div className="w-48 h-48 md:w-56 md:h-56 overflow-hidden border-2 border-accent-cyan/30">
+                    <Image
+                      src="/images/faculty-director.png"
+                      alt="Sathya Narayanan - Faculty Director, OptionScore Academy"
+                      width={224}
+                      height={224}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent-cyan text-background text-xs font-bold uppercase tracking-normal whitespace-nowrap">
+                    Faculty Director
+                  </div>
+                </div>
               </div>
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent-cyan text-background text-xs font-bold uppercase tracking-normal whitespace-nowrap">
-                Faculty Director
+
+              {/* Faculty Director Details */}
+              <div>
+                <h3 className="font-bold uppercase tracking-normal text-2xl text-text-primary mb-1 text-center md:text-left">
+                  Sathya Narayanan
+                </h3>
+                <p className="text-accent-cyan text-sm font-semibold mb-4 text-center md:text-left">
+                  Master Black Belt | Director of Faculty, OptionScore Academy
+                </p>
+                <p className="text-text-secondary text-base leading-relaxed mb-4">
+                  Sathya Narayanan is a Commerce professional with over three decades of hands-on
+                  experience spanning global corporations, multinational conglomerates, and high-stakes
+                  turnaround mandates across industries.
+                </p>
+                <p className="text-text-secondary text-base leading-relaxed">
+                  He carries the distinction of a Lean Six Sigma Master Black Belt and has personally
+                  trained over 5,000 professionals. A certified NISM Research Analyst XV.
+                </p>
               </div>
             </div>
-            <p className="text-2xl md:text-3xl font-bold text-text-primary mb-1 mt-4">
-              Sathya Narayanan
-            </p>
-            <p className="text-accent-cyan text-sm font-semibold">
-              Master Black Belt | Director of Faculty, OptionScore Academy
-            </p>
           </div>
         </AnimatedSection>
 
