@@ -33,7 +33,13 @@ export const metadata: Metadata = {
     description:
       "Get real-time market scoring, AI-driven insights, and professional trading tools in one powerful mobile app.",
   },
-  icons: { icon: "/favicon.ico" },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
