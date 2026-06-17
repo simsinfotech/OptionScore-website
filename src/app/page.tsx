@@ -26,8 +26,8 @@ export default function Home() {
         <HowItWorks />
         <Pricing />
         <Testimonials />
-        <Academics />
         <About />
+        <Academics />
         <FAQ />
         <Privacy />
         <CTA />
