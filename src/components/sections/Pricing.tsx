@@ -69,41 +69,36 @@ export function Pricing() {
           </p>
 
           {/* Billing toggle */}
-          <div className="inline-flex items-center gap-4">
-            <span
-              className={`text-sm uppercase tracking-normal transition-colors ${
-                !annual ? "text-text-primary" : "text-text-muted"
+          <div className="inline-flex items-center gap-2">
+            <button
+              onClick={() => setAnnual(false)}
+              className={`px-5 py-2.5 text-sm font-semibold uppercase tracking-normal transition-all duration-300 ${
+                !annual
+                  ? "bg-accent-cyan text-background shadow-[0_0_20px_rgba(11,177,88,0.3)]"
+                  : "bg-card border border-card-border text-text-muted hover:text-text-primary hover:border-accent-cyan/40"
               }`}
             >
               Monthly
-            </span>
-            <button
-              onClick={() => setAnnual(!annual)}
-              className="relative w-14 h-7 border border-accent-cyan/40 bg-card transition-colors"
-              aria-label="Toggle billing period"
-            >
-              <motion.div
-                animate={{ x: annual ? 26 : 2 }}
-                transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                className="absolute top-[3px] w-5 h-5 bg-accent-cyan"
-              />
             </button>
-            <span
-              className={`text-sm uppercase tracking-normal transition-colors ${
-                annual ? "text-text-primary" : "text-text-muted"
+            <button
+              onClick={() => setAnnual(true)}
+              className={`px-5 py-2.5 text-sm font-semibold uppercase tracking-normal transition-all duration-300 relative ${
+                annual
+                  ? "bg-accent-cyan text-background shadow-[0_0_20px_rgba(11,177,88,0.3)]"
+                  : "bg-card border border-card-border text-text-muted hover:text-text-primary hover:border-accent-cyan/40"
               }`}
             >
               Annual
-            </span>
-            {annual && (
-              <motion.span
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="text-xs font-bold text-accent-lime bg-accent-lime/10 border border-accent-lime/30 px-2 py-1"
-              >
-                SAVE 20%
-              </motion.span>
-            )}
+              {annual && (
+                <motion.span
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="absolute -top-2.5 -right-3 text-[10px] font-bold text-background bg-accent-lime px-1.5 py-0.5 rounded-sm"
+                >
+                  -20%
+                </motion.span>
+              )}
+            </button>
           </div>
         </AnimatedSection>
 
