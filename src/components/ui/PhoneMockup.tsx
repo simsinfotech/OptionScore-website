@@ -1,16 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 interface PhoneMockupProps {
   src?: string;
   alt?: string;
   className?: string;
-  priority?: boolean;
 }
 
-export function PhoneMockup({ src, alt = "App screenshot", className = "", priority = false }: PhoneMockupProps) {
+export function PhoneMockup({ src, alt = "App screenshot", className = "" }: PhoneMockupProps) {
   return (
     <motion.div
       className={`${className} overflow-hidden rounded-2xl`}
@@ -22,14 +20,10 @@ export function PhoneMockup({ src, alt = "App screenshot", className = "", prior
       transition={{ duration: 0.35, ease: "easeOut" }}
     >
       {src ? (
-        <Image
+        <img
           src={src}
           alt={alt}
-          width={600}
-          height={1200}
           className="w-full h-auto rounded-2xl"
-          priority={priority}
-          sizes="(max-width: 768px) 180px, 260px"
         />
       ) : (
         <div className="w-full h-full flex items-center justify-center">

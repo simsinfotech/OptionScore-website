@@ -61,7 +61,7 @@ export function Academics() {
                 <div className="relative">
                   <div className="w-48 h-48 md:w-56 md:h-56 overflow-hidden border-2 border-accent-cyan/30">
                     <Image
-                      src="/images/faculty-director.webp"
+                      src="/images/faculty-director.png"
                       alt="Sathya Narayanan - Faculty Director, OptionScore Academy"
                       width={224}
                       height={224}
