@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SOCIAL_LINKS, NAV_LINKS } from "@/lib/constants";
+import { SOCIAL_LINKS, NAV_LINKS, LEGAL_LINKS } from "@/lib/constants";
 import { FaXTwitter, FaDiscord, FaInstagram } from "react-icons/fa6";
 
 const BRAND_TAGS = ["AI-Powered", "Real-Time Scores", "Mobile-First"];
@@ -11,7 +11,7 @@ export function Footer() {
       <div className="divider-shimmer" />
 
       <div className="max-w-7xl lg:max-w-none mx-auto px-6 lg:px-20 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
             <div className="flex items-center mb-4">
@@ -31,8 +31,8 @@ export function Footer() {
               />
             </div>
             <p className="text-text-muted text-sm leading-relaxed mb-2">
-              AI-powered trading analysis for the modern trader. Make smarter
-              decisions with real-time market scoring.
+              AI-powered market analytics &amp; education for the modern trader.
+              Make smarter decisions with real-time market scoring.
             </p>
             {/* Brand tags */}
             <div className="flex flex-wrap gap-2 mb-4">
@@ -45,8 +45,9 @@ export function Footer() {
                 </span>
               ))}
             </div>
-            <p className="text-text-muted text-sm font-semibold">
-              SEBI Registration - <span className="text-accent-cyan">Applied For</span>
+            <p className="text-text-muted text-xs leading-relaxed">
+              Market analytics &amp; education tool. Not a SEBI-registered
+              investment adviser. Not investment advice.
             </p>
           </div>
 
@@ -56,7 +57,26 @@ export function Footer() {
               Navigation
             </h4>
             <ul className="space-y-2">
-              {NAV_LINKS.map((link) => (
+              {NAV_LINKS.filter((link) => link.href.startsWith("#")).map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-text-muted hover:text-accent-cyan transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="font-mono text-sm font-semibold uppercase tracking-normal text-text-primary mb-4">
+              Legal
+            </h4>
+            <ul className="space-y-2">
+              {LEGAL_LINKS.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
@@ -98,7 +118,21 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-card-border text-center">
+        {/* Risk / advisory disclaimer */}
+        <div className="mt-12 pt-8 border-t border-card-border">
+          <p className="text-text-muted text-[11px] leading-relaxed max-w-4xl">
+            <span className="font-semibold text-text-secondary">Disclaimer:</span>{" "}
+            OptionScore is a market data, analytics and educational tool. It does
+            not provide investment advice, recommendations, or solicitations to
+            buy or sell any security. OptionScore is not a SEBI-registered
+            investment adviser, research analyst, or stockbroker. Trading and
+            investing in securities and derivatives involve substantial risk of
+            loss; past and back-tested performance is not indicative of future
+            results. All decisions are made solely by you, at your own risk.
+          </p>
+        </div>
+
+        <div className="mt-8 pt-8 border-t border-card-border text-center">
           <p className="text-text-muted text-xs">
             &copy; {new Date().getFullYear()}{" "}
             <span className="gradient-text-cyan-violet font-semibold">OptionScore</span>

@@ -57,6 +57,15 @@ export const STEPS = [
   },
 ];
 
+export const LEGAL_LINKS = [
+  { label: "Terms & Conditions", href: "/terms" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Refund & Cancellation", href: "/refund-policy" },
+  { label: "Shipping & Delivery", href: "/shipping-policy" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Account Deletion", href: "/account-deletion" },
+];
+
 export const SOCIAL_LINKS = [
   { label: "Twitter", href: "https://twitter.com/optionscore" },
   { label: "Discord", href: "https://discord.gg/optionscore" },
