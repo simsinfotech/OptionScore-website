@@ -25,6 +25,10 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# secrets / keys accidentally dropped in the repo
+*rzp-key*.csv
+*.key.csv
+
 # vercel
 .vercel
 
