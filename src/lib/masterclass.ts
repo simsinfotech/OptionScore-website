@@ -22,7 +22,7 @@ export const MASTERCLASS = {
   paymentLinkUrl: "https://rzp.io/rzp/o5jV4PRs",
 
   /** WhatsApp group invite link shown on the confirmation page + email. */
-  whatsappGroupUrl: "https://chat.whatsapp.com/KGmTEjpk6X7GX18zSbXVjb?s=em&p=a&mlu=2",
+  whatsappGroupUrl: "https://chat.whatsapp.com/CfuP5c2qahw2M8j8vB2X58?s=cl&p=a&mlu=2",
 
   /** Live session details. */
   session: {

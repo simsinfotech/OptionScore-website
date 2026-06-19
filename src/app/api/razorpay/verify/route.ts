@@ -1,8 +1,11 @@
 import { NextResponse } from "next/server";
 import crypto from "crypto";
 import { postToSheet } from "@/lib/server/sheet";
-import { sendConfirmationEmail } from "@/lib/server/email";
-import { MASTERCLASS_FEE_RUPEES } from "@/lib/masterclass";
+import {
+  sendConfirmationEmail,
+  sendWorkshopConfirmationEmail,
+} from "@/lib/server/email";
+import { resolveProduct } from "@/lib/server/products";
 
 export const runtime = "nodejs";
 
@@ -14,7 +17,10 @@ export async function POST(req: Request) {
       razorpay_payment_id,
       razorpay_signature,
       lead,
+      product,
     } = body;
+
+    const productConfig = resolveProduct(product);
 
     const keySecret = process.env.RAZORPAY_KEY_SECRET;
     if (!keySecret) {
@@ -48,7 +54,11 @@ export async function POST(req: Request) {
     let emailSent = false;
     if (lead?.email) {
       try {
-        await sendConfirmationEmail(lead);
+        if (productConfig.id === "workshop") {
+          await sendWorkshopConfirmationEmail(lead);
+        } else {
+          await sendConfirmationEmail(lead);
+        }
         emailSent = true;
       } catch (e) {
         console.error("Confirmation email failed", e);
@@ -57,17 +67,20 @@ export async function POST(req: Request) {
 
     // 3. Mark the row Paid in the sheet (best-effort).
     try {
-      await postToSheet({
-        action: "paid",
-        name: lead?.name,
-        mobile: lead?.mobile,
-        email: lead?.email,
-        experience: lead?.experience,
-        source: lead?.source,
-        paymentId: razorpay_payment_id,
-        amount: MASTERCLASS_FEE_RUPEES,
-        emailSent,
-      });
+      await postToSheet(
+        {
+          action: "paid",
+          name: lead?.name,
+          mobile: lead?.mobile,
+          email: lead?.email,
+          experience: lead?.experience,
+          source: lead?.source,
+          paymentId: razorpay_payment_id,
+          amount: productConfig.feeRupees,
+          emailSent,
+        },
+        productConfig.sheetUrlEnv
+      );
     } catch (e) {
       console.error("Sheet 'paid' update failed", e);
     }

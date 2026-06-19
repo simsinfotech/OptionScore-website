@@ -1,9 +1,10 @@
 /** Server-only helper to post to the Google Apps Script Web App. */
 
 export async function postToSheet(
-  payload: Record<string, unknown>
+  payload: Record<string, unknown>,
+  urlEnv: string = "APPS_SCRIPT_URL"
 ): Promise<{ ok: boolean; [key: string]: unknown }> {
-  const url = process.env.APPS_SCRIPT_URL;
+  const url = process.env[urlEnv];
   const token = process.env.APPS_SCRIPT_TOKEN;
 
   if (!url || !token || url.includes("XXXXXXXX")) {

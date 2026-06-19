@@ -98,6 +98,10 @@ export default function MasterclassOfferPage() {
     }
   };
 
+  // Funnel protection — don't render (or flash) the offer until the reserve
+  // form has been completed. The useEffect above redirects to /master-class.
+  if (!lead) return null;
+
   return (
     <FunnelShell>
       <div className="max-w-2xl mx-auto px-6 py-14">

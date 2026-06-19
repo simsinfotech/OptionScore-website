@@ -8,19 +8,21 @@ export type StoredLead = {
   source: string;
 };
 
-const KEY = "os_mc_lead";
+/** Per-funnel localStorage key. Masterclass keeps its original key so existing
+ *  flows are untouched; other funnels (e.g. the workshop) pass their own. */
+const DEFAULT_KEY = "os_mc_lead";
 
-export function saveLead(lead: StoredLead): void {
+export function saveLead(lead: StoredLead, key: string = DEFAULT_KEY): void {
   try {
-    localStorage.setItem(KEY, JSON.stringify(lead));
+    localStorage.setItem(key, JSON.stringify(lead));
   } catch {
     /* ignore */
   }
 }
 
-export function getLead(): StoredLead | null {
+export function getLead(key: string = DEFAULT_KEY): StoredLead | null {
   try {
-    const v = localStorage.getItem(KEY);
+    const v = localStorage.getItem(key);
     return v ? (JSON.parse(v) as StoredLead) : null;
   } catch {
     return null;

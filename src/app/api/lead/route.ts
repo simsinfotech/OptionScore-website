@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server";
 import { postToSheet } from "@/lib/server/sheet";
+import { resolveProduct } from "@/lib/server/products";
 
 export const runtime = "nodejs";
 
 export async function POST(req: Request) {
   try {
-    const { name, mobile, email, experience, source } = await req.json();
+    const { name, mobile, email, experience, source, product } =
+      await req.json();
 
     if (!name || !mobile || !email) {
       return NextResponse.json(
@@ -14,14 +16,19 @@ export async function POST(req: Request) {
       );
     }
 
-    await postToSheet({
-      action: "reserve",
-      name,
-      mobile,
-      email,
-      experience: experience || "",
-      source: source || "",
-    });
+    const { sheetUrlEnv } = resolveProduct(product);
+
+    await postToSheet(
+      {
+        action: "reserve",
+        name,
+        mobile,
+        email,
+        experience: experience || "",
+        source: source || "",
+      },
+      sheetUrlEnv
+    );
 
     return NextResponse.json({ ok: true });
   } catch (err) {
