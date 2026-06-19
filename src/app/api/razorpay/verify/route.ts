@@ -6,6 +6,7 @@ import {
   sendWorkshopConfirmationEmail,
 } from "@/lib/server/email";
 import { resolveProduct } from "@/lib/server/products";
+import { resolveRazorpayCredentials } from "@/lib/server/razorpay";
 
 export const runtime = "nodejs";
 
@@ -22,13 +23,15 @@ export async function POST(req: Request) {
 
     const productConfig = resolveProduct(product);
 
-    const keySecret = process.env.RAZORPAY_KEY_SECRET;
-    if (!keySecret) {
+    const cred = resolveRazorpayCredentials();
+    if (!cred.ok) {
+      console.error("Razorpay config error:", cred.error);
       return NextResponse.json(
-        { ok: false, error: "Razorpay is not configured." },
+        { ok: false, error: cred.error },
         { status: 500 }
       );
     }
+    const keySecret = cred.keySecret;
 
     if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
       return NextResponse.json(

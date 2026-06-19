@@ -1,18 +1,16 @@
 import { NextResponse } from "next/server";
 import { resolveProduct } from "@/lib/server/products";
+import { resolveRazorpayCredentials } from "@/lib/server/razorpay";
 
 export const runtime = "nodejs";
 
 export async function POST(req: Request) {
-  const keyId = process.env.RAZORPAY_KEY_ID;
-  const keySecret = process.env.RAZORPAY_KEY_SECRET;
-
-  if (!keyId || !keySecret || keyId.includes("xxxx")) {
-    return NextResponse.json(
-      { ok: false, error: "Razorpay is not configured yet." },
-      { status: 500 }
-    );
+  const cred = resolveRazorpayCredentials();
+  if (!cred.ok) {
+    console.error("Razorpay config error:", cred.error);
+    return NextResponse.json({ ok: false, error: cred.error }, { status: 500 });
   }
+  const { keyId, keySecret } = cred;
 
   // Body is optional — masterclass posts none, so default to that product.
   let product: string | undefined;

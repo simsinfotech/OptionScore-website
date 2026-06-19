@@ -95,12 +95,6 @@ export const WORKSHOP = {
     },
   ],
 
-  /**
-   * Razorpay hosted payment link (TEST). Not used by the /workshop funnel —
-   * it pays via embedded checkout. Kept here only for manual sharing.
-   */
-  paymentLinkUrl: "https://rzp.io/rzp/bZTz4rpR",
-
   /** WhatsApp group invite link shown on the confirmation page + email. */
   whatsappGroupUrl: "https://chat.whatsapp.com/CfuP5c2qahw2M8j8vB2X58?s=em&p=a&mlu=2",
 
