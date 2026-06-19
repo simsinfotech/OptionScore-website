@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { FunnelShell } from "@/components/funnel/FunnelShell";
 import { saveLead, readSource } from "@/lib/funnel-client";
+import { trackLead } from "@/lib/fbpixel";
 import { MASTERCLASS } from "@/lib/masterclass";
 
 const EXPERIENCE_OPTIONS = ["Beginner", "Intermediate", "Advanced"];
@@ -44,6 +45,7 @@ export default function MasterclassReservePage() {
       // Save locally even if the sheet write hiccups — we don't want to block
       // the funnel; the row will still be reconciled at the payment step.
       saveLead(lead);
+      trackLead();
 
       if (!res.ok && !data?.ok) {
         console.error("lead save failed", data);
@@ -52,6 +54,7 @@ export default function MasterclassReservePage() {
     } catch (err) {
       console.error(err);
       saveLead(lead);
+      trackLead();
       router.push("/master-class/offer");
     }
   };

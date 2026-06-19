@@ -15,6 +15,7 @@ import {
   type StoredLead,
   type RazorpayResponse,
 } from "@/lib/funnel-client";
+import { trackInitiateCheckout, trackPurchase } from "@/lib/fbpixel";
 import { WORKSHOP, WORKSHOP_FEE_RUPEES } from "@/lib/workshop";
 
 const WS_LEAD_KEY = "os_ws_lead";
@@ -46,6 +47,7 @@ export default function WorkshopOfferPage() {
     if (!lead) return;
     setError("");
     setPaying(true);
+    trackInitiateCheckout(WORKSHOP_FEE_RUPEES);
 
     const loaded = await loadRazorpay();
     if (!loaded) {
@@ -88,6 +90,7 @@ export default function WorkshopOfferPage() {
             const verify = await verifyRes.json();
             if (verify.ok) {
               setPaid(WS_LEAD_KEY, response.razorpay_payment_id);
+              trackPurchase(WORKSHOP_FEE_RUPEES);
               router.push("/workshop/confirmed");
             } else {
               setError(verify.error || "Payment could not be verified.");
