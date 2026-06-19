@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import { MASTERCLASS_FEE_PAISE } from "@/lib/masterclass";
+import { resolveProduct } from "@/lib/server/products";
 
 export const runtime = "nodejs";
 
-export async function POST() {
+export async function POST(req: Request) {
   const keyId = process.env.RAZORPAY_KEY_ID;
   const keySecret = process.env.RAZORPAY_KEY_SECRET;
 
@@ -13,6 +13,16 @@ export async function POST() {
       { status: 500 }
     );
   }
+
+  // Body is optional — masterclass posts none, so default to that product.
+  let product: string | undefined;
+  try {
+    const body = await req.json();
+    product = body?.product;
+  } catch {
+    /* no body — fine */
+  }
+  const { feePaise, receiptPrefix, notesPurpose } = resolveProduct(product);
 
   const auth = Buffer.from(`${keyId}:${keySecret}`).toString("base64");
 
@@ -24,10 +34,10 @@ export async function POST() {
         Authorization: `Basic ${auth}`,
       },
       body: JSON.stringify({
-        amount: MASTERCLASS_FEE_PAISE,
+        amount: feePaise,
         currency: "INR",
-        receipt: `mc_${Date.now()}`,
-        notes: { purpose: "masterclass-registration" },
+        receipt: `${receiptPrefix}_${Date.now()}`,
+        notes: { purpose: notesPurpose },
       }),
     });
 
