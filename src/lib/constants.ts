@@ -67,8 +67,6 @@ export const LEGAL_LINKS = [
 ];
 
 export const SOCIAL_LINKS = [
-  { label: "Twitter", href: "https://twitter.com/optionscore" },
-  { label: "Discord", href: "https://discord.gg/optionscore" },
   { label: "Instagram", href: "https://www.instagram.com/optionscore.app?igsh=MXNrNDE5OW83NWMycQ==" },
 ];
 
