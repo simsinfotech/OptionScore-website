@@ -15,6 +15,7 @@ import {
   type StoredLead,
   type RazorpayResponse,
 } from "@/lib/funnel-client";
+import { trackInitiateCheckout, trackPurchase } from "@/lib/fbpixel";
 import { MASTERCLASS, MASTERCLASS_FEE_RUPEES } from "@/lib/masterclass";
 
 const DISCOVER = [
@@ -50,6 +51,7 @@ export default function MasterclassOfferPage() {
     if (!lead) return;
     setError("");
     setPaying(true);
+    trackInitiateCheckout(MASTERCLASS_FEE_RUPEES);
 
     const loaded = await loadRazorpay();
     if (!loaded) {
@@ -88,6 +90,7 @@ export default function MasterclassOfferPage() {
             const verify = await verifyRes.json();
             if (verify.ok) {
               setPaid(undefined, response.razorpay_payment_id);
+              trackPurchase(MASTERCLASS_FEE_RUPEES);
               router.push("/master-class/confirmed");
             } else {
               setError(verify.error || "Payment could not be verified.");

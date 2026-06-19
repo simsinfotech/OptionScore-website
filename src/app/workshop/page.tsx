@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { FunnelShell } from "@/components/funnel/FunnelShell";
 import { saveLead, readSource } from "@/lib/funnel-client";
+import { trackLead } from "@/lib/fbpixel";
 import { WORKSHOP } from "@/lib/workshop";
 
 const WS_LEAD_KEY = "os_ws_lead";
@@ -46,6 +47,7 @@ export default function WorkshopReservePage() {
       // Save locally even if the sheet write hiccups — we don't want to block
       // the funnel; the row will still be reconciled at the payment step.
       saveLead(lead, WS_LEAD_KEY);
+      trackLead();
 
       if (!res.ok && !data?.ok) {
         console.error("lead save failed", data);
@@ -54,6 +56,7 @@ export default function WorkshopReservePage() {
     } catch (err) {
       console.error(err);
       saveLead(lead, WS_LEAD_KEY);
+      trackLead();
       router.push("/workshop/offer");
     }
   };
