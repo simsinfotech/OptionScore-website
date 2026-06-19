@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa6";
 import { FunnelShell } from "@/components/funnel/FunnelShell";
-import { getLead } from "@/lib/funnel-client";
+import { getLead, isPaid } from "@/lib/funnel-client";
 import { MASTERCLASS, isMcPlaceholder } from "@/lib/masterclass";
 
 export default function MasterclassConfirmedPage() {
@@ -16,8 +16,13 @@ export default function MasterclassConfirmedPage() {
   useEffect(() => {
     const lead = getLead();
     if (!lead) {
-      // Funnel protection — don't allow direct access without going through it.
+      // No form filled — back to the start.
       router.replace("/master-class");
+      return;
+    }
+    if (!isPaid()) {
+      // Form filled but not paid — can't reach confirmation yet.
+      router.replace("/master-class/offer");
       return;
     }
     if (lead.name) setName(lead.name.split(" ")[0]);

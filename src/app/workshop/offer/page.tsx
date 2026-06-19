@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/Button";
 import { FunnelShell } from "@/components/funnel/FunnelShell";
 import {
   getLead,
+  isPaid,
+  setPaid,
   loadRazorpay,
   openRazorpay,
   type StoredLead,
@@ -30,6 +32,11 @@ export default function WorkshopOfferPage() {
     if (!stored) {
       // Funnel protection — must complete the reserve form first.
       router.replace("/workshop");
+      return;
+    }
+    if (isPaid(WS_LEAD_KEY)) {
+      // Already paid — don't let them pay again; send to confirmation.
+      router.replace("/workshop/confirmed");
       return;
     }
     setLeadState(stored);
@@ -80,6 +87,7 @@ export default function WorkshopOfferPage() {
             });
             const verify = await verifyRes.json();
             if (verify.ok) {
+              setPaid(WS_LEAD_KEY, response.razorpay_payment_id);
               router.push("/workshop/confirmed");
             } else {
               setError(verify.error || "Payment could not be verified.");
