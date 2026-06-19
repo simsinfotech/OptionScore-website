@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { SOCIAL_LINKS, NAV_LINKS, LEGAL_LINKS } from "@/lib/constants";
-import { FaXTwitter, FaDiscord, FaInstagram } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
 
 const BRAND_TAGS = ["AI-Powered", "Real-Time Scores", "Mobile-First"];
 
@@ -97,8 +97,6 @@ export function Footer() {
             <div className="flex gap-4">
               {SOCIAL_LINKS.map((link) => {
                 const icons: Record<string, React.ReactNode> = {
-                  Twitter: <FaXTwitter size={18} />,
-                  Discord: <FaDiscord size={18} />,
                   Instagram: <FaInstagram size={18} />,
                 };
                 return (
