@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/Button";
 import { FunnelShell } from "@/components/funnel/FunnelShell";
 import {
   getLead,
+  isPaid,
+  setPaid,
   loadRazorpay,
   openRazorpay,
   type StoredLead,
@@ -34,6 +36,11 @@ export default function MasterclassOfferPage() {
     if (!stored) {
       // Funnel protection — must complete the reserve form first.
       router.replace("/master-class");
+      return;
+    }
+    if (isPaid()) {
+      // Already paid — don't let them pay again; send to confirmation.
+      router.replace("/master-class/confirmed");
       return;
     }
     setLeadState(stored);
@@ -80,6 +87,7 @@ export default function MasterclassOfferPage() {
             });
             const verify = await verifyRes.json();
             if (verify.ok) {
+              setPaid(undefined, response.razorpay_payment_id);
               router.push("/master-class/confirmed");
             } else {
               setError(verify.error || "Payment could not be verified.");

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa6";
 import { FunnelShell } from "@/components/funnel/FunnelShell";
-import { getLead } from "@/lib/funnel-client";
+import { getLead, isPaid } from "@/lib/funnel-client";
 import { WORKSHOP, isWsPlaceholder } from "@/lib/workshop";
 
 const WS_LEAD_KEY = "os_ws_lead";
@@ -18,8 +18,13 @@ export default function WorkshopConfirmedPage() {
   useEffect(() => {
     const lead = getLead(WS_LEAD_KEY);
     if (!lead) {
-      // Funnel protection — don't allow direct access without going through it.
+      // No form filled — back to the start.
       router.replace("/workshop");
+      return;
+    }
+    if (!isPaid(WS_LEAD_KEY)) {
+      // Form filled but not paid — can't reach confirmation yet.
+      router.replace("/workshop/offer");
       return;
     }
     if (lead.name) setName(lead.name.split(" ")[0]);

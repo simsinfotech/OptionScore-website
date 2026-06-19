@@ -15,6 +15,10 @@ const DEFAULT_KEY = "os_mc_lead";
 export function saveLead(lead: StoredLead, key: string = DEFAULT_KEY): void {
   try {
     localStorage.setItem(key, JSON.stringify(lead));
+    // A fresh form submission starts a new attempt — clear any prior paid
+    // state so a returning/re-registering user must pay again before they can
+    // reach the confirmation page.
+    localStorage.removeItem(paidKey(key));
   } catch {
     /* ignore */
   }
@@ -26,6 +30,28 @@ export function getLead(key: string = DEFAULT_KEY): StoredLead | null {
     return v ? (JSON.parse(v) as StoredLead) : null;
   } catch {
     return null;
+  }
+}
+
+function paidKey(key: string): string {
+  return `${key}_paid`;
+}
+
+/** Mark this funnel as paid (called after the server verifies the payment). */
+export function setPaid(key: string = DEFAULT_KEY, paymentId?: string): void {
+  try {
+    localStorage.setItem(paidKey(key), paymentId || "1");
+  } catch {
+    /* ignore */
+  }
+}
+
+/** True only once a verified payment has been recorded for this funnel. */
+export function isPaid(key: string = DEFAULT_KEY): boolean {
+  try {
+    return !!localStorage.getItem(paidKey(key));
+  } catch {
+    return false;
   }
 }
 
