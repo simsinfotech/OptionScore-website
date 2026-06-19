@@ -18,9 +18,6 @@ export const MASTERCLASS = {
   /** Shown across the funnel. */
   title: "Live Online Masterclass",
 
-  /** Razorpay hosted payment link the "Complete Registration" button opens. */
-  paymentLinkUrl: "https://rzp.io/rzp/o5jV4PRs",
-
   /** WhatsApp group invite link shown on the confirmation page + email. */
   whatsappGroupUrl: "https://chat.whatsapp.com/CfuP5c2qahw2M8j8vB2X58?s=cl&p=a&mlu=2",
 

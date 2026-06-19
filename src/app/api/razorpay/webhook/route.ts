@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import crypto from "crypto";
 import { postToSheet } from "@/lib/server/sheet";
 import { sendConfirmationEmail } from "@/lib/server/email";
+import { getWebhookSecret } from "@/lib/server/razorpay";
 
 export const runtime = "nodejs";
 
@@ -12,7 +13,7 @@ export const runtime = "nodejs";
  * RAZORPAY_WEBHOOK_SECRET.
  */
 export async function POST(req: Request) {
-  const secret = process.env.RAZORPAY_WEBHOOK_SECRET;
+  const secret = getWebhookSecret();
   if (!secret) {
     return NextResponse.json(
       { ok: false, error: "Webhook secret not configured." },
