@@ -19,7 +19,7 @@ export const MASTERCLASS = {
   title: "Live Online Masterclass",
 
   /** WhatsApp group invite link shown on the confirmation page + email. */
-  whatsappGroupUrl: "https://chat.whatsapp.com/CfuP5c2qahw2M8j8vB2X58?s=cl&p=a&mlu=2",
+  whatsappGroupUrl: "https://chat.whatsapp.com/LLMDcHkqSnv6HahjOe73yw?s=em&p=a&mlu=2",
 
   /** Live session details. */
   session: {
