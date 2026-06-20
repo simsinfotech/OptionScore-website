@@ -46,7 +46,7 @@ export function Navbar() {
         </a>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -65,9 +65,9 @@ export function Navbar() {
           </Button>
         </div>
 
-        {/* Mobile hamburger */}
+        {/* Mobile / tablet hamburger */}
         <button
-          className="md:hidden text-text-primary"
+          className="lg:hidden text-text-primary"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -86,7 +86,7 @@ export function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden glass-strong px-6 pb-6"
+          className="lg:hidden glass-strong px-6 pb-6"
         >
           {NAV_LINKS.map((link) => (
             <a

@@ -20,6 +20,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/Button";
+import { Academics } from "@/components/sections/Academics";
+import { FounderProfile } from "@/components/sections/FounderProfile";
 import { EnquiryModal } from "@/components/academy/EnquiryModal";
 import {
   ACADEMY_TAGLINE,
@@ -98,8 +100,8 @@ export default function AcademyPage() {
                 {ACADEMY_TAGLINE}
               </p>
               <h1 className="font-bold tracking-tight text-4xl md:text-6xl text-text-primary mb-6 leading-[1.08]">
-                Learn Options The Way{" "}
-                <span className="gradient-text-cyan-violet">Institutions Trade Them</span>
+                Learn Trading the way{" "}
+                <span className="gradient-text-cyan-violet">Institutions trade them</span>
               </h1>
               <p className="text-text-secondary text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-9">
                 A three-level program that takes you from market basics to
@@ -507,6 +509,14 @@ export default function AcademyPage() {
             </div>
           </div>
         </section>
+
+        {/* ───────────── About the Founder & Faculty (together, as on the homepage) ───────────── */}
+        <section className="py-20 md:py-28 px-6 section-mesh-violet relative overflow-hidden border-y border-card-border">
+          <div className="max-w-6xl lg:max-w-none lg:px-14 mx-auto relative z-10">
+            <FounderProfile />
+          </div>
+        </section>
+        <Academics />
 
         {/* ───────────── FAQ ───────────── */}
         <section className="py-20 md:py-28 px-6">
