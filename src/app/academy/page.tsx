@@ -332,7 +332,7 @@ export default function AcademyPage() {
                     </div>
                   </div>
                   <div className="lg:w-64 lg:border-l lg:border-card-border lg:pl-8">
-                    <div className="flex items-baseline justify-between mb-3">
+                    <div className="flex items-baseline justify-between mb-1">
                       <span className="text-text-muted text-xs uppercase tracking-normal">
                         Recorded
                       </span>
@@ -340,6 +340,9 @@ export default function AcademyPage() {
                         {ACADEMY_BUNDLE.recorded}
                       </span>
                     </div>
+                    <p className="text-accent-lime text-[11px] font-semibold mb-3">
+                      Save {ACADEMY_BUNDLE.recordedSaving} vs buying levels separately
+                    </p>
                     <div className="flex items-baseline justify-between mb-5">
                       <span className="text-text-primary text-xs uppercase tracking-normal font-semibold">
                         Live Cohort
