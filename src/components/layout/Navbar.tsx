@@ -28,7 +28,7 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl lg:max-w-none mx-auto px-6 lg:px-20 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 md:gap-3">
+        <a href="/" className="flex items-center gap-2 md:gap-3">
           <Image
             src="/images/logo.png"
             alt="OptionScore icon"
@@ -60,7 +60,7 @@ export function Navbar() {
               />
             </a>
           ))}
-          <Button size="sm" variant="gradient" href="#download">
+          <Button size="sm" variant="gradient" href="/#download">
             Download
           </Button>
         </div>
@@ -98,7 +98,7 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
-          <Button size="sm" variant="gradient" href="#download" className="mt-4 w-full">
+          <Button size="sm" variant="gradient" href="/#download" className="mt-4 w-full">
             Download
           </Button>
         </motion.div>

@@ -57,7 +57,7 @@ export function Footer() {
               Navigation
             </h4>
             <ul className="space-y-2">
-              {NAV_LINKS.filter((link) => link.href.startsWith("#")).map((link) => (
+              {NAV_LINKS.filter((link) => link.href.includes("#")).map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
