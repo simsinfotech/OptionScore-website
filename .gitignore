@@ -29,6 +29,10 @@ yarn-error.log*
 *rzp-key*.csv
 *.key.csv
 
+# confidential internal docs (not for version control)
+OptionScore_Academy_Detailed_Course_Outline.pdf
+*Internal*.pdf
+
 # vercel
 .vercel
 
