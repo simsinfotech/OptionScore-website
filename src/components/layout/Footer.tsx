@@ -11,7 +11,7 @@ export function Footer() {
       <div className="divider-shimmer" />
 
       <div className="max-w-7xl lg:max-w-none mx-auto px-6 lg:px-20 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
           {/* Brand */}
           <div>
             <div className="flex items-center mb-4">
@@ -49,6 +49,16 @@ export function Footer() {
               Market analytics &amp; education tool. Not a SEBI-registered
               investment adviser. Not investment advice.
             </p>
+
+            {/* Credentials */}
+            <div className="mt-4 space-y-1">
+              <p className="text-text-secondary text-xs font-semibold">
+                NISM XV Research Analyst Certified
+              </p>
+              <p className="text-text-muted text-xs">
+                SEBI RA License: Applied for
+              </p>
+            </div>
           </div>
 
           {/* Navigation */}
