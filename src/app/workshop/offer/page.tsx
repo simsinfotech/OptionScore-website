@@ -222,8 +222,11 @@ export default function WorkshopOfferPage() {
             </span>
 
             <TypeWriter
-              texts={WORKSHOP.hero.headline}
-              greenIndex={1}
+              segments={[
+                { text: "Watch Me Trade. ", mobileBr: true },
+                { text: "Live. In Front of You.", green: true, br: true },
+                { text: "Real Market. Real Time." },
+              ]}
               className="font-mono font-bold text-[1.3rem] md:text-[2.6rem] leading-[1.2] md:leading-[1.15] text-white mb-3 md:mb-4"
             />
 
@@ -876,57 +879,78 @@ export default function WorkshopOfferPage() {
    TypeWriter effect
    ═══════════════════════════════════════════════════ */
 
-function TypeWriter({ texts, className, greenIndex }: { texts: readonly string[]; className?: string; greenIndex?: number }) {
-  const full = texts.map((t) => t.trim());
-  const [lineIdx, setLineIdx] = useState(0);
-  const [charIdx, setCharIdx] = useState(0);
+/**
+ * Segments: each has text, optional green styling, and optional breakpoints.
+ * `mobileBr` = show <br> on mobile only (hidden on md+)
+ * `desktopBr` = show <br> on desktop only (hidden below md)
+ * `br` = always break
+ */
+type TypeSegment = {
+  text: string;
+  green?: boolean;
+  mobileBr?: boolean;
+  desktopBr?: boolean;
+  br?: boolean;
+};
+
+function TypeWriter({ segments, className }: { segments: TypeSegment[]; className?: string }) {
+  // Flatten all text into one string for typing
+  const allText = segments.map((s) => s.text).join("");
+  const [typed, setTyped] = useState(0);
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    if (done) return;
-    const currentLine = full[lineIdx] || "";
-    if (charIdx < currentLine.length) {
+    if (typed < allText.length) {
       const speed = 35 + Math.random() * 25;
-      const t = setTimeout(() => setCharIdx((c) => c + 1), speed);
+      const t = setTimeout(() => setTyped((c) => c + 1), speed);
       return () => clearTimeout(t);
     }
-    // Line done — move to next
-    if (lineIdx < full.length - 1) {
-      const t = setTimeout(() => {
-        setLineIdx((l) => l + 1);
-        setCharIdx(0);
-      }, 300);
-      return () => clearTimeout(t);
-    }
-    // All lines done
     setDone(true);
-  }, [lineIdx, charIdx, done, full]);
+  }, [typed, allText.length]);
+
+  // Build rendered output
+  let consumed = 0;
+  const rendered = segments.map((seg, i) => {
+    const segStart = consumed;
+    const segEnd = segStart + seg.text.length;
+    consumed = segEnd;
+
+    // How much of this segment is visible
+    const visibleLen = Math.max(0, Math.min(typed - segStart, seg.text.length));
+    const display = seg.text.slice(0, visibleLen);
+    const isCurrent = typed >= segStart && typed < segEnd;
+
+    const content = seg.green ? (
+      <span className="text-[#0bb158] [text-shadow:0_0_20px_rgba(11,177,88,0.5),0_0_40px_rgba(11,177,88,0.25)]">
+        {display}
+      </span>
+    ) : (
+      display
+    );
+
+    // Determine line break: only show once this segment is fully typed
+    const segFullyTyped = typed >= segEnd;
+    let lineBreak = null;
+    if (segFullyTyped || done) {
+      if (seg.mobileBr) lineBreak = <br className="md:hidden" />;
+      else if (seg.desktopBr) lineBreak = <br className="hidden md:block" />;
+      else if (seg.br) lineBreak = <br />;
+    }
+
+    return (
+      <span key={i}>
+        {content}
+        {isCurrent && !done && (
+          <span className="inline-block w-[2px] md:w-[3px] h-[1.1em] bg-[#0bb158] align-middle ml-[2px] animate-blink" />
+        )}
+        {lineBreak}
+      </span>
+    );
+  });
 
   return (
     <h1 className={className}>
-      {full.map((line, i) => {
-        let display = "";
-        if (i < lineIdx) display = line;
-        else if (i === lineIdx) display = line.slice(0, charIdx);
-        else display = "";
-
-        const isGreen = greenIndex !== undefined && i === greenIndex;
-        return (
-          <span key={i}>
-            {isGreen ? (
-              <span className="text-[#0bb158] [text-shadow:0_0_20px_rgba(11,177,88,0.5),0_0_40px_rgba(11,177,88,0.25)]">
-                {display}
-              </span>
-            ) : (
-              display
-            )}
-            {i === lineIdx && !done && (
-              <span className="inline-block w-[2px] md:w-[3px] h-[1.1em] bg-[#0bb158] align-middle ml-[2px] animate-blink" />
-            )}
-            {i < full.length - 1 && <br />}
-          </span>
-        );
-      })}
+      {rendered}
       {done && (
         <span className="inline-block w-[2px] md:w-[3px] h-[1.1em] bg-[#0bb158] align-middle ml-[2px] animate-blink" />
       )}
