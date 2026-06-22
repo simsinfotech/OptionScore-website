@@ -3,7 +3,23 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { HiCheck, HiXMark, HiPlus, HiMinus } from "react-icons/hi2";
+import {
+  HiCheck,
+  HiXMark,
+  HiPlus,
+  HiMinus,
+  HiPlay,
+  HiExclamationTriangle,
+  HiLockClosed,
+  HiCreditCard,
+  HiShieldCheck,
+  HiFire,
+  HiUser,
+  HiClock,
+  HiStar,
+  HiCheckCircle,
+  HiXCircle,
+} from "react-icons/hi2";
 import { FaWhatsapp } from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
@@ -212,8 +228,8 @@ export default function WorkshopOfferPage() {
 
             {/* VSL Placeholder */}
             <div className="max-w-[800px] mx-auto mb-10 bg-[#0a0a0a] border border-[rgba(11,177,88,0.2)] rounded-2xl aspect-video flex flex-col items-center justify-center cursor-pointer relative overflow-hidden">
-              <div className="w-20 h-20 rounded-full bg-[#0bb158] flex items-center justify-center mb-4 text-2xl shadow-[0_0_30px_rgba(11,177,88,0.5)]">
-                ▶
+              <div className="w-20 h-20 rounded-full bg-[#0bb158] flex items-center justify-center mb-4 shadow-[0_0_30px_rgba(11,177,88,0.5)]">
+                <HiPlay size={32} className="text-white ml-1" />
               </div>
               <p className="text-[1rem] text-[#6b7280]">{WORKSHOP.hero.vslText}</p>
             </div>
@@ -246,7 +262,7 @@ export default function WorkshopOfferPage() {
               Razorpay · Secure Payment · Instant Confirmation · EMI Available
             </div>
             <div className="mt-4 text-[0.95rem] text-[#0bb158] font-bold [text-shadow:0_0_15px_rgba(11,177,88,0.4)]">
-              ⚠ Only {WORKSHOP.announcement.seats} spots left · Last batch closed before the scheduled date
+              <HiExclamationTriangle className="inline align-middle mr-1" size={16} /> Only {WORKSHOP.announcement.seats} spots left · Last batch closed before the scheduled date
             </div>
           </div>
         </section>
@@ -269,12 +285,13 @@ export default function WorkshopOfferPage() {
                 <p className="text-[0.92rem] text-[#6b7280] mb-3">{card.body}</p>
                 <ul>
                   {card.items.map((item) => (
-                    <li key={item} className="text-[0.88rem] text-[#6b7280] py-1 pl-6 relative before:content-['✓'] before:absolute before:left-0 before:text-[#0bb158] before:font-bold">
+                    <li key={item} className="text-[0.88rem] text-[#6b7280] py-1 flex items-start gap-2">
+                      <HiCheck className="text-[#0bb158] mt-0.5 flex-shrink-0" size={14} />
                       {item}
                     </li>
                   ))}
                 </ul>
-                <p className="mt-3 text-[0.8rem] text-[#9CA3AF]">⏱ {card.duration}</p>
+                <p className="mt-3 text-[0.8rem] text-[#9CA3AF] flex items-center gap-1"><HiClock size={14} /> {card.duration}</p>
               </div>
             ))}
           </div>
@@ -326,23 +343,29 @@ export default function WorkshopOfferPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
             <div className="ws-card-red p-7 relative overflow-hidden">
               <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(239,68,68,0.12)_0%,transparent_40%,transparent_60%,rgba(239,68,68,0.12)_100%)] pointer-events-none" />
-              <h4 className="font-mono font-bold text-[1.05rem] text-red-500 mb-4 pb-3 border-b border-[rgba(11,177,88,0.2)]">
-                ✗ What Retail Traders Do
+              <h4 className="font-mono font-bold text-[1.05rem] text-red-500 mb-4 pb-3 border-b border-[rgba(11,177,88,0.2)] flex items-center gap-2">
+                <HiXCircle size={18} className="text-red-500" /> What Retail Traders Do
               </h4>
               <ul>
                 {WORKSHOP.problem.retail.map((item) => (
-                  <li key={item} className="text-[0.88rem] text-[#6b7280] py-1.5 pl-6 relative before:content-['✗'] before:absolute before:left-0 before:text-red-500 before:font-bold">{item}</li>
+                  <li key={item} className="text-[0.88rem] text-[#6b7280] py-1.5 flex items-start gap-2">
+                    <HiXMark className="text-red-500 mt-0.5 flex-shrink-0" size={14} />
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
             <div className="ws-card p-7 relative overflow-hidden">
               <div className="ws-card-glow" />
-              <h4 className="font-mono font-bold text-[1.05rem] text-[#0bb158] mb-4 pb-3 border-b border-[rgba(11,177,88,0.2)]">
-                ✓ What Institutions Do
+              <h4 className="font-mono font-bold text-[1.05rem] text-[#0bb158] mb-4 pb-3 border-b border-[rgba(11,177,88,0.2)] flex items-center gap-2">
+                <HiCheckCircle size={18} className="text-[#0bb158]" /> What Institutions Do
               </h4>
               <ul>
                 {WORKSHOP.problem.institutional.map((item) => (
-                  <li key={item} className="text-[0.88rem] text-[#6b7280] py-1.5 pl-6 relative before:content-['✓'] before:absolute before:left-0 before:text-[#0bb158] before:font-bold">{item}</li>
+                  <li key={item} className="text-[0.88rem] text-[#6b7280] py-1.5 flex items-start gap-2">
+                    <HiCheck className="text-[#0bb158] mt-0.5 flex-shrink-0" size={14} />
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -376,7 +399,7 @@ export default function WorkshopOfferPage() {
             <div className="ws-card flex gap-4 p-5 relative overflow-hidden">
               <div className="ws-card-glow" />
               <div className="w-12 h-12 bg-[rgba(11,177,88,0.1)] text-[#0bb158] rounded-lg flex items-center justify-center flex-shrink-0">
-                ★
+                <HiStar size={20} />
               </div>
               <div>
                 <h4 className="font-mono font-bold text-[0.95rem] text-white mb-0.5">Alumni Pricing on Future Workshops &amp; Courses</h4>
@@ -395,9 +418,9 @@ export default function WorkshopOfferPage() {
           <div className="text-center mt-8">
             <button onClick={scrollToCta} className="cta-button">RESERVE MY SEAT — {PRICE} →</button>
             <div className="flex justify-center gap-4 flex-wrap mt-4 text-[0.8rem] text-[#6b7280]">
-              <span>🔒 256-bit SSL</span>
-              <span>✓ Powered by Razorpay</span>
-              <span>💳 Cards, UPI, Net Banking, EMI</span>
+              <span><HiLockClosed className="inline align-middle mr-1" size={14} /> 256-bit SSL</span>
+              <span><HiCheckCircle className="inline align-middle mr-1 text-[#22c55e]" size={14} /> Powered by Razorpay</span>
+              <span><HiCreditCard className="inline align-middle mr-1" size={14} /> Cards, UPI, Net Banking, EMI</span>
             </div>
             <p className="text-[0.88rem] text-[#6b7280] mt-4 max-w-[500px] mx-auto">
               Most traders lose more than Rs. 5,999 in a single bad trade. This workshop fixes the reason those trades keep happening.
@@ -409,25 +432,25 @@ export default function WorkshopOfferPage() {
         <WSection label="Is This Workshop Right For You?" title={<>Serious Traders Only.<br />Not Everyone Should Register.</>}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
-              <h3 className="font-mono font-bold text-[1.15rem] text-[#0bb158] mb-4 pb-3 border-b-2 border-[#0bb158]">
-                ✓ This Workshop is PERFECT if you:
+              <h3 className="font-mono font-bold text-[1.15rem] text-[#0bb158] mb-4 pb-3 border-b-2 border-[#0bb158] flex items-center gap-2">
+                <HiCheckCircle size={18} /> This Workshop is PERFECT if you:
               </h3>
               <ul>
                 {WORKSHOP.whoItsFor.perfect.map((item) => (
-                  <li key={item} className="text-[0.92rem] text-[#6b7280] py-2 pl-7 relative">
-                    <span className="absolute left-0">✅</span> {item}
+                  <li key={item} className="text-[0.92rem] text-[#6b7280] py-2 flex items-start gap-2.5">
+                    <HiCheckCircle className="text-[#22c55e] mt-0.5 flex-shrink-0" size={16} /> {item}
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h3 className="font-mono font-bold text-[1.15rem] text-red-500 mb-4 pb-3 border-b-2 border-red-500">
-                ✗ This is NOT for you if:
+              <h3 className="font-mono font-bold text-[1.15rem] text-red-500 mb-4 pb-3 border-b-2 border-red-500 flex items-center gap-2">
+                <HiXCircle size={18} /> This is NOT for you if:
               </h3>
               <ul>
                 {WORKSHOP.whoItsFor.notFor.map((item) => (
-                  <li key={item} className="text-[0.92rem] text-[#6b7280] py-2 pl-7 relative">
-                    <span className="absolute left-0">❌</span> {item}
+                  <li key={item} className="text-[0.92rem] text-[#6b7280] py-2 flex items-start gap-2.5">
+                    <HiXCircle className="text-red-500 mt-0.5 flex-shrink-0" size={16} /> {item}
                   </li>
                 ))}
               </ul>
@@ -470,12 +493,12 @@ export default function WorkshopOfferPage() {
         </WSection>
 
         {/* ═══════════ Testimonials ═══════════ */}
-        <WSection label="What Traders Say" title={<>★★★★★ 4.9/5 Average Rating ([X] Reviews)</>}>
+        <WSection label="What Traders Say" title={<><span className="inline-flex gap-0.5 align-middle">{Array.from({length:5}).map((_,i)=><HiStar key={i} className="text-yellow-400" size={22} />)}</span> 4.9/5 Average Rating ([X] Reviews)</>}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {WORKSHOP.testimonials.map((t, i) => (
               <div key={i} className="ws-card p-6 flex flex-col relative overflow-hidden">
                 <div className="ws-card-glow" />
-                <div className="text-yellow-400 mb-2">★★★★★</div>
+                <div className="flex gap-0.5 mb-2">{Array.from({length:5}).map((_,j)=><HiStar key={j} className="text-yellow-400" size={16} />)}</div>
                 <div className="font-bold text-[0.95rem] text-white mb-2">{t.headline}</div>
                 <blockquote className="text-[0.88rem] text-[#6b7280] italic leading-[1.6] mb-3 flex-1">&ldquo;{t.quote}&rdquo;</blockquote>
                 <div className="flex items-center gap-2.5 mt-auto">
@@ -483,7 +506,7 @@ export default function WorkshopOfferPage() {
                   <div>
                     <div className="font-bold text-[0.85rem] text-white">{t.name}</div>
                     <div className="text-[0.75rem] text-[#6b7280]">{t.location}</div>
-                    <div className="text-[0.7rem] text-[#0bb158] font-semibold">✓ Verified Workshop Attendee</div>
+                    <div className="text-[0.7rem] text-[#0bb158] font-semibold flex items-center gap-1"><HiCheckCircle size={12} /> Verified Workshop Attendee</div>
                   </div>
                 </div>
               </div>
@@ -516,7 +539,7 @@ export default function WorkshopOfferPage() {
               Reserve Your Seat ({WORKSHOP.announcement.seats} Spots Left)
             </h2>
             <p className="text-center text-[#6b7280] mb-8">
-              ⚠ Workshop is {WORKSHOP.announcement.date} · Last batch closed before scheduled date
+              <HiExclamationTriangle className="inline align-middle mr-1" size={16} /> Workshop is {WORKSHOP.announcement.date} · Last batch closed before scheduled date
             </p>
 
             <div className="ws-card max-w-[700px] mx-auto border-2 border-[rgba(11,177,88,0.3)] shadow-[0_0_30px_rgba(11,177,88,0.1),0_0_60px_rgba(11,177,88,0.05)] overflow-hidden relative">
@@ -567,7 +590,7 @@ export default function WorkshopOfferPage() {
                 </div>
 
                 <div className="bg-[rgba(5,5,5,0.85)] border border-[rgba(11,177,88,0.12)] rounded-lg p-5 text-left mb-5">
-                  <h4 className="font-mono font-bold text-[0.95rem] text-white mb-2">🛡 My Personal Guarantee</h4>
+                  <h4 className="font-mono font-bold text-[0.95rem] text-white mb-2 flex items-center gap-2"><HiShieldCheck size={18} className="text-[#0bb158]" /> My Personal Guarantee</h4>
                   <p className="text-[0.85rem] text-[#6b7280] leading-[1.6]">{WORKSHOP.guarantee}</p>
                 </div>
               </div>
@@ -595,19 +618,29 @@ export default function WorkshopOfferPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               <div className="bg-[rgba(5,5,5,0.85)] border border-[rgba(255,255,255,0.06)] rounded-2xl p-7 text-left relative overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.05)_0%,transparent_40%,transparent_60%,rgba(255,255,255,0.05)_100%)] pointer-events-none" />
-                <h4 className="font-mono font-bold text-[1.05rem] text-[#6b7280] mb-4 pb-3 border-b border-[rgba(11,177,88,0.2)]">✗ The Hard Way:</h4>
+                <h4 className="font-mono font-bold text-[1.05rem] text-[#6b7280] mb-4 pb-3 border-b border-[rgba(11,177,88,0.2)] flex items-center gap-2">
+                  <HiXCircle size={18} className="text-red-500" /> The Hard Way:
+                </h4>
                 <ul>
                   {WORKSHOP.contrast.hardWay.map((item) => (
-                    <li key={item} className="text-[0.88rem] text-[#6b7280] py-1.5 pl-6 relative before:content-['✗'] before:absolute before:left-0 before:text-[#6b7280]">{item}</li>
+                    <li key={item} className="text-[0.88rem] text-[#6b7280] py-1.5 flex items-start gap-2">
+                      <HiXMark className="text-[#6b7280] mt-0.5 flex-shrink-0" size={14} />
+                      {item}
+                    </li>
                   ))}
                 </ul>
               </div>
               <div className="ws-card p-7 text-left relative overflow-hidden">
                 <div className="ws-card-glow" />
-                <h4 className="font-mono font-bold text-[1.05rem] text-[#0bb158] mb-4 pb-3 border-b border-[rgba(11,177,88,0.2)]">✓ The OptionScore Way:</h4>
+                <h4 className="font-mono font-bold text-[1.05rem] text-[#0bb158] mb-4 pb-3 border-b border-[rgba(11,177,88,0.2)] flex items-center gap-2">
+                  <HiCheckCircle size={18} className="text-[#0bb158]" /> The OptionScore Way:
+                </h4>
                 <ul>
                   {WORKSHOP.contrast.optionScoreWay.map((item) => (
-                    <li key={item} className="text-[0.88rem] text-[#6b7280] py-1.5 pl-6 relative before:content-['✓'] before:absolute before:left-0 before:text-[#0bb158] before:font-bold">{item}</li>
+                    <li key={item} className="text-[0.88rem] text-[#6b7280] py-1.5 flex items-start gap-2">
+                      <HiCheck className="text-[#0bb158] mt-0.5 flex-shrink-0" size={14} />
+                      {item}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -652,7 +685,7 @@ export default function WorkshopOfferPage() {
 
       {/* ═══════════ Sticky Bottom Bar ═══════════ */}
       <div className={`fixed bottom-0 left-0 right-0 z-[999] bg-[rgba(5,5,5,0.95)] border-t border-[rgba(11,177,88,0.2)] py-3 px-6 flex justify-center items-center gap-5 shadow-[0_-4px_20px_rgba(0,0,0,0.3)] backdrop-blur-[12px] transition-transform duration-400 ${showStickyBar ? "translate-y-0" : "translate-y-full"}`}>
-        <span className="text-[0.9rem] text-[#6b7280]">🔥 {WORKSHOP.announcement.seats} seats left · <strong className="text-[1.2rem] text-[#0bb158] font-extrabold">{PRICE}</strong></span>
+        <span className="text-[0.9rem] text-[#6b7280] flex items-center gap-1"><HiFire className="text-orange-500" size={16} /> {WORKSHOP.announcement.seats} seats left · <strong className="text-[1.2rem] text-[#0bb158] font-extrabold">{PRICE}</strong></span>
         <button onClick={scrollToCta} className="cta-button !py-3 !px-8 !text-[0.95rem]">Reserve Now →</button>
       </div>
 
@@ -665,7 +698,7 @@ export default function WorkshopOfferPage() {
             exit={{ x: -120 }}
             className="fixed bottom-20 left-6 z-[998] bg-[rgba(5,5,5,0.95)] border border-[rgba(11,177,88,0.15)] rounded-lg px-5 py-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.4)] flex items-center gap-2.5 max-w-[300px] text-[0.82rem] text-[#d1d5db]"
           >
-            <span className="text-[#6b7280]">👤</span>
+            <HiUser className="text-[#6b7280] flex-shrink-0" size={16} />
             <span><strong>{socialProof.name}</strong> from {socialProof.city} just registered</span>
           </motion.div>
         )}
@@ -795,7 +828,7 @@ function Faq({ q, a }: { q: string; a: string }) {
         className="w-full flex items-center justify-between gap-4 px-5 py-4.5 text-left hover:bg-[#0a0a0a] transition-colors"
       >
         <span className="text-white text-[0.95rem] font-semibold">{q}</span>
-        <span className={`text-[#0bb158] text-[1.2rem] flex-shrink-0 ml-4 transition-transform ${open ? "rotate-45" : ""}`}>+</span>
+        {open ? <HiMinus className="text-[#0bb158] flex-shrink-0 ml-4" size={18} /> : <HiPlus className="text-[#0bb158] flex-shrink-0 ml-4" size={18} />}
       </button>
       {open && (
         <p className="px-5 pb-4.5 text-[#6b7280] text-[0.9rem] leading-[1.7]">{a}</p>
