@@ -305,7 +305,7 @@ export const WORKSHOP = {
     "P.S. — I cap seats because I review every participant's chart personally. The last batch closed before the scheduled date. If you're considering it — register now.",
 
   /* ─── WhatsApp ─── */
-  whatsappNumber: "[PHONE PLACEHOLDER]",
+  whatsappNumber: "919036317765",
   whatsappMessage:
     "Hi, I have a question about the OptionScore Academy workshop.",
 
