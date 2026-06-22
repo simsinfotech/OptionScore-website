@@ -31,8 +31,11 @@ export function FunnelShell({ children }: { children: React.ReactNode }) {
       <footer className="border-t border-card-border">
         <div className="max-w-3xl mx-auto px-6 py-6">
           <p className="text-text-muted text-[11px] leading-relaxed text-center">
-            OptionScore is a market analytics &amp; education tool. This session
-            is educational and is not investment advice. Trading involves risk.
+            OptionScore is a market analytics &amp; education platform. This
+            session is purely educational and does not constitute investment
+            advice. Trading in financial markets involves substantial risk of
+            loss and is not suitable for all investors. Past performance does not
+            guarantee future results.
           </p>
         </div>
       </footer>
