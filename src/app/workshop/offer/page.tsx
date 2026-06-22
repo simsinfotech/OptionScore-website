@@ -195,7 +195,7 @@ export default function WorkshopOfferPage() {
             <Image src="/images/logo-text.png" alt="OptionScore" width={120} height={20} className="h-4 md:h-5 w-auto" />
           </Link>
           <button onClick={scrollToCta} className="bg-[#0bb158] text-black text-[0.7rem] md:text-xs font-bold px-3 md:px-5 py-1.5 md:py-2 rounded-md hover:bg-[#0ed668] transition-colors font-mono">
-            Reserve Seat →
+            Reserve Seat
           </button>
         </div>
       </nav>
@@ -206,7 +206,7 @@ export default function WorkshopOfferPage() {
           {[0, 1, 2].map((i) => (
             <span key={i} className="flex-shrink-0">
               <span className="inline-block w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500 align-middle mr-1" /> NEXT BATCH: {WORKSHOP.announcement.date} &nbsp;·&nbsp; Only {WORKSHOP.announcement.seats} Seats &nbsp;·&nbsp;{" "}
-              <button onClick={scrollToCta} className="text-[#0bb158] font-bold underline">Reserve Now →</button>
+              <button onClick={scrollToCta} className="text-[#0bb158] font-bold underline">Reserve Now</button>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
           ))}
@@ -264,7 +264,7 @@ export default function WorkshopOfferPage() {
 
             <br />
             <button onClick={scrollToCta} className="cta-button inline-block">
-              RESERVE MY SEAT — {PRICE} →
+              RESERVE MY SEAT — {PRICE}
             </button>
             <div className="text-center mt-2 md:mt-3 text-[0.7rem] md:text-[0.82rem] text-[#6b7280]">
               Razorpay · Secure Payment · Instant Confirmation · EMI Available
@@ -424,7 +424,7 @@ export default function WorkshopOfferPage() {
             </div>
           </div>
           <div className="text-center mt-6 md:mt-8">
-            <button onClick={scrollToCta} className="cta-button">RESERVE MY SEAT — {PRICE} →</button>
+            <button onClick={scrollToCta} className="cta-button">RESERVE MY SEAT — {PRICE}</button>
             <div className="flex justify-center gap-3 md:gap-4 flex-wrap mt-3 md:mt-4 text-[0.7rem] md:text-[0.8rem] text-[#6b7280]">
               <span><HiLockClosed className="inline align-middle mr-0.5" size={12} /> 256-bit SSL</span>
               <span><HiCheckCircle className="inline align-middle mr-0.5 text-[#22c55e]" size={12} /> Razorpay</span>
@@ -663,7 +663,7 @@ export default function WorkshopOfferPage() {
               ))}
             </div>
 
-            <button onClick={scrollToCta} className="cta-button mb-3">YES — RESERVE MY SEAT — {PRICE} →</button>
+            <button onClick={scrollToCta} className="cta-button mb-3">YES — RESERVE MY SEAT — {PRICE}</button>
             <div className="text-[0.75rem] md:text-[0.85rem] text-[#9CA3AF] mt-2">Only {WORKSHOP.announcement.seats} spots left for {WORKSHOP.announcement.date} batch</div>
             <div className="mt-3 md:mt-4 text-[0.78rem] md:text-[0.88rem] text-[#6b7280] italic px-2">{WORKSHOP.finalPS}</div>
           </div>
@@ -716,7 +716,6 @@ export default function WorkshopOfferPage() {
             <button onClick={scrollToCta} className="sticky-bar-cta group relative overflow-hidden bg-gradient-to-r from-[#0bb158] to-[#0ed668] text-[#010101] font-bold text-[0.75rem] md:text-[0.95rem] py-2.5 md:py-3.5 px-5 md:px-10 rounded-lg uppercase tracking-wide cursor-pointer border-none font-[JetBrains_Mono,ui-monospace,monospace] shadow-[0_0_20px_rgba(11,177,88,0.3)]">
               <span className="relative z-10 flex items-center gap-1.5 md:gap-2">
                 Reserve Now
-                <HiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" size={16} />
               </span>
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.25)] to-transparent sticky-bar-shimmer" />
             </button>
