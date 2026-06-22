@@ -25,6 +25,7 @@ import {
   HiPencilSquare,
   HiAcademicCap,
   HiBolt,
+  HiArrowRight,
 } from "react-icons/hi2";
 import { PiCoffeeBold } from "react-icons/pi";
 import { FaWhatsapp } from "react-icons/fa6";
@@ -691,9 +692,36 @@ export default function WorkshopOfferPage() {
       </footer>
 
       {/* ═══════════ Sticky Bottom Bar ═══════════ */}
-      <div className={`fixed bottom-0 left-0 right-0 z-[999] bg-[rgba(5,5,5,0.95)] border-t border-[rgba(11,177,88,0.2)] py-2 md:py-3 px-3 md:px-6 flex justify-center items-center gap-3 md:gap-5 shadow-[0_-4px_20px_rgba(0,0,0,0.3)] backdrop-blur-[12px] transition-transform duration-400 ${showStickyBar ? "translate-y-0" : "translate-y-full"}`}>
-        <span className="text-[0.75rem] md:text-[0.9rem] text-[#6b7280] flex items-center gap-1"><HiFire className="text-orange-500" size={14} /> {WORKSHOP.announcement.seats} seats left · <strong className="text-[1rem] md:text-[1.2rem] text-[#0bb158] font-extrabold">{PRICE}</strong></span>
-        <button onClick={scrollToCta} className="cta-button !py-2.5 md:!py-3 !px-5 md:!px-8 !text-[0.78rem] md:!text-[0.95rem]">Reserve Now →</button>
+      <div className={`sticky-bottom-bar fixed bottom-0 left-0 right-0 z-[999] transition-transform duration-500 ease-out ${showStickyBar ? "translate-y-0" : "translate-y-full"}`}>
+        {/* Animated top border glow */}
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#0bb158] to-transparent sticky-bar-glow" />
+        <div className="relative bg-[rgba(5,5,5,0.97)] backdrop-blur-[20px] py-2.5 md:py-3.5 px-4 md:px-8">
+          <div className="max-w-5xl mx-auto flex justify-between items-center gap-3 md:gap-6">
+            {/* Left: Info */}
+            <div className="flex flex-col gap-0.5">
+              <div className="flex items-center gap-1.5 md:gap-2">
+                <span className="relative flex h-2 w-2 md:h-2.5 md:w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 md:h-2.5 md:w-2.5 bg-red-500" />
+                </span>
+                <span className="text-[0.65rem] md:text-[0.8rem] text-red-400 font-semibold uppercase tracking-wider">Only {WORKSHOP.announcement.seats} seats left</span>
+              </div>
+              <div className="flex items-center gap-2 md:gap-3">
+                <span className="text-[0.7rem] md:text-[0.85rem] text-[#6b7280] line-through">₹15,000</span>
+                <span className="text-[1rem] md:text-[1.3rem] text-[#0bb158] font-extrabold">{PRICE}</span>
+                <span className="hidden md:inline-block text-[0.65rem] bg-[rgba(11,177,88,0.15)] text-[#0bb158] px-2 py-0.5 rounded-full font-semibold">60% OFF</span>
+              </div>
+            </div>
+            {/* Right: CTA */}
+            <button onClick={scrollToCta} className="sticky-bar-cta group relative overflow-hidden bg-gradient-to-r from-[#0bb158] to-[#0ed668] text-[#010101] font-bold text-[0.75rem] md:text-[0.95rem] py-2.5 md:py-3.5 px-5 md:px-10 rounded-lg uppercase tracking-wide cursor-pointer border-none font-[JetBrains_Mono,ui-monospace,monospace] shadow-[0_0_20px_rgba(11,177,88,0.3)]">
+              <span className="relative z-10 flex items-center gap-1.5 md:gap-2">
+                Reserve Now
+                <HiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" size={16} />
+              </span>
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.25)] to-transparent sticky-bar-shimmer" />
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* ═══════════ Social Proof Toast ═══════════ */}
@@ -737,6 +765,42 @@ export default function WorkshopOfferPage() {
           0%, 100% { box-shadow: 0 0 20px rgba(11,177,88,0.25), 0 0 40px rgba(11,177,88,0.1); }
           50% { box-shadow: 0 0 30px rgba(11,177,88,0.35), 0 0 60px rgba(11,177,88,0.15); }
         }
+        /* ── Sticky Bottom Bar ── */
+        @keyframes sticky-bar-glow-slide {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        @keyframes sticky-bar-shimmer-slide {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(200%); }
+        }
+        .sticky-bar-glow {
+          overflow: hidden;
+        }
+        .sticky-bar-glow::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(90deg, transparent, rgba(11,177,88,0.8), transparent);
+          animation: sticky-bar-glow-slide 3s ease-in-out infinite;
+        }
+        .sticky-bar-shimmer {
+          animation: sticky-bar-shimmer-slide 2.5s ease-in-out infinite;
+        }
+        .sticky-bar-cta {
+          transition: all 0.3s ease;
+        }
+        .sticky-bar-cta:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 0 30px rgba(11,177,88,0.5), 0 0 60px rgba(11,177,88,0.2);
+        }
+        .sticky-bar-cta:active {
+          transform: scale(0.97);
+        }
+
         .cta-button {
           display: inline-block;
           background: linear-gradient(135deg, #0bb158, #0ed668, #0bb158);
