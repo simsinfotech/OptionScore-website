@@ -471,7 +471,7 @@ export default function WorkshopOfferPage() {
           <div className="ws-card flex flex-col md:flex-row gap-6 md:gap-12 items-start p-5 md:p-12 relative overflow-hidden">
             <div className="ws-card-glow" />
             <Image
-              src="/images/instructor.png"
+              src="/founder.jpg"
               alt={WORKSHOP.instructor.name}
               width={180}
               height={180}
