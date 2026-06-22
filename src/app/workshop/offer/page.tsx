@@ -221,14 +221,11 @@ export default function WorkshopOfferPage() {
               {WORKSHOP.hero.badge}
             </span>
 
-            <h1 className="font-mono font-bold text-[1.3rem] md:text-[2.6rem] leading-[1.2] md:leading-[1.15] text-white mb-3 md:mb-4">
-              {WORKSHOP.hero.headline[0]}
-              <span className="text-[#0bb158] [text-shadow:0_0_20px_rgba(11,177,88,0.5),0_0_40px_rgba(11,177,88,0.25)]">
-                {WORKSHOP.hero.headline[1]}
-              </span>
-              <br />
-              {WORKSHOP.hero.headline[2]}
-            </h1>
+            <TypeWriter
+              texts={WORKSHOP.hero.headline}
+              greenIndex={1}
+              className="font-mono font-bold text-[1.3rem] md:text-[2.6rem] leading-[1.2] md:leading-[1.15] text-white mb-3 md:mb-4"
+            />
 
             <p className="text-[0.85rem] md:text-[1.1rem] text-[#6b7280] max-w-[900px] mx-auto mb-6 md:mb-8 leading-[1.6] md:leading-[1.7]">
               {WORKSHOP.hero.sub}
@@ -756,6 +753,13 @@ export default function WorkshopOfferPage() {
           0% { transform: translateX(0); }
           100% { transform: translateX(-33.33%); }
         }
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
+        }
+        .animate-blink {
+          animation: blink 0.8s step-end infinite;
+        }
         @keyframes btn-gradient-shimmer {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
@@ -865,6 +869,68 @@ export default function WorkshopOfferPage() {
         }
       `}</style>
     </div>
+  );
+}
+
+/* ═══════════════════════════════════════════════════
+   TypeWriter effect
+   ═══════════════════════════════════════════════════ */
+
+function TypeWriter({ texts, className, greenIndex }: { texts: readonly string[]; className?: string; greenIndex?: number }) {
+  const full = texts.map((t) => t.trim());
+  const [lineIdx, setLineIdx] = useState(0);
+  const [charIdx, setCharIdx] = useState(0);
+  const [done, setDone] = useState(false);
+
+  useEffect(() => {
+    if (done) return;
+    const currentLine = full[lineIdx] || "";
+    if (charIdx < currentLine.length) {
+      const speed = 35 + Math.random() * 25;
+      const t = setTimeout(() => setCharIdx((c) => c + 1), speed);
+      return () => clearTimeout(t);
+    }
+    // Line done — move to next
+    if (lineIdx < full.length - 1) {
+      const t = setTimeout(() => {
+        setLineIdx((l) => l + 1);
+        setCharIdx(0);
+      }, 300);
+      return () => clearTimeout(t);
+    }
+    // All lines done
+    setDone(true);
+  }, [lineIdx, charIdx, done, full]);
+
+  return (
+    <h1 className={className}>
+      {full.map((line, i) => {
+        let display = "";
+        if (i < lineIdx) display = line;
+        else if (i === lineIdx) display = line.slice(0, charIdx);
+        else display = "";
+
+        const isGreen = greenIndex !== undefined && i === greenIndex;
+        return (
+          <span key={i}>
+            {isGreen ? (
+              <span className="text-[#0bb158] [text-shadow:0_0_20px_rgba(11,177,88,0.5),0_0_40px_rgba(11,177,88,0.25)]">
+                {display}
+              </span>
+            ) : (
+              display
+            )}
+            {i === lineIdx && !done && (
+              <span className="inline-block w-[2px] md:w-[3px] h-[1.1em] bg-[#0bb158] align-middle ml-[2px] animate-blink" />
+            )}
+            {i < full.length - 1 && <br />}
+          </span>
+        );
+      })}
+      {done && (
+        <span className="inline-block w-[2px] md:w-[3px] h-[1.1em] bg-[#0bb158] align-middle ml-[2px] animate-blink" />
+      )}
+    </h1>
   );
 }
 
