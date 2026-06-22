@@ -468,34 +468,39 @@ export default function WorkshopOfferPage() {
 
         {/* ═══════════ Instructor ═══════════ */}
         <WSection label="Your Instructor" title="Who's Teaching This Workshop?" alt>
-          <div className="ws-card flex flex-col md:flex-row gap-6 md:gap-12 items-start p-5 md:p-12 relative overflow-hidden">
+          <div className="ws-card flex flex-col items-center text-center p-6 md:p-12 relative overflow-hidden">
             <div className="ws-card-glow" />
+            {/* Photo */}
             <Image
               src="/founder.jpg"
               alt={WORKSHOP.instructor.name}
               width={180}
               height={180}
-              className="w-[80px] h-[80px] md:w-[180px] md:h-[180px] rounded-full object-cover flex-shrink-0 border-[3px] border-[rgba(11,177,88,0.3)] shadow-[0_0_30px_rgba(11,177,88,0.3)] mx-auto md:mx-0"
+              className="w-[100px] h-[100px] md:w-[160px] md:h-[160px] rounded-full object-cover border-[3px] border-[rgba(11,177,88,0.3)] shadow-[0_0_30px_rgba(11,177,88,0.3)] mb-4 md:mb-5"
             />
-            <div className="text-center md:text-left">
-              <h3 className="font-mono font-bold text-[1.15rem] md:text-[1.5rem] text-white mb-1">{WORKSHOP.instructor.name}</h3>
-              <div className="text-[0.78rem] md:text-[0.9rem] text-[#0bb158] font-semibold mb-3 md:mb-4">{WORKSHOP.instructor.title}</div>
+            {/* Name & Title */}
+            <h3 className="font-mono font-bold text-[1.15rem] md:text-[1.5rem] text-white mb-1">{WORKSHOP.instructor.name}</h3>
+            <div className="text-[0.78rem] md:text-[0.9rem] text-[#0bb158] font-semibold mb-4 md:mb-6">{WORKSHOP.instructor.title}</div>
+            {/* Stats row */}
+            <div className="flex gap-6 md:gap-10 mb-5 md:mb-7 flex-wrap justify-center">
+              {WORKSHOP.instructor.stats.map((stat) => (
+                <div key={stat.label}>
+                  <div className="text-[1.2rem] md:text-[1.6rem] font-extrabold text-[#0bb158]">{stat.value}</div>
+                  <div className="text-[0.65rem] md:text-[0.75rem] text-[#6b7280] uppercase tracking-wide">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+            {/* Bio */}
+            <div className="max-w-[700px]">
               {WORKSHOP.instructor.bio.map((p, i) => (
                 <p key={i} className="text-[0.8rem] md:text-[0.92rem] text-[#6b7280] leading-[1.6] md:leading-[1.7] mb-2 md:mb-3">{p}</p>
               ))}
-              <div className="flex gap-5 md:gap-7 mt-3 md:mt-4 flex-wrap justify-center md:justify-start">
-                {WORKSHOP.instructor.stats.map((stat) => (
-                  <div key={stat.label}>
-                    <div className="text-[1.1rem] md:text-[1.4rem] font-extrabold text-[#0bb158]">{stat.value}</div>
-                    <div className="text-[0.68rem] md:text-[0.75rem] text-[#6b7280] uppercase tracking-wide">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-1.5 md:gap-2 mt-3 md:mt-4 justify-center md:justify-start">
-                {WORKSHOP.instructor.credentials.map((c) => (
-                  <span key={c} className="text-[0.65rem] md:text-[0.75rem] font-semibold px-2 md:px-3 py-0.5 md:py-1 rounded-full bg-[rgba(11,177,88,0.1)] text-[#0bb158]">{c}</span>
-                ))}
-              </div>
+            </div>
+            {/* Credential tags */}
+            <div className="flex flex-wrap gap-1.5 md:gap-2 mt-3 md:mt-4 justify-center">
+              {WORKSHOP.instructor.credentials.map((c) => (
+                <span key={c} className="text-[0.65rem] md:text-[0.75rem] font-semibold px-2 md:px-3 py-0.5 md:py-1 rounded-full bg-[rgba(11,177,88,0.1)] text-[#0bb158]">{c}</span>
+              ))}
             </div>
           </div>
         </WSection>
