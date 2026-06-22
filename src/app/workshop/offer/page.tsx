@@ -19,7 +19,14 @@ import {
   HiStar,
   HiCheckCircle,
   HiXCircle,
+  HiChartBar,
+  HiChatBubbleLeftRight,
+  HiPresentationChartLine,
+  HiPencilSquare,
+  HiAcademicCap,
+  HiBolt,
 } from "react-icons/hi2";
+import { PiCoffeeBold } from "react-icons/pi";
 import { FaWhatsapp } from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
@@ -311,10 +318,10 @@ export default function WorkshopOfferPage() {
               <div className="relative ml-6 border-l-[3px] border-[rgba(255,255,255,0.06)]">
                 {day.sessions.map((s, i) => (
                   <div key={i} className="flex gap-6 pb-5 relative pl-8">
-                    <div className={`absolute left-[-9px] top-1 w-[50px] h-[50px] rounded-full border-2 flex items-center justify-center flex-shrink-0 z-[1] text-[#6b7280] ${
-                      s.type === "live" ? "border-[#0bb158] bg-[rgba(11,177,88,0.08)] text-[#0bb158]" : s.type === "break" ? "border-[rgba(11,177,88,0.3)] bg-[rgba(11,177,88,0.05)] text-[#0ed668]" : "border-[rgba(255,255,255,0.08)] bg-[#050505]"
+                    <div className={`absolute left-[-9px] top-1 w-[50px] h-[50px] rounded-full border-2 flex items-center justify-center flex-shrink-0 z-[1] ${
+                      s.type === "live" ? "border-[#0bb158] bg-[rgba(11,177,88,0.08)] text-[#0bb158]" : s.type === "break" ? "border-[rgba(11,177,88,0.3)] bg-[rgba(11,177,88,0.05)] text-[#0ed668]" : "border-[rgba(255,255,255,0.08)] bg-[#050505] text-[#6b7280]"
                     }`}>
-                      <span className="text-[0.7rem] font-mono font-bold">{s.duration}</span>
+                      <TimelineIcon tag={s.tag} type={s.type} />
                     </div>
                     <div className="flex-1 ml-10 pt-1">
                       <div className="text-[0.8rem] font-bold text-[#0bb158] uppercase tracking-wide mb-1">{s.time}</div>
@@ -835,6 +842,18 @@ function Faq({ q, a }: { q: string; a: string }) {
       )}
     </div>
   );
+}
+
+function TimelineIcon({ tag, type }: { tag: string; type: string }) {
+  const size = 22;
+  const t = tag.toUpperCase();
+  if (t.includes("BREAK") || t.includes("LUNCH")) return <PiCoffeeBold size={size} />;
+  if (t.includes("Q&A") || t.includes("CLOSE")) return <HiChatBubbleLeftRight size={size} />;
+  if (t.includes("LIVE MARKET")) return <HiChartBar size={size} />;
+  if (t.includes("HANDS ON") || t.includes("PERSONAL REVIEW")) return <HiPencilSquare size={size} />;
+  if (t.includes("LIVE TEACHING")) return <HiPresentationChartLine size={size} />;
+  if (type === "live") return <HiBolt size={size} />;
+  return <HiAcademicCap size={size} />;
 }
 
 function CountdownTimer() {
