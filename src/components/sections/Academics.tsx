@@ -83,9 +83,10 @@ export function Academics() {
                   Master Black Belt | Director of Faculty, OptionScore Academy
                 </p>
                 <p className="text-text-secondary text-base leading-relaxed mb-4">
-                  Sathya Narayanan is a Commerce professional with over three decades of hands-on
-                  experience spanning global corporations, multinational conglomerates, and high-stakes
-                  turnaround mandates across industries.
+                  Sathya Narayanan is a Commerce professional with a{" "}
+                  <span className="text-accent-cyan font-semibold">Doctorate in Finance from France</span>{" "}
+                  and over three decades of hands-on experience spanning global corporations,
+                  multinational conglomerates, and high-stakes turnaround mandates across industries.
                 </p>
                 <p className="text-text-secondary text-base leading-relaxed">
                   He carries the distinction of a Lean Six Sigma Master Black Belt and has personally
@@ -128,10 +129,11 @@ export function Academics() {
                 The <span className="text-accent-cyan">Professional</span>
               </h4>
               <p className="text-text-secondary text-sm leading-relaxed mb-4">
-                Sathya Narayanan is a Commerce professional with over three decades of hands-on
-                experience spanning global corporations, multinational conglomerates, and high-stakes
-                turnaround mandates across industries. His career is a testament to what disciplined,
-                process-driven thinking can achieve at scale.
+                Sathya Narayanan is a Commerce professional with a{" "}
+                <span className="text-accent-cyan font-semibold">Doctorate in Finance from France</span>{" "}
+                and over three decades of hands-on experience spanning global corporations,
+                multinational conglomerates, and high-stakes turnaround mandates across industries.
+                His career is a testament to what disciplined, process-driven thinking can achieve at scale.
               </p>
               <p className="text-text-secondary text-sm leading-relaxed mb-4">
                 He has held senior roles at institutions of considerable stature — building a rare
