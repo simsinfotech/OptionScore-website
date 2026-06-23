@@ -234,14 +234,6 @@ export default function WorkshopOfferPage() {
               {WORKSHOP.hero.sub}
             </p>
 
-            {/* VSL Placeholder */}
-            <div className="max-w-[800px] mx-auto mb-6 md:mb-10 bg-[#0a0a0a] border border-[rgba(11,177,88,0.2)] rounded-xl md:rounded-2xl aspect-video flex flex-col items-center justify-center cursor-pointer relative overflow-hidden px-4">
-              <div className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-[#0bb158] flex items-center justify-center mb-3 md:mb-4 shadow-[0_0_30px_rgba(11,177,88,0.5)]">
-                <HiPlay size={24} className="text-white ml-0.5 md:ml-1 md:!w-8 md:!h-8" />
-              </div>
-              <p className="text-[0.75rem] md:text-[1rem] text-[#6b7280] text-center leading-snug">{WORKSHOP.hero.vslText}</p>
-            </div>
-
             {/* Hero Stats */}
             <div className="grid grid-cols-2 md:flex md:justify-center gap-3 md:gap-8 mb-5 md:mb-6">
               {WORKSHOP.heroStats.map((s) => (
