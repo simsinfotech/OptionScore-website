@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { LEGAL_LAST_UPDATED, isPlaceholder } from "@/lib/legal";
+import { BackButton } from "./BackButton";
 
 /**
  * Shared layout for all legal pages (Terms, Privacy, Refund, Shipping, Contact).
@@ -41,12 +42,9 @@ export function LegalPage({
               className="h-6 w-auto"
             />
           </Link>
-          <Link
-            href="/"
-            className="text-sm text-text-muted hover:text-accent-cyan transition-colors"
-          >
-            &larr; Back to home
-          </Link>
+          <BackButton className="text-sm text-text-muted hover:text-accent-cyan transition-colors">
+            &larr; Back
+          </BackButton>
         </div>
       </header>
 
@@ -68,12 +66,9 @@ export function LegalPage({
         <div className="space-y-10">{children}</div>
 
         <div className="mt-16 pt-8 border-t border-card-border">
-          <Link
-            href="/"
-            className="text-sm text-accent-cyan hover:underline"
-          >
-            &larr; Back to OptionScore
-          </Link>
+          <BackButton className="text-sm text-accent-cyan hover:underline">
+            &larr; Back
+          </BackButton>
         </div>
       </main>
     </div>
