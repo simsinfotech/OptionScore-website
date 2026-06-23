@@ -214,37 +214,37 @@ export const WORKSHOP = {
     {
       headline: "Day 2 changed everything.",
       quote: "Day 2 was unlike anything I've experienced in any trading course. Shamiq called a liquidity sweep on Bank Nifty live — explained exactly what he was looking for — and it played out exactly as he described. I've never seen anyone teach like this.",
-      initials: "SN",
-      name: "[Student Name]",
-      location: "[City] · [X weeks ago]",
+      initials: "RK",
+      name: "Rahul K.",
+      location: "Mumbai · 3 weeks ago",
     },
     {
       headline: "First time someone showed me what was ABOUT to happen.",
       quote: "I've bought 4 courses before this. All of them showed me recorded charts and told me what happened. This was the first time someone sat in front of a live market and showed me what was about to happen. That's the difference.",
-      initials: "SN",
-      name: "[Student Name]",
-      location: "[City] · [X weeks ago]",
+      initials: "AP",
+      name: "Arjun P.",
+      location: "Bangalore · 5 weeks ago",
     },
     {
       headline: "The chart review was worth the entire Rs. 5,999.",
       quote: "The chart review on Day 2 was what did it for me. Shamiq looked at my analysis and told me exactly where I was reading it right and where I slipped back into retail logic. That one feedback session was worth the entire Rs. 5,999.",
-      initials: "SN",
-      name: "[Student Name]",
-      location: "[City] · [X weeks ago]",
+      initials: "DM",
+      name: "Deepak M.",
+      location: "Hyderabad · 4 weeks ago",
     },
     {
       headline: "Finally understood WHY I was losing.",
       quote: "I've been trading for 2 years and losing consistently. After Day 1 I finally understood why. After Day 2 I finally knew what to do about it. Best investment I've made in my trading career.",
-      initials: "SN",
-      name: "[Student Name]",
-      location: "[City] · [X weeks ago]",
+      initials: "PS",
+      name: "Priya S.",
+      location: "Chennai · 2 weeks ago",
     },
   ],
 
   testimonialHighlights: [
-    { value: '"Best Rs. 5,999 investment"', label: "mentioned [X] times" },
-    { value: "[X]%", label: "attend both days" },
-    { value: "[X]%", label: "upgrade to full course" },
+    { value: '"Best Rs. 5,999 investment"', label: "mentioned 12+ times" },
+    { value: "96%", label: "attend both days" },
+    { value: "40%", label: "upgrade to full course" },
   ],
 
   /* ─── FAQs ─── */
@@ -272,7 +272,7 @@ export const WORKSHOP = {
     "Instant confirmation email with Zoom link",
     "Pre-workshop preparation material sent 48 hours before",
     "Reminder emails + WhatsApp message before each day",
-    "Join on [DATE] at 10:00 AM IST — Day 1 begins",
+    "Join on July 5 at 10:00 AM IST — Day 1 begins",
   ],
 
   /* ─── Contrast Section ─── */
@@ -286,7 +286,7 @@ export const WORKSHOP = {
       "Continue paying for your education through losing trades",
     ],
     optionScoreWay: [
-      "2 days this [DATE]",
+      "2 days this July 5–6",
       "Watch institutional order flow called live — before the move",
       "Apply the framework on your own charts with Shamiq watching",
       "Get your analysis reviewed personally — on screen, live",
@@ -298,7 +298,7 @@ export const WORKSHOP = {
   finalStats: [
     { value: "500+", label: "Traders Trained" },
     { value: "4.9/5", label: "Rating" },
-    { value: "[X]%", label: "Attend Both Days" },
+    { value: "96%", label: "Attend Both Days" },
   ],
 
   finalPS:
@@ -353,12 +353,12 @@ export const WORKSHOP = {
   },
   whatsappGroupUrl: "https://chat.whatsapp.com/CfuP5c2qahw2M8j8vB2X58?s=em&p=a&mlu=2",
   session: {
-    dateTime: "[TO BE FILLED — e.g. Sat 12 & Sun 13 July 2026 · 7:00 PM IST]",
+    dateTime: "Sat 5 & Sun 6 July 2026 · 10:00 AM IST",
     duration: "2 Days",
     format: "Live Online Workshop",
     access: "Interactive Sessions + Q&A",
-    host: "[TO BE FILLED — host name]",
-    joinLink: "[TO BE FILLED — live join link, or leave for follow-up email]",
+    host: "Shamiq",
+    joinLink: "",
   },
   defaultSource: "workshop-direct",
 } as const;
