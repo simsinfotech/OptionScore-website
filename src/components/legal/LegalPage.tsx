@@ -25,7 +25,7 @@ export function LegalPage({
     <div className="min-h-screen bg-background grid-bg">
       {/* Header */}
       <header className="border-b border-card-border">
-        <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-center">
           <Link href="/" className="flex items-center gap-3">
             <Image
               src="/images/logo.png"
@@ -42,13 +42,13 @@ export function LegalPage({
               className="h-6 w-auto"
             />
           </Link>
-          <BackButton className="text-sm text-text-muted hover:text-accent-cyan transition-colors">
-            &larr; Back
-          </BackButton>
         </div>
       </header>
 
       <main className="max-w-3xl mx-auto px-6 py-16">
+        <BackButton className="text-sm text-text-muted hover:text-accent-cyan transition-colors mb-6 inline-block">
+          &larr; Back
+        </BackButton>
         <h1 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-3">
           {title}
           {accentWord && <span className="text-accent-cyan"> {accentWord}</span>}
