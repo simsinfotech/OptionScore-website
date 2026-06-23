@@ -683,7 +683,6 @@ export default function WorkshopOfferPage() {
             <Image src="/images/logo-text.png" alt="OptionScore" width={120} height={20} className="h-4 md:h-5 w-auto" />
           </Link>
         </div>
-        <div className="text-[10px] md:text-[12px] text-[#6b7280] mb-3">{WORKSHOP.footer.rera}</div>
         <div className="flex justify-center gap-3 md:gap-6 flex-wrap mb-3 text-[0.7rem] md:text-[0.8rem]">
           <Link href="/privacy-policy" className="hover:text-[#0bb158]">Privacy Policy</Link>
           <Link href="/terms" className="hover:text-[#0bb158]">Terms</Link>

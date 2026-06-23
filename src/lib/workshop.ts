@@ -18,8 +18,8 @@ export const WORKSHOP = {
 
   /* ─── Announcement bar ─── */
   announcement: {
-    date: "[DATE PLACEHOLDER]",
-    seats: "[X]",
+    date: "July 1st Week",
+    seats: "19",
   },
 
   /* ─── Hero ─── */
@@ -35,10 +35,10 @@ export const WORKSHOP = {
   },
 
   heroStats: [
-    { value: "[X]", label: "Traders Trained" },
+    { value: "500+", label: "Traders Trained" },
     { value: "4.9/5", label: "Rating" },
     { value: "Live", label: "Chart Reviews" },
-    { value: "Max [X]", label: "Seats" },
+    { value: "Max 19", label: "Seats" },
   ] as const,
 
   /* ─── Experience Cards ─── */
@@ -90,7 +90,7 @@ export const WORKSHOP = {
   /* ─── Schedule ─── */
   schedule: {
     day1: {
-      header: "DAY 1 — [DATE PLACEHOLDER] · 10:00 AM to 5:00 PM IST",
+      header: "DAY 1 — Saturday, July 5 · 10:00 AM to 5:00 PM IST",
       sessions: [
         { time: "10:00 AM – 10:15 AM", duration: "15 min", title: "Welcome & Setup", description: "Introductions, platform check, overview of the two days ahead.", tag: "", type: "default" as const },
         { time: "10:15 AM – 11:30 AM", duration: "75 min", title: "Session 1 — How Institutions Move Price", description: "Liquidity pools. Stop hunts. Why retail traders are always on the wrong side. Live chart examples on Nifty and XAUUSD throughout.", tag: "LIVE TEACHING", type: "live" as const },
@@ -104,7 +104,7 @@ export const WORKSHOP = {
       ],
     },
     day2: {
-      header: "DAY 2 — [DATE PLACEHOLDER] · 9:00 AM to 3:00 PM IST",
+      header: "DAY 2 — Sunday, July 6 · 9:00 AM to 3:00 PM IST",
       sessions: [
         { time: "9:00 AM – 9:15 AM", duration: "15 min", title: "Day 2 Briefing", description: "Recap of Day 1 framework. What we're watching for in today's session.", tag: "", type: "default" as const },
         { time: "9:15 AM – 11:30 AM", duration: "135 min", title: "LIVE MARKET OPEN — Shamiq Trades Live", description: "9:15am. Charts open. Real market. Real session. Shamiq calls setups live — identifying liquidity, calling the sweep, executing — while explaining every decision out loud. You watch, ask questions, and see the framework in action on today's market.", tag: "LIVE MARKET", type: "live" as const },
@@ -296,7 +296,7 @@ export const WORKSHOP = {
   },
 
   finalStats: [
-    { value: "[X]", label: "Traders Trained" },
+    { value: "500+", label: "Traders Trained" },
     { value: "4.9/5", label: "Rating" },
     { value: "[X]%", label: "Attend Both Days" },
   ],
@@ -323,7 +323,6 @@ export const WORKSHOP = {
 
   /* ─── Footer ─── */
   footer: {
-    rera: "A SimsInfotech Initiative · RERA: PRM/KA/RERA/1251/309/AG/251029/006418",
     disclaimer:
       "DISCLAIMER: This workshop is for educational purposes only. It does not include trade signals, tips, or personalised investment recommendations. No financial advice is provided. Trading involves risk. Past performance is not indicative of future results.",
   },
