@@ -1023,12 +1023,8 @@ function CountdownTimer() {
   const [display, setDisplay] = useState("");
 
   useEffect(() => {
-    let stored = localStorage.getItem("optionscore_countdown_end");
-    if (!stored) {
-      stored = String(Date.now() + 48 * 3600000);
-      localStorage.setItem("optionscore_countdown_end", stored);
-    }
-    const end = parseInt(stored);
+    // Workshop starts July 5, 2026 at 10:00 AM IST (UTC+5:30)
+    const end = new Date("2026-07-05T04:30:00Z").getTime();
 
     const update = () => {
       const diff = Math.max(0, end - Date.now());
