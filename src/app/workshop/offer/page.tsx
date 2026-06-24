@@ -179,10 +179,13 @@ export default function WorkshopOfferPage() {
 
   return (
     <div className="min-h-screen bg-[#020a05] text-[#d1d5db] flex flex-col relative overflow-x-hidden">
-      {/* Background glow */}
+      {/* Background */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,rgba(11,177,88,0.35)_0%,transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_60%_at_50%_120%,rgba(11,177,88,0.2)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_130%_90%_at_50%_-10%,rgba(11,177,88,0.28)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_0%_50%,rgba(11,177,88,0.12)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_100%_50%,rgba(11,177,88,0.12)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_70%_at_50%_110%,rgba(11,177,88,0.22)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,177,88,0.06)_0%,transparent_30%,transparent_70%,rgba(11,177,88,0.06)_100%)]" />
       </div>
 
       {/* ═══════════ Navbar ═══════════ */}
