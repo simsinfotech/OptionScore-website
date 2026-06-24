@@ -181,11 +181,11 @@ export default function WorkshopOfferPage() {
     <div className="min-h-screen bg-[#020a05] text-[#d1d5db] flex flex-col relative overflow-x-hidden">
       {/* Background */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_130%_90%_at_50%_-10%,rgba(11,177,88,0.28)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_0%_50%,rgba(11,177,88,0.12)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_100%_50%,rgba(11,177,88,0.12)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_70%_at_50%_110%,rgba(11,177,88,0.22)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,177,88,0.06)_0%,transparent_30%,transparent_70%,rgba(11,177,88,0.06)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_130%_90%_at_50%_-10%,rgba(11,177,88,0.5)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_0%_50%,rgba(11,177,88,0.25)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_100%_50%,rgba(11,177,88,0.25)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_70%_at_50%_110%,rgba(11,177,88,0.4)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,177,88,0.1)_0%,transparent_30%,transparent_70%,rgba(11,177,88,0.1)_100%)]" />
       </div>
 
       {/* ═══════════ Navbar ═══════════ */}
