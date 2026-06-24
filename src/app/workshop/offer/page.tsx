@@ -184,18 +184,7 @@ export default function WorkshopOfferPage() {
 
       {/* ═══════════ Marquee Announcement Bar ═══════════ */}
       <div className="bg-[rgba(11,177,88,0.05)] border-b border-[rgba(11,177,88,0.12)] overflow-hidden whitespace-nowrap py-1.5 md:py-2 text-[0.7rem] md:text-[0.8rem] text-[#9CA3AF] relative z-[1]">
-        <div className="flex w-max animate-[marquee_20s_linear_infinite]">
-          {[0, 1].map((i) => (
-            <span key={i} className="flex-shrink-0 px-8">
-              Next Batch: {WORKSHOP.announcement.date} &nbsp;·&nbsp; {WORKSHOP.announcement.seats} seats remaining &nbsp;·&nbsp; Rs. {WORKSHOP_FEE_RUPEES.toLocaleString("en-IN")}
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              Next Batch: {WORKSHOP.announcement.date} &nbsp;·&nbsp; {WORKSHOP.announcement.seats} seats remaining &nbsp;·&nbsp; Rs. {WORKSHOP_FEE_RUPEES.toLocaleString("en-IN")}
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              Next Batch: {WORKSHOP.announcement.date} &nbsp;·&nbsp; {WORKSHOP.announcement.seats} seats remaining &nbsp;·&nbsp; Rs. {WORKSHOP_FEE_RUPEES.toLocaleString("en-IN")}
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span>
-          ))}
-        </div>
+        <MarqueeText text={`Next Batch: ${WORKSHOP.announcement.date}  ·  ${WORKSHOP.announcement.seats} seats remaining  ·  Rs. ${WORKSHOP_FEE_RUPEES.toLocaleString("en-IN")}`} />
       </div>
 
       <main className="flex-1 w-full relative z-[1]">
@@ -917,6 +906,19 @@ function CountdownTimer() {
           </div>
         );
       })}
+    </div>
+  );
+}
+
+function MarqueeText({ text }: { text: string }) {
+  const sep = "     ★     ";
+  const chunk = `${text}${sep}`;
+  // Repeat enough times to fill wide screens, then duplicate for seamless loop
+  const repeat = chunk.repeat(6);
+  return (
+    <div className="flex w-max animate-[marquee_30s_linear_infinite]">
+      <span className="flex-shrink-0">{repeat}</span>
+      <span className="flex-shrink-0">{repeat}</span>
     </div>
   );
 }
