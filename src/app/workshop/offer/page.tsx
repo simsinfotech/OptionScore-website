@@ -178,7 +178,7 @@ export default function WorkshopOfferPage() {
             <span className="hidden lg:inline text-[0.9rem] text-white font-bold leading-[1.2] font-mono border-l border-[rgba(255,255,255,0.2)] pl-3 ml-2">Real-Market Trading Education for Retail Traders</span>
           </button>
           <div className="flex items-center gap-1 md:gap-5">
-            <div className="hidden md:flex items-center gap-5 text-[0.8rem] text-[#9CA3AF]">
+            <div className="hidden md:flex items-center gap-5 text-[0.8rem] text-[#9CA3AF] font-mono">
               <a href="#schedule" onClick={(e) => { e.preventDefault(); document.getElementById("schedule")?.scrollIntoView({ behavior: "smooth" }); }} className="hover:text-white transition-colors">Schedule</a>
               <a href="#instructor" onClick={(e) => { e.preventDefault(); document.getElementById("instructor")?.scrollIntoView({ behavior: "smooth" }); }} className="hover:text-white transition-colors">Instructor</a>
               <a href="#testimonials" onClick={(e) => { e.preventDefault(); document.getElementById("testimonials")?.scrollIntoView({ behavior: "smooth" }); }} className="hover:text-white transition-colors">Reviews</a>
