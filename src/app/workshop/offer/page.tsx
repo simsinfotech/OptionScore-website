@@ -175,7 +175,7 @@ export default function WorkshopOfferPage() {
           <button onClick={() => router.back()} className="flex items-center gap-2 cursor-pointer">
             <Image src="/images/logo.png" alt="OptionScore" width={64} height={64} className="h-6 w-6 md:h-8 md:w-8" />
             <Image src="/images/logo-text.png" alt="OptionScore" width={320} height={56} className="h-4 md:h-5 w-auto" />
-            <span className="hidden md:inline text-[0.7rem] text-[#6b7280] border-l border-[rgba(255,255,255,0.1)] pl-2 ml-1">Real-Market Trading Education for Retail Traders</span>
+            <span className="hidden lg:inline text-[0.75rem] text-[#9CA3AF] border-l border-[rgba(255,255,255,0.15)] pl-3 ml-2">Real-Market Trading Education for Retail Traders</span>
           </button>
           <button onClick={scrollToCta} className="bg-[#0bb158] text-black text-[0.7rem] md:text-xs font-bold px-3 md:px-5 py-1.5 md:py-2 rounded-md hover:bg-[#0ed668] transition-colors">
             Reserve Seat
