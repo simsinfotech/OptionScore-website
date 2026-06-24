@@ -177,9 +177,17 @@ export default function WorkshopOfferPage() {
             <Image src="/images/logo-text.png" alt="OptionScore" width={320} height={56} className="h-4 md:h-5 w-auto" />
             <span className="hidden lg:inline text-[0.9rem] text-white font-bold leading-[1.2] font-mono border-l border-[rgba(255,255,255,0.2)] pl-3 ml-2">Real-Market Trading Education for Retail Traders</span>
           </button>
-          <button onClick={scrollToCta} className="bg-[#0bb158] text-black text-[0.7rem] md:text-xs font-bold px-3 md:px-5 py-1.5 md:py-2 rounded-md hover:bg-[#0ed668] transition-colors">
-            Reserve Seat
-          </button>
+          <div className="flex items-center gap-1 md:gap-5">
+            <div className="hidden md:flex items-center gap-5 text-[0.8rem] text-[#9CA3AF]">
+              <a href="#schedule" onClick={(e) => { e.preventDefault(); document.getElementById("schedule")?.scrollIntoView({ behavior: "smooth" }); }} className="hover:text-white transition-colors">Schedule</a>
+              <a href="#instructor" onClick={(e) => { e.preventDefault(); document.getElementById("instructor")?.scrollIntoView({ behavior: "smooth" }); }} className="hover:text-white transition-colors">Instructor</a>
+              <a href="#testimonials" onClick={(e) => { e.preventDefault(); document.getElementById("testimonials")?.scrollIntoView({ behavior: "smooth" }); }} className="hover:text-white transition-colors">Reviews</a>
+              <a href="#faq" onClick={(e) => { e.preventDefault(); document.getElementById("faq")?.scrollIntoView({ behavior: "smooth" }); }} className="hover:text-white transition-colors">FAQ</a>
+            </div>
+            <button onClick={scrollToCta} className="bg-[#0bb158] text-black text-[0.7rem] md:text-xs font-bold px-3 md:px-5 py-1.5 md:py-2 rounded-md hover:bg-[#0ed668] transition-colors">
+              Reserve Seat
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -270,7 +278,7 @@ export default function WorkshopOfferPage() {
         </WSection>
 
         {/* ═══════════ Schedule ═══════════ */}
-        <WSection label="The 2-Day Schedule" title={<>Every Hour. Mapped.<br />Nothing Left to Chance.</>}>
+        <WSection id="schedule" label="The 2-Day Schedule" title={<>Every Hour. Mapped.<br />Nothing Left to Chance.</>}>
           {[WORKSHOP.schedule.day1, WORKSHOP.schedule.day2].map((day) => (
             <div key={day.header} className="mb-8 md:mb-12">
               <div className="text-center text-[0.75rem] md:text-[1.1rem] font-bold text-[#0bb158] bg-[rgba(11,177,88,0.08)] border border-[rgba(11,177,88,0.2)] rounded-lg py-2.5 md:py-3.5 px-3 md:px-6 mb-6 md:mb-8 tracking-wide">
@@ -414,7 +422,7 @@ export default function WorkshopOfferPage() {
         </WSection>
 
         {/* ═══════════ Instructor ═══════════ */}
-        <WSection label="Your Instructor" title="Who's Teaching This Workshop?" alt>
+        <WSection id="instructor" label="Your Instructor" title="Who's Teaching This Workshop?" alt>
           <div className="ws-card flex flex-col items-center text-center p-6 md:p-12">
             {/* Photo */}
             <Image
@@ -452,7 +460,7 @@ export default function WorkshopOfferPage() {
         </WSection>
 
         {/* ═══════════ Testimonials ═══════════ */}
-        <WSection label="What Traders Say" title={<><span className="inline-flex gap-0.5 align-middle">{Array.from({length:5}).map((_,i)=><HiStar key={i} className="text-yellow-400" size={16} />)}</span> 4.9/5 Average Rating</>}>
+        <WSection id="testimonials" label="What Traders Say" title={<><span className="inline-flex gap-0.5 align-middle">{Array.from({length:5}).map((_,i)=><HiStar key={i} className="text-yellow-400" size={16} />)}</span> 4.9/5 Average Rating</>}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
             {WORKSHOP.testimonials.map((t, i) => (
               <div key={i} className="ws-card p-4 md:p-6 flex flex-col">
@@ -480,7 +488,7 @@ export default function WorkshopOfferPage() {
         </WSection>
 
         {/* ═══════════ FAQ ═══════════ */}
-        <WSection title="Frequently Asked Questions" alt>
+        <WSection id="faq" title="Frequently Asked Questions" alt>
           <div className="max-w-[800px] mx-auto">
             {WORKSHOP.faqs.map((f, i) => (
               <Faq key={i} q={f.q} a={f.a} />
@@ -808,12 +816,14 @@ function TypeWriter({ segments, className }: { segments: TypeSegment[]; classNam
    ═══════════════════════════════════════════════════ */
 
 function WSection({
+  id,
   label,
   title,
   children,
   alt,
   dark,
 }: {
+  id?: string;
   label?: string;
   title: React.ReactNode;
   children: React.ReactNode;
@@ -821,7 +831,7 @@ function WSection({
   dark?: boolean;
 }) {
   return (
-    <section className={`py-10 md:py-20 relative z-[1] ${alt ? "bg-[rgba(2,10,5,0.4)]" : ""} ${dark ? "bg-[rgba(2,10,5,0.6)]" : ""}`}>
+    <section id={id} className={`py-10 md:py-20 relative z-[1] ${alt ? "bg-[rgba(2,10,5,0.4)]" : ""} ${dark ? "bg-[rgba(2,10,5,0.6)]" : ""}`}>
       <div className="max-w-full mx-auto px-4 md:px-16">
         {label && (
           <div className="text-center text-[0.7rem] md:text-[0.8rem] font-bold tracking-[0.08em] md:tracking-[0.1em] uppercase text-[#0bb158] mb-2 md:mb-3">
