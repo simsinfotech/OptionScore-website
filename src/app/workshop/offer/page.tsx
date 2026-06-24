@@ -176,7 +176,7 @@ export default function WorkshopOfferPage() {
             <Image src="/images/logo.png" alt="OptionScore" width={32} height={32} className="h-6 w-6 md:h-8 md:w-8" />
             <Image src="/images/logo-text.png" alt="OptionScore" width={120} height={20} className="h-4 md:h-5 w-auto" />
           </button>
-          <button onClick={scrollToCta} className="bg-[#0bb158] text-black text-[0.7rem] md:text-xs font-bold px-3 md:px-5 py-1.5 md:py-2 rounded-md hover:bg-[#0ed668] transition-colors font-mono">
+          <button onClick={scrollToCta} className="bg-[#0bb158] text-black text-[0.7rem] md:text-xs font-bold px-3 md:px-5 py-1.5 md:py-2 rounded-md hover:bg-[#0ed668] transition-colors">
             Reserve Seat
           </button>
         </div>
@@ -198,7 +198,7 @@ export default function WorkshopOfferPage() {
         {/* ═══════════ Hero ═══════════ */}
         <section ref={heroRef} className="py-8 md:py-16 text-center">
           <div className="max-w-full mx-auto px-4 md:px-16">
-            <span className="inline-block bg-[rgba(11,177,88,0.12)] text-[#0bb158] text-[0.6rem] md:text-[0.75rem] font-semibold tracking-[0.08em] md:tracking-[0.1em] uppercase px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border border-[rgba(11,177,88,0.25)] font-mono leading-tight">
+            <span className="inline-block bg-[rgba(11,177,88,0.12)] text-[#0bb158] text-[0.6rem] md:text-[0.75rem] font-semibold tracking-[0.08em] md:tracking-[0.1em] uppercase px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border border-[rgba(11,177,88,0.25)] leading-tight">
               {WORKSHOP.hero.badge}
             </span>
 
@@ -208,7 +208,7 @@ export default function WorkshopOfferPage() {
                 { text: "Live. In Front of You.", green: true, br: true },
                 { text: "Real Market. Real Time." },
               ]}
-              className="font-mono font-bold text-[1.3rem] md:text-[2.6rem] leading-[1.2] md:leading-[1.15] text-white mb-3 md:mb-4"
+              className="font-bold text-[1.3rem] md:text-[2.6rem] leading-[1.2] md:leading-[1.15] text-white mb-3 md:mb-4"
             />
 
             <p className="text-[0.85rem] md:text-[1.1rem] text-[#6b7280] max-w-[900px] mx-auto mb-6 md:mb-8 leading-[1.6] md:leading-[1.7]">
@@ -237,7 +237,7 @@ export default function WorkshopOfferPage() {
 
             <br />
             <button onClick={scrollToCta} className="cta-button inline-block">
-              RESERVE MY SEAT — {PRICE}
+              Reserve My Seat — {PRICE}
             </button>
             <div className="text-center mt-2 md:mt-3 text-[0.7rem] md:text-[0.82rem] text-[#6b7280]">
               Secure payment via Razorpay · UPI, Cards, EMI
@@ -279,7 +279,7 @@ export default function WorkshopOfferPage() {
         <WSection label="The 2-Day Schedule" title={<>Every Hour. Mapped.<br />Nothing Left to Chance.</>}>
           {[WORKSHOP.schedule.day1, WORKSHOP.schedule.day2].map((day) => (
             <div key={day.header} className="mb-8 md:mb-12">
-              <div className="text-center font-mono text-[0.75rem] md:text-[1.1rem] font-bold text-[#0bb158] bg-[rgba(11,177,88,0.08)] border border-[rgba(11,177,88,0.2)] rounded-lg py-2.5 md:py-3.5 px-3 md:px-6 mb-6 md:mb-8 tracking-wide">
+              <div className="text-center text-[0.75rem] md:text-[1.1rem] font-bold text-[#0bb158] bg-[rgba(11,177,88,0.08)] border border-[rgba(11,177,88,0.2)] rounded-lg py-2.5 md:py-3.5 px-3 md:px-6 mb-6 md:mb-8 tracking-wide">
                 {day.header}
               </div>
               <div className="relative ml-4 md:ml-6 border-l-[2px] md:border-l-[3px] border-[rgba(255,255,255,0.06)]">
@@ -292,7 +292,7 @@ export default function WorkshopOfferPage() {
                     </div>
                     <div className="flex-1 ml-6 md:ml-10 pt-0.5 md:pt-1">
                       <div className="text-[0.7rem] md:text-[0.8rem] font-bold text-[#0bb158] uppercase tracking-wide mb-0.5 md:mb-1">{s.time}</div>
-                      <h4 className="font-mono font-bold text-[0.85rem] md:text-[1.05rem] text-white mb-0.5 md:mb-1">
+                      <h4 className="font-bold text-[0.85rem] md:text-[1.05rem] text-white mb-0.5 md:mb-1">
                         {s.title}
                         {s.tag && (
                           <span className={`hidden md:inline-block text-[0.65rem] md:text-[0.7rem] font-bold px-2 md:px-2.5 py-0.5 rounded-full ml-2 ${
@@ -316,7 +316,7 @@ export default function WorkshopOfferPage() {
           <p className="text-center text-[0.82rem] md:text-[1rem] text-[#6b7280] max-w-[700px] mx-auto mb-8 md:mb-12">{WORKSHOP.problem.body}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-10">
             <div className="ws-card-red p-5 md:p-7">
-              <h4 className="font-mono font-bold text-[0.88rem] md:text-[1.05rem] text-red-500 mb-3 md:mb-4 pb-2 md:pb-3 border-b border-[rgba(11,177,88,0.2)] flex items-center gap-2">
+              <h4 className="font-bold text-[0.88rem] md:text-[1.05rem] text-red-500 mb-3 md:mb-4 pb-2 md:pb-3 border-b border-[rgba(11,177,88,0.2)] flex items-center gap-2">
                 <HiXCircle size={16} className="text-red-500 flex-shrink-0" /> What Retail Traders Do
               </h4>
               <ul>
@@ -329,7 +329,7 @@ export default function WorkshopOfferPage() {
               </ul>
             </div>
             <div className="ws-card p-5 md:p-7">
-              <h4 className="font-mono font-bold text-[0.88rem] md:text-[1.05rem] text-[#0bb158] mb-3 md:mb-4 pb-2 md:pb-3 border-b border-[rgba(11,177,88,0.2)] flex items-center gap-2">
+              <h4 className="font-bold text-[0.88rem] md:text-[1.05rem] text-[#0bb158] mb-3 md:mb-4 pb-2 md:pb-3 border-b border-[rgba(11,177,88,0.2)] flex items-center gap-2">
                 <HiCheckCircle size={16} className="text-[#0bb158] flex-shrink-0" /> What Institutions Do
               </h4>
               <ul>
@@ -361,7 +361,7 @@ export default function WorkshopOfferPage() {
                   <HiCheck size={18} />
                 </div>
                 <div className="min-w-0">
-                  <h4 className="font-mono font-bold text-[0.8rem] md:text-[0.95rem] text-white mb-0.5 leading-tight">{item.label}</h4>
+                  <h4 className="font-bold text-[0.8rem] md:text-[0.95rem] text-white mb-0.5 leading-tight">{item.label}</h4>
                   <span className="text-[0.72rem] md:text-[0.8rem] text-[#6b7280] line-through">Rs. {item.value.toLocaleString("en-IN")}</span>
                 </div>
               </div>
@@ -372,7 +372,7 @@ export default function WorkshopOfferPage() {
                 <HiStar size={18} />
               </div>
               <div className="min-w-0">
-                <h4 className="font-mono font-bold text-[0.8rem] md:text-[0.95rem] text-white mb-0.5 leading-tight">Alumni Pricing on Future Workshops &amp; Courses</h4>
+                <h4 className="font-bold text-[0.8rem] md:text-[0.95rem] text-white mb-0.5 leading-tight">Alumni Pricing on Future Workshops &amp; Courses</h4>
                 <span className="text-[0.72rem] md:text-[0.8rem] text-[#0bb158] font-semibold">Priceless</span>
               </div>
             </div>
@@ -431,7 +431,7 @@ export default function WorkshopOfferPage() {
               className="w-[100px] h-[100px] md:w-[160px] md:h-[160px] rounded-full object-cover border-[3px] border-[rgba(255,255,255,0.1)] mb-4 md:mb-5"
             />
             {/* Name & Title */}
-            <h3 className="font-mono font-bold text-[1.15rem] md:text-[1.5rem] text-white mb-1">{WORKSHOP.instructor.name}</h3>
+            <h3 className="font-bold text-[1.15rem] md:text-[1.5rem] text-white mb-1">{WORKSHOP.instructor.name}</h3>
             <div className="text-[0.78rem] md:text-[0.9rem] text-[#0bb158] font-semibold mb-4 md:mb-6">{WORKSHOP.instructor.title}</div>
             {/* Stats row */}
             <div className="flex gap-6 md:gap-10 mb-5 md:mb-7 flex-wrap justify-center">
@@ -505,7 +505,7 @@ export default function WorkshopOfferPage() {
             </p>
 
             <div className="ws-card max-w-[700px] mx-auto border border-[rgba(11,177,88,0.25)] overflow-hidden">
-              <div className="bg-[#0bb158] text-white text-center py-3 md:py-5 text-[0.95rem] md:text-[1.2rem] font-bold font-mono">
+              <div className="bg-[#0bb158] text-white text-center py-3 md:py-5 text-[0.95rem] md:text-[1.2rem] font-bold">
                 2-Day Live Workshop — All Inclusive
               </div>
               <div className="p-5 md:p-9 text-center">
@@ -538,7 +538,7 @@ export default function WorkshopOfferPage() {
                   disabled={paying}
                   className="cta-button w-full !text-[0.95rem] md:!text-[1.2rem] !py-4 md:!py-5 my-4 md:my-5 disabled:opacity-70"
                 >
-                  {paying ? "Processing..." : `RESERVE MY SEAT — ${PRICE}`}
+                  {paying ? "Processing..." : `Reserve My Seat — ${PRICE}`}
                 </button>
 
                 <div className="flex justify-center gap-3 md:gap-4 flex-wrap mb-4 md:mb-6 text-[0.7rem] md:text-[0.8rem] text-[#6b7280]">
@@ -548,7 +548,7 @@ export default function WorkshopOfferPage() {
                 </div>
 
                 <div className="bg-[rgba(5,5,5,0.85)] border border-[rgba(11,177,88,0.12)] rounded-lg p-4 md:p-5 text-left mb-4 md:mb-5">
-                  <h4 className="font-mono font-bold text-[0.82rem] md:text-[0.95rem] text-white mb-1.5 md:mb-2 flex items-center gap-2"><HiShieldCheck size={16} className="text-[#0bb158]" /> My Personal Guarantee</h4>
+                  <h4 className="font-bold text-[0.82rem] md:text-[0.95rem] text-white mb-1.5 md:mb-2 flex items-center gap-2"><HiShieldCheck size={16} className="text-[#0bb158]" /> My Personal Guarantee</h4>
                   <p className="text-[0.78rem] md:text-[0.85rem] text-[#6b7280] leading-[1.5] md:leading-[1.6]">{WORKSHOP.guarantee}</p>
                 </div>
               </div>
@@ -566,10 +566,10 @@ export default function WorkshopOfferPage() {
         {/* ═══════════ Contrast / Final CTA ═══════════ */}
         <section className="py-12 md:py-20 bg-[rgba(1,1,1,0.6)] border-t border-[rgba(11,177,88,0.1)] text-center relative z-[1]">
           <div className="max-w-full mx-auto px-4 md:px-16">
-            <h2 className="font-mono font-bold text-[1.2rem] md:text-[2.2rem] text-white mb-6 md:mb-10">Don&apos;t Keep Trading the Hard Way.</h2>
+            <h2 className="font-bold text-[1.2rem] md:text-[2.2rem] text-white mb-6 md:mb-10">Don&apos;t Keep Trading the Hard Way.</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
               <div className="ws-card-red p-5 md:p-7 text-left">
-                <h4 className="font-mono font-bold text-[0.88rem] md:text-[1.05rem] text-[#6b7280] mb-3 md:mb-4 pb-2 md:pb-3 border-b border-[rgba(11,177,88,0.2)] flex items-center gap-2">
+                <h4 className="font-bold text-[0.88rem] md:text-[1.05rem] text-[#6b7280] mb-3 md:mb-4 pb-2 md:pb-3 border-b border-[rgba(11,177,88,0.2)] flex items-center gap-2">
                   <HiXCircle size={16} className="text-red-500 flex-shrink-0" /> The Hard Way:
                 </h4>
                 <ul>
@@ -582,7 +582,7 @@ export default function WorkshopOfferPage() {
                 </ul>
               </div>
               <div className="ws-card p-5 md:p-7 text-left">
-                <h4 className="font-mono font-bold text-[0.88rem] md:text-[1.05rem] text-[#0bb158] mb-3 md:mb-4 pb-2 md:pb-3 border-b border-[rgba(11,177,88,0.2)] flex items-center gap-2">
+                <h4 className="font-bold text-[0.88rem] md:text-[1.05rem] text-[#0bb158] mb-3 md:mb-4 pb-2 md:pb-3 border-b border-[rgba(11,177,88,0.2)] flex items-center gap-2">
                   <HiCheckCircle size={16} className="text-[#0bb158] flex-shrink-0" /> The OptionScore Way:
                 </h4>
                 <ul>
@@ -640,7 +640,7 @@ export default function WorkshopOfferPage() {
               <span className="text-[1rem] md:text-[1.2rem] text-[#0bb158] font-bold">{PRICE}</span>
               <span className="text-[0.7rem] md:text-[0.82rem] text-[#6b7280]">· {WORKSHOP.announcement.seats} seats left</span>
             </div>
-            <button onClick={scrollToCta} className="bg-[#0bb158] hover:bg-[#0ed668] text-[#010101] font-bold text-[0.75rem] md:text-[0.9rem] py-2.5 md:py-3 px-5 md:px-8 rounded-lg uppercase cursor-pointer border-none font-[JetBrains_Mono,ui-monospace,monospace] transition-colors">
+            <button onClick={scrollToCta} className="bg-[#0bb158] hover:bg-[#0ed668] text-[#010101] font-bold text-[0.75rem] md:text-[0.9rem] py-2.5 md:py-3 px-5 md:px-8 rounded-lg cursor-pointer border-none transition-colors">
               Reserve Now
             </button>
           </div>
@@ -683,8 +683,7 @@ export default function WorkshopOfferPage() {
           border: none;
           cursor: pointer;
           transition: all 0.2s;
-          text-transform: uppercase;
-          font-family: 'JetBrains Mono', ui-monospace, monospace;
+          font-family: inherit;
         }
         @media (min-width: 768px) {
           .cta-button {
