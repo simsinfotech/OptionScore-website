@@ -181,10 +181,7 @@ export default function WorkshopOfferPage() {
     <div className="min-h-screen bg-[#020a05] text-[#d1d5db] flex flex-col relative overflow-x-hidden">
       {/* Background glow */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,rgba(11,177,88,0.25)_0%,transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_120%,rgba(11,177,88,0.18)_0%,transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_100%_at_0%_50%,rgba(11,177,88,0.12)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_100%_at_100%_50%,rgba(11,177,88,0.12)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_60%_at_50%_-20%,rgba(11,177,88,0.12)_0%,transparent_60%)]" />
       </div>
 
       {/* ═══════════ Navbar ═══════════ */}
@@ -201,12 +198,11 @@ export default function WorkshopOfferPage() {
       </nav>
 
       {/* ═══════════ Marquee Announcement Bar ═══════════ */}
-      <div className="bg-[rgba(11,177,88,0.08)] border-b border-[rgba(11,177,88,0.2)] overflow-hidden whitespace-nowrap py-1.5 md:py-2 text-[0.7rem] md:text-[0.8rem] font-semibold text-white relative z-[1]">
+      <div className="bg-[rgba(11,177,88,0.05)] border-b border-[rgba(11,177,88,0.12)] overflow-hidden whitespace-nowrap py-1.5 md:py-2 text-[0.7rem] md:text-[0.8rem] text-[#9CA3AF] relative z-[1]">
         <div className="inline-flex animate-[marquee_20s_linear_infinite]">
           {[0, 1, 2].map((i) => (
             <span key={i} className="flex-shrink-0">
-              <span className="inline-block w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500 align-middle mr-1" /> NEXT BATCH: {WORKSHOP.announcement.date} &nbsp;·&nbsp; Only {WORKSHOP.announcement.seats} Seats &nbsp;·&nbsp;{" "}
-              <button onClick={scrollToCta} className="text-[#0bb158] font-bold underline">Reserve Now</button>
+              Next Batch: {WORKSHOP.announcement.date} &nbsp;·&nbsp; {WORKSHOP.announcement.seats} seats remaining &nbsp;·&nbsp; Rs. {WORKSHOP_FEE_RUPEES.toLocaleString("en-IN")}
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
           ))}
@@ -217,7 +213,7 @@ export default function WorkshopOfferPage() {
         {/* ═══════════ Hero ═══════════ */}
         <section ref={heroRef} className="py-8 md:py-16 text-center">
           <div className="max-w-full mx-auto px-4 md:px-16">
-            <span className="inline-block bg-[#0bb158] text-white text-[0.6rem] md:text-[0.75rem] font-bold tracking-[0.08em] md:tracking-[0.1em] uppercase px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 shadow-[0_0_20px_rgba(11,177,88,0.3)] font-mono leading-tight">
+            <span className="inline-block bg-[rgba(11,177,88,0.12)] text-[#0bb158] text-[0.6rem] md:text-[0.75rem] font-semibold tracking-[0.08em] md:tracking-[0.1em] uppercase px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border border-[rgba(11,177,88,0.25)] font-mono leading-tight">
               {WORKSHOP.hero.badge}
             </span>
 
@@ -245,9 +241,9 @@ export default function WorkshopOfferPage() {
             </div>
 
             {/* Price Box */}
-            <div className="inline-block bg-[#050505] border-2 border-[#0bb158] rounded-xl md:rounded-2xl px-6 md:px-12 py-4 md:py-6 mb-5 md:mb-6 shadow-[0_0_20px_rgba(11,177,88,0.25),0_0_40px_rgba(11,177,88,0.1)] text-center">
+            <div className="inline-block bg-[#050505] border border-[rgba(11,177,88,0.3)] rounded-xl md:rounded-2xl px-6 md:px-12 py-4 md:py-6 mb-5 md:mb-6 text-center">
               <div className="text-[0.85rem] md:text-[1.1rem] text-[#6b7280] line-through">Rs. {WORKSHOP.totalValue.toLocaleString("en-IN")}</div>
-              <div className="text-[1.8rem] md:text-[3rem] font-extrabold text-[#0bb158] [text-shadow:0_0_20px_rgba(11,177,88,0.4)]">
+              <div className="text-[1.8rem] md:text-[3rem] font-extrabold text-[#0bb158] ">
                 {PRICE} <span className="inline-block bg-[#0bb158] text-white text-[0.65rem] md:text-[0.8rem] font-bold px-2 md:px-3 py-0.5 md:py-1 rounded-full align-super ml-1 md:ml-2">88% OFF</span>
               </div>
               <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280] mt-1 md:mt-2">Workshop Price</div>
@@ -261,8 +257,8 @@ export default function WorkshopOfferPage() {
             <div className="text-center mt-2 md:mt-3 text-[0.7rem] md:text-[0.82rem] text-[#6b7280]">
               Razorpay · Secure Payment · Instant Confirmation · EMI Available
             </div>
-            <div className="mt-3 md:mt-4 text-[0.8rem] md:text-[0.95rem] text-[#0bb158] font-bold [text-shadow:0_0_15px_rgba(11,177,88,0.4)]">
-              <HiExclamationTriangle className="inline align-middle mr-1" size={14} /> Only {WORKSHOP.announcement.seats} spots left · Last batch closed before the scheduled date
+            <div className="mt-3 md:mt-4 text-[0.78rem] md:text-[0.88rem] text-[#9CA3AF]">
+              Only {WORKSHOP.announcement.seats} spots left for the {WORKSHOP.announcement.date} batch
             </div>
           </div>
         </section>
@@ -271,9 +267,8 @@ export default function WorkshopOfferPage() {
         <WSection label="What Happens Inside This Workshop" title={<>Not Theory. Not Slides.<br />Live Markets. Live Feedback. Live Trading.</>} alt>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-7 mb-4 md:mb-7">
             {WORKSHOP.experienceCards.map((card) => (
-              <div key={card.title} className="ws-card p-5 md:p-8 relative overflow-hidden">
-                <div className="ws-card-glow" />
-                <span className="inline-block bg-[#0bb158] text-white text-[0.7rem] md:text-[0.75rem] font-bold px-3 py-1 rounded-full mb-3 md:mb-4">
+              <div key={card.title} className="ws-card p-5 md:p-8">
+                <span className="inline-block text-[#0bb158] text-[0.7rem] md:text-[0.75rem] font-semibold mb-2 md:mb-3 uppercase tracking-wide">
                   {card.tag}
                 </span>
                 <h3 className="font-mono font-bold text-[1rem] md:text-[1.25rem] text-white mb-2">{card.title}</h3>
@@ -295,8 +290,7 @@ export default function WorkshopOfferPage() {
               </div>
             ))}
           </div>
-          <div className="text-center bg-[rgba(11,177,88,0.08)] border-2 border-[#0bb158] rounded-xl md:rounded-2xl p-4 md:p-5 font-semibold text-[0.82rem] md:text-[1rem] text-[#0ed668] relative overflow-hidden">
-            <div className="ws-card-glow" />
+          <div className="text-center bg-[rgba(11,177,88,0.06)] border border-[rgba(11,177,88,0.2)] rounded-xl md:rounded-2xl p-4 md:p-5 font-semibold text-[0.82rem] md:text-[1rem] text-[#0ed668]">
             {WORKSHOP.buildSummary}
           </div>
         </WSection>
@@ -355,8 +349,7 @@ export default function WorkshopOfferPage() {
                 ))}
               </ul>
             </div>
-            <div className="ws-card p-5 md:p-7 relative overflow-hidden">
-              <div className="ws-card-glow" />
+            <div className="ws-card p-5 md:p-7">
               <h4 className="font-mono font-bold text-[0.88rem] md:text-[1.05rem] text-[#0bb158] mb-3 md:mb-4 pb-2 md:pb-3 border-b border-[rgba(11,177,88,0.2)] flex items-center gap-2">
                 <HiCheckCircle size={16} className="text-[#0bb158] flex-shrink-0" /> What Institutions Do
               </h4>
@@ -384,9 +377,8 @@ export default function WorkshopOfferPage() {
         <WSection title={`Everything Included in Your ${PRICE} Workshop Seat`} alt>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5 mb-6 md:mb-8">
             {WORKSHOP.valueStack.map((item) => (
-              <div key={item.label} className="ws-card flex gap-3 md:gap-4 p-3.5 md:p-5 relative overflow-hidden">
-                <div className="ws-card-glow" />
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-[rgba(11,177,88,0.1)] text-[#0bb158] rounded-lg flex items-center justify-center flex-shrink-0">
+              <div key={item.label} className="ws-card flex gap-3 md:gap-4 p-3.5 md:p-5">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-[rgba(11,177,88,0.08)] text-[#0bb158] rounded-lg flex items-center justify-center flex-shrink-0">
                   <HiCheck size={18} />
                 </div>
                 <div className="min-w-0">
@@ -396,9 +388,8 @@ export default function WorkshopOfferPage() {
               </div>
             ))}
             {/* Alumni pricing card */}
-            <div className="ws-card flex gap-3 md:gap-4 p-3.5 md:p-5 relative overflow-hidden">
-              <div className="ws-card-glow" />
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-[rgba(11,177,88,0.1)] text-[#0bb158] rounded-lg flex items-center justify-center flex-shrink-0">
+            <div className="ws-card flex gap-3 md:gap-4 p-3.5 md:p-5">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-[rgba(11,177,88,0.08)] text-[#0bb158] rounded-lg flex items-center justify-center flex-shrink-0">
                 <HiStar size={18} />
               </div>
               <div className="min-w-0">
@@ -407,10 +398,9 @@ export default function WorkshopOfferPage() {
               </div>
             </div>
           </div>
-          <div className="ws-card text-center p-5 md:p-8 relative overflow-hidden">
-            <div className="ws-card-glow" />
+          <div className="ws-card text-center p-5 md:p-8">
             <div className="text-[0.88rem] md:text-[1.1rem] text-[#6b7280] line-through">Total Value: Rs. {WORKSHOP.totalValue.toLocaleString("en-IN")}</div>
-            <div className="text-[2rem] md:text-[3rem] font-extrabold text-[#0bb158] my-1 md:my-2 [text-shadow:0_0_20px_rgba(11,177,88,0.4)]">{PRICE}</div>
+            <div className="text-[2rem] md:text-[3rem] font-extrabold text-[#0bb158] my-1 md:my-2 ">{PRICE}</div>
             <div className="inline-block bg-[#0bb158] text-white px-3 md:px-4 py-1 rounded-full font-bold text-[0.75rem] md:text-[0.85rem]">
               You Save Rs. {(WORKSHOP.totalValue - WORKSHOP_FEE_RUPEES).toLocaleString("en-IN")} (88% OFF)
             </div>
@@ -460,15 +450,14 @@ export default function WorkshopOfferPage() {
 
         {/* ═══════════ Instructor ═══════════ */}
         <WSection label="Your Instructor" title="Who's Teaching This Workshop?" alt>
-          <div className="ws-card flex flex-col items-center text-center p-6 md:p-12 relative overflow-hidden">
-            <div className="ws-card-glow" />
+          <div className="ws-card flex flex-col items-center text-center p-6 md:p-12">
             {/* Photo */}
             <Image
               src="/founder.jpg"
               alt={WORKSHOP.instructor.name}
               width={180}
               height={180}
-              className="w-[100px] h-[100px] md:w-[160px] md:h-[160px] rounded-full object-cover border-[3px] border-[rgba(11,177,88,0.3)] shadow-[0_0_30px_rgba(11,177,88,0.3)] mb-4 md:mb-5"
+              className="w-[100px] h-[100px] md:w-[160px] md:h-[160px] rounded-full object-cover border-[3px] border-[rgba(255,255,255,0.1)] mb-4 md:mb-5"
             />
             {/* Name & Title */}
             <h3 className="font-mono font-bold text-[1.15rem] md:text-[1.5rem] text-white mb-1">{WORKSHOP.instructor.name}</h3>
@@ -501,17 +490,15 @@ export default function WorkshopOfferPage() {
         <WSection label="What Traders Say" title={<><span className="inline-flex gap-0.5 align-middle">{Array.from({length:5}).map((_,i)=><HiStar key={i} className="text-yellow-400" size={16} />)}</span> 4.9/5 Average Rating</>}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
             {WORKSHOP.testimonials.map((t, i) => (
-              <div key={i} className="ws-card p-4 md:p-6 flex flex-col relative overflow-hidden">
-                <div className="ws-card-glow" />
-                <div className="flex gap-0.5 mb-2">{Array.from({length:5}).map((_,j)=><HiStar key={j} className="text-yellow-400" size={14} />)}</div>
-                <div className="font-bold text-[0.82rem] md:text-[0.95rem] text-white mb-1.5 md:mb-2">{t.headline}</div>
-                <blockquote className="text-[0.78rem] md:text-[0.88rem] text-[#6b7280] italic leading-[1.5] md:leading-[1.6] mb-2 md:mb-3 flex-1">&ldquo;{t.quote}&rdquo;</blockquote>
-                <div className="flex items-center gap-2 mt-auto">
-                  <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-[rgba(11,177,88,0.15)] text-[#0bb158] flex items-center justify-center font-bold text-[0.7rem] md:text-[0.8rem]">{t.initials}</div>
+              <div key={i} className="ws-card p-4 md:p-6 flex flex-col">
+                <div className="flex gap-0.5 mb-2">{Array.from({length:5}).map((_,j)=><HiStar key={j} className="text-yellow-400" size={13} />)}</div>
+                <div className="font-bold text-[0.82rem] md:text-[0.95rem] text-white mb-1.5 md:mb-2">&ldquo;{t.headline}&rdquo;</div>
+                <p className="text-[0.78rem] md:text-[0.88rem] text-[#9CA3AF] leading-[1.5] md:leading-[1.6] mb-3 md:mb-4 flex-1">{t.quote}</p>
+                <div className="flex items-center gap-2.5 mt-auto pt-3 border-t border-[rgba(255,255,255,0.06)]">
+                  <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-[rgba(255,255,255,0.08)] text-[#d1d5db] flex items-center justify-center font-semibold text-[0.7rem] md:text-[0.8rem]">{t.initials}</div>
                   <div>
-                    <div className="font-bold text-[0.78rem] md:text-[0.85rem] text-white">{t.name}</div>
+                    <div className="font-semibold text-[0.78rem] md:text-[0.85rem] text-white">{t.name}</div>
                     <div className="text-[0.68rem] md:text-[0.75rem] text-[#6b7280]">{t.location}</div>
-                    <div className="text-[0.62rem] md:text-[0.7rem] text-[#0bb158] font-semibold flex items-center gap-1"><HiCheckCircle size={10} /> Verified Attendee</div>
                   </div>
                 </div>
               </div>
@@ -547,8 +534,7 @@ export default function WorkshopOfferPage() {
               <HiExclamationTriangle className="inline align-middle mr-1" size={14} /> Workshop is {WORKSHOP.announcement.date} · Last batch closed before scheduled date
             </p>
 
-            <div className="ws-card max-w-[700px] mx-auto border-2 border-[rgba(11,177,88,0.3)] shadow-[0_0_30px_rgba(11,177,88,0.1),0_0_60px_rgba(11,177,88,0.05)] overflow-hidden relative">
-              <div className="ws-card-glow" />
+            <div className="ws-card max-w-[700px] mx-auto border border-[rgba(11,177,88,0.25)] overflow-hidden">
               <div className="bg-[#0bb158] text-white text-center py-3 md:py-5 text-[0.95rem] md:text-[1.2rem] font-bold font-mono">
                 2-Day Live Workshop — All Inclusive
               </div>
@@ -568,7 +554,7 @@ export default function WorkshopOfferPage() {
 
                 <div className="my-4 md:my-5">
                   <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280] uppercase tracking-wide font-semibold">Your Investment Today</div>
-                  <div className="text-[2.2rem] md:text-[3.5rem] font-extrabold text-[#0bb158] [text-shadow:0_0_20px_rgba(11,177,88,0.4)]">{PRICE}</div>
+                  <div className="text-[2.2rem] md:text-[3.5rem] font-extrabold text-[#0bb158] ">{PRICE}</div>
                   <div className="inline-block bg-[rgba(11,177,88,0.15)] text-[#0bb158] px-3 py-1 rounded-full font-bold text-[0.75rem] md:text-[0.85rem]">
                     Save Rs. {(WORKSHOP.totalValue - WORKSHOP_FEE_RUPEES).toLocaleString("en-IN")} (88% OFF)
                   </div>
@@ -585,7 +571,7 @@ export default function WorkshopOfferPage() {
                   disabled={paying}
                   className="cta-button w-full !text-[0.95rem] md:!text-[1.2rem] !py-4 md:!py-5 my-4 md:my-5 disabled:opacity-70"
                 >
-                  {paying ? "Processing..." : `RESERVE MY SEAT — ${PRICE} →`}
+                  {paying ? "Processing..." : `RESERVE MY SEAT — ${PRICE}`}
                 </button>
 
                 <div className="flex justify-center gap-3 md:gap-4 flex-wrap mb-4 md:mb-6 text-[0.7rem] md:text-[0.8rem] text-[#6b7280]">
@@ -635,8 +621,7 @@ export default function WorkshopOfferPage() {
                   ))}
                 </ul>
               </div>
-              <div className="ws-card p-5 md:p-7 text-left relative overflow-hidden">
-                <div className="ws-card-glow" />
+              <div className="ws-card p-5 md:p-7 text-left">
                 <h4 className="font-mono font-bold text-[0.88rem] md:text-[1.05rem] text-[#0bb158] mb-3 md:mb-4 pb-2 md:pb-3 border-b border-[rgba(11,177,88,0.2)] flex items-center gap-2">
                   <HiCheckCircle size={16} className="text-[#0bb158] flex-shrink-0" /> The OptionScore Way:
                 </h4>
@@ -688,32 +673,15 @@ export default function WorkshopOfferPage() {
       </footer>
 
       {/* ═══════════ Sticky Bottom Bar ═══════════ */}
-      <div className={`sticky-bottom-bar fixed bottom-0 left-0 right-0 z-[999] transition-transform duration-500 ease-out ${showStickyBar ? "translate-y-0" : "translate-y-full"}`}>
-        {/* Animated top border glow */}
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#0bb158] to-transparent sticky-bar-glow" />
-        <div className="relative bg-[rgba(5,5,5,0.97)] backdrop-blur-[20px] py-2.5 md:py-3.5 px-4 md:px-8">
+      <div className={`fixed bottom-0 left-0 right-0 z-[999] transition-transform duration-300 ${showStickyBar ? "translate-y-0" : "translate-y-full"}`}>
+        <div className="bg-[rgba(8,8,8,0.95)] backdrop-blur-[12px] border-t border-[rgba(255,255,255,0.08)] py-2.5 md:py-3 px-4 md:px-8">
           <div className="max-w-5xl mx-auto flex justify-between items-center gap-3 md:gap-6">
-            {/* Left: Info */}
-            <div className="flex flex-col gap-0.5">
-              <div className="flex items-center gap-1.5 md:gap-2">
-                <span className="relative flex h-2 w-2 md:h-2.5 md:w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 md:h-2.5 md:w-2.5 bg-red-500" />
-                </span>
-                <span className="text-[0.65rem] md:text-[0.8rem] text-red-400 font-semibold uppercase tracking-wider">Only {WORKSHOP.announcement.seats} seats left</span>
-              </div>
-              <div className="flex items-center gap-2 md:gap-3">
-                <span className="text-[0.7rem] md:text-[0.85rem] text-[#6b7280] line-through">₹15,000</span>
-                <span className="text-[1rem] md:text-[1.3rem] text-[#0bb158] font-extrabold">{PRICE}</span>
-                <span className="hidden md:inline-block text-[0.65rem] bg-[rgba(11,177,88,0.15)] text-[#0bb158] px-2 py-0.5 rounded-full font-semibold">60% OFF</span>
-              </div>
+            <div className="flex items-center gap-2 md:gap-3">
+              <span className="text-[1rem] md:text-[1.2rem] text-[#0bb158] font-bold">{PRICE}</span>
+              <span className="text-[0.7rem] md:text-[0.82rem] text-[#6b7280]">· {WORKSHOP.announcement.seats} seats left</span>
             </div>
-            {/* Right: CTA */}
-            <button onClick={scrollToCta} className="sticky-bar-cta group relative overflow-hidden bg-gradient-to-r from-[#0bb158] to-[#0ed668] text-[#010101] font-bold text-[0.75rem] md:text-[0.95rem] py-2.5 md:py-3.5 px-5 md:px-10 rounded-lg uppercase tracking-wide cursor-pointer border-none font-[JetBrains_Mono,ui-monospace,monospace] shadow-[0_0_20px_rgba(11,177,88,0.3)]">
-              <span className="relative z-10 flex items-center gap-1.5 md:gap-2">
-                Reserve Now
-              </span>
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.25)] to-transparent sticky-bar-shimmer" />
+            <button onClick={scrollToCta} className="bg-[#0bb158] hover:bg-[#0ed668] text-[#010101] font-bold text-[0.75rem] md:text-[0.9rem] py-2.5 md:py-3 px-5 md:px-8 rounded-lg uppercase cursor-pointer border-none font-[JetBrains_Mono,ui-monospace,monospace] transition-colors">
+              Reserve Now
             </button>
           </div>
         </div>
@@ -758,55 +726,9 @@ export default function WorkshopOfferPage() {
         .animate-blink {
           animation: blink 0.8s step-end infinite;
         }
-        @keyframes btn-gradient-shimmer {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        @keyframes btn-glow-pulse {
-          0%, 100% { box-shadow: 0 0 20px rgba(11,177,88,0.25), 0 0 40px rgba(11,177,88,0.1); }
-          50% { box-shadow: 0 0 30px rgba(11,177,88,0.35), 0 0 60px rgba(11,177,88,0.15); }
-        }
-        /* ── Sticky Bottom Bar ── */
-        @keyframes sticky-bar-glow-slide {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
-        }
-        @keyframes sticky-bar-shimmer-slide {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(200%); }
-        }
-        .sticky-bar-glow {
-          overflow: hidden;
-        }
-        .sticky-bar-glow::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(90deg, transparent, rgba(11,177,88,0.8), transparent);
-          animation: sticky-bar-glow-slide 3s ease-in-out infinite;
-        }
-        .sticky-bar-shimmer {
-          animation: sticky-bar-shimmer-slide 2.5s ease-in-out infinite;
-        }
-        .sticky-bar-cta {
-          transition: all 0.3s ease;
-        }
-        .sticky-bar-cta:hover {
-          transform: translateY(-1px);
-          box-shadow: 0 0 30px rgba(11,177,88,0.5), 0 0 60px rgba(11,177,88,0.2);
-        }
-        .sticky-bar-cta:active {
-          transform: scale(0.97);
-        }
-
         .cta-button {
           display: inline-block;
-          background: linear-gradient(135deg, #0bb158, #0ed668, #0bb158);
-          background-size: 200% 200%;
+          background: #0bb158;
           color: #010101;
           font-size: 0.88rem;
           font-weight: 700;
@@ -814,11 +736,9 @@ export default function WorkshopOfferPage() {
           border-radius: 8px;
           border: none;
           cursor: pointer;
-          transition: all 0.3s;
-          box-shadow: 0 0 20px rgba(11,177,88,0.25), 0 0 40px rgba(11,177,88,0.1);
+          transition: all 0.2s;
           text-transform: uppercase;
           font-family: 'JetBrains Mono', ui-monospace, monospace;
-          animation: btn-gradient-shimmer 3s ease infinite, btn-glow-pulse 2s ease-in-out infinite;
         }
         @media (min-width: 768px) {
           .cta-button {
@@ -827,8 +747,9 @@ export default function WorkshopOfferPage() {
           }
         }
         .cta-button:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 0 30px rgba(11,177,88,0.4), 0 0 60px rgba(11,177,88,0.2);
+          background: #0ed668;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(11,177,88,0.3);
         }
         .cta-button:disabled {
           opacity: 0.7;
@@ -845,17 +766,7 @@ export default function WorkshopOfferPage() {
           .ws-card { border-radius: 16px; }
         }
         .ws-card:hover {
-          border-color: rgba(11,177,88,0.3);
-          box-shadow: 0 4px 30px rgba(11,177,88,0.12);
-        }
-        @media (min-width: 768px) {
-          .ws-card:hover { transform: translateY(-2px); }
-        }
-        .ws-card-glow {
-          position: absolute;
-          top: 0; left: 0; right: 0; bottom: 0;
-          background: linear-gradient(90deg, rgba(11,177,88,0.22) 0%, transparent 40%, transparent 60%, rgba(11,177,88,0.22) 100%);
-          pointer-events: none;
+          border-color: rgba(11,177,88,0.25);
         }
         .ws-card-red {
           background: rgba(239,68,68,0.05);
@@ -916,7 +827,7 @@ function TypeWriter({ segments, className }: { segments: TypeSegment[]; classNam
     const isCurrent = typed >= segStart && typed < segEnd;
 
     const content = seg.green ? (
-      <span className="text-[#0bb158] [text-shadow:0_0_20px_rgba(11,177,88,0.5),0_0_40px_rgba(11,177,88,0.25)]">
+      <span className="text-[#0bb158]">
         {display}
       </span>
     ) : (
@@ -978,7 +889,7 @@ function WSection({
             {label}
           </div>
         )}
-        <h2 className="font-mono font-bold text-center text-[1.15rem] md:text-[2.2rem] text-white mb-2 md:mb-3 leading-tight">
+        <h2 className="font-bold text-center text-[1.15rem] md:text-[2.2rem] text-white mb-2 md:mb-3 leading-tight">
           {title}
         </h2>
         <div className="mb-6 md:mb-12" />
@@ -991,8 +902,7 @@ function WSection({
 function Faq({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="ws-card mb-2 md:mb-2.5 overflow-hidden relative">
-      <div className="ws-card-glow" />
+    <div className="ws-card mb-2 md:mb-2.5 overflow-hidden">
       <button
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between gap-3 md:gap-4 px-4 md:px-5 py-3 md:py-4 text-left hover:bg-[#0a0a0a] transition-colors"
