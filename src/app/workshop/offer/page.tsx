@@ -613,7 +613,7 @@ export default function WorkshopOfferPage() {
       </main>
 
       {/* ═══════════ Footer ═══════════ */}
-      <footer className="bg-[rgba(1,1,1,0.7)] text-[#6b7280] text-center pt-8 md:pt-10 pb-20 md:pb-24 px-4 md:px-6 border-t border-[rgba(11,177,88,0.1)] relative z-[1]">
+      <footer className="bg-[rgba(1,1,1,0.7)] text-[#6b7280] text-center pt-8 md:pt-10 pb-28 md:pb-28 px-4 md:px-6 border-t border-[rgba(11,177,88,0.1)] relative z-[1]">
         <div className="flex justify-center mb-3">
           <button onClick={() => router.back()} className="flex items-center gap-2 cursor-pointer">
             <Image src="/images/logo.png" alt="OptionScore" width={32} height={32} className="h-6 w-6 md:h-8 md:w-8" />
