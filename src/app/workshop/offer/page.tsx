@@ -184,7 +184,7 @@ export default function WorkshopOfferPage() {
 
       {/* ═══════════ Marquee Announcement Bar ═══════════ */}
       <div className="bg-[rgba(11,177,88,0.05)] border-b border-[rgba(11,177,88,0.12)] overflow-hidden whitespace-nowrap py-1.5 md:py-2 text-[0.7rem] md:text-[0.8rem] text-[#9CA3AF] relative z-[1]">
-        <MarqueeText text={`Next Batch: ${WORKSHOP.announcement.date}  ·  ${WORKSHOP.announcement.seats} seats remaining  ·  Rs. ${WORKSHOP_FEE_RUPEES.toLocaleString("en-IN")}`} />
+        <MarqueeText text={`Next Batch: ${WORKSHOP.announcement.date}  ·  ${WORKSHOP.announcement.seats} of ${WORKSHOP.announcement.totalSeats} seats remaining  ·  Rs. ${WORKSHOP_FEE_RUPEES.toLocaleString("en-IN")}`} />
       </div>
 
       <main className="flex-1 w-full relative z-[1]">
@@ -236,7 +236,7 @@ export default function WorkshopOfferPage() {
               Secure payment via Razorpay · UPI, Cards, EMI
             </div>
             <div className="mt-3 md:mt-4 text-[0.78rem] md:text-[0.88rem] text-[#9CA3AF]">
-              Only {WORKSHOP.announcement.seats} spots left for the {WORKSHOP.announcement.date} batch
+              Only {WORKSHOP.announcement.seats} of {WORKSHOP.announcement.totalSeats} spots left for the {WORKSHOP.announcement.date} batch
             </div>
           </div>
         </section>
@@ -494,7 +494,7 @@ export default function WorkshopOfferPage() {
               Register for the Workshop
             </h2>
             <p className="text-center text-[0.78rem] md:text-[1rem] text-[#6b7280] mb-6 md:mb-8">
-              {WORKSHOP.announcement.date} · {WORKSHOP.announcement.seats} seats available
+              {WORKSHOP.announcement.date} · {WORKSHOP.announcement.seats} of {WORKSHOP.announcement.totalSeats} seats available
             </p>
 
             <div className="ws-card max-w-[700px] mx-auto border border-[rgba(11,177,88,0.25)] overflow-hidden">
@@ -599,7 +599,7 @@ export default function WorkshopOfferPage() {
             </div>
 
             <button onClick={scrollToCta} className="cta-button mb-3">Register Now — {PRICE}</button>
-            <div className="text-[0.75rem] md:text-[0.85rem] text-[#9CA3AF] mt-2">Only {WORKSHOP.announcement.seats} spots left for {WORKSHOP.announcement.date} batch</div>
+            <div className="text-[0.75rem] md:text-[0.85rem] text-[#9CA3AF] mt-2">Only {WORKSHOP.announcement.seats} of {WORKSHOP.announcement.totalSeats} spots left for {WORKSHOP.announcement.date} batch</div>
             <div className="mt-3 md:mt-4 text-[0.78rem] md:text-[0.88rem] text-[#6b7280] italic px-2">{WORKSHOP.finalPS}</div>
           </div>
         </section>
@@ -631,7 +631,7 @@ export default function WorkshopOfferPage() {
           <div className="max-w-5xl mx-auto flex justify-between items-center gap-3 md:gap-6">
             <div className="flex items-center gap-2 md:gap-3">
               <span className="text-[1rem] md:text-[1.2rem] text-[#0bb158] font-bold">{PRICE}</span>
-              <span className="text-[0.7rem] md:text-[0.82rem] text-[#6b7280]">· {WORKSHOP.announcement.seats} seats left</span>
+              <span className="text-[0.7rem] md:text-[0.82rem] text-[#6b7280]">· {WORKSHOP.announcement.seats}/{WORKSHOP.announcement.totalSeats} seats left</span>
             </div>
             <button onClick={scrollToCta} className="bg-[#0bb158] hover:bg-[#0ed668] text-[#010101] font-bold text-[0.75rem] md:text-[0.9rem] py-2.5 md:py-3 px-5 md:px-8 rounded-lg cursor-pointer border-none transition-colors">
               Reserve Now

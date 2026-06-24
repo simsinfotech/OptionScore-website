@@ -20,6 +20,7 @@ export const WORKSHOP = {
   announcement: {
     date: "July 1st Week",
     seats: "19",
+    totalSeats: "50",
   },
 
   /* ─── Hero ─── */
@@ -38,7 +39,7 @@ export const WORKSHOP = {
     { value: "500+", label: "Traders Trained" },
     { value: "4.9/5", label: "Rating" },
     { value: "Live", label: "Chart Reviews" },
-    { value: "Max 19", label: "Seats" },
+    { value: "50", label: "Max Seats" },
   ] as const,
 
   /* ─── Experience Cards ─── */
