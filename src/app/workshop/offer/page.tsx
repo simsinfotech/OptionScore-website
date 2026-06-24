@@ -528,7 +528,8 @@ export default function WorkshopOfferPage() {
 
                 <div className="my-4 md:my-5">
                   <div className="text-[2.2rem] md:text-[3.5rem] font-extrabold text-[#0bb158]">{PRICE}</div>
-                  <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280]">one-time · no recurring charges · Inclusive of all taxes</div>
+                  <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280]">one-time · no recurring charges</div>
+                  <div className="text-[0.75rem] md:text-[0.85rem] text-white font-semibold mt-1">Inclusive of all taxes (GST)</div>
                 </div>
 
                 {error && (
