@@ -241,7 +241,8 @@ export default function WorkshopOfferPage() {
             <button onClick={scrollToCta} className="cta-button inline-block">
               Reserve My Seat for {PRICE}
             </button>
-            <div className="text-center mt-2 md:mt-3 text-[0.7rem] md:text-[0.82rem] text-[#6b7280]">
+            <div className="text-center mt-2 text-[0.7rem] md:text-[0.78rem] text-[#6b7280]">Inclusive of all taxes (GST)</div>
+            <div className="text-center mt-1 md:mt-2 text-[0.7rem] md:text-[0.82rem] text-[#6b7280]">
               Secure payment via Razorpay · UPI, Cards, EMI
             </div>
             <div className="mt-3 md:mt-4 text-[0.78rem] md:text-[0.88rem] text-[#9CA3AF]">
@@ -609,8 +610,9 @@ export default function WorkshopOfferPage() {
               ))}
             </div>
 
-            <button onClick={scrollToCta} className="cta-button mb-3">Register Now for {PRICE}</button>
-            <div className="text-[0.75rem] md:text-[0.85rem] text-[#9CA3AF] mt-2">Only {WORKSHOP.announcement.seats} of {WORKSHOP.announcement.totalSeats} spots left for {WORKSHOP.announcement.date} batch</div>
+            <button onClick={scrollToCta} className="cta-button mb-1">Register Now for {PRICE}</button>
+            <div className="text-[0.7rem] md:text-[0.78rem] text-[#6b7280] mb-2">Inclusive of all taxes (GST)</div>
+            <div className="text-[0.75rem] md:text-[0.85rem] text-[#9CA3AF]">Only {WORKSHOP.announcement.seats} of {WORKSHOP.announcement.totalSeats} spots left for {WORKSHOP.announcement.date} batch</div>
             <div className="mt-3 md:mt-4 text-[0.78rem] md:text-[0.88rem] text-[#6b7280] italic px-2">{WORKSHOP.finalPS}</div>
           </div>
         </section>
