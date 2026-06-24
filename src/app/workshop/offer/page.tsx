@@ -54,10 +54,6 @@ export default function WorkshopOfferPage() {
   const [paying, setPaying] = useState(false);
   const [error, setError] = useState("");
   const [showStickyBar, setShowStickyBar] = useState(false);
-  const [socialProof, setSocialProof] = useState<{
-    name: string;
-    city: string;
-  } | null>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
   /* ─── Funnel protection ─── */
@@ -86,21 +82,6 @@ export default function WorkshopOfferPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /* ─── Social proof popup ─── */
-  useEffect(() => {
-    const names = WORKSHOP.socialProofNames;
-    let idx = 0;
-    let timeout: ReturnType<typeof setTimeout>;
-    const show = () => {
-      const person = names[idx % names.length];
-      idx++;
-      setSocialProof(person);
-      setTimeout(() => setSocialProof(null), 4000);
-      timeout = setTimeout(show, 45000 + Math.random() * 45000);
-    };
-    timeout = setTimeout(show, 30000);
-    return () => clearTimeout(timeout);
-  }, []);
 
   /* ─── Payment handler ─── */
   const handlePay = useCallback(async () => {
@@ -691,20 +672,6 @@ export default function WorkshopOfferPage() {
         </div>
       </div>
 
-      {/* ═══════════ Social Proof Toast ═══════════ */}
-      <AnimatePresence>
-        {socialProof && (
-          <motion.div
-            initial={{ x: -120 }}
-            animate={{ x: 0 }}
-            exit={{ x: -120 }}
-            className="fixed bottom-16 md:bottom-20 left-3 md:left-6 z-[998] bg-[rgba(5,5,5,0.95)] border border-[rgba(11,177,88,0.15)] rounded-lg px-3 md:px-5 py-2.5 md:py-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.4)] flex items-center gap-2 max-w-[240px] md:max-w-[300px] text-[0.72rem] md:text-[0.82rem] text-[#d1d5db]"
-          >
-            <HiUser className="text-[#6b7280] flex-shrink-0" size={14} />
-            <span><strong>{socialProof.name}</strong> from {socialProof.city} just registered</span>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* ═══════════ Floating WhatsApp ═══════════ */}
       <a
