@@ -184,9 +184,13 @@ export default function WorkshopOfferPage() {
 
       {/* ═══════════ Marquee Announcement Bar ═══════════ */}
       <div className="bg-[rgba(11,177,88,0.05)] border-b border-[rgba(11,177,88,0.12)] overflow-hidden whitespace-nowrap py-1.5 md:py-2 text-[0.7rem] md:text-[0.8rem] text-[#9CA3AF] relative z-[1]">
-        <div className="inline-flex animate-[marquee_20s_linear_infinite]">
-          {[0, 1, 2].map((i) => (
-            <span key={i} className="flex-shrink-0">
+        <div className="flex w-max animate-[marquee_20s_linear_infinite]">
+          {[0, 1].map((i) => (
+            <span key={i} className="flex-shrink-0 px-8">
+              Next Batch: {WORKSHOP.announcement.date} &nbsp;·&nbsp; {WORKSHOP.announcement.seats} seats remaining &nbsp;·&nbsp; Rs. {WORKSHOP_FEE_RUPEES.toLocaleString("en-IN")}
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              Next Batch: {WORKSHOP.announcement.date} &nbsp;·&nbsp; {WORKSHOP.announcement.seats} seats remaining &nbsp;·&nbsp; Rs. {WORKSHOP_FEE_RUPEES.toLocaleString("en-IN")}
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               Next Batch: {WORKSHOP.announcement.date} &nbsp;·&nbsp; {WORKSHOP.announcement.seats} seats remaining &nbsp;·&nbsp; Rs. {WORKSHOP_FEE_RUPEES.toLocaleString("en-IN")}
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
@@ -663,7 +667,7 @@ export default function WorkshopOfferPage() {
       <style jsx global>{`
         @keyframes marquee {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-33.33%); }
+          100% { transform: translateX(-50%); }
         }
         @keyframes blink {
           0%, 100% { opacity: 1; }
