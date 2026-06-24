@@ -233,13 +233,13 @@ export default function WorkshopOfferPage() {
               <div className="text-[1.8rem] md:text-[3rem] font-extrabold text-[#0bb158]">
                 {PRICE}
               </div>
-              <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280] mt-1 md:mt-2">for the full 2-day workshop</div>
+              <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280] mt-1 md:mt-2">for the full 2-day workshop · Inclusive of all taxes</div>
               <CountdownTimer />
             </div>
 
             <br />
             <button onClick={scrollToCta} className="cta-button inline-block">
-              Reserve My Seat for{PRICE}
+              Reserve My Seat for {PRICE}
             </button>
             <div className="text-center mt-2 md:mt-3 text-[0.7rem] md:text-[0.82rem] text-[#6b7280]">
               Secure payment via Razorpay · UPI, Cards, EMI
@@ -383,11 +383,11 @@ export default function WorkshopOfferPage() {
             <div className="text-[0.85rem] md:text-[1rem] text-[#6b7280]">All of the above for just</div>
             <div className="text-[2rem] md:text-[3rem] font-extrabold text-[#0bb158] my-1 md:my-2">{PRICE}</div>
             <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280]">
-              instead of Rs. {WORKSHOP.totalValue.toLocaleString("en-IN")} if purchased separately
+              instead of Rs. {WORKSHOP.totalValue.toLocaleString("en-IN")} if purchased separately · Inclusive of all taxes
             </div>
           </div>
           <div className="text-center mt-6 md:mt-8">
-            <button onClick={scrollToCta} className="cta-button">Register Now for{PRICE}</button>
+            <button onClick={scrollToCta} className="cta-button">Register Now for {PRICE}</button>
           </div>
         </WSection>
 
@@ -526,7 +526,7 @@ export default function WorkshopOfferPage() {
 
                 <div className="my-4 md:my-5">
                   <div className="text-[2.2rem] md:text-[3.5rem] font-extrabold text-[#0bb158]">{PRICE}</div>
-                  <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280]">one-time · no recurring charges</div>
+                  <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280]">one-time · no recurring charges · Inclusive of all taxes</div>
                 </div>
 
                 {error && (
@@ -607,7 +607,7 @@ export default function WorkshopOfferPage() {
               ))}
             </div>
 
-            <button onClick={scrollToCta} className="cta-button mb-3">Register Now for{PRICE}</button>
+            <button onClick={scrollToCta} className="cta-button mb-3">Register Now for {PRICE}</button>
             <div className="text-[0.75rem] md:text-[0.85rem] text-[#9CA3AF] mt-2">Only {WORKSHOP.announcement.seats} of {WORKSHOP.announcement.totalSeats} spots left for {WORKSHOP.announcement.date} batch</div>
             <div className="mt-3 md:mt-4 text-[0.78rem] md:text-[0.88rem] text-[#6b7280] italic px-2">{WORKSHOP.finalPS}</div>
           </div>
