@@ -173,8 +173,8 @@ export default function WorkshopOfferPage() {
       <nav className="sticky top-0 z-[1000] bg-black border-b border-[rgba(11,177,88,0.15)] py-2 md:py-3">
         <div className="max-w-full mx-auto px-4 md:px-16 flex items-center justify-between">
           <button onClick={() => router.back()} className="flex items-center gap-2 cursor-pointer">
-            <Image src="/images/logo.png" alt="OptionScore" width={32} height={32} className="h-6 w-6 md:h-8 md:w-8" />
-            <Image src="/images/logo-text.png" alt="OptionScore" width={120} height={20} className="h-4 md:h-5 w-auto" />
+            <Image src="/images/logo.png" alt="OptionScore" width={64} height={64} className="h-6 w-6 md:h-8 md:w-8" />
+            <Image src="/images/logo-text.png" alt="OptionScore" width={320} height={56} className="h-4 md:h-5 w-auto" />
           </button>
           <button onClick={scrollToCta} className="bg-[#0bb158] text-black text-[0.7rem] md:text-xs font-bold px-3 md:px-5 py-1.5 md:py-2 rounded-md hover:bg-[#0ed668] transition-colors">
             Reserve Seat
@@ -616,8 +616,8 @@ export default function WorkshopOfferPage() {
       <footer className="bg-[rgba(1,1,1,0.7)] text-[#6b7280] text-center pt-8 md:pt-10 pb-28 md:pb-28 px-4 md:px-6 border-t border-[rgba(11,177,88,0.1)] relative z-[1]">
         <div className="flex justify-center mb-3">
           <button onClick={() => router.back()} className="flex items-center gap-2 cursor-pointer">
-            <Image src="/images/logo.png" alt="OptionScore" width={32} height={32} className="h-6 w-6 md:h-8 md:w-8" />
-            <Image src="/images/logo-text.png" alt="OptionScore" width={120} height={20} className="h-4 md:h-5 w-auto" />
+            <Image src="/images/logo.png" alt="OptionScore" width={64} height={64} className="h-6 w-6 md:h-8 md:w-8" />
+            <Image src="/images/logo-text.png" alt="OptionScore" width={320} height={56} className="h-4 md:h-5 w-auto" />
           </button>
         </div>
         <div className="flex justify-center gap-3 md:gap-6 flex-wrap mb-3 text-[0.7rem] md:text-[0.8rem]">
