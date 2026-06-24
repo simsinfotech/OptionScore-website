@@ -230,7 +230,7 @@ export default function WorkshopOfferPage() {
 
             <br />
             <button onClick={scrollToCta} className="cta-button inline-block">
-              Reserve My Seat — {PRICE}
+              Reserve My Seat for{PRICE}
             </button>
             <div className="text-center mt-2 md:mt-3 text-[0.7rem] md:text-[0.82rem] text-[#6b7280]">
               Secure payment via Razorpay · UPI, Cards, EMI
@@ -378,7 +378,7 @@ export default function WorkshopOfferPage() {
             </div>
           </div>
           <div className="text-center mt-6 md:mt-8">
-            <button onClick={scrollToCta} className="cta-button">Register Now — {PRICE}</button>
+            <button onClick={scrollToCta} className="cta-button">Register Now for{PRICE}</button>
           </div>
         </WSection>
 
@@ -499,7 +499,7 @@ export default function WorkshopOfferPage() {
 
             <div className="ws-card max-w-[700px] mx-auto border border-[rgba(11,177,88,0.25)] overflow-hidden">
               <div className="bg-[#0bb158] text-white text-center py-3 md:py-5 text-[0.95rem] md:text-[1.2rem] font-bold">
-                2-Day Live Workshop — All Inclusive
+                2-Day Live Workshop · All Inclusive
               </div>
               <div className="p-5 md:p-9 text-center">
                 <div className="text-left mb-4 md:mb-6">
@@ -531,7 +531,7 @@ export default function WorkshopOfferPage() {
                   disabled={paying}
                   className="cta-button w-full !text-[0.95rem] md:!text-[1.2rem] !py-4 md:!py-5 my-4 md:my-5 disabled:opacity-70"
                 >
-                  {paying ? "Processing..." : `Reserve My Seat — ${PRICE}`}
+                  {paying ? "Processing..." : `Reserve My Seat for${PRICE}`}
                 </button>
 
                 <div className="flex justify-center gap-3 md:gap-4 flex-wrap mb-4 md:mb-6 text-[0.7rem] md:text-[0.8rem] text-[#6b7280]">
@@ -598,7 +598,7 @@ export default function WorkshopOfferPage() {
               ))}
             </div>
 
-            <button onClick={scrollToCta} className="cta-button mb-3">Register Now — {PRICE}</button>
+            <button onClick={scrollToCta} className="cta-button mb-3">Register Now for{PRICE}</button>
             <div className="text-[0.75rem] md:text-[0.85rem] text-[#9CA3AF] mt-2">Only {WORKSHOP.announcement.seats} of {WORKSHOP.announcement.totalSeats} spots left for {WORKSHOP.announcement.date} batch</div>
             <div className="mt-3 md:mt-4 text-[0.78rem] md:text-[0.88rem] text-[#6b7280] italic px-2">{WORKSHOP.finalPS}</div>
           </div>
