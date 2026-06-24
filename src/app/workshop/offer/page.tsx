@@ -388,6 +388,7 @@ export default function WorkshopOfferPage() {
           </div>
           <div className="text-center mt-6 md:mt-8">
             <button onClick={scrollToCta} className="cta-button">Register Now for {PRICE}</button>
+            <div className="text-[0.7rem] md:text-[0.8rem] text-[#9CA3AF] mt-2">Inclusive of all taxes (GST)</div>
           </div>
         </WSection>
 
