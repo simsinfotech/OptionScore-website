@@ -540,8 +540,9 @@ export default function WorkshopOfferPage() {
                   disabled={paying}
                   className="cta-button w-full !text-[0.95rem] md:!text-[1.2rem] !py-4 md:!py-5 my-4 md:my-5 disabled:opacity-70"
                 >
-                  {paying ? "Processing..." : `Reserve My Seat for${PRICE}`}
+                  {paying ? "Processing..." : `Reserve My Seat for ${PRICE}`}
                 </button>
+                <div className="text-center text-[0.7rem] md:text-[0.8rem] text-[#9CA3AF] mb-3">Inclusive of all taxes (GST)</div>
 
                 <div className="flex justify-center gap-3 md:gap-4 flex-wrap mb-4 md:mb-6 text-[0.7rem] md:text-[0.8rem] text-[#6b7280]">
                   <span><HiLockClosed className="inline align-middle mr-0.5" size={12} /> 256-bit SSL</span>
