@@ -210,7 +210,7 @@ export default function WorkshopOfferPage() {
             </p>
 
             {/* Hero Stats */}
-            <div className="grid grid-cols-2 md:flex md:justify-center gap-3 md:gap-8 mb-5 md:mb-6">
+            <div className="grid grid-cols-2 justify-items-center md:flex md:justify-center gap-3 md:gap-8 mb-5 md:mb-6">
               {WORKSHOP.heroStats.map((s) => (
                 <span key={s.label} className="text-[0.75rem] md:text-[0.88rem] text-[#6b7280] flex items-center gap-1">
                   <HiCheck className="text-[#22c55e] flex-shrink-0" size={14} />
