@@ -227,11 +227,11 @@ export default function WorkshopOfferPage() {
 
             {/* Price Box */}
             <div className="inline-block bg-[#050505] border border-[rgba(11,177,88,0.3)] rounded-xl md:rounded-2xl px-6 md:px-12 py-4 md:py-6 mb-5 md:mb-6 text-center">
-              <div className="text-[0.85rem] md:text-[1.1rem] text-[#6b7280] line-through">Rs. {WORKSHOP.totalValue.toLocaleString("en-IN")}</div>
-              <div className="text-[1.8rem] md:text-[3rem] font-extrabold text-[#0bb158] ">
-                {PRICE} <span className="inline-block bg-[#0bb158] text-white text-[0.65rem] md:text-[0.8rem] font-bold px-2 md:px-3 py-0.5 md:py-1 rounded-full align-super ml-1 md:ml-2">88% OFF</span>
+              <div className="text-[0.82rem] md:text-[0.95rem] text-[#6b7280] line-through">Rs. {WORKSHOP.totalValue.toLocaleString("en-IN")}</div>
+              <div className="text-[1.8rem] md:text-[3rem] font-extrabold text-[#0bb158]">
+                {PRICE}
               </div>
-              <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280] mt-1 md:mt-2">Workshop Price</div>
+              <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280] mt-1 md:mt-2">for the full 2-day workshop</div>
               <CountdownTimer />
             </div>
 
@@ -240,7 +240,7 @@ export default function WorkshopOfferPage() {
               RESERVE MY SEAT — {PRICE}
             </button>
             <div className="text-center mt-2 md:mt-3 text-[0.7rem] md:text-[0.82rem] text-[#6b7280]">
-              Razorpay · Secure Payment · Instant Confirmation · EMI Available
+              Secure payment via Razorpay · UPI, Cards, EMI
             </div>
             <div className="mt-3 md:mt-4 text-[0.78rem] md:text-[0.88rem] text-[#9CA3AF]">
               Only {WORKSHOP.announcement.seats} spots left for the {WORKSHOP.announcement.date} batch
@@ -256,13 +256,8 @@ export default function WorkshopOfferPage() {
                 <span className="inline-block text-[#0bb158] text-[0.7rem] md:text-[0.75rem] font-semibold mb-2 md:mb-3 uppercase tracking-wide">
                   {card.tag}
                 </span>
-                <h3 className="font-mono font-bold text-[1rem] md:text-[1.25rem] text-white mb-2">{card.title}</h3>
-                <div className="flex gap-2 md:gap-3 flex-wrap mb-2 md:mb-3">
-                  {card.meta.map((m) => (
-                    <span key={m} className="text-[0.68rem] md:text-[0.78rem] font-semibold px-2 md:px-3 py-0.5 md:py-1 rounded-full bg-[#0a0a0a] text-[#6b7280]">{m}</span>
-                  ))}
-                </div>
-                <p className="text-[0.82rem] md:text-[0.92rem] text-[#6b7280] mb-2 md:mb-3">{card.body}</p>
+                <h3 className="font-bold text-[1rem] md:text-[1.25rem] text-white mb-2">{card.title}</h3>
+                <p className="text-[0.82rem] md:text-[0.92rem] text-[#9CA3AF] mb-2 md:mb-3">{card.body}</p>
                 <ul>
                   {card.items.map((item) => (
                     <li key={item} className="text-[0.8rem] md:text-[0.88rem] text-[#6b7280] py-0.5 md:py-1 flex items-start gap-2">
@@ -320,8 +315,7 @@ export default function WorkshopOfferPage() {
         <WSection label={WORKSHOP.problem.label} title={<>{WORKSHOP.problem.headline.split("\n").map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}</>} dark>
           <p className="text-center text-[0.82rem] md:text-[1rem] text-[#6b7280] max-w-[700px] mx-auto mb-8 md:mb-12">{WORKSHOP.problem.body}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-10">
-            <div className="ws-card-red p-5 md:p-7 relative overflow-hidden">
-              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(239,68,68,0.12)_0%,transparent_40%,transparent_60%,rgba(239,68,68,0.12)_100%)] pointer-events-none" />
+            <div className="ws-card-red p-5 md:p-7">
               <h4 className="font-mono font-bold text-[0.88rem] md:text-[1.05rem] text-red-500 mb-3 md:mb-4 pb-2 md:pb-3 border-b border-[rgba(11,177,88,0.2)] flex items-center gap-2">
                 <HiXCircle size={16} className="text-red-500 flex-shrink-0" /> What Retail Traders Do
               </h4>
@@ -384,31 +378,23 @@ export default function WorkshopOfferPage() {
             </div>
           </div>
           <div className="ws-card text-center p-5 md:p-8">
-            <div className="text-[0.88rem] md:text-[1.1rem] text-[#6b7280] line-through">Total Value: Rs. {WORKSHOP.totalValue.toLocaleString("en-IN")}</div>
-            <div className="text-[2rem] md:text-[3rem] font-extrabold text-[#0bb158] my-1 md:my-2 ">{PRICE}</div>
-            <div className="inline-block bg-[#0bb158] text-white px-3 md:px-4 py-1 rounded-full font-bold text-[0.75rem] md:text-[0.85rem]">
-              You Save Rs. {(WORKSHOP.totalValue - WORKSHOP_FEE_RUPEES).toLocaleString("en-IN")} (88% OFF)
+            <div className="text-[0.85rem] md:text-[1rem] text-[#6b7280]">All of the above for just</div>
+            <div className="text-[2rem] md:text-[3rem] font-extrabold text-[#0bb158] my-1 md:my-2">{PRICE}</div>
+            <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280]">
+              instead of Rs. {WORKSHOP.totalValue.toLocaleString("en-IN")} if purchased separately
             </div>
           </div>
           <div className="text-center mt-6 md:mt-8">
-            <button onClick={scrollToCta} className="cta-button">RESERVE MY SEAT — {PRICE}</button>
-            <div className="flex justify-center gap-3 md:gap-4 flex-wrap mt-3 md:mt-4 text-[0.7rem] md:text-[0.8rem] text-[#6b7280]">
-              <span><HiLockClosed className="inline align-middle mr-0.5" size={12} /> 256-bit SSL</span>
-              <span><HiCheckCircle className="inline align-middle mr-0.5 text-[#22c55e]" size={12} /> Razorpay</span>
-              <span><HiCreditCard className="inline align-middle mr-0.5" size={12} /> Cards, UPI, EMI</span>
-            </div>
-            <p className="text-[0.78rem] md:text-[0.88rem] text-[#6b7280] mt-3 md:mt-4 max-w-[500px] mx-auto">
-              Most traders lose more than Rs. 5,999 in a single bad trade. This workshop fixes the reason those trades keep happening.
-            </p>
+            <button onClick={scrollToCta} className="cta-button">Register Now — {PRICE}</button>
           </div>
         </WSection>
 
         {/* ═══════════ Who It's For ═══════════ */}
-        <WSection label="Is This Workshop Right For You?" title={<>Serious Traders Only.<br />Not Everyone Should Register.</>}>
+        <WSection label="Is This For You?" title="Who Should Attend">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
             <div>
-              <h3 className="font-mono font-bold text-[0.92rem] md:text-[1.15rem] text-[#0bb158] mb-3 md:mb-4 pb-2 md:pb-3 border-b-2 border-[#0bb158] flex items-center gap-2">
-                <HiCheckCircle size={16} /> This Workshop is PERFECT if you:
+              <h3 className="font-semibold text-[0.92rem] md:text-[1.15rem] text-[#0bb158] mb-3 md:mb-4 pb-2 md:pb-3 border-b border-[rgba(11,177,88,0.3)]">
+                Good fit if you:
               </h3>
               <ul>
                 {WORKSHOP.whoItsFor.perfect.map((item) => (
@@ -419,8 +405,8 @@ export default function WorkshopOfferPage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-mono font-bold text-[0.92rem] md:text-[1.15rem] text-red-500 mb-3 md:mb-4 pb-2 md:pb-3 border-b-2 border-red-500 flex items-center gap-2">
-                <HiXCircle size={16} /> This is NOT for you if:
+              <h3 className="font-semibold text-[0.92rem] md:text-[1.15rem] text-red-400 mb-3 md:mb-4 pb-2 md:pb-3 border-b border-[rgba(239,68,68,0.3)]">
+                Not the right fit if you:
               </h3>
               <ul>
                 {WORKSHOP.whoItsFor.notFor.map((item) => (
@@ -511,12 +497,11 @@ export default function WorkshopOfferPage() {
         {/* ═══════════ Register / Pricing ═══════════ */}
         <section id="register" className="py-12 md:py-20 relative z-[1]">
           <div className="max-w-full mx-auto px-4 md:px-16">
-            <CountdownTimer />
-            <h2 className="font-mono font-bold text-[1.3rem] md:text-[2.2rem] text-white text-center mb-2 md:mb-3">
-              Reserve Your Seat ({WORKSHOP.announcement.seats} Spots Left)
+            <h2 className="font-bold text-[1.3rem] md:text-[2.2rem] text-white text-center mb-2 md:mb-3">
+              Register for the Workshop
             </h2>
             <p className="text-center text-[0.78rem] md:text-[1rem] text-[#6b7280] mb-6 md:mb-8">
-              <HiExclamationTriangle className="inline align-middle mr-1" size={14} /> Workshop is {WORKSHOP.announcement.date} · Last batch closed before scheduled date
+              {WORKSHOP.announcement.date} · {WORKSHOP.announcement.seats} seats available
             </p>
 
             <div className="ws-card max-w-[700px] mx-auto border border-[rgba(11,177,88,0.25)] overflow-hidden">
@@ -538,11 +523,8 @@ export default function WorkshopOfferPage() {
                 </div>
 
                 <div className="my-4 md:my-5">
-                  <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280] uppercase tracking-wide font-semibold">Your Investment Today</div>
-                  <div className="text-[2.2rem] md:text-[3.5rem] font-extrabold text-[#0bb158] ">{PRICE}</div>
-                  <div className="inline-block bg-[rgba(11,177,88,0.15)] text-[#0bb158] px-3 py-1 rounded-full font-bold text-[0.75rem] md:text-[0.85rem]">
-                    Save Rs. {(WORKSHOP.totalValue - WORKSHOP_FEE_RUPEES).toLocaleString("en-IN")} (88% OFF)
-                  </div>
+                  <div className="text-[2.2rem] md:text-[3.5rem] font-extrabold text-[#0bb158]">{PRICE}</div>
+                  <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280]">one-time · no recurring charges</div>
                 </div>
 
                 {error && (
@@ -573,16 +555,10 @@ export default function WorkshopOfferPage() {
             </div>
 
             {/* Post-register steps */}
-            <div className="text-center mt-6 md:mt-8">
-              <h4 className="text-[0.88rem] md:text-[1.05rem] font-bold text-white mb-3 md:mb-4">What Happens After You Register:</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-3 max-w-[700px] mx-auto text-left">
-                {WORKSHOP.postRegister.map((step, i) => (
-                  <div key={i} className="flex gap-2 md:gap-2.5 items-start">
-                    <div className="w-6 h-6 md:w-7 md:h-7 rounded-full bg-[#0bb158] text-white flex items-center justify-center font-bold text-[0.7rem] md:text-[0.8rem] flex-shrink-0">{i + 1}</div>
-                    <span className="text-[0.75rem] md:text-[0.82rem] text-[#6b7280] pt-0.5 md:pt-1">{step}</span>
-                  </div>
-                ))}
-              </div>
+            <div className="text-center mt-6 md:mt-8 max-w-[600px] mx-auto">
+              <p className="text-[0.78rem] md:text-[0.88rem] text-[#6b7280] leading-relaxed">
+                After payment you&apos;ll get an instant confirmation email with the Zoom link, plus preparation material 48 hours before the workshop.
+              </p>
             </div>
           </div>
         </section>
@@ -592,8 +568,7 @@ export default function WorkshopOfferPage() {
           <div className="max-w-full mx-auto px-4 md:px-16">
             <h2 className="font-mono font-bold text-[1.2rem] md:text-[2.2rem] text-white mb-6 md:mb-10">Don&apos;t Keep Trading the Hard Way.</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
-              <div className="bg-[rgba(5,5,5,0.85)] border border-[rgba(255,255,255,0.06)] rounded-xl md:rounded-2xl p-5 md:p-7 text-left relative overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.05)_0%,transparent_40%,transparent_60%,rgba(255,255,255,0.05)_100%)] pointer-events-none" />
+              <div className="ws-card-red p-5 md:p-7 text-left">
                 <h4 className="font-mono font-bold text-[0.88rem] md:text-[1.05rem] text-[#6b7280] mb-3 md:mb-4 pb-2 md:pb-3 border-b border-[rgba(11,177,88,0.2)] flex items-center gap-2">
                   <HiXCircle size={16} className="text-red-500 flex-shrink-0" /> The Hard Way:
                 </h4>
@@ -630,7 +605,7 @@ export default function WorkshopOfferPage() {
               ))}
             </div>
 
-            <button onClick={scrollToCta} className="cta-button mb-3">YES — RESERVE MY SEAT — {PRICE}</button>
+            <button onClick={scrollToCta} className="cta-button mb-3">Register Now — {PRICE}</button>
             <div className="text-[0.75rem] md:text-[0.85rem] text-[#9CA3AF] mt-2">Only {WORKSHOP.announcement.seats} spots left for {WORKSHOP.announcement.date} batch</div>
             <div className="mt-3 md:mt-4 text-[0.78rem] md:text-[0.88rem] text-[#6b7280] italic px-2">{WORKSHOP.finalPS}</div>
           </div>
