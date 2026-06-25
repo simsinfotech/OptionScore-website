@@ -3,6 +3,8 @@ export const NAV_LINKS = [
   { label: "How It Works", href: "/#how-it-works" },
   { label: "Pricing", href: "/#pricing" },
   { label: "Academy", href: "/academy" },
+  { label: "Workshop", href: "/workshop" },
+  { label: "Master Class", href: "/master-class" },
   { label: "About", href: "/#about" },
   { label: "Privacy", href: "/#privacy" },
   { label: "Account Deletion", href: "/account-deletion" },

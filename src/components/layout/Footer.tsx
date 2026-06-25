@@ -11,7 +11,7 @@ export function Footer() {
       <div className="divider-shimmer" />
 
       <div className="max-w-7xl lg:max-w-none mx-auto px-6 lg:px-20 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-10">
           {/* Brand */}
           <div>
             <div className="flex items-center mb-4">
@@ -77,6 +77,30 @@ export function Footer() {
                   </a>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          {/* Academy */}
+          <div>
+            <h4 className="font-mono text-sm font-semibold uppercase tracking-normal text-text-primary mb-4">
+              Academy
+            </h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="/academy" className="text-sm text-text-muted hover:text-accent-cyan transition-colors">
+                  OptionScore Academy
+                </a>
+              </li>
+              <li>
+                <a href="/workshop" className="text-sm text-text-muted hover:text-accent-cyan transition-colors">
+                  Live Trading Workshop
+                </a>
+              </li>
+              <li>
+                <a href="/master-class" className="text-sm text-text-muted hover:text-accent-cyan transition-colors">
+                  Master Class
+                </a>
+              </li>
             </ul>
           </div>
 
