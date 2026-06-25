@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { NAV_LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
@@ -17,11 +16,8 @@ export function Navbar() {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#010101] ${
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#010101] animate-fade-in ${
         scrolled
           ? "border-b border-white/5 shadow-[0_4px_20px_rgba(11,177,88,0.06)]"
           : ""
@@ -85,10 +81,8 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="lg:hidden glass-strong px-6 pb-6"
+        <div
+          className="lg:hidden glass-strong px-6 pb-6 animate-fade-in"
         >
           {NAV_LINKS.map((link) => (
             <a
@@ -103,8 +97,8 @@ export function Navbar() {
           <Button size="sm" variant="gradient" href="/#download" className="mt-4 w-full">
             Download
           </Button>
-        </motion.div>
+        </div>
       )}
-    </motion.nav>
+    </nav>
   );
 }
