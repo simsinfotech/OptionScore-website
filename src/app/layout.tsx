@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://optionscore.app"),
   title: "OptionScore | AI-Powered Trading Analysis",
   description:
-    "Get real-time market scoring, AI-driven insights, and professional trading tools in one powerful mobile app.",
+    "Market scores, options chains, and F&O trade setups on your phone. Built for Indian traders.",
   openGraph: {
     title: "OptionScore | AI-Powered Trading Analysis",
     description:
-      "Get real-time market scoring, AI-driven insights, and professional trading tools in one powerful mobile app.",
+      "Market scores, options chains, and F&O trade setups on your phone. Built for Indian traders.",
     type: "website",
     url: "https://optionscore.app",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "OptionScore | AI-Powered Trading Analysis",
     description:
-      "Get real-time market scoring, AI-driven insights, and professional trading tools in one powerful mobile app.",
+      "Market scores, options chains, and F&O trade setups on your phone. Built for Indian traders.",
   },
   icons: {
     icon: [

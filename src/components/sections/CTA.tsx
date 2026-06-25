@@ -29,8 +29,8 @@ export function CTA() {
 
           <AnimatedSection delay={0.1}>
             <p className="text-text-secondary text-lg mb-8 max-w-xl mx-auto">
-              Join thousands of traders using AI-powered insights to make better
-              decisions every day.
+              Join 10,000+ traders who check their market score before
+              placing a trade.
             </p>
           </AnimatedSection>
 

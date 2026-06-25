@@ -14,27 +14,27 @@ export const FEATURES = [
   {
     title: "Market Scoring",
     description:
-      "Real-time proprietary scoring algorithm that rates market conditions from 0-100, helping you identify optimal entry and exit points.",
+      "Every instrument gets a score from 0 to 100 based on price action, volume, and open interest. Higher score means a stronger setup.",
   },
   {
     title: "ScoreAI",
     description:
-      "AI-powered analysis engine that processes thousands of data points to deliver actionable trading insights in seconds.",
+      "Ask questions about any stock or index in plain language. ScoreAI pulls the latest data and gives you a direct answer.",
   },
   {
     title: "Trading Tools",
     description:
-      "Professional-grade charting, options flow tracking, and risk calculators — all optimized for mobile.",
+      "Full options chain with Greeks, F&O setup recommendations, and risk calculators. All on your phone.",
   },
   {
     title: "Community",
     description:
-      "Connect with thousands of traders sharing strategies, alerts, and real-time market commentary.",
+      "Join a group of active traders sharing setups, alerts, and market commentary throughout the trading day.",
   },
   {
     title: "Broker Integration",
     description:
-      "Seamlessly connect your brokerage account to execute trades directly from OptionScore with one tap.",
+      "Connect your brokerage account and place trades directly from OptionScore with one tap.",
   },
 ];
 

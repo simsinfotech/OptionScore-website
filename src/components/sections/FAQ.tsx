@@ -9,7 +9,7 @@ const FAQ_ITEMS = [
   {
     question: "What is OptionScore?",
     answer:
-      "OptionScore is an AI-powered trading analysis app that distills complex market data into a single, actionable score. It covers options chains, F&O setups, real-time alerts, and smart money flow to give you institutional-grade insights on your phone.",
+      "OptionScore is a trading app that scores every stock and index from 0 to 100. It also gives you options chains with Greeks, F&O setup ideas, and alerts. Available on iOS and Android.",
   },
   {
     question: "Is my data safe?",
@@ -24,7 +24,7 @@ const FAQ_ITEMS = [
   {
     question: "How does the scoring algorithm work?",
     answer:
-      "Our AI engine processes millions of real-time data points including price action, volume, open interest, option Greeks, and institutional flow to generate a single composite score for each instrument. Higher scores indicate stronger setups.",
+      "The score is based on price action, volume, open interest, option Greeks, and institutional flow. All of these are combined into a single number from 0 to 100 for each instrument. A higher score means a stronger setup.",
   },
   {
     question: "Can I cancel my subscription anytime?",

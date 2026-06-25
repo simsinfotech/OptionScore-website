@@ -203,10 +203,8 @@ export default function AcademyPage() {
                 const Icon = PILLAR_ICONS[i];
                 return (
                   <AnimatedSection key={pillar.title} delay={i * 0.1} className="flex">
-                    <motion.div
-                      whileHover={{ y: -6 }}
-                      transition={{ duration: 0.3 }}
-                      className="glass p-8 h-full w-full"
+                    <div
+                      className="glass p-8 h-full w-full hover:-translate-y-1 transition-transform duration-300"
                     >
                       <div className="inline-flex items-center justify-center w-12 h-12 icon-bg-cyan mb-6">
                         <Icon className="text-accent-cyan text-xl" />
@@ -222,7 +220,7 @@ export default function AcademyPage() {
                       <p className="text-text-secondary text-sm leading-relaxed">
                         {pillar.what}
                       </p>
-                    </motion.div>
+                    </div>
                   </AnimatedSection>
                 );
               })}
@@ -246,10 +244,8 @@ export default function AcademyPage() {
                 const a = ACCENT[lvl.accent];
                 return (
                   <AnimatedSection key={lvl.level} delay={i * 0.12} className="flex">
-                    <motion.div
-                      whileHover={{ y: -6 }}
-                      transition={{ duration: 0.3 }}
-                      className="grad-border-static p-7 flex flex-col w-full"
+                    <div
+                      className="grad-border-static p-7 flex flex-col w-full hover:-translate-y-1 transition-transform duration-300"
                     >
                       <div className={`h-1 w-12 ${a.bar} mb-6`} />
                       <div className="flex items-center justify-between mb-3">
@@ -299,7 +295,7 @@ export default function AcademyPage() {
                       >
                         Enquire
                       </Button>
-                    </motion.div>
+                    </div>
                   </AnimatedSection>
                 );
               })}
@@ -460,10 +456,8 @@ export default function AcademyPage() {
                 const a = ACCENT[ACADEMY_LEVELS[i].accent];
                 return (
                   <AnimatedSection key={cert.level} delay={i * 0.1} className="flex">
-                    <motion.div
-                      whileHover={{ y: -6 }}
-                      transition={{ duration: 0.3 }}
-                      className="grad-border-static p-8 text-center h-full w-full"
+                    <div
+                      className="grad-border-static p-8 text-center h-full w-full hover:-translate-y-1 transition-transform duration-300"
                     >
                       <span className="inline-flex items-center justify-center w-14 h-14 icon-bg-cyan mb-5">
                         <HiAcademicCap className="text-accent-cyan text-2xl" />
@@ -475,7 +469,7 @@ export default function AcademyPage() {
                       <h3 className="font-bold tracking-tight text-base text-text-primary">
                         {cert.title}
                       </h3>
-                    </motion.div>
+                    </div>
                   </AnimatedSection>
                 );
               })}

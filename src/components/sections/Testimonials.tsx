@@ -6,23 +6,23 @@ import { HiStar } from "react-icons/hi2";
 const TESTIMONIALS = [
   {
     quote:
-      "OptionScore completely changed how I approach the market. The scoring system gives me confidence in every trade I make.",
+      "I used to spend hours reading charts before market open. Now I check OptionScore's market score, pick my setups, and I'm done in 15 minutes.",
     author: "Rajesh M.",
-    role: "Options Trader",
+    role: "Options Trader, Mumbai",
     stars: 5,
   },
   {
     quote:
-      "The AI scoring is incredibly accurate. I've seen a noticeable improvement in my win rate since I started using it.",
+      "The options chain view with Greeks is what sold me. I was paying ₹2,500/month for a desktop terminal that did the same thing.",
     author: "Priya S.",
-    role: "Swing Trader",
-    stars: 5,
+    role: "Swing Trader, Bangalore",
+    stars: 4,
   },
   {
     quote:
-      "Best trading app I've used in years. The real-time alerts and options chain analysis are game-changers.",
+      "Finally an app that doesn't just throw buy/sell signals. The scoring helps me stay out of bad trades, which is half the battle.",
     author: "Amit K.",
-    role: "Day Trader",
+    role: "F&O Trader, Delhi",
     stars: 5,
   },
 ];
@@ -37,8 +37,7 @@ export function Testimonials() {
             <span className="text-[#0BB158]">Traders</span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
-            Thousands of traders trust OptionScore for smarter, data-driven
-            decisions every day.
+            Hear from traders who use OptionScore every day.
           </p>
         </AnimatedSection>
 

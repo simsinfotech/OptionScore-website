@@ -42,8 +42,8 @@ export function Hero() {
         <p
           className="text-text-secondary text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 md:mb-10 px-4 sm:px-2"
         >
-          Real-time market scoring, AI-driven insights, and professional trading
-          tools in one powerful mobile app.
+          Market scores, options chains, and trade setups
+          on your phone. Built for Indian F&O traders.
         </p>
 
         <div

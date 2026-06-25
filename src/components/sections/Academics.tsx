@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { HiBriefcase, HiAcademicCap, HiChartBar, HiUserGroup } from "react-icons/hi2";
 import Image from "next/image";
@@ -102,18 +101,16 @@ export function Academics() {
             {HIGHLIGHTS.map((item) => {
               const Icon = item.icon;
               return (
-                <motion.div
+                <div
                   key={item.label}
-                  whileHover={{ y: -4, boxShadow: "0 0 20px rgba(11,177,88,0.15)" }}
-                  transition={{ duration: 0.3 }}
-                  className="glass p-5 text-center cursor-pointer"
+                  className="glass p-5 text-center hover:-translate-y-1 transition-transform duration-300"
                 >
                   <div className="inline-flex items-center justify-center w-10 h-10 icon-bg-cyan mb-3">
                     <Icon className="text-xl text-accent-cyan" />
                   </div>
                   <div className="text-2xl font-bold text-accent-cyan mb-1">{item.value}</div>
                   <div className="text-text-muted text-xs uppercase tracking-normal">{item.label}</div>
-                </motion.div>
+                </div>
               );
             })}
           </div>

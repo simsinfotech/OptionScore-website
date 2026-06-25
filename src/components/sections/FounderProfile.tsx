@@ -55,8 +55,8 @@ export function FounderProfile() {
           </p>
           <p className="text-text-secondary text-base leading-relaxed max-w-4xl mx-auto text-center">
             His mission is simple: empower traders with AI-driven tools that
-            cut through the noise and deliver clarity, making smarter
-            trading decisions accessible to everyone.
+            cut through the noise and give traders clear,
+            actionable information.
           </p>
         </div>
       </AnimatedSection>

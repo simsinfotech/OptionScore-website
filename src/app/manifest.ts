@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "OptionScore",
     short_name: "OptionScore",
     description:
-      "AI-Powered Trading Analysis — real-time market scoring, AI-driven insights, and professional trading tools.",
+      "Market scores, options chains, and F&O trade setups on your phone.",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",
