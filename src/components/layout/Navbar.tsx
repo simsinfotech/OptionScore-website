@@ -17,7 +17,7 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#010101] animate-fade-in ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#010101] ${
         scrolled
           ? "border-b border-white/5 shadow-[0_4px_20px_rgba(11,177,88,0.06)]"
           : ""

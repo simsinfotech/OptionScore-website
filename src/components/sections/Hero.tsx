@@ -33,14 +33,14 @@ export function Hero() {
 
       <div className="relative z-[10] w-full mx-auto px-6 lg:px-20 py-20 md:py-32 text-center overflow-hidden">
         <h1
-          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-6 glow-text tracking-normal md:whitespace-nowrap animate-fade-in"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-6 glow-text tracking-normal md:whitespace-nowrap"
         >
           Trade Smarter<br className="md:hidden" />{" "}
           <span className="gradient-text-cyan-violet">With OptionScore</span>
         </h1>
 
         <p
-          className="text-text-secondary text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 md:mb-10 px-4 sm:px-2 animate-fade-in [animation-delay:200ms]"
+          className="text-text-secondary text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 md:mb-10 px-4 sm:px-2"
         >
           Real-time market scoring, AI-driven insights, and professional trading
           tools — all in one powerful mobile app.
