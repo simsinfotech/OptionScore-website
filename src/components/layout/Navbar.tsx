@@ -30,11 +30,12 @@ export function Navbar() {
       <div className="max-w-7xl lg:max-w-none mx-auto px-6 lg:px-20 h-16 flex items-center justify-between">
         <a href="/" className="flex items-center gap-2 md:gap-3">
           <Image
-            src="/images/logo.png"
+            src="/images/logo-sm.png"
             alt="OptionScore icon"
             width={40}
             height={40}
             className="h-7 w-7 md:h-9 md:w-9"
+            priority
           />
           <Image
             src="/images/logo-text.png"
@@ -42,6 +43,7 @@ export function Navbar() {
             width={160}
             height={28}
             className="h-4 w-auto md:h-6"
+            priority
           />
         </a>
 

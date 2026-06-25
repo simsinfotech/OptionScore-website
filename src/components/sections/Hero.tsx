@@ -97,7 +97,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.9 }}
             className="self-end mt-12 animate-float-delayed"
           >
-            <PhoneMockup src="/images/preview-2.png" alt="OptionScore market overview" className="w-[200px]" />
+            <PhoneMockup src="/images/preview-2.jpg" alt="OptionScore market overview" className="w-[200px]" priority />
           </motion.div>
 
           <motion.div
@@ -106,7 +106,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.8 }}
             className="animate-float"
           >
-            <PhoneMockup src="/images/preview-1.png" alt="OptionScore command center" className="w-[260px]" />
+            <PhoneMockup src="/images/preview-1.jpg" alt="OptionScore command center" className="w-[260px]" priority />
           </motion.div>
 
           <motion.div
@@ -116,7 +116,7 @@ export function Hero() {
             className="self-end mt-12 animate-float-delayed"
             style={{ animationDelay: "1s" }}
           >
-            <PhoneMockup src="/images/preview-3.png" alt="OptionScore options intelligence" className="w-[200px]" />
+            <PhoneMockup src="/images/preview-3.jpg" alt="OptionScore options intelligence" className="w-[200px]" priority />
           </motion.div>
         </div>
 
@@ -129,7 +129,7 @@ export function Hero() {
               transition={{ duration: 1, delay: 0.9 }}
               className="flex-shrink-0 snap-center"
             >
-              <PhoneMockup src="/images/preview-2.png" alt="OptionScore market overview" className="w-[180px]" />
+              <PhoneMockup src="/images/preview-2.jpg" alt="OptionScore market overview" className="w-[180px]" />
             </motion.div>
 
             <motion.div
@@ -138,7 +138,7 @@ export function Hero() {
               transition={{ duration: 1, delay: 0.8 }}
               className="flex-shrink-0 snap-center"
             >
-              <PhoneMockup src="/images/preview-1.png" alt="OptionScore command center" className="w-[180px]" />
+              <PhoneMockup src="/images/preview-1.jpg" alt="OptionScore command center" className="w-[180px]" />
             </motion.div>
 
             <motion.div
@@ -147,7 +147,7 @@ export function Hero() {
               transition={{ duration: 1, delay: 0.9 }}
               className="flex-shrink-0 snap-center"
             >
-              <PhoneMockup src="/images/preview-3.png" alt="OptionScore options intelligence" className="w-[180px]" />
+              <PhoneMockup src="/images/preview-3.jpg" alt="OptionScore options intelligence" className="w-[180px]" />
             </motion.div>
           </div>
         </div>
