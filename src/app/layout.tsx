@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { MetaPixel } from "@/components/MetaPixel";
 
@@ -43,6 +44,29 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "OptionScore",
+  url: "https://optionscore.app",
+  logo: "https://optionscore.app/icon-192.png",
+  sameAs: [
+    // TODO: Replace with actual social media URLs
+    // "https://twitter.com/optionscore",
+    // "https://www.instagram.com/optionscore",
+    // "https://www.youtube.com/@optionscore",
+  ],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "OptionScore",
+  url: "https://optionscore.app",
+};
+
+const GA_MEASUREMENT_ID = "G-T3F32T477M";
+
 export default function RootLayout({
   children,
 }: {
@@ -50,10 +74,36 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <head />
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd),
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
         <MetaPixel />
         {children}
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );
