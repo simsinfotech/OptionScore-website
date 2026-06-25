@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { HiChevronDown } from "react-icons/hi2";
 
@@ -69,33 +68,28 @@ export function FAQ() {
                   <span className="text-text-primary font-semibold text-sm md:text-base pr-4">
                     {item.question}
                   </span>
-                  <motion.span
-                    animate={{ rotate: openIndex === index ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex-shrink-0"
+                  <span
+                    className="flex-shrink-0 transition-transform duration-300"
+                    style={{ transform: openIndex === index ? "rotate(180deg)" : "rotate(0deg)" }}
                   >
                     <HiChevronDown className="text-accent-cyan text-xl" />
-                  </motion.span>
+                  </span>
                 </button>
 
-                <AnimatePresence initial={false}>
-                  {openIndex === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-5 pb-5">
-                        <div className="divider-gradient mb-4" />
-                        <p className="text-text-secondary text-sm leading-relaxed">
-                          {item.answer}
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <div
+                  className="overflow-hidden transition-all duration-300"
+                  style={{
+                    maxHeight: openIndex === index ? "300px" : "0",
+                    opacity: openIndex === index ? 1 : 0,
+                  }}
+                >
+                  <div className="px-5 pb-5">
+                    <div className="divider-gradient mb-4" />
+                    <p className="text-text-secondary text-sm leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </div>
+                </div>
               </div>
             </AnimatedSection>
           ))}

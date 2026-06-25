@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/Button";
 import { getStoreUrl } from "@/lib/constants";
@@ -89,13 +88,11 @@ export function Pricing() {
             >
               Annual
               {annual && (
-                <motion.span
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                <span
                   className="absolute -top-2.5 -right-3 text-[10px] font-bold text-background bg-accent-lime px-1.5 py-0.5 rounded-sm"
                 >
                   -20%
-                </motion.span>
+                </span>
               )}
             </button>
           </div>
