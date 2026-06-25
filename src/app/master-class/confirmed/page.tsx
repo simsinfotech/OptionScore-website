@@ -49,7 +49,7 @@ export default function MasterclassConfirmedPage() {
           </h1>
           <p className="text-text-secondary text-sm leading-relaxed mb-8">
             Your spot for the OptionScore {MASTERCLASS.title} is confirmed.
-            We&apos;ve emailed your session details — check your inbox (and spam
+            We&apos;ve emailed your session details. Check your inbox (and spam
             folder, just in case).
           </p>
 

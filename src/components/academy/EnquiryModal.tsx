@@ -151,7 +151,7 @@ export function EnquiryModal({ open, onClose, defaultCourse }: EnquiryModalProps
                     Enquiry received
                   </h3>
                   <p className="text-text-secondary text-sm leading-relaxed mb-7 max-w-sm mx-auto">
-                    Thanks, {name.split(" ")[0] || "there"} — our team will reach
+                    Thanks, {name.split(" ")[0] || "there"}! Our team will reach
                     out to you shortly about{" "}
                     <span className="text-text-primary font-semibold">{course}</span>.
                   </p>

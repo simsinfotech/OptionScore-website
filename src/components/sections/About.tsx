@@ -34,7 +34,7 @@ export function About() {
               <p className="text-text-secondary text-base leading-relaxed mb-6">
                 OptionScore is an Indian trading technology company on a mission to
                 democratize institutional-grade market analysis. We believe every
-                trader — from beginners to professionals — deserves powerful tools
+                trader, from beginners to professionals, deserves powerful tools
                 without the complexity or the price tag.
               </p>
               <p className="text-text-secondary text-base leading-relaxed mb-6">

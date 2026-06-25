@@ -3,7 +3,7 @@ import { LegalPage, LegalSection, LegalList, Val } from "@/components/legal/Lega
 import { COMPANY } from "@/lib/legal";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — OptionScore",
+  title: "Privacy Policy | OptionScore",
   description:
     "How OptionScore collects, uses, stores, and protects your personal data.",
 };
@@ -34,11 +34,11 @@ export default function PrivacyPolicyPage() {
         <p>We collect the following categories of information:</p>
         <LegalList
           items={[
-            "Account information — name, email address, phone number, and password when you register.",
-            "Payment information — billing details and transaction records. Card and bank details are handled directly by our payment gateway / app store partners; we do not store full card numbers.",
-            "Usage data — watchlists, alerts, in-app preferences, scores you view, and feature usage.",
-            "Device & technical data — device type, operating system, IP address, app version, and crash logs.",
-            "Communications — messages you send us for support or feedback.",
+            "Account information: name, email address, phone number, and password when you register.",
+            "Payment information: billing details and transaction records. Card and bank details are handled directly by our payment gateway / app store partners; we do not store full card numbers.",
+            "Usage data: watchlists, alerts, in-app preferences, scores you view, and feature usage.",
+            "Device & technical data: device type, operating system, IP address, app version, and crash logs.",
+            "Communications: messages you send us for support or feedback.",
           ]}
         />
       </LegalSection>
@@ -73,9 +73,9 @@ export default function PrivacyPolicyPage() {
         </p>
         <LegalList
           items={[
-            "Service providers — payment gateways, app stores, cloud hosting, analytics, and customer-support tools that process data on our behalf under confidentiality obligations;",
-            "Legal & regulatory authorities — where required by law, court order, or to protect our rights and the safety of users;",
-            "Business transfers — in connection with a merger, acquisition, or sale of assets, subject to this Policy.",
+            "Service providers: payment gateways, app stores, cloud hosting, analytics, and customer-support tools that process data on our behalf under confidentiality obligations;",
+            "Legal & regulatory authorities: where required by law, court order, or to protect our rights and the safety of users;",
+            "Business transfers: in connection with a merger, acquisition, or sale of assets, subject to this Policy.",
           ]}
         />
       </LegalSection>
@@ -92,9 +92,9 @@ export default function PrivacyPolicyPage() {
 
       <LegalSection heading="6. Data Security">
         <p>
-          We implement reasonable technical and organisational measures —
+          We implement reasonable technical and organisational measures
           including encryption in transit, access controls, and secure
-          infrastructure — to protect your information. However, no method of
+          infrastructure to protect your information. However, no method of
           transmission or storage is completely secure, and we cannot guarantee
           absolute security.
         </p>

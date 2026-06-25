@@ -3,7 +3,7 @@ import { LegalPage, LegalSection, LegalList, Val } from "@/components/legal/Lega
 import { COMPANY } from "@/lib/legal";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions — OptionScore",
+  title: "Terms & Conditions | OptionScore",
   description:
     "The terms and conditions governing your use of the OptionScore app and website.",
 };
@@ -30,7 +30,7 @@ export default function TermsPage() {
         </>
       }
     >
-      <LegalSection heading="1. Nature of the Service — Not Investment Advice">
+      <LegalSection heading="1. Nature of the Service: Not Investment Advice">
         <p>
           OptionScore is a <strong>market data, analytics and educational
           tool</strong>. It provides quantitative scores, charts, indicators,

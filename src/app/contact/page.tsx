@@ -3,7 +3,7 @@ import { LegalPage, LegalSection, Val } from "@/components/legal/LegalPage";
 import { COMPANY, isPlaceholder } from "@/lib/legal";
 
 export const metadata: Metadata = {
-  title: "Contact Us — OptionScore",
+  title: "Contact Us | OptionScore",
   description:
     "Get in touch with the OptionScore team. Support, business, and grievance contact details.",
 };

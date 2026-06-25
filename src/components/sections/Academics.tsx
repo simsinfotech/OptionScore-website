@@ -47,7 +47,7 @@ export function Academics() {
             OptionScore <span className="text-[#0BB158]">Academy</span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
-            Learn options the right way — with structured thinking, disciplined frameworks, and measurable outcomes.
+            Learn options the right way with structured thinking, disciplined frameworks, and measurable outcomes.
           </p>
         </AnimatedSection>
 
@@ -135,7 +135,7 @@ export function Academics() {
                 His career is a testament to what disciplined, process-driven thinking can achieve at scale.
               </p>
               <p className="text-text-secondary text-sm leading-relaxed mb-4">
-                He has held senior roles at institutions of considerable stature — building a rare
+                He has held senior roles at institutions of considerable stature, building a rare
                 cross-sector command of operations, finance, and organisational performance that few
                 professionals in India can claim.
               </p>
@@ -161,7 +161,7 @@ export function Academics() {
               <p className="text-text-secondary text-sm leading-relaxed mb-4">
                 Sathya Narayanan carries the distinction of a Lean Six Sigma Master Black Belt —
                 the highest tier of operational excellence certification globally. Over his career,
-                he has applied this framework not in classrooms, but in the field — diagnosing
+                he has applied this framework not in classrooms, but in the field: diagnosing
                 underperforming and sick business units and engineering their return to profitability
                 in record time.
               </p>
@@ -189,7 +189,7 @@ export function Academics() {
             </p>
             <p className="text-text-secondary text-base leading-relaxed mb-6 max-w-4xl mx-auto text-center">
               Every module he leads is built on structured thinking, disciplined frameworks, and
-              measurable outcomes — not noise.
+              measurable outcomes, not noise.
             </p>
             <p className="text-accent-cyan text-sm font-semibold text-center">
               For serious traders and analysts who want to learn options the right way, there is no better guide.

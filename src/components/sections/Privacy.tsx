@@ -43,7 +43,7 @@ export function Privacy() {
             Your <span className="text-[#0BB158]">Privacy</span> Matters
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
-            We built OptionScore with privacy as a core principle — not an
+            We built OptionScore with privacy as a core principle, not an
             afterthought.
           </p>
         </AnimatedSection>

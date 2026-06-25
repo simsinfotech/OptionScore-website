@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Trading Academy | OptionScore",
   description:
-    "OptionScore Academy — Learn institutional trading with live workshops, courses, and personal mentorship. Master order flow, CRT, and market structure across Indian equity, forex, gold & crypto.",
+    "OptionScore Academy: Learn institutional trading with live workshops, courses, and personal mentorship. Master order flow, CRT, and market structure across Indian equity, forex, gold & crypto.",
   openGraph: {
     title: "Trading Academy | OptionScore",
     description:

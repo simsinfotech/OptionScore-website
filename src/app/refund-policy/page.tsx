@@ -3,7 +3,7 @@ import { LegalPage, LegalSection, LegalList, Val } from "@/components/legal/Lega
 import { COMPANY } from "@/lib/legal";
 
 export const metadata: Metadata = {
-  title: "Refund & Cancellation Policy — OptionScore",
+  title: "Refund & Cancellation Policy | OptionScore",
   description:
     "OptionScore's policy on subscription cancellations and refunds.",
 };
@@ -58,7 +58,7 @@ export default function RefundPolicyPage() {
         />
       </LegalSection>
 
-      <LegalSection heading="4. Exceptions — When We Do Refund">
+      <LegalSection heading="4. Exceptions: When We Do Refund">
         <p>
           We will review refund requests on a case-by-case basis and may issue a
           refund where:

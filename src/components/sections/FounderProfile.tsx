@@ -47,7 +47,7 @@ export function FounderProfile() {
             </p>
           </div>
           <p className="text-text-secondary text-base leading-relaxed mb-4 max-w-4xl mx-auto text-center">
-            Shamique Hussain is the visionary behind OptionScore — with over{" "}
+            Shamique Hussain is the visionary behind OptionScore with over{" "}
             <span className="text-accent-cyan font-semibold">15 years of experience</span> in trading and technology. Driven by
             the belief that every Indian trader deserves access to
             institutional-grade market intelligence, he built OptionScore to
@@ -55,7 +55,7 @@ export function FounderProfile() {
           </p>
           <p className="text-text-secondary text-base leading-relaxed max-w-4xl mx-auto text-center">
             His mission is simple: empower traders with AI-driven tools that
-            cut through the noise and deliver clarity — making smarter
+            cut through the noise and deliver clarity, making smarter
             trading decisions accessible to everyone.
           </p>
         </div>

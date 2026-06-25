@@ -18,11 +18,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://optionscore.app"),
-  title: "OptionScore — AI-Powered Trading Analysis",
+  title: "OptionScore | AI-Powered Trading Analysis",
   description:
     "Get real-time market scoring, AI-driven insights, and professional trading tools in one powerful mobile app.",
   openGraph: {
-    title: "OptionScore — AI-Powered Trading Analysis",
+    title: "OptionScore | AI-Powered Trading Analysis",
     description:
       "Get real-time market scoring, AI-driven insights, and professional trading tools in one powerful mobile app.",
     type: "website",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "OptionScore — AI-Powered Trading Analysis",
+    title: "OptionScore | AI-Powered Trading Analysis",
     description:
       "Get real-time market scoring, AI-driven insights, and professional trading tools in one powerful mobile app.",
   },

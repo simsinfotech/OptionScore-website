@@ -105,7 +105,7 @@ export default function AcademyPage() {
               </h1>
               <p className="text-text-secondary text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-9">
                 A three-level program that takes you from market basics to
-                professional-grade options trading — built on institutional
+                professional-grade options trading, built on institutional
                 frameworks and the OptionScore scoring system.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -153,7 +153,7 @@ export default function AcademyPage() {
                 <div className="space-y-4 text-text-secondary leading-relaxed">
                   <p>
                     Most retail traders learn options as a speculation tool.
-                    Institutions treat them as risk instruments — scoring the
+                    Institutions treat them as risk instruments, scoring the
                     environment before they ever take a position.
                   </p>
                   <p>
@@ -195,7 +195,7 @@ export default function AcademyPage() {
               titlePlain="Built On"
               titleAccent="Three Pillars"
               accentClass="text-[#0BB158]"
-              subtitle="Every module sits on the same foundation — institutional thinking, real execution, and a scoring system that comes before the trade."
+              subtitle="Every module sits on the same foundation: institutional thinking, real execution, and a scoring system that comes before the trade."
             />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -408,7 +408,7 @@ export default function AcademyPage() {
               titlePlain="Every Module,"
               titleAccent="Mapped Out"
               accentClass="text-[#0BB158]"
-              subtitle="41 modules across three levels — from market structure to building your own scoring system. Expand each level to see what's inside."
+              subtitle="41 modules across three levels, from market structure to building your own scoring system. Expand each level to see what's inside."
             />
 
             <div className="space-y-4">

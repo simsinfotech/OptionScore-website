@@ -51,7 +51,7 @@ export default function WorkshopConfirmedPage() {
           </h1>
           <p className="text-text-secondary text-sm leading-relaxed mb-8">
             Thank you for registering for the OptionScore {WORKSHOP.title}.
-            We&apos;ve emailed your workshop details — check your inbox (and spam
+            We&apos;ve emailed your workshop details. Check your inbox (and spam
             folder, just in case).
           </p>
 

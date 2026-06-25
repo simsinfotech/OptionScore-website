@@ -74,7 +74,7 @@ export default function WorkshopReservePage() {
             Reserve Your <span className="text-accent-cyan">Seat</span>
           </h1>
           <p className="text-text-secondary text-sm leading-relaxed mb-8">
-            Enter your details to continue to the {WORKSHOP.title} — a live,
+            Enter your details to continue to the {WORKSHOP.title}, a live,
             2-day intensive on building a disciplined decision-making framework.
           </p>
 

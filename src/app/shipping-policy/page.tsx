@@ -3,7 +3,7 @@ import { LegalPage, LegalSection, LegalList, Val } from "@/components/legal/Lega
 import { COMPANY } from "@/lib/legal";
 
 export const metadata: Metadata = {
-  title: "Shipping & Delivery Policy — OptionScore",
+  title: "Shipping & Delivery Policy | OptionScore",
   description:
     "How OptionScore delivers its digital subscription service.",
 };

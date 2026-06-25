@@ -9,7 +9,7 @@ const FAQ_ITEMS = [
   {
     question: "What is OptionScore?",
     answer:
-      "OptionScore is an AI-powered trading analysis app that distills complex market data into a single, actionable score. It covers options chains, F&O setups, real-time alerts, and smart money flow — giving you institutional-grade insights on your phone.",
+      "OptionScore is an AI-powered trading analysis app that distills complex market data into a single, actionable score. It covers options chains, F&O setups, real-time alerts, and smart money flow to give you institutional-grade insights on your phone.",
   },
   {
     question: "Is my data safe?",
@@ -19,12 +19,12 @@ const FAQ_ITEMS = [
   {
     question: "Which brokers are supported?",
     answer:
-      "OptionScore works independently of your broker. You can use it alongside any Indian broker — Zerodha, Groww, Angel One, Upstox, and more. We provide analysis and insights; you execute trades on your preferred platform.",
+      "OptionScore works independently of your broker. You can use it alongside any Indian broker like Zerodha, Groww, Angel One, Upstox, and more. We provide analysis and insights; you execute trades on your preferred platform.",
   },
   {
     question: "How does the scoring algorithm work?",
     answer:
-      "Our AI engine processes millions of real-time data points — including price action, volume, open interest, option Greeks, and institutional flow — to generate a single composite score for each instrument. Higher scores indicate stronger setups.",
+      "Our AI engine processes millions of real-time data points including price action, volume, open interest, option Greeks, and institutional flow to generate a single composite score for each instrument. Higher scores indicate stronger setups.",
   },
   {
     question: "Can I cancel my subscription anytime?",
