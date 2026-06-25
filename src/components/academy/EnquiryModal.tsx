@@ -161,7 +161,7 @@ export function EnquiryModal({ open, onClose, defaultCourse }: EnquiryModalProps
                 </div>
               ) : (
                 <>
-                  <span className="section-chip">Academy Enquiry</span>
+                  <span className="text-[#0BB158] text-xs font-bold uppercase tracking-[0.15em]">Academy Enquiry</span>
                   <h3 className="font-bold tracking-tight text-2xl text-text-primary mt-3 mb-1">
                     Talk to our team
                   </h3>

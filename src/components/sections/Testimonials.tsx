@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { HiStar } from "react-icons/hi2";
 
@@ -33,10 +32,9 @@ export function Testimonials() {
     <section className="py-24 px-6 relative overflow-hidden section-mesh-alt">
       <div className="max-w-6xl lg:max-w-none lg:px-14 mx-auto relative z-10">
         <AnimatedSection className="text-center mb-12">
-          <span className="section-chip">What Traders Say</span>
           <h2 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
             Trusted by{" "}
-            <span className="gradient-text-cyan-violet">Traders</span>
+            <span className="text-[#0BB158]">Traders</span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
             Thousands of traders trust OptionScore for smarter, data-driven
@@ -47,14 +45,8 @@ export function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {TESTIMONIALS.map((t, index) => (
             <AnimatedSection key={t.author} delay={index * 0.15} className="flex">
-              <motion.div
-                whileHover={{
-                  y: -8,
-                  boxShadow:
-                    "0 0 30px rgba(11,177,88,0.15), 0 20px 40px rgba(0,0,0,0.3)",
-                }}
-                transition={{ duration: 0.3 }}
-                className="glass p-6 flex flex-col w-full cursor-pointer card-hover-gradient"
+              <div
+                className="glass p-6 flex flex-col w-full hover:-translate-y-1 transition-transform duration-300"
               >
                 {/* Stars */}
                 <div className="flex gap-1 mb-4">
@@ -78,13 +70,13 @@ export function Testimonials() {
                     {t.role}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </AnimatedSection>
           ))}
         </div>
       </div>
 
-      <div className="divider-shimmer mt-24" />
+      <div className="divider-gradient mt-24" />
     </section>
   );
 }

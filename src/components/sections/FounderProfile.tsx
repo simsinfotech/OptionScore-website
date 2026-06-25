@@ -23,7 +23,7 @@ export function FounderProfile() {
         <div className="glass p-8 md:p-12">
           <div className="flex flex-col items-center mb-8">
             <h3 className="font-bold uppercase tracking-normal text-xl text-text-primary mb-6 text-center">
-              About the <span className="gradient-text-cyan-violet">Founder</span>
+              About the <span className="text-[#0BB158]">Founder</span>
             </h3>
             <div className="relative mb-4">
               <div className="w-48 h-48 md:w-56 md:h-56 overflow-hidden border-2 border-accent-cyan/30 rounded-full">

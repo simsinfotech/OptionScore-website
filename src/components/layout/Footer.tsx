@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="relative" style={{ background: "radial-gradient(ellipse at 100% 100%, rgba(11,177,88,0.55) 0%, transparent 50%), #050505" }}>
       {/* Shimmer divider at top */}
-      <div className="divider-shimmer" />
+      <div className="divider-gradient" />
 
       <div className="max-w-7xl lg:max-w-none mx-auto px-6 lg:px-20 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-10">
@@ -167,7 +167,7 @@ export function Footer() {
         <div className="mt-8 pt-8 border-t border-card-border text-center">
           <p className="text-text-muted text-xs">
             &copy; {new Date().getFullYear()}{" "}
-            <span className="gradient-text-cyan-violet font-semibold">OptionScore</span>
+            <span className="text-[#0BB158] font-semibold">OptionScore</span>
             . All rights reserved.
           </p>
         </div>

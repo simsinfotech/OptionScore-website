@@ -59,9 +59,8 @@ export function Pricing() {
     <section id="pricing" className="py-24 px-6 relative overflow-hidden section-mesh-violet">
       <div className="max-w-6xl lg:max-w-none lg:px-14 mx-auto relative z-10">
         <AnimatedSection className="text-center mb-12">
-          <span className="section-chip">Transparent Pricing</span>
           <h2 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
-            Choose Your <span className="gradient-text-violet-lime">Plan</span>
+            Choose Your <span className="text-[#0BB158]">Plan</span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto mb-8">
             Start free and upgrade as you grow. All plans include core market
@@ -72,9 +71,9 @@ export function Pricing() {
           <div className="inline-flex items-center gap-2">
             <button
               onClick={() => setAnnual(false)}
-              className={`px-5 py-2.5 text-sm font-semibold uppercase tracking-normal transition-all duration-300 ${
+              className={`px-5 py-2.5 text-sm font-semibold uppercase tracking-normal transition-all duration-200 ${
                 !annual
-                  ? "bg-accent-cyan text-background shadow-[0_0_20px_rgba(11,177,88,0.3)]"
+                  ? "bg-accent-cyan text-background"
                   : "bg-card border border-card-border text-text-muted hover:text-text-primary hover:border-accent-cyan/40"
               }`}
             >
@@ -82,9 +81,9 @@ export function Pricing() {
             </button>
             <button
               onClick={() => setAnnual(true)}
-              className={`px-5 py-2.5 text-sm font-semibold uppercase tracking-normal transition-all duration-300 relative ${
+              className={`px-5 py-2.5 text-sm font-semibold uppercase tracking-normal transition-all duration-200 relative ${
                 annual
-                  ? "bg-accent-cyan text-background shadow-[0_0_20px_rgba(11,177,88,0.3)]"
+                  ? "bg-accent-cyan text-background"
                   : "bg-card border border-card-border text-text-muted hover:text-text-primary hover:border-accent-cyan/40"
               }`}
             >
@@ -105,7 +104,7 @@ export function Pricing() {
         {/* 7-day free trial banner */}
         <AnimatedSection delay={0.1} className="mb-8">
           <div className="text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-2 border border-accent-lime/30 bg-accent-lime/5 text-accent-lime text-sm font-semibold badge-shimmer">
+            <span className="inline-flex items-center gap-2 px-4 py-2 border border-accent-lime/30 bg-accent-lime/5 text-accent-lime text-sm font-semibold">
               <HiStar className="text-base" />
               7-Day Free Trial on All Plans (iOS only)
               <HiStar className="text-base" />
@@ -121,26 +120,17 @@ export function Pricing() {
 
             return (
               <AnimatedSection key={plan.name} delay={index * 0.15} className="flex">
-                <motion.div
-                  whileHover={{
-                    y: -8,
-                    boxShadow: isPopular
-                      ? "0 0 50px rgba(11,177,88,0.25), 0 0 30px rgba(11,177,88,0.15), 0 20px 40px rgba(0,0,0,0.3)"
-                      : "0 0 30px rgba(11,177,88,0.15), 0 20px 40px rgba(0,0,0,0.3)",
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className={`relative p-6 cursor-pointer flex flex-col w-full ${
+                <div
+                  className={`relative p-6 flex flex-col w-full hover:-translate-y-1 transition-transform duration-300 ${
                     isPopular
-                      ? "grad-border-card"
-                      : isBest
-                      ? "grad-border-static"
+                      ? "grad-border-static border-2"
                       : "grad-border-static"
                   }`}
                 >
                   {/* Badge */}
                   {plan.badge && (
                     <div
-                      className={`absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 text-[10px] font-bold uppercase tracking-normal flex items-center gap-1 badge-shimmer ${
+                      className={`absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 text-[10px] font-bold uppercase tracking-normal flex items-center gap-1 ${
                         isPopular
                           ? "bg-accent-cyan text-background"
                           : "bg-accent-lime text-background"
@@ -196,7 +186,7 @@ export function Pricing() {
                   >
                     Start Free Trial
                   </Button>
-                </motion.div>
+                </div>
               </AnimatedSection>
             );
           })}
@@ -204,8 +194,8 @@ export function Pricing() {
 
       </div>
 
-      {/* Shimmer divider at bottom */}
-      <div className="divider-shimmer mt-24" />
+      {/* Divider at bottom */}
+      <div className="divider-gradient mt-24" />
     </section>
   );
 }

@@ -69,7 +69,7 @@ export default function WorkshopReservePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <span className="section-chip">{WORKSHOP.badge}</span>
+          <span className="text-[#0BB158] text-xs font-bold uppercase tracking-[0.15em]">{WORKSHOP.badge}</span>
           <h1 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mt-3 mb-3">
             Reserve Your <span className="text-accent-cyan">Seat</span>
           </h1>

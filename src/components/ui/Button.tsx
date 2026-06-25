@@ -19,9 +19,9 @@ export function Button({
 }: ButtonProps) {
   const classes = twMerge(
     clsx(
-      "inline-flex items-center justify-center font-mono font-semibold uppercase tracking-normal transition-all duration-300 hover:scale-105 active:scale-95",
+      "inline-flex items-center justify-center font-mono font-semibold uppercase tracking-normal transition-all duration-200",
       {
-        "bg-accent-cyan text-background hover:shadow-glow hover:bg-accent-cyan/90":
+        "bg-accent-cyan text-background hover:bg-accent-cyan/90":
           variant === "primary",
         "border border-accent-cyan text-accent-cyan hover:bg-accent-cyan/10":
           variant === "secondary",

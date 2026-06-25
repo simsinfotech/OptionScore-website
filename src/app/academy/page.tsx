@@ -95,13 +95,13 @@ export default function AcademyPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="section-chip">OptionScore Academy</span>
+              <span className="text-[#0BB158] text-xs font-bold uppercase tracking-[0.15em]">OptionScore Academy</span>
               <p className="font-mono text-accent-cyan text-[11px] md:text-xs uppercase tracking-[0.22em] mt-5 mb-5">
                 {ACADEMY_TAGLINE}
               </p>
               <h1 className="font-bold tracking-tight text-4xl md:text-6xl text-text-primary mb-6 leading-[1.08]">
                 Learn Trading the way{" "}
-                <span className="gradient-text-cyan-violet">Institutions trade them</span>
+                <span className="text-[#0BB158]">Institutions trade them</span>
               </h1>
               <p className="text-text-secondary text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-9">
                 A three-level program that takes you from market basics to
@@ -144,11 +144,11 @@ export default function AcademyPage() {
           <div className="max-w-6xl lg:max-w-none lg:px-14 mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <AnimatedSection>
-                <span className="section-chip">The Problem</span>
+                <span className="text-[#0BB158] text-xs font-bold uppercase tracking-[0.15em]">The Problem</span>
                 <h2 className="font-bold tracking-tight text-3xl md:text-4xl text-text-primary mt-4 mb-6 leading-tight">
                   It&apos;s not a knowledge gap.
                   <br />
-                  <span className="gradient-text-violet-lime">It&apos;s a framework gap.</span>
+                  <span className="text-[#0BB158]">It&apos;s a framework gap.</span>
                 </h2>
                 <div className="space-y-4 text-text-secondary leading-relaxed">
                   <p>
@@ -167,7 +167,7 @@ export default function AcademyPage() {
 
               <AnimatedSection delay={0.12}>
                 <div className="grad-border-static p-10 md:p-12 text-center">
-                  <div className="text-6xl md:text-7xl font-bold gradient-text-cyan-violet leading-none">
+                  <div className="text-6xl md:text-7xl font-bold text-[#0BB158] leading-none">
                     9<span className="text-text-muted text-4xl md:text-5xl"> / </span>10
                   </div>
                   <p className="text-text-primary font-semibold mt-5 mb-1">
@@ -194,7 +194,7 @@ export default function AcademyPage() {
               chip="How We Teach"
               titlePlain="Built On"
               titleAccent="Three Pillars"
-              accentClass="gradient-text-cyan-violet"
+              accentClass="text-[#0BB158]"
               subtitle="Every module sits on the same foundation — institutional thinking, real execution, and a scoring system that comes before the trade."
             />
 
@@ -237,7 +237,7 @@ export default function AcademyPage() {
               chip="The Program"
               titlePlain="Three Levels, One"
               titleAccent="Journey"
-              accentClass="gradient-text-violet-lime"
+              accentClass="text-[#0BB158]"
               subtitle="Start as a beginner and finish trading like a professional. Take a single level on its own, or the full program as a bundle."
             />
 
@@ -307,10 +307,10 @@ export default function AcademyPage() {
 
             {/* Bundle */}
             <AnimatedSection delay={0.1}>
-              <div className="grad-border-card p-7 md:p-9">
+              <div className="grad-border-static p-7 md:p-9">
                 <div className="flex flex-col lg:flex-row lg:items-center gap-8">
                   <div className="flex-1">
-                    <span className="inline-block badge-shimmer bg-accent-lime text-background text-[10px] font-bold uppercase tracking-normal px-3 py-1 mb-4">
+                    <span className="inline-block bg-accent-lime text-background text-[10px] font-bold uppercase tracking-normal px-3 py-1 mb-4">
                       Best Value
                     </span>
                     <h3 className="font-bold tracking-tight text-2xl md:text-3xl text-text-primary mb-3">
@@ -347,7 +347,7 @@ export default function AcademyPage() {
                       <span className="text-text-primary text-xs uppercase tracking-normal font-semibold">
                         Live Cohort
                       </span>
-                      <span className="text-3xl font-bold gradient-text-cyan-violet">
+                      <span className="text-3xl font-bold text-[#0BB158]">
                         {ACADEMY_BUNDLE.cohort}
                       </span>
                     </div>
@@ -407,7 +407,7 @@ export default function AcademyPage() {
               chip="Curriculum"
               titlePlain="Every Module,"
               titleAccent="Mapped Out"
-              accentClass="gradient-text-cyan-violet"
+              accentClass="text-[#0BB158]"
               subtitle="41 modules across three levels — from market structure to building your own scoring system. Expand each level to see what's inside."
             />
 
@@ -428,7 +428,7 @@ export default function AcademyPage() {
               chip="How It Runs"
               titlePlain="The Cohort"
               titleAccent="Rhythm"
-              accentClass="gradient-text-violet-lime"
+              accentClass="text-[#0BB158]"
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {ACADEMY_FORMAT.map((item, i) => (
@@ -452,7 +452,7 @@ export default function AcademyPage() {
               chip="Certification"
               titlePlain="Earn Your"
               titleAccent="Credentials"
-              accentClass="gradient-text-cyan-violet"
+              accentClass="text-[#0BB158]"
               subtitle="Each level ends with a graded project, evaluated by faculty against institutional standards. Pass and you earn verifiable, tiered certification. Re-submissions are free."
             />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -490,7 +490,7 @@ export default function AcademyPage() {
               chip="Included With The Bundle"
               titlePlain="Bonuses &"
               titleAccent="Add-Ons"
-              accentClass="gradient-text-violet-lime"
+              accentClass="text-[#0BB158]"
               subtitle="The full program comes loaded with everything you need to stay consistent long after the cohort ends."
             />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -528,7 +528,7 @@ export default function AcademyPage() {
               chip="Questions"
               titlePlain="Frequently"
               titleAccent="Asked"
-              accentClass="gradient-text-cyan-violet"
+              accentClass="text-[#0BB158]"
             />
             <div className="space-y-3">
               {ACADEMY_FAQS.map((faq, i) => (
@@ -544,7 +544,7 @@ export default function AcademyPage() {
             <AnimatedSection>
               <h2 className="font-bold tracking-tight text-3xl md:text-5xl text-text-primary mb-5 leading-tight">
                 Score The Market{" "}
-                <span className="gradient-text-violet-lime">Before You Trade</span>
+                <span className="text-[#0BB158]">Before You Trade</span>
               </h2>
               <p className="text-text-secondary text-base md:text-lg max-w-xl mx-auto mb-9">
                 Join OptionScore Academy and learn the frameworks that separate the
@@ -604,7 +604,7 @@ function SectionHeader({
 }) {
   return (
     <AnimatedSection className="text-center mb-14 md:mb-16">
-      <span className="section-chip">{chip}</span>
+      <span className="text-[#0BB158] text-xs font-bold uppercase tracking-[0.15em]">{chip}</span>
       <h2 className="font-bold tracking-tight text-3xl md:text-4xl text-text-primary mt-4 mb-4 leading-tight">
         {titlePlain} <span className={accentClass}>{titleAccent}</span>
       </h2>

@@ -40,15 +40,6 @@
     background-size: 60px 60px;
   }
 
-  .glow-border {
-    box-shadow: 0 0 20px rgba(11, 177, 88, 0.3);
-    border: 1px solid rgba(11, 177, 88, 0.4);
-  }
-
-  .glow-text {
-    text-shadow: 0 0 20px rgba(11, 177, 88, 0.5);
-  }
-
   .heading {
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -75,107 +66,7 @@
   animation: float-delayed 5s ease-in-out infinite;
 }
 
-/* Pulsing glow for CTA */
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(11, 177, 88, 0.2); }
-  50% { box-shadow: 0 0 40px rgba(11, 177, 88, 0.4), 0 0 80px rgba(11, 177, 88, 0.15); }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-/* Animated gradient background */
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient-shift 6s ease-in-out infinite;
-}
-
-/* Scanning line effect */
-@keyframes scan-line {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
-}
-
-.scan-line {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(11, 177, 88, 0.15), transparent);
-  animation: scan-line 8s linear infinite;
-}
-
-/* Orbiting dots */
-@keyframes orbit {
-  0% { transform: rotate(0deg) translateX(250px) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(250px) rotate(-360deg); }
-}
-
-@keyframes orbit-reverse {
-  0% { transform: rotate(0deg) translateX(180px) rotate(0deg); }
-  100% { transform: rotate(-360deg) translateX(180px) rotate(360deg); }
-}
-
-.orbit-dot {
-  animation: orbit 20s linear infinite;
-}
-
-.orbit-dot-reverse {
-  animation: orbit-reverse 15s linear infinite;
-}
-
-/* ===== VISUAL REDESIGN UTILITIES ===== */
-
-/* Gradient text effects */
-.gradient-text-cyan-violet {
-  background: linear-gradient(135deg, #0BB158, #0BB158);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-text-cyan-lime {
-  background: linear-gradient(135deg, #0BB158, #0BB158);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-text-violet-lime {
-  background: linear-gradient(135deg, #0BB158, #0BB158);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Animated conic-gradient spinning border */
-@property --border-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-.grad-border-card {
-  position: relative;
-  background: #050505;
-  border: 1px solid transparent;
-  background-image: linear-gradient(145deg, rgba(11,177,88,0.1), #050505 50%, rgba(11,177,88,0.06)), conic-gradient(from var(--border-angle, 0deg), #0BB158, #0BB158, #0BB158, #0BB158);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  animation: border-spin 4s linear infinite;
-}
-
-@keyframes border-spin {
-  0% { --border-angle: 0deg; }
-  100% { --border-angle: 360deg; }
-}
+/* ===== VISUAL UTILITIES ===== */
 
 /* Static gradient border */
 .grad-border-static {
@@ -185,19 +76,19 @@
   background-clip: padding-box, border-box;
 }
 
-/* Glassmorphism */
+/* Glassmorphism — simplified */
 .glass {
-  background: linear-gradient(145deg, rgba(11, 177, 88, 0.08) 0%, rgba(5, 5, 5, 0.9) 50%, rgba(11, 177, 88, 0.05) 100%);
+  background: rgba(5, 5, 5, 0.9);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(11, 177, 88, 0.2);
+  border: 1px solid rgba(11, 177, 88, 0.12);
 }
 
 .glass-strong {
   background: rgba(5, 5, 5, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(11, 177, 88, 0.2);
+  border: 1px solid rgba(11, 177, 88, 0.15);
 }
 
 /* Section mesh backgrounds with green corner glows */
@@ -250,122 +141,18 @@
   background: linear-gradient(90deg, transparent, rgba(11, 177, 88, 0.3), rgba(11, 177, 88, 0.3), transparent);
 }
 
-.divider-shimmer {
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, transparent 40%, rgba(11, 177, 88, 0.6) 50%, transparent 60%, transparent 100%);
-  background-size: 200% 100%;
-  animation: shimmer 3s linear infinite;
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-/* Gradient button */
+/* Gradient button — simplified */
 .btn-gradient {
-  position: relative;
-  background: linear-gradient(135deg, #0BB158 0%, #0ed668 50%, #0BB158 100%);
-  background-size: 200% 100%;
+  background: #0BB158;
   color: #010101;
   font-family: var(--font-mono), monospace;
   font-weight: 700;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(11, 177, 88, 0.25), 0 0 40px rgba(11, 177, 88, 0.1);
-  animation: btn-gradient-shimmer 3s ease-in-out infinite, btn-glow-pulse 2s ease-in-out infinite;
-  overflow: hidden;
-}
-
-.btn-gradient::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
-  animation: btn-shine 3s ease-in-out infinite;
+  transition: background 0.2s ease;
 }
 
 .btn-gradient:hover {
-  box-shadow: 0 0 35px rgba(11, 177, 88, 0.5), 0 0 60px rgba(11, 177, 88, 0.3), 0 0 80px rgba(11, 177, 88, 0.15);
+  background: #099a4b;
 }
-
-@keyframes btn-gradient-shimmer {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-@keyframes btn-glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(11, 177, 88, 0.25), 0 0 40px rgba(11, 177, 88, 0.1); }
-  50% { box-shadow: 0 0 30px rgba(11, 177, 88, 0.4), 0 0 60px rgba(11, 177, 88, 0.2); }
-}
-
-@keyframes btn-shine {
-  0% { left: -100%; }
-  60%, 100% { left: 150%; }
-}
-
-/* Section label chip */
-.section-chip {
-  display: inline-block;
-  font-family: var(--font-mono), monospace;
-  font-size: 0.7rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  padding: 0.25rem 0.75rem;
-  border: 1px solid rgba(11, 177, 88, 0.3);
-  color: #0BB158;
-  background: rgba(11, 177, 88, 0.05);
-  margin-bottom: 1rem;
-}
-
-/* Badge shimmer */
-.badge-shimmer {
-  position: relative;
-  overflow: hidden;
-}
-
-.badge-shimmer::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  animation: shimmer 3s linear infinite;
-}
-
-/* Card holographic gradient fill on hover */
-.card-hover-gradient {
-  position: relative;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.card-hover-gradient::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  opacity: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(11, 177, 88, 0.15) 0%,
-    rgba(11, 177, 88, 0.12) 25%,
-    rgba(11, 177, 88, 0.08) 50%,
-    rgba(11, 177, 88, 0.12) 75%,
-    rgba(11, 177, 88, 0.15) 100%
-  );
-  transition: opacity 0.4s ease;
-}
-
-.card-hover-gradient:hover::before {
-  opacity: 1;
-}
-
 
 /* Market ticker infinite scroll */
 @keyframes ticker-scroll {
@@ -400,42 +187,13 @@
   .glass {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    background: linear-gradient(145deg, rgba(11,177,88,0.08) 0%, rgba(5,5,5,0.95) 50%, rgba(11,177,88,0.05) 100%);
+    background: rgba(5, 5, 5, 0.95);
   }
 
   .glass-strong {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     background: rgba(5, 5, 5, 0.95);
-  }
-
-  /* Disable shimmer animations */
-  .divider-shimmer {
-    animation: none;
-    background: linear-gradient(90deg, transparent, rgba(11, 177, 88, 0.3), transparent);
-  }
-
-  .badge-shimmer::after {
-    animation: none;
-    display: none;
-  }
-
-  /* Disable spinning border animation */
-  .grad-border-card {
-    animation: none;
-  }
-
-  /* Reduce scan-line animation */
-  .scan-line {
-    animation: none;
-    display: none;
-  }
-
-  /* Disable orbit dots */
-  .orbit-dot,
-  .orbit-dot-reverse {
-    animation: none;
-    display: none;
   }
 
   /* Disable ping animation on ticker live dot */

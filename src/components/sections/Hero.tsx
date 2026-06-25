@@ -33,10 +33,10 @@ export function Hero() {
 
       <div className="relative z-[10] w-full mx-auto px-6 lg:px-20 py-20 md:py-32 text-center overflow-hidden">
         <h1
-          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-6 glow-text tracking-normal md:whitespace-nowrap"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-6 tracking-normal md:whitespace-nowrap"
         >
           Trade Smarter<br className="md:hidden" />{" "}
-          <span className="gradient-text-cyan-violet">With OptionScore</span>
+          <span className="text-[#0BB158]">With OptionScore</span>
         </h1>
 
         <p
@@ -107,8 +107,8 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Shimmer divider at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 divider-shimmer" />
+      {/* Divider at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 divider-gradient" />
     </section>
   );
 }

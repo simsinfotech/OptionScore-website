@@ -43,9 +43,8 @@ export function Academics() {
     <section id="academics" className="py-24 px-6 section-mesh-cyan relative overflow-hidden">
       <div className="max-w-6xl lg:max-w-none lg:px-14 mx-auto relative z-10">
         <AnimatedSection className="text-center mb-16">
-          <span className="section-chip">Learn</span>
           <h2 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
-            OptionScore <span className="gradient-text-cyan-violet">Academy</span>
+            OptionScore <span className="text-[#0BB158]">Academy</span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
             Learn options the right way — with structured thinking, disciplined frameworks, and measurable outcomes.
@@ -181,7 +180,7 @@ export function Academics() {
         <AnimatedSection delay={0.4}>
           <div className="glass p-8 md:p-12">
             <h4 className="font-bold uppercase tracking-normal text-base text-text-primary mb-4 text-center">
-              Why <span className="gradient-text-cyan-violet">OptionScore Academy</span>
+              Why <span className="text-[#0BB158]">OptionScore Academy</span>
             </h4>
             <p className="text-text-secondary text-base leading-relaxed mb-4 max-w-4xl mx-auto text-center">
               At OptionScore Academy, Sathya Narayanan brings the same rigour that governed boardroom

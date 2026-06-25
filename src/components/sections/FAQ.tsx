@@ -49,10 +49,9 @@ export function FAQ() {
     <section className="py-24 px-6 relative overflow-hidden section-mesh-violet">
       <div className="max-w-3xl lg:max-w-4xl mx-auto relative z-10">
         <AnimatedSection className="text-center mb-12">
-          <span className="section-chip">Common Questions</span>
           <h2 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
             Frequently Asked{" "}
-            <span className="gradient-text-cyan-violet">Questions</span>
+            <span className="text-[#0BB158]">Questions</span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
             Everything you need to know about OptionScore.
@@ -103,7 +102,7 @@ export function FAQ() {
         </div>
       </div>
 
-      <div className="divider-shimmer mt-24" />
+      <div className="divider-gradient mt-24" />
     </section>
   );
 }

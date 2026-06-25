@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { HiArrowDownTray, HiChartBarSquare, HiRocketLaunch } from "react-icons/hi2";
 
@@ -39,9 +38,8 @@ export function HowItWorks() {
     <section id="how-it-works" className="py-24 px-6 section-mesh-alt relative overflow-hidden">
       <div className="max-w-6xl lg:max-w-none lg:px-14 mx-auto relative z-10">
         <AnimatedSection className="text-center mb-20">
-          <span className="section-chip">Getting Started</span>
           <h2 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
-            How It <span className="gradient-text-cyan-violet">Works</span>
+            How It <span className="text-[#0BB158]">Works</span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
             Get started in three simple steps.
@@ -50,52 +48,36 @@ export function HowItWorks() {
 
         {/* Steps */}
         <div className="relative">
-          {/* Connecting line (desktop) - gradient */}
-          <div className="hidden md:block absolute top-[60px] left-[16%] right-[16%] h-[1px]">
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.2, delay: 0.5 }}
-              className="w-full h-full origin-left"
-              style={{
-                background: "linear-gradient(90deg, rgba(11,177,88,0.1), rgba(11,177,88,0.4), rgba(11,177,88,0.1))",
-              }}
-            />
-          </div>
+          {/* Connecting line (desktop) */}
+          <div className="hidden md:block absolute top-[60px] left-[16%] right-[16%] h-[1px]"
+            style={{
+              background: "linear-gradient(90deg, rgba(11,177,88,0.1), rgba(11,177,88,0.4), rgba(11,177,88,0.1))",
+            }}
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
             {STEPS.map((step, index) => {
               const Icon = step.icon;
               return (
                 <AnimatedSection key={step.step} delay={index * 0.2} className="h-full">
-                  <motion.div
-                    whileHover={{
-                      y: -8,
-                      boxShadow: "0 0 40px rgba(11,177,88,0.15), 0 20px 40px rgba(0,0,0,0.3)",
-                    }}
-                    transition={{ duration: 0.3 }}
-                    className="relative text-center glass p-8 cursor-pointer group h-full flex flex-col items-center"
+                  <div
+                    className="relative text-center glass p-8 group h-full flex flex-col items-center hover:-translate-y-1 transition-transform duration-300"
                   >
-                    {/* Step number badge - gradient */}
+                    {/* Step number badge */}
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                      <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        className="w-8 h-8 text-background text-sm font-bold flex items-center justify-center"
-                        style={{ background: "linear-gradient(135deg, #0BB158, #0BB158)" }}
+                      <div
+                        className="w-8 h-8 bg-[#0BB158] text-background text-sm font-bold flex items-center justify-center"
                       >
                         {step.step}
-                      </motion.div>
+                      </div>
                     </div>
 
                     {/* Icon */}
-                    <motion.div
-                      whileHover={{ scale: 1.15, rotate: -5 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                      className="inline-flex items-center justify-center w-16 h-16 icon-bg-cyan text-accent-cyan text-3xl mb-6 mt-4 group-hover:border-accent-cyan/50 transition-colors duration-300"
+                    <div
+                      className="inline-flex items-center justify-center w-16 h-16 icon-bg-cyan text-accent-cyan text-3xl mb-6 mt-4"
                     >
                       <Icon />
-                    </motion.div>
+                    </div>
 
                     {/* Title */}
                     <h3 className="font-bold uppercase tracking-normal text-base text-text-primary mb-3">
@@ -109,7 +91,7 @@ export function HowItWorks() {
 
                     {/* Stat highlight */}
                     <div className="border-t border-card-border pt-4 mt-auto w-full">
-                      <div className="text-2xl font-bold gradient-text-cyan-violet glow-text">
+                      <div className="text-2xl font-bold text-[#0BB158]">
                         {step.stat}
                       </div>
                       <div className="text-xs text-text-muted uppercase tracking-normal mt-1">
@@ -119,10 +101,9 @@ export function HowItWorks() {
 
                     {/* Bottom accent line */}
                     <div
-                      className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-all duration-500"
-                      style={{ background: "linear-gradient(90deg, #0BB158, #0BB158)" }}
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#0BB158] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     />
-                  </motion.div>
+                  </div>
                 </AnimatedSection>
               );
             })}
@@ -130,8 +111,8 @@ export function HowItWorks() {
         </div>
       </div>
 
-      {/* Shimmer divider at bottom */}
-      <div className="divider-shimmer mt-24" />
+      {/* Divider at bottom */}
+      <div className="divider-gradient mt-24" />
     </section>
   );
 }

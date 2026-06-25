@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { HiLockClosed, HiShieldCheck, HiEye, HiDocumentText } from "react-icons/hi2";
 
@@ -40,9 +39,8 @@ export function Privacy() {
     <section id="privacy" className="py-24 px-6 section-mesh-alt relative overflow-hidden">
       <div className="max-w-5xl lg:max-w-none lg:px-14 mx-auto">
         <AnimatedSection className="text-center mb-16">
-          <span className="section-chip">Trust & Security</span>
           <h2 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
-            Your <span className="gradient-text-cyan-violet">Privacy</span> Matters
+            Your <span className="text-[#0BB158]">Privacy</span> Matters
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
             We built OptionScore with privacy as a core principle — not an
@@ -58,13 +56,8 @@ export function Privacy() {
             const accentBg = point.color === "cyan" ? "bg-accent-cyan" : point.color === "violet" ? "bg-accent-violet" : "bg-accent-lime";
             return (
               <AnimatedSection key={point.title} delay={index * 0.1}>
-                <motion.div
-                  whileHover={{
-                    y: -4,
-                    boxShadow: "0 0 20px rgba(11,177,88,0.1), 0 10px 30px rgba(0,0,0,0.2)",
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="glass p-6 h-full cursor-pointer group relative overflow-hidden"
+                <div
+                  className="glass p-6 h-full group relative overflow-hidden hover:-translate-y-1 transition-transform duration-300"
                 >
                   <div className={`inline-flex items-center justify-center w-10 h-10 ${iconBg} mb-4`}>
                     <Icon className={`text-xl ${textColor}`} />
@@ -77,7 +70,7 @@ export function Privacy() {
                   </p>
                   {/* Accent line on hover */}
                   <div className={`absolute bottom-0 left-0 right-0 h-[2px] ${accentBg} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                </motion.div>
+                </div>
               </AnimatedSection>
             );
           })}
@@ -96,8 +89,8 @@ export function Privacy() {
         </AnimatedSection>
       </div>
 
-      {/* Shimmer divider at bottom */}
-      <div className="divider-shimmer mt-24" />
+      {/* Divider at bottom */}
+      <div className="divider-gradient mt-24" />
     </section>
   );
 }

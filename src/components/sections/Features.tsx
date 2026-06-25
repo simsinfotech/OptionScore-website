@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { FEATURES } from "@/lib/constants";
 import { Card } from "@/components/ui/Card";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
@@ -31,9 +30,8 @@ export function Features() {
     <section id="features" className="py-24 px-6 relative overflow-hidden section-mesh-cyan">
       <div className="max-w-7xl lg:max-w-none lg:px-14 mx-auto relative z-10">
         <AnimatedSection className="text-center mb-16">
-          <span className="section-chip">Platform Features</span>
           <h2 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-4">
-            Powerful <span className="gradient-text-cyan-violet">Features</span>
+            Powerful <span className="text-[#0BB158]">Features</span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
             Everything you need to analyze markets and execute trades with
@@ -49,13 +47,11 @@ export function Features() {
             return (
               <AnimatedSection key={feature.title} delay={index * 0.1}>
                 <Card className="h-full group relative overflow-hidden" variant={cardVariant}>
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                  <div
                     className={`inline-flex items-center justify-center w-12 h-12 ${color.bg} mb-4`}
                   >
                     <Icon className={`text-2xl ${color.text}`} />
-                  </motion.div>
+                  </div>
                   <h3 className="font-bold uppercase tracking-normal text-lg text-text-primary mb-3">
                     {feature.title}
                   </h3>
@@ -71,8 +67,8 @@ export function Features() {
         </div>
       </div>
 
-      {/* Shimmer divider at bottom */}
-      <div className="divider-shimmer mt-24" />
+      {/* Divider at bottom */}
+      <div className="divider-gradient mt-24" />
     </section>
   );
 }

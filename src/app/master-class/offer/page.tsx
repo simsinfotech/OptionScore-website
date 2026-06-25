@@ -121,12 +121,12 @@ export default function MasterclassOfferPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <span className="section-chip">{MASTERCLASS.title}</span>
+          <span className="text-[#0BB158] text-xs font-bold uppercase tracking-[0.15em]">{MASTERCLASS.title}</span>
 
           <h1 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mt-3 mb-4 leading-tight">
             Most Traders Look For Entries.
             <br />
-            <span className="gradient-text-violet-lime">
+            <span className="text-[#0BB158]">
               Professionals Look For Reasons To Wait.
             </span>
           </h1>
