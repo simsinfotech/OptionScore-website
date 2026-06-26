@@ -172,7 +172,7 @@ export function Footer() {
           </p>
           <a
             href="/account-deletion"
-            className="inline-block text-[11px] text-text-muted hover:text-red-400 border border-card-border hover:border-red-400/40 px-3 py-1.5 transition-colors whitespace-nowrap"
+            className="inline-block text-[11px] text-white/70 hover:text-red-400 border border-white/30 hover:border-red-400/40 px-3 py-1.5 transition-colors whitespace-nowrap"
           >
             Request Account Deletion
           </a>
