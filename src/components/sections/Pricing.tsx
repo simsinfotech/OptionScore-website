@@ -67,33 +67,34 @@ export function Pricing() {
           </p>
 
           {/* Billing toggle */}
-          <div className="inline-flex items-center gap-3">
-            <div className="relative inline-flex items-center bg-card border border-card-border p-1 gap-0">
-              {/* Sliding indicator */}
-              <div
-                className="absolute top-1 bottom-1 w-[calc(50%-4px)] bg-[#0BB158] transition-transform duration-300 ease-out"
-                style={{ transform: annual ? "translateX(calc(100% + 4px))" : "translateX(0)" }}
-              />
-              <button
-                onClick={() => setAnnual(false)}
-                className={`relative z-10 px-6 py-2 text-sm font-semibold tracking-normal transition-colors duration-200 ${
-                  !annual ? "text-white" : "text-text-muted hover:text-text-primary"
-                }`}
-              >
-                Monthly
-              </button>
-              <button
-                onClick={() => setAnnual(true)}
-                className={`relative z-10 px-6 py-2 text-sm font-semibold tracking-normal transition-colors duration-200 ${
-                  annual ? "text-white" : "text-text-muted hover:text-text-primary"
-                }`}
-              >
-                Annual
-              </button>
-            </div>
-            <span className="text-[11px] font-bold text-accent-lime bg-accent-lime/10 border border-accent-lime/30 px-2.5 py-1">
-              Save 20%
-            </span>
+          <div className="inline-flex items-center gap-2">
+            <button
+              onClick={() => setAnnual(false)}
+              className={`px-5 py-2.5 text-sm font-semibold uppercase tracking-normal transition-all duration-200 ${
+                !annual
+                  ? "bg-accent-cyan text-background"
+                  : "bg-card border border-card-border text-text-muted hover:text-text-primary hover:border-accent-cyan/40"
+              }`}
+            >
+              Monthly
+            </button>
+            <button
+              onClick={() => setAnnual(true)}
+              className={`px-5 py-2.5 text-sm font-semibold uppercase tracking-normal transition-all duration-200 relative ${
+                annual
+                  ? "bg-accent-cyan text-background"
+                  : "bg-card border border-card-border text-text-muted hover:text-text-primary hover:border-accent-cyan/40"
+              }`}
+            >
+              Annual
+              {annual && (
+                <span
+                  className="absolute -top-2.5 -right-3 text-[10px] font-bold text-background bg-accent-lime px-1.5 py-0.5 rounded-sm"
+                >
+                  -20%
+                </span>
+              )}
+            </button>
           </div>
         </AnimatedSection>
 
