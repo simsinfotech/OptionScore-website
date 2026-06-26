@@ -1,16 +1,18 @@
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { MarketTicker } from "@/components/ui/MarketTicker";
 import { Hero } from "@/components/sections/Hero";
 import { Features } from "@/components/sections/Features";
 import { HowItWorks } from "@/components/sections/HowItWorks";
-import { Pricing } from "@/components/sections/Pricing";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { Academics } from "@/components/sections/Academics";
-import { About } from "@/components/sections/About";
-import { FAQ } from "@/components/sections/FAQ";
-import { Privacy } from "@/components/sections/Privacy";
-import { CTA } from "@/components/sections/CTA";
+
+const Pricing = dynamic(() => import("@/components/sections/Pricing").then(m => ({ default: m.Pricing })));
+const Testimonials = dynamic(() => import("@/components/sections/Testimonials").then(m => ({ default: m.Testimonials })));
+const Academics = dynamic(() => import("@/components/sections/Academics").then(m => ({ default: m.Academics })));
+const About = dynamic(() => import("@/components/sections/About").then(m => ({ default: m.About })));
+const FAQ = dynamic(() => import("@/components/sections/FAQ").then(m => ({ default: m.FAQ })));
+const Privacy = dynamic(() => import("@/components/sections/Privacy").then(m => ({ default: m.Privacy })));
+const CTA = dynamic(() => import("@/components/sections/CTA").then(m => ({ default: m.CTA })));
 
 export default function Home() {
   return (

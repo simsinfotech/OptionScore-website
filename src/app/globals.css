@@ -202,6 +202,12 @@
     display: none;
   }
 
+  /* Disable float animations on mobile — GPU heavy */
+  .animate-float,
+  .animate-float-delayed {
+    animation: none;
+  }
+
   /* GPU-accelerate ticker on mobile */
   .ticker-scroll {
     -webkit-backface-visibility: hidden;
