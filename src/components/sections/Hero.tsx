@@ -20,7 +20,7 @@ export function Hero() {
 
       <div className="relative z-[10] w-full mx-auto px-6 lg:px-20 py-20 md:py-32 text-center overflow-hidden">
         <h1
-          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-6 tracking-normal md:whitespace-nowrap"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-text-primary mb-6 tracking-normal lg:whitespace-nowrap"
         >
           Trade Smarter<br className="md:hidden" />{" "}
           <span className="text-[#0BB158]">With OptionScore</span>

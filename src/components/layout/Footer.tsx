@@ -11,7 +11,7 @@ export function Footer() {
       <div className="divider-gradient" />
 
       <div className="max-w-7xl lg:max-w-none mx-auto px-6 lg:px-20 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10">
           {/* Brand */}
           <div>
             <div className="flex items-center mb-4">

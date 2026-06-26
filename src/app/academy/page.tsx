@@ -123,7 +123,7 @@ export default function AcademyPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="grid grid-cols-4 gap-px bg-card-border border border-card-border mt-14 max-w-2xl mx-auto"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-card-border border border-card-border mt-14 max-w-2xl mx-auto"
             >
               {HERO_STATS.map((s) => (
                 <div key={s.label} className="bg-background px-2 py-5">

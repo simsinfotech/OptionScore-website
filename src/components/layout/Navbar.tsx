@@ -23,7 +23,7 @@ export function Navbar() {
           : ""
       }`}
     >
-      <div className="max-w-7xl lg:max-w-none mx-auto px-6 lg:px-20 h-16 flex items-center justify-between">
+      <div className="max-w-7xl lg:max-w-none mx-auto px-6 md:px-10 lg:px-20 h-16 flex items-center justify-between">
         <a href="/" className="flex items-center gap-2 md:gap-3">
           <Image
             src="/images/logo.png"
