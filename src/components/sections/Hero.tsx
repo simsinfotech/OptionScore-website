@@ -76,9 +76,29 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Mobile: single hero image, no slider */}
-        <div className="md:hidden mt-12 flex justify-center">
-          <PhoneMockup src="/images/preview-1.jpg" alt="OptionScore command center" className="w-[200px]" priority />
+        {/* Mobile: 3-image auto-scroll carousel */}
+        <div className="md:hidden mt-12 overflow-hidden">
+          <div className="flex gap-6 animate-mobile-slider w-max">
+            <div className="flex-shrink-0 w-[200px]">
+              <PhoneMockup src="/images/preview-1.jpg" alt="OptionScore command center" className="w-[200px]" priority />
+            </div>
+            <div className="flex-shrink-0 w-[200px]">
+              <PhoneMockup src="/images/preview-2.jpg" alt="OptionScore market overview" className="w-[200px]" />
+            </div>
+            <div className="flex-shrink-0 w-[200px]">
+              <PhoneMockup src="/images/preview-3.jpg" alt="OptionScore options intelligence" className="w-[200px]" />
+            </div>
+            {/* Duplicate for seamless loop */}
+            <div className="flex-shrink-0 w-[200px]">
+              <PhoneMockup src="/images/preview-1.jpg" alt="OptionScore command center" className="w-[200px]" />
+            </div>
+            <div className="flex-shrink-0 w-[200px]">
+              <PhoneMockup src="/images/preview-2.jpg" alt="OptionScore market overview" className="w-[200px]" />
+            </div>
+            <div className="flex-shrink-0 w-[200px]">
+              <PhoneMockup src="/images/preview-3.jpg" alt="OptionScore options intelligence" className="w-[200px]" />
+            </div>
+          </div>
         </div>
       </div>
 
