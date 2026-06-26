@@ -6,8 +6,6 @@ export const NAV_LINKS = [
   { label: "Workshop", href: "/workshop" },
   { label: "Master Class", href: "/master-class" },
   { label: "About", href: "/#about" },
-  { label: "Privacy", href: "/#privacy" },
-  { label: "Account Deletion", href: "/account-deletion" },
 ];
 
 export const FEATURES = [
