@@ -164,12 +164,18 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-card-border text-center">
+        <div className="mt-8 pt-8 border-t border-card-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-text-muted text-xs">
             &copy; {new Date().getFullYear()}{" "}
             <span className="text-[#0BB158] font-semibold">OptionScore</span>
             . All rights reserved.
           </p>
+          <a
+            href="/account-deletion"
+            className="text-[11px] text-text-muted hover:text-red-400 border border-card-border hover:border-red-400/40 px-3 py-1.5 transition-colors"
+          >
+            Request Account Deletion
+          </a>
         </div>
       </div>
     </footer>
