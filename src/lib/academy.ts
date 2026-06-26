@@ -8,8 +8,8 @@
 export const ACADEMY_TAGLINE = "Score The Market Before You Trade™";
 
 export const ACADEMY_INTRO = [
-  "Most retail options traders in India lose money — SEBI data puts the figure at roughly 9 out of 10. We believe that is not a knowledge gap. It is a framework gap.",
-  "OptionScore Academy teaches the institutional frameworks risk desks and prop firms actually use — adapted for Indian F&O markets, paired with real execution, and built around the OptionScore market-scoring system.",
+  "Most retail options traders in India lose money. SEBI data puts the figure at roughly 9 out of 10. We believe that is not a knowledge gap. It is a framework gap.",
+  "OptionScore Academy teaches the institutional frameworks risk desks and prop firms actually use, adapted for Indian F&O markets, paired with real execution and built around the OptionScore market-scoring system.",
 ];
 
 export interface Pillar {
@@ -20,15 +20,15 @@ export interface Pillar {
 export const ACADEMY_PILLARS: Pillar[] = [
   {
     title: "Institutional Frameworks",
-    what: "How risk desks, market makers, and prop firms actually think about options, risk, and portfolios — across Greeks, volatility, and portfolio construction.",
+    what: "How risk desks, market makers, and prop firms actually think about options, risk, and portfolios. Covers Greeks, volatility, and portfolio construction.",
   },
   {
     title: "Active Execution",
-    what: "How institutional thinking translates into real Indian retail trades — broker mechanics, taxation, live trading rooms, option playbooks, and trade management.",
+    what: "How institutional thinking translates into real Indian retail trades. Broker mechanics, taxation, live trading rooms, option playbooks, and trade management.",
   },
   {
     title: "The OptionScore System",
-    what: "A market-scoring engine that classifies regime, structure, volatility, liquidity, and positioning before any trade — so you score the market first, then act.",
+    what: "A market-scoring engine that classifies regime, structure, volatility, liquidity, and positioning before any trade. You score the market first, then act.",
   },
 ];
 
@@ -47,7 +47,7 @@ export interface LevelSummary {
 export const ACADEMY_LEVELS: LevelSummary[] = [
   {
     level: "Level 1",
-    name: "Beginner — Stocks",
+    name: "Beginner: Stocks",
     focus: "Market literacy & risk foundation before you touch options.",
     duration: "4 weeks",
     modules: "12 modules",
@@ -57,7 +57,7 @@ export const ACADEMY_LEVELS: LevelSummary[] = [
   },
   {
     level: "Level 2",
-    name: "Intermediate — Options Foundation",
+    name: "Intermediate: Options Foundation",
     focus: "Where options become a real instrument, not a lottery ticket.",
     duration: "6 weeks",
     modules: "15 modules",
@@ -67,7 +67,7 @@ export const ACADEMY_LEVELS: LevelSummary[] = [
   },
   {
     level: "Level 3",
-    name: "Advanced — Options Pro",
+    name: "Advanced: Options Pro",
     focus: "Trade options the way institutions manage risk, adapted for Indian F&O.",
     duration: "8 weeks",
     modules: "13 modules",
@@ -79,7 +79,7 @@ export const ACADEMY_LEVELS: LevelSummary[] = [
 
 export const ACADEMY_BUNDLE = {
   name: "Full Program Bundle",
-  focus: "All three levels + every bonus — the complete journey, beginner to professional.",
+  focus: "All three levels + every bonus. The complete journey, beginner to professional.",
   duration: "18 weeks",
   modules: "41 modules + bonuses",
   recorded: "₹39,999",
@@ -112,9 +112,9 @@ export const ACADEMY_FOUNDATION = {
   title: "The Professional Trader Mindset",
   hours: "4 hrs · 2 sessions",
   blurb:
-    "Delivered before any technical content begins. The trainer's 24-year journey, how professionals think differently, and why OptionScore exists — because transformation starts with the right mental frame, not a strategy.",
+    "Delivered before any technical content begins. The trainer's 24-year journey, how professionals think differently, and why OptionScore exists. It starts with the right mental frame, not a strategy.",
   highlights: [
-    "The 24-year journey — institutions, World Bank years, markets traded, and the mistakes that taught the most",
+    "The 24-year journey: institutions, World Bank years, markets traded, and the mistakes that taught the most",
     "How professionals frame opportunities, losses, and the trades they skip",
     "Why institutions never trade without scoring the environment first",
     "The conviction-before-execution principle the whole academy is built on",
@@ -125,7 +125,7 @@ export const ACADEMY_CURRICULUM: CurriculumLevel[] = [
   {
     id: "level-1",
     level: "Level 1",
-    name: "Beginner — Stocks",
+    name: "Beginner: Stocks",
     blurb: "The market literacy and risk foundation every trader needs before touching options.",
     duration: "4 weeks",
     recorded: "₹5,999",
@@ -136,7 +136,7 @@ export const ACADEMY_CURRICULUM: CurriculumLevel[] = [
       { code: "1.2", title: "Broker Setup & Platform Mastery", hours: "2 hrs" },
       { code: "1.3", title: "Chart Reading Foundations", hours: "3 hrs" },
       { code: "1.4", title: "Technical Analysis Essentials", hours: "3 hrs" },
-      { code: "1.5", title: "OptionScore Foundations — How The Score Works", hours: "4 hrs" },
+      { code: "1.5", title: "OptionScore Foundations: How The Score Works", hours: "4 hrs" },
       { code: "1.6", title: "Why 9 Out of 10 Retail Traders Lose", hours: "2 hrs" },
       { code: "1.7", title: "Risk Management Foundations", hours: "3 hrs" },
       { code: "1.8", title: "Trading Psychology Basics", hours: "2 hrs" },
@@ -149,7 +149,7 @@ export const ACADEMY_CURRICULUM: CurriculumLevel[] = [
   {
     id: "level-2",
     level: "Level 2",
-    name: "Intermediate — Options Foundation",
+    name: "Intermediate: Options Foundation",
     blurb: "Where options become a real instrument, not a lottery ticket.",
     duration: "6 weeks",
     recorded: "₹14,999",
@@ -159,7 +159,7 @@ export const ACADEMY_CURRICULUM: CurriculumLevel[] = [
     modules: [
       { code: "2.1", title: "Options Market Fundamentals", hours: "2 hrs" },
       { code: "2.2", title: "Option Pricing & Black-Scholes Intuition", hours: "3 hrs" },
-      { code: "2.3", title: "The Greeks — Delta, Gamma, Theta, Vega", hours: "4 hrs" },
+      { code: "2.3", title: "The Greeks: Delta, Gamma, Theta, Vega", hours: "4 hrs" },
       { code: "2.4", title: "Implied Volatility & IV Rank", hours: "3 hrs" },
       { code: "2.5", title: "Open Interest Analysis", hours: "3 hrs" },
       { code: "2.6", title: "F&O Taxation & Turnover", hours: "2 hrs" },
@@ -169,7 +169,7 @@ export const ACADEMY_CURRICULUM: CurriculumLevel[] = [
       { code: "2.10", title: "Directional Option Selling", hours: "3 hrs" },
       { code: "2.11", title: "Option Playbooks", hours: "4 hrs" },
       { code: "2.12", title: "Trade Management", hours: "3 hrs" },
-      { code: "2.13", title: "Professional Trade Reviews — 50 Historical Trades", hours: "8 hrs" },
+      { code: "2.13", title: "Professional Trade Reviews: 50 Historical Trades", hours: "8 hrs" },
       { code: "2.14", title: "Live Case Studies", hours: "4 hrs" },
       { code: "2.15", title: "Final Project & Level 2 Certification", hours: "6 hrs" },
     ],
@@ -177,7 +177,7 @@ export const ACADEMY_CURRICULUM: CurriculumLevel[] = [
   {
     id: "level-3",
     level: "Level 3",
-    name: "Advanced — Options Pro",
+    name: "Advanced: Options Pro",
     blurb: "Trading options the way institutions manage risk, adapted for Indian F&O markets.",
     duration: "8 weeks",
     recorded: "₹29,999",
@@ -186,7 +186,7 @@ export const ACADEMY_CURRICULUM: CurriculumLevel[] = [
     accent: "rose",
     modules: [
       { code: "3.1", title: "Institutional Market Structure", hours: "3 hrs" },
-      { code: "3.2", title: "Advanced Greeks — Second-Order & Cross-Effects", hours: "3 hrs" },
+      { code: "3.2", title: "Advanced Greeks: Second-Order & Cross-Effects", hours: "3 hrs" },
       { code: "3.3", title: "Volatility Trading", hours: "4 hrs" },
       { code: "3.4", title: "Advanced Option Strategies", hours: "5 hrs" },
       { code: "3.5", title: "Portfolio Construction", hours: "4 hrs" },
@@ -203,12 +203,12 @@ export const ACADEMY_CURRICULUM: CurriculumLevel[] = [
 ];
 
 export const ACADEMY_FORMAT = [
-  "3 live sessions per week — 2 teaching sessions (90 min) + 1 live trading room (60 min)",
-  "All sessions recorded — students retain lifetime access",
-  "Weekly assignments — practical exercises with faculty review",
+  "3 live sessions per week: 2 teaching sessions (90 min) + 1 live trading room (60 min)",
+  "All sessions recorded. Students retain lifetime access",
+  "Weekly assignments with practical exercises and faculty review",
   "Private, moderated, faculty-active community",
-  "End-of-level project — gated certification",
-  "Time commitment: 6–8 hours per week (live + self-paced)",
+  "End-of-level project with gated certification",
+  "Time commitment: 6 to 8 hours per week (live + self-paced)",
 ];
 
 export interface Certification {
@@ -231,7 +231,7 @@ export const ACADEMY_BONUSES: Bonus[] = [
   {
     title: "90-Day Consistency Challenge",
     description:
-      "Daily check-ins, weekly journal reviews, and an accountability cohort — built to fix the #1 problem in retail trading: inconsistency.",
+      "Daily check-ins, weekly journal reviews, and an accountability cohort. Built to fix the #1 problem in retail trading: inconsistency.",
   },
   {
     title: "Trading Psychology Deep Dive",
@@ -241,7 +241,7 @@ export const ACADEMY_BONUSES: Bonus[] = [
   {
     title: "Trade Journal Templates",
     description:
-      "Pre-built Excel and Notion journals aligned to the OS framework — pre-trade checklist, post-trade review, weekly analytics.",
+      "Pre-built Excel and Notion journals aligned to the OS framework. Includes pre-trade checklist, post-trade review, and weekly analytics.",
   },
   {
     title: "Risk Management Calculator",
@@ -249,14 +249,14 @@ export const ACADEMY_BONUSES: Bonus[] = [
       "A browser-based position-sizing and risk-allocation tool aligned to OptionScore engine outputs.",
   },
   {
-    title: "OptionScore App — 6 Months Pro",
+    title: "OptionScore App: 6 Months Pro",
     description:
       "Six months of OS Pro bundled with the cohort, so you apply academy frameworks using the live engine.",
   },
   {
     title: "Weekly Market Outlook Sessions",
     description:
-      "Live faculty-led sessions every Sunday — the week ahead, OS engine pre-read, and watchlist construction. Recorded for catch-up.",
+      "Live faculty-led sessions every Sunday covering the week ahead, OS engine pre-read, and watchlist construction. Recorded for catch-up.",
   },
   {
     title: "Private Community Access",
@@ -272,9 +272,9 @@ export const ACADEMY_BONUSES: Bonus[] = [
 
 // Enquiry form options. `value` is what gets written to the sheet.
 export const ACADEMY_COURSE_OPTIONS = [
-  "Level 1 — Beginner (Stocks)",
-  "Level 2 — Intermediate (Options Foundation)",
-  "Level 3 — Advanced (Options Pro)",
+  "Level 1: Beginner (Stocks)",
+  "Level 2: Intermediate (Options Foundation)",
+  "Level 3: Advanced (Options Pro)",
   "Full Program Bundle",
   "Not sure yet",
 ] as const;
@@ -293,15 +293,15 @@ export interface AcademyFaq {
 export const ACADEMY_FAQS: AcademyFaq[] = [
   {
     q: "Do I need any prior experience to start?",
-    a: "No. Level 1 (Beginner — Stocks) assumes zero background and builds market literacy and risk foundations from scratch. Level 2 expects Level 1 or equivalent market experience, and Level 3 expects Level 2.",
+    a: "No. Level 1 (Beginner: Stocks) assumes zero background and builds market literacy and risk foundations from scratch. Level 2 expects Level 1 or equivalent market experience, and Level 3 expects Level 2.",
   },
   {
     q: "What's the difference between the Recorded and Cohort options?",
-    a: "Recorded gives you the structured video curriculum at your own pace. The Cohort is the full live experience — 3 live sessions a week, live trading rooms, weekly faculty review, the private community, gated certification, and bonuses.",
+    a: "Recorded gives you the structured video curriculum at your own pace. The Cohort is the full live experience: 3 live sessions a week, live trading rooms, weekly faculty review, the private community, gated certification, and bonuses.",
   },
   {
     q: "Do I get a certificate?",
-    a: "Yes. Each level ends with a graded project. Passing students earn tiered, verifiable certification — OS Certified Trader (Level 1), OS Certified Options Practitioner (Level 2), and OS Certified Options Professional (Level 3). Re-submissions are free.",
+    a: "Yes. Each level ends with a graded project. Passing students earn tiered, verifiable certification: OS Certified Trader (Level 1), OS Certified Options Practitioner (Level 2), and OS Certified Options Professional (Level 3). Re-submissions are free.",
   },
   {
     q: "How much time does it take each week?",
@@ -309,6 +309,6 @@ export const ACADEMY_FAQS: AcademyFaq[] = [
   },
   {
     q: "Is this investment advice or a tips service?",
-    a: "No. OptionScore Academy is an education program. We teach frameworks and process — not buy/sell calls or guaranteed returns. Trading involves substantial risk of loss, and all decisions are your own.",
+    a: "No. OptionScore Academy is an education program. We teach frameworks and process, not buy/sell calls or guaranteed returns. Trading involves substantial risk of loss, and all decisions are your own.",
   },
 ];

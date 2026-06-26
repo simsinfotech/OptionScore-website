@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import {
   HiCheck,
   HiCheckCircle,
@@ -90,11 +89,7 @@ export default function AcademyPage() {
         {/* ───────────── Hero ───────────── */}
         <section className="section-mesh-violet relative overflow-hidden border-b border-card-border">
           <div className="max-w-3xl mx-auto px-6 py-20 md:py-28 text-center relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+            <div>
               <span className="text-[#0BB158] text-xs font-bold uppercase tracking-[0.15em]">OptionScore Academy</span>
               <p className="font-mono text-accent-cyan text-[11px] md:text-xs uppercase tracking-[0.22em] mt-5 mb-5">
                 {ACADEMY_TAGLINE}
@@ -116,13 +111,10 @@ export default function AcademyPage() {
                   Levels &amp; Pricing
                 </Button>
               </div>
-            </motion.div>
+            </div>
 
             {/* Stat strip */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.15 }}
+            <div
               className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-card-border border border-card-border mt-14 max-w-2xl mx-auto"
             >
               {HERO_STATS.map((s) => (
@@ -135,7 +127,7 @@ export default function AcademyPage() {
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -178,7 +170,7 @@ export default function AcademyPage() {
                   </p>
                   <div className="divider-gradient my-7" />
                   <p className="text-text-secondary text-sm leading-relaxed">
-                    Our entire curriculum is built to put you in the other 10% —
+                    Our entire curriculum is built to put you in the other 10%,
                     through process, not prediction.
                   </p>
                 </div>
