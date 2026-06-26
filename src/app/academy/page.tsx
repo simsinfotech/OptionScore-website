@@ -88,13 +88,13 @@ export default function AcademyPage() {
       <main className="relative z-[1] pt-16">
         {/* ───────────── Hero ───────────── */}
         <section className="section-mesh-violet relative overflow-hidden border-b border-card-border">
-          <div className="max-w-4xl mx-auto px-6 py-20 md:py-28 text-center relative z-10">
+          <div className="max-w-3xl mx-auto px-6 py-20 md:py-28 text-center relative z-10">
             <div>
               <span className="text-[#0BB158] text-xs font-bold uppercase tracking-[0.15em]">OptionScore Academy</span>
               <p className="font-mono text-accent-cyan text-[11px] md:text-xs uppercase tracking-[0.22em] mt-5 mb-5">
                 {ACADEMY_TAGLINE}
               </p>
-              <h1 className="font-bold tracking-tight text-4xl md:text-6xl text-text-primary mb-6 leading-[1.08] lg:whitespace-nowrap">
+              <h1 className="font-bold tracking-tight text-4xl md:text-5xl text-text-primary mb-6 leading-[1.15]">
                 Learn Trading the way{" "}
                 <span className="text-[#0BB158]">Institutions trade them</span>
               </h1>
