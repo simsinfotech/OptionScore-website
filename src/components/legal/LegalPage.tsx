@@ -25,7 +25,12 @@ export function LegalPage({
     <div className="min-h-screen bg-background grid-bg">
       {/* Header */}
       <header className="border-b border-card-border">
-        <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-center">
+        <div className="max-w-4xl mx-auto px-6 h-16 flex items-center gap-4">
+          <Link href="/" className="flex items-center justify-center w-9 h-9 border border-card-border hover:border-accent-cyan/40 transition-colors" aria-label="Go back">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-white">
+              <path fillRule="evenodd" d="M17 10a.75.75 0 0 1-.75.75H5.612l4.158 3.96a.75.75 0 1 1-1.04 1.08l-5.5-5.25a.75.75 0 0 1 0-1.08l5.5-5.25a.75.75 0 1 1 1.04 1.08L5.612 9.25H16.25A.75.75 0 0 1 17 10Z" clipRule="evenodd" />
+            </svg>
+          </Link>
           <Link href="/" className="flex items-center gap-3">
             <Image
               src="/images/logo.png"
@@ -46,9 +51,6 @@ export function LegalPage({
       </header>
 
       <main className="max-w-3xl mx-auto px-6 py-16">
-        <BackButton className="text-sm text-text-muted hover:text-accent-cyan transition-colors mb-6 inline-block">
-          &larr; Back
-        </BackButton>
         <h1 className="font-bold tracking-normal text-3xl md:text-4xl text-text-primary mb-3">
           {title}
           {accentWord && <span className="text-accent-cyan"> {accentWord}</span>}
