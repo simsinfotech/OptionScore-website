@@ -66,15 +66,6 @@
   animation: float-delayed 5s ease-in-out infinite;
 }
 
-@keyframes mobile-slider {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-mobile-slider {
-  animation: mobile-slider 12s linear infinite;
-}
-
 /* ===== VISUAL UTILITIES ===== */
 
 /* Static gradient border */
