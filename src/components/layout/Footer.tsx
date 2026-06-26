@@ -165,14 +165,14 @@ export function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-card-border flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-text-muted text-xs">
+          <p className="text-text-muted text-xs text-center sm:text-left">
             &copy; {new Date().getFullYear()}{" "}
             <span className="text-[#0BB158] font-semibold">OptionScore</span>
             . All rights reserved.
           </p>
           <a
             href="/account-deletion"
-            className="text-[11px] text-text-muted hover:text-red-400 border border-card-border hover:border-red-400/40 px-3 py-1.5 transition-colors"
+            className="inline-block text-[11px] text-text-muted hover:text-red-400 border border-card-border hover:border-red-400/40 px-3 py-1.5 transition-colors whitespace-nowrap"
           >
             Request Account Deletion
           </a>
