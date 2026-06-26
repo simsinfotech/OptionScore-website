@@ -172,6 +172,11 @@
 }
 
 /* Hide scrollbar for slider */
+/* Phone mockup shadow — disabled on mobile for GPU perf */
+.phone-mockup-shadow {
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -206,6 +211,11 @@
   .animate-float,
   .animate-float-delayed {
     animation: none;
+  }
+
+  /* Disable drop-shadow filter on mobile — GPU heavy */
+  .phone-mockup-shadow {
+    filter: none;
   }
 
   /* GPU-accelerate ticker on mobile */

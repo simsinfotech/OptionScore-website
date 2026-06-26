@@ -1,6 +1,3 @@
-"use client";
-
-import { useRef, useEffect } from "react";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 import { Button } from "@/components/ui/Button";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
@@ -14,16 +11,6 @@ const TRUST_BADGES = [
 ];
 
 export function Hero() {
-  const sliderRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (slider && slider.children.length > 1) {
-      const centerCard = slider.children[1] as HTMLElement;
-      const scrollLeft = centerCard.offsetLeft - slider.offsetWidth / 2 + centerCard.offsetWidth / 2;
-      slider.scrollLeft = scrollLeft;
-    }
-  }, []);
 
   return (
     <section
@@ -47,7 +34,7 @@ export function Hero() {
         </p>
 
         <div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-xs sm:max-w-none mx-auto animate-fade-in [animation-delay:400ms]"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-xs sm:max-w-none mx-auto md:animate-fade-in md:[animation-delay:400ms]"
         >
           <Button size="lg" variant="gradient" href={APP_STORE_URL} className="w-full sm:w-auto">
             <FaApple className="mr-2 text-xl" />
@@ -61,7 +48,7 @@ export function Hero() {
 
         {/* Trust badge strip */}
         <div
-          className="flex items-center justify-center gap-3 sm:gap-6 mt-8 flex-wrap animate-fade-in [animation-delay:600ms]"
+          className="flex items-center justify-center gap-3 sm:gap-6 mt-8 flex-wrap md:animate-fade-in md:[animation-delay:600ms]"
         >
           {TRUST_BADGES.map((badge) => {
             const Icon = badge.icon;
@@ -89,21 +76,9 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Mobile: swipeable slider */}
-        <div className="md:hidden mt-12 -mx-6">
-          <div ref={sliderRef} className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-[calc(50vw-90px)] pb-4 scrollbar-hide">
-            <div className="flex-shrink-0 snap-center">
-              <PhoneMockup src="/images/preview-2.jpg" alt="OptionScore market overview" className="w-[180px]" />
-            </div>
-
-            <div className="flex-shrink-0 snap-center">
-              <PhoneMockup src="/images/preview-1.jpg" alt="OptionScore command center" className="w-[180px]" priority />
-            </div>
-
-            <div className="flex-shrink-0 snap-center">
-              <PhoneMockup src="/images/preview-3.jpg" alt="OptionScore options intelligence" className="w-[180px]" />
-            </div>
-          </div>
+        {/* Mobile: single hero image, no slider */}
+        <div className="md:hidden mt-12 flex justify-center">
+          <PhoneMockup src="/images/preview-1.jpg" alt="OptionScore command center" className="w-[200px]" priority />
         </div>
       </div>
 

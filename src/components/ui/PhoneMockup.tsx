@@ -10,8 +10,7 @@ interface PhoneMockupProps {
 export function PhoneMockup({ src, alt = "App screenshot", className = "", priority = false }: PhoneMockupProps) {
   return (
     <div
-      className={`${className} overflow-hidden rounded-2xl`}
-      style={{ filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.6))" }}
+      className={`${className} overflow-hidden rounded-2xl phone-mockup-shadow`}
     >
       {src ? (
         <Image
