@@ -1,5 +1,3 @@
-"use client";
-
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { HiArrowDownTray, HiChartBarSquare, HiRocketLaunch } from "react-icons/hi2";
 
