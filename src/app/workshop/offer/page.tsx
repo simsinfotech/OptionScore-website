@@ -227,6 +227,19 @@ export default function WorkshopOfferPage() {
               ))}
             </div>
 
+            {/* Portrait Video */}
+            <div className="flex justify-center my-6 md:my-10">
+              <div className="w-[220px] md:w-[300px] aspect-[9/16] rounded-xl md:rounded-2xl overflow-hidden border border-[rgba(11,177,88,0.25)] shadow-[0_0_30px_rgba(11,177,88,0.15)]">
+                <iframe
+                  src="https://www.youtube.com/embed/IyIFjM_U4bQ?rel=0&modestbranding=1"
+                  title="Workshop Preview"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+
             {/* Price Box */}
             <div className="inline-block bg-[#050505] border border-[rgba(11,177,88,0.3)] rounded-xl md:rounded-2xl px-6 md:px-12 py-4 md:py-6 mb-5 md:mb-6 text-center">
               <div className="text-[0.82rem] md:text-[0.95rem] text-[#6b7280] line-through">Rs. {WORKSHOP.totalValue.toLocaleString("en-IN")}</div>
