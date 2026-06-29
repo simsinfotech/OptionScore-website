@@ -9,6 +9,9 @@ import {
   HiPlus,
   HiMinus,
   HiPlay,
+  HiPause,
+  HiSpeakerWave,
+  HiSpeakerXMark,
   HiExclamationTriangle,
   HiLockClosed,
   HiCreditCard,
@@ -54,6 +57,9 @@ export default function WorkshopOfferPage() {
   const [paying, setPaying] = useState(false);
   const [error, setError] = useState("");
   const [showStickyBar, setShowStickyBar] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
   /* ─── Funnel protection ─── */
@@ -229,8 +235,9 @@ export default function WorkshopOfferPage() {
 
             {/* Portrait Video */}
             <div className="flex justify-center my-6 md:my-10">
-              <div className="w-[220px] md:w-[300px] aspect-[9/16] rounded-xl md:rounded-2xl overflow-hidden border border-[rgba(11,177,88,0.25)] shadow-[0_0_30px_rgba(11,177,88,0.15)] bg-black">
+              <div className="relative w-[220px] md:w-[300px] aspect-[9/16] rounded-xl md:rounded-2xl overflow-hidden border border-[rgba(11,177,88,0.25)] shadow-[0_0_30px_rgba(11,177,88,0.15)] bg-black group">
                 <video
+                  ref={videoRef}
                   src="/workshop-preview.mp4"
                   autoPlay
                   muted
@@ -238,6 +245,31 @@ export default function WorkshopOfferPage() {
                   playsInline
                   className="w-full h-full object-cover"
                 />
+                {/* Controls overlay */}
+                <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-4 py-3 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button
+                    onClick={() => {
+                      const v = videoRef.current;
+                      if (!v) return;
+                      if (isPlaying) { v.pause(); } else { v.play(); }
+                      setIsPlaying(!isPlaying);
+                    }}
+                    className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                  >
+                    {isPlaying ? <HiPause size={18} /> : <HiPlay size={18} />}
+                  </button>
+                  <button
+                    onClick={() => {
+                      const v = videoRef.current;
+                      if (!v) return;
+                      v.muted = !v.muted;
+                      setIsMuted(!isMuted);
+                    }}
+                    className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                  >
+                    {isMuted ? <HiSpeakerXMark size={18} /> : <HiSpeakerWave size={18} />}
+                  </button>
+                </div>
               </div>
             </div>
 
