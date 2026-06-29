@@ -230,12 +230,13 @@ export default function WorkshopOfferPage() {
             {/* Portrait Video */}
             <div className="flex justify-center my-6 md:my-10">
               <div className="w-[220px] md:w-[300px] aspect-[9/16] rounded-xl md:rounded-2xl overflow-hidden border border-[rgba(11,177,88,0.25)] shadow-[0_0_30px_rgba(11,177,88,0.15)] bg-black">
-                <iframe
-                  src="https://drive.google.com/file/d/1dv29Z-eunBDoakYoTypCorRwNxaejZeV/preview"
-                  title="Workshop Preview"
-                  allow="autoplay"
-                  allowFullScreen
-                  className="w-full h-full border-0"
+                <video
+                  src="/workshop-preview.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
