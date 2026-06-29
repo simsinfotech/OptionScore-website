@@ -229,18 +229,18 @@ export default function WorkshopOfferPage() {
 
             {/* Portrait Video */}
             <div className="flex justify-center my-6 md:my-10">
-              <div className="w-[220px] md:w-[300px] aspect-[9/16] rounded-xl md:rounded-2xl overflow-hidden border border-[rgba(11,177,88,0.25)] shadow-[0_0_30px_rgba(11,177,88,0.15)]">
+              <div className="w-[220px] md:w-[300px] aspect-[9/16] rounded-xl md:rounded-2xl overflow-hidden border border-[rgba(11,177,88,0.25)] shadow-[0_0_30px_rgba(11,177,88,0.15)] bg-black">
                 <iframe
-                  src="https://www.youtube.com/embed/IyIFjM_U4bQ?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=IyIFjM_U4bQ&showinfo=0&controls=1&iv_load_policy=3"
+                  src="https://drive.google.com/file/d/1dv29Z-eunBDoakYoTypCorRwNxaejZeV/preview"
                   title="Workshop Preview"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="autoplay"
                   allowFullScreen
-                  className="w-full h-full"
+                  className="w-full h-full border-0"
                 />
               </div>
             </div>
 
-            {/* Price Box */}
+{/* Price Box */}
             <div className="inline-block bg-[#050505] border border-[rgba(11,177,88,0.3)] rounded-xl md:rounded-2xl px-6 md:px-12 py-4 md:py-6 mb-5 md:mb-6 text-center">
               <div className="text-[0.82rem] md:text-[0.95rem] text-[#6b7280] line-through">Rs. {WORKSHOP.totalValue.toLocaleString("en-IN")}</div>
               <div className="text-[1.8rem] md:text-[3rem] font-extrabold text-[#0bb158]">
