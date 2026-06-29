@@ -231,7 +231,7 @@ export default function WorkshopOfferPage() {
             <div className="flex justify-center my-6 md:my-10">
               <div className="w-[220px] md:w-[300px] aspect-[9/16] rounded-xl md:rounded-2xl overflow-hidden border border-[rgba(11,177,88,0.25)] shadow-[0_0_30px_rgba(11,177,88,0.15)]">
                 <iframe
-                  src="https://www.youtube.com/embed/IyIFjM_U4bQ?rel=0&modestbranding=1"
+                  src="https://www.youtube.com/embed/IyIFjM_U4bQ?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=IyIFjM_U4bQ&showinfo=0&controls=1&iv_load_policy=3"
                   title="Workshop Preview"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
