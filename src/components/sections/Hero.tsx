@@ -1,14 +1,8 @@
-import dynamic from "next/dynamic";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 import { Button } from "@/components/ui/Button";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
 import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
 import { HiUsers, HiStar, HiBolt } from "react-icons/hi2";
-
-const MobilePhoneSlider = dynamic(
-  () => import("@/components/ui/MobilePhoneSlider").then(m => ({ default: m.MobilePhoneSlider })),
-  { ssr: false }
-);
 
 const TRUST_BADGES = [
   { icon: HiUsers, label: "10,000+ Traders" },
@@ -82,8 +76,10 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Mobile: swipeable phone slider */}
-        <MobilePhoneSlider />
+        {/* Mobile: single hero image */}
+        <div className="md:hidden mt-12 flex justify-center">
+          <PhoneMockup src="/images/preview-1.jpg" alt="OptionScore command center" className="w-[200px]" priority />
+        </div>
       </div>
 
       {/* Divider at bottom */}
