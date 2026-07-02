@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import { PhoneMockup } from "@/components/ui/PhoneMockup";
+import Image from "next/image";
 
 const SLIDES = [
   { src: "/images/preview-1.jpg", alt: "OptionScore command center" },
@@ -10,26 +9,26 @@ const SLIDES = [
 ];
 
 export function MobilePhoneSlider() {
-  const ref = useRef<HTMLDivElement>(null);
-
   return (
     <div className="md:hidden mt-12">
-      <div
-        ref={ref}
-        className="flex gap-5 overflow-x-auto snap-x snap-mandatory px-[calc(50%-100px)] pb-4 no-scrollbar"
-      >
+      <div className="flex gap-5 overflow-x-auto snap-x snap-mandatory px-[calc(50%-100px)] pb-4 no-scrollbar">
         {SLIDES.map((slide, i) => (
           <div key={slide.src} className="flex-shrink-0 w-[200px] snap-center">
-            <PhoneMockup
-              src={slide.src}
-              alt={slide.alt}
-              className="w-[200px]"
-              priority={i === 0}
-            />
+            <div className="w-[200px] overflow-hidden rounded-2xl">
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                width={400}
+                height={800}
+                className="w-full h-auto rounded-2xl"
+                priority={i === 0}
+                loading={i === 0 ? "eager" : "lazy"}
+                sizes="200px"
+              />
+            </div>
           </div>
         ))}
       </div>
-      {/* Dots */}
       <div className="flex justify-center gap-2 mt-3">
         {SLIDES.map((slide) => (
           <div
