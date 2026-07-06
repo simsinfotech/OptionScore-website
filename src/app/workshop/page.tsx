@@ -142,7 +142,7 @@ export default function WorkshopReservePage() {
               className="w-full"
               disabled={submitting}
             >
-              {submitting ? "Please wait…" : "Continue · Rs. 5,999"}
+              {submitting ? "Please wait…" : "Continue"}
             </Button>
 
           </form>
