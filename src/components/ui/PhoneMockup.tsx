@@ -5,9 +5,10 @@ interface PhoneMockupProps {
   alt?: string;
   className?: string;
   priority?: boolean;
+  loading?: "eager" | "lazy";
 }
 
-export function PhoneMockup({ src, alt = "App screenshot", className = "", priority = false }: PhoneMockupProps) {
+export function PhoneMockup({ src, alt = "App screenshot", className = "", priority = false, loading }: PhoneMockupProps) {
   return (
     <div
       className={`${className} overflow-hidden rounded-2xl phone-mockup-shadow`}
@@ -20,6 +21,7 @@ export function PhoneMockup({ src, alt = "App screenshot", className = "", prior
           height={1040}
           className="w-full h-auto rounded-2xl"
           priority={priority}
+          loading={loading}
           sizes="(max-width: 768px) 180px, 260px"
         />
       ) : (

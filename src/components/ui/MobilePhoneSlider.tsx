@@ -16,8 +16,8 @@ export function MobilePhoneSlider() {
               <Image
                 src={slide.src}
                 alt={slide.alt}
-                width={400}
-                height={800}
+                width={200}
+                height={432}
                 className="w-full h-auto rounded-2xl"
                 priority={i === 0}
                 loading={i === 0 ? "eager" : "lazy"}
