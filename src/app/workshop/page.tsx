@@ -145,19 +145,6 @@ export default function WorkshopReservePage() {
               {submitting ? "Please wait…" : "Continue · Rs. 5,999"}
             </Button>
 
-            <div className="relative flex items-center gap-3 my-4">
-              <div className="flex-1 h-px bg-card-border" />
-              <span className="text-text-muted text-xs uppercase tracking-wider">or</span>
-              <div className="flex-1 h-px bg-card-border" />
-            </div>
-
-            <Button
-              variant="secondary"
-              className="w-full text-sm"
-              href="https://rzp.io/rzp/vvLHj0gp"
-            >
-              Join the Webinar for just Rs. 299
-            </Button>
           </form>
         </motion.div>
       </div>
