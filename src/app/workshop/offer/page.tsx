@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { Suspense, useEffect, useState, useCallback, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
   HiCheck,
@@ -50,7 +50,15 @@ const WS_LEAD_KEY = "os_ws_lead";
 const PRODUCT = "workshop";
 const PRICE = `Rs. ${WORKSHOP_FEE_RUPEES.toLocaleString("en-IN")}`;
 
-export default function WorkshopOfferPage() {
+export default function WorkshopOfferPageWrapper() {
+  return (
+    <Suspense>
+      <WorkshopOfferPage />
+    </Suspense>
+  );
+}
+
+function WorkshopOfferPage() {
   const router = useRouter();
   const [lead, setLeadState] = useState<StoredLead | null>(null);
   const [paying, setPaying] = useState(false);
