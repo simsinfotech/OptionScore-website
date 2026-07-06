@@ -34,9 +34,9 @@ export default function WebinarPage() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-center font-bold text-xl sm:text-2xl md:text-[2.1rem] text-white leading-tight mb-4">
-          Learn the Institutional Framework<br />
-          <span className="text-[#0bb158]">That Changed Everything</span>
+        <h1 className="text-center font-bold text-white leading-tight mb-4">
+          <span className="block text-xl sm:text-2xl md:text-[1.85rem] whitespace-nowrap">Learn the Institutional Framework</span>
+          <span className="block text-xl sm:text-2xl md:text-[1.85rem] text-[#0bb158]">That Changed Everything</span>
         </h1>
 
         <p className="text-center text-[#9CA3AF] text-sm md:text-base max-w-xl mx-auto mb-10 leading-relaxed">
