@@ -19,7 +19,7 @@ export function MobilePhoneSlider() {
                 width={200}
                 height={432}
                 className="w-full h-auto rounded-2xl"
-                loading={i === 0 ? "eager" : "lazy"}
+                loading="lazy"
                 sizes="200px"
               />
             </div>
