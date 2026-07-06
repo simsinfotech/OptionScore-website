@@ -142,7 +142,30 @@ export default function WorkshopReservePage() {
               className="w-full"
               disabled={submitting}
             >
-              {submitting ? "Please wait…" : "Continue"}
+              {submitting ? "Please wait…" : "Continue · Rs. 5,999"}
+            </Button>
+
+            <div className="relative flex items-center gap-3 my-4">
+              <div className="flex-1 h-px bg-card-border" />
+              <span className="text-text-muted text-xs uppercase tracking-wider">or</span>
+              <div className="flex-1 h-px bg-card-border" />
+            </div>
+
+            <Button
+              type="submit"
+              variant="secondary"
+              className="w-full text-sm"
+              disabled={submitting}
+              onClick={() => {
+                const hiddenInput = document.createElement("input");
+                hiddenInput.type = "hidden";
+                hiddenInput.name = "tier";
+                hiddenInput.value = "webinar-only";
+                const form = document.querySelector("form");
+                form?.appendChild(hiddenInput);
+              }}
+            >
+              {submitting ? "Please wait…" : "Join the Webinar for just Rs. 299"}
             </Button>
           </form>
         </motion.div>
