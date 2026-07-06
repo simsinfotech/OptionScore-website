@@ -31,6 +31,7 @@ export function Navbar() {
             width={40}
             height={40}
             className="h-7 w-7 md:h-9 md:w-9"
+            priority
           />
           <Image
             src="/images/logo-text.png"
@@ -38,6 +39,7 @@ export function Navbar() {
             width={160}
             height={28}
             className="h-4 w-auto md:h-6"
+            priority
           />
         </a>
 
