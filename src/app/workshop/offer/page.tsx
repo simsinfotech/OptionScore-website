@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback, useRef } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
   HiCheck,
   HiXMark,
@@ -61,8 +61,15 @@ export default function WorkshopOfferPage() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
+  const searchParams = useSearchParams();
+
   /* ─── Funnel protection ─── */
   useEffect(() => {
+    const isPreview = searchParams.get("preview") === "1";
+    if (isPreview) {
+      setLeadState({ name: "Preview", email: "preview@test.com", mobile: "0000000000" });
+      return;
+    }
     const stored = getLead(WS_LEAD_KEY);
     if (!stored) {
       router.replace("/workshop");
@@ -73,7 +80,7 @@ export default function WorkshopOfferPage() {
       return;
     }
     setLeadState(stored);
-  }, [router]);
+  }, [router, searchParams]);
 
   /* ─── Sticky bar scroll listener ─── */
   useEffect(() => {
