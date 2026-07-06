@@ -67,7 +67,7 @@ export default function WorkshopOfferPage() {
   useEffect(() => {
     const isPreview = searchParams.get("preview") === "1";
     if (isPreview) {
-      setLeadState({ name: "Preview", email: "preview@test.com", mobile: "0000000000" });
+      setLeadState({ name: "Preview", email: "preview@test.com", mobile: "0000000000", experience: "", source: "" });
       return;
     }
     const stored = getLead(WS_LEAD_KEY);
