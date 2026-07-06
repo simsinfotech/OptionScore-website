@@ -56,6 +56,7 @@ export default function WorkshopOfferPage() {
   const [paying, setPaying] = useState(false);
   const [error, setError] = useState("");
   const [showStickyBar, setShowStickyBar] = useState(false);
+  const [showWebinarModal, setShowWebinarModal] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -599,14 +600,12 @@ export default function WorkshopOfferPage() {
                   <div className="flex-1 h-px bg-[#ffffff10]" />
                 </div>
 
-                <a
-                  href="https://rzp.io/rzp/vvLHj0gp"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => setShowWebinarModal(true)}
                   className="block w-full text-center border border-[#0bb158]/40 text-[#0bb158] font-bold text-[0.85rem] md:text-[1rem] py-3 md:py-4 rounded-lg hover:bg-[#0bb158]/10 transition-colors mb-3"
                 >
                   Join the Webinar for just Rs. 299
-                </a>
+                </button>
 
                 <div className="flex justify-center gap-3 md:gap-4 flex-wrap mb-4 md:mb-6 text-[0.7rem] md:text-[0.8rem] text-[#6b7280]">
                   <span><HiLockClosed className="inline align-middle mr-0.5" size={12} /> 256-bit SSL</span>
@@ -726,6 +725,11 @@ export default function WorkshopOfferPage() {
       >
         <FaWhatsapp size={24} className="text-white md:!w-7 md:!h-7" />
       </a>
+
+      {/* ═══════════ Webinar Modal ═══════════ */}
+      {showWebinarModal && (
+        <WebinarModal onClose={() => setShowWebinarModal(false)} />
+      )}
 
       {/* ═══════════ Custom Styles ═══════════ */}
       <style jsx global>{`
@@ -996,6 +1000,111 @@ function MarqueeText({ text }: { text: string }) {
     <div className="flex w-max animate-[marquee_30s_linear_infinite]">
       <span className="flex-shrink-0">{repeat}</span>
       <span className="flex-shrink-0">{repeat}</span>
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════════════
+   Webinar Rs. 299 Modal
+   ═══════════════════════════════════════════════════ */
+
+const WEBINAR_QUESTIONS = [
+  {
+    question: "What is your current trading experience?",
+    options: ["Less than 6 months", "6 months – 1 year", "1 – 3 years", "3+ years"],
+  },
+  {
+    question: "What is your biggest challenge in trading right now?",
+    options: [
+      "I don't have a clear framework",
+      "I get stopped out on good setups",
+      "I can't manage risk properly",
+      "I struggle with consistency",
+    ],
+  },
+  {
+    question: "Are you committed to attending the full live webinar?",
+    options: ["Yes, I'll be there live", "I'll try my best"],
+  },
+];
+
+function WebinarModal({ onClose }: { onClose: () => void }) {
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState<string[]>([]);
+
+  const handleSelect = (option: string) => {
+    const newAnswers = [...answers, option];
+    setAnswers(newAnswers);
+
+    if (step < WEBINAR_QUESTIONS.length - 1) {
+      setStep(step + 1);
+    } else {
+      // All answered — redirect to Razorpay
+      window.open("https://rzp.io/rzp/vvLHj0gp", "_blank");
+      onClose();
+    }
+  };
+
+  const current = WEBINAR_QUESTIONS[step];
+
+  return (
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+      <div
+        className="relative bg-[#0a0a0a] border border-[rgba(11,177,88,0.2)] rounded-2xl w-full max-w-md p-6 md:p-8"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 text-[#6b7280] hover:text-white transition-colors"
+        >
+          <HiXMark size={20} />
+        </button>
+
+        {/* Header — only on first step */}
+        {step === 0 && (
+          <div className="mb-5">
+            <p className="text-[#0bb158] text-xs font-bold uppercase tracking-[0.15em] mb-2">Webinar Access · Rs. 299</p>
+            <h3 className="text-white font-bold text-lg md:text-xl leading-tight">
+              Can&apos;t invest Rs. 5,999 right now? No worries.
+            </h3>
+            <p className="text-[#9CA3AF] text-sm mt-2 leading-relaxed">
+              Join the live webinar for just Rs. 299 and experience the framework firsthand. Just answer 3 quick questions to continue.
+            </p>
+          </div>
+        )}
+
+        {/* Progress */}
+        <div className="flex gap-1.5 mb-5">
+          {WEBINAR_QUESTIONS.map((_, i) => (
+            <div
+              key={i}
+              className={`h-1 flex-1 rounded-full transition-colors ${
+                i <= step ? "bg-[#0bb158]" : "bg-[#ffffff10]"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Question */}
+        <p className="text-white font-semibold text-[0.95rem] md:text-base mb-4">
+          {step + 1}. {current.question}
+        </p>
+
+        {/* Options */}
+        <div className="space-y-2.5">
+          {current.options.map((option) => (
+            <button
+              key={option}
+              onClick={() => handleSelect(option)}
+              className="w-full text-left px-4 py-3 rounded-lg border border-[#ffffff15] text-[#d1d5db] text-sm hover:border-[#0bb158]/50 hover:bg-[#0bb158]/5 hover:text-white transition-all"
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
