@@ -933,8 +933,8 @@ function CountdownTimer() {
   const [display, setDisplay] = useState("");
 
   useEffect(() => {
-    // Workshop starts July 5, 2026 at 10:00 AM IST (UTC+5:30)
-    const end = new Date("2026-07-05T04:30:00Z").getTime();
+    // Workshop starts July 12, 2026 at 10:00 AM IST (UTC+5:30)
+    const end = new Date("2026-07-12T04:30:00Z").getTime();
 
     const update = () => {
       const diff = Math.max(0, end - Date.now());

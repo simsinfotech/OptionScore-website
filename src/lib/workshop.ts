@@ -18,7 +18,7 @@ export const WORKSHOP = {
 
   /* ─── Announcement bar ─── */
   announcement: {
-    date: "July 1st Week",
+    date: "July 2nd Week",
     seats: "19",
     totalSeats: "50",
   },
@@ -91,7 +91,7 @@ export const WORKSHOP = {
   /* ─── Schedule ─── */
   schedule: {
     day1: {
-      header: "DAY 1 · Saturday, July 5 · 10:00 AM to 5:00 PM IST",
+      header: "DAY 1 · Saturday, July 12 · 10:00 AM to 5:00 PM IST",
       sessions: [
         { time: "10:00 AM – 10:15 AM", duration: "15 min", title: "Welcome & Setup", description: "Introductions, platform check, overview of the two days ahead.", tag: "", type: "default" as const },
         { time: "10:15 AM – 11:30 AM", duration: "75 min", title: "Session 1: How Institutions Move Price", description: "Liquidity pools. Stop hunts. Why retail traders are always on the wrong side. Live chart examples on Nifty and XAUUSD throughout.", tag: "LIVE TEACHING", type: "live" as const },
@@ -105,7 +105,7 @@ export const WORKSHOP = {
       ],
     },
     day2: {
-      header: "DAY 2 · Sunday, July 6 · 9:00 AM to 3:00 PM IST",
+      header: "DAY 2 · Sunday, July 13 · 9:00 AM to 3:00 PM IST",
       sessions: [
         { time: "9:00 AM – 9:15 AM", duration: "15 min", title: "Day 2 Briefing", description: "Recap of Day 1 framework. What we're watching for in today's session.", tag: "", type: "default" as const },
         { time: "9:15 AM – 11:30 AM", duration: "135 min", title: "LIVE MARKET OPEN: Shamiq Trades Live", description: "9:15am. Charts open. Real market. Real session. Shamiq calls setups live, identifying liquidity, calling the sweep, executing while explaining every decision out loud. You watch, ask questions, and see the framework in action on today's market.", tag: "LIVE MARKET", type: "live" as const },
@@ -273,7 +273,7 @@ export const WORKSHOP = {
     "Instant confirmation email with Zoom link",
     "Pre-workshop preparation material sent 48 hours before",
     "Reminder emails + WhatsApp message before each day",
-    "Join on July 5 at 10:00 AM IST, Day 1 begins",
+    "Join on July 12 at 10:00 AM IST, Day 1 begins",
   ],
 
   /* ─── Contrast Section ─── */
@@ -287,7 +287,7 @@ export const WORKSHOP = {
       "Continue paying for your education through losing trades",
     ],
     optionScoreWay: [
-      "2 days this July 5–6",
+      "2 days this July 12–13",
       "Watch institutional order flow called live, before the move",
       "Apply the framework on your own charts with Shamiq watching",
       "Get your analysis reviewed personally, on screen, live",
@@ -354,7 +354,7 @@ export const WORKSHOP = {
   },
   whatsappGroupUrl: "https://chat.whatsapp.com/CfuP5c2qahw2M8j8vB2X58?s=em&p=a&mlu=2",
   session: {
-    dateTime: "Sat 5 & Sun 6 July 2026 · 10:00 AM IST",
+    dateTime: "Sat 12 & Sun 13 July 2026 · 10:00 AM IST",
     duration: "2 Days",
     format: "Live Online Workshop",
     access: "Interactive Sessions + Q&A",
