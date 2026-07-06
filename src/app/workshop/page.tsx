@@ -152,20 +152,11 @@ export default function WorkshopReservePage() {
             </div>
 
             <Button
-              type="submit"
               variant="secondary"
               className="w-full text-sm"
-              disabled={submitting}
-              onClick={() => {
-                const hiddenInput = document.createElement("input");
-                hiddenInput.type = "hidden";
-                hiddenInput.name = "tier";
-                hiddenInput.value = "webinar-only";
-                const form = document.querySelector("form");
-                form?.appendChild(hiddenInput);
-              }}
+              href="https://rzp.io/rzp/vvLHj0gp"
             >
-              {submitting ? "Please wait…" : "Join the Webinar for just Rs. 299"}
+              Join the Webinar for just Rs. 299
             </Button>
           </form>
         </motion.div>
