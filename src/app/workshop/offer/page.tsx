@@ -107,7 +107,7 @@ export default function WorkshopOfferPage() {
                     exitIntentShown.current = true;
                     setShowWebinarModal(true);
                   }
-                }, 5000);
+                }, 3000);
               } else {
                 clearTimeout(timer);
               }
