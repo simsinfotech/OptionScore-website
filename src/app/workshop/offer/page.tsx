@@ -1,7 +1,7 @@
 "use client";
 
-import { Suspense, useEffect, useState, useCallback, useRef } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState, useCallback, useRef } from "react";
+import { useRouter } from "next/navigation";
 import {
   HiCheck,
   HiXMark,
@@ -50,15 +50,7 @@ const WS_LEAD_KEY = "os_ws_lead";
 const PRODUCT = "workshop";
 const PRICE = `Rs. ${WORKSHOP_FEE_RUPEES.toLocaleString("en-IN")}`;
 
-export default function WorkshopOfferPageWrapper() {
-  return (
-    <Suspense>
-      <WorkshopOfferPage />
-    </Suspense>
-  );
-}
-
-function WorkshopOfferPage() {
+export default function WorkshopOfferPage() {
   const router = useRouter();
   const [lead, setLeadState] = useState<StoredLead | null>(null);
   const [paying, setPaying] = useState(false);
@@ -69,15 +61,8 @@ function WorkshopOfferPage() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
-  const searchParams = useSearchParams();
-
   /* ─── Funnel protection ─── */
   useEffect(() => {
-    const isPreview = searchParams.get("preview") === "1";
-    if (isPreview) {
-      setLeadState({ name: "Preview", email: "preview@test.com", mobile: "0000000000", experience: "", source: "" });
-      return;
-    }
     const stored = getLead(WS_LEAD_KEY);
     if (!stored) {
       router.replace("/workshop");
@@ -88,7 +73,7 @@ function WorkshopOfferPage() {
       return;
     }
     setLeadState(stored);
-  }, [router, searchParams]);
+  }, [router]);
 
   /* ─── Sticky bar scroll listener ─── */
   useEffect(() => {
