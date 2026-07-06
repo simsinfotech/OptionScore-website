@@ -88,11 +88,14 @@ export default function WorkshopOfferPage() {
     };
     document.addEventListener("mouseleave", handleMouseLeave);
 
-    // Mobile + Desktop: show popup 5s after user scrolls to the register section
+    // Mobile only: show popup 5s after user scrolls to the register section
     let timer: ReturnType<typeof setTimeout>;
-    const section = document.getElementById("register");
-    const observer = section
-      ? new IntersectionObserver(
+    let observer: IntersectionObserver | null = null;
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      const section = document.getElementById("register");
+      if (section) {
+        observer = new IntersectionObserver(
           ([entry]) => {
             if (entry.isIntersecting && !exitIntentShown.current) {
               timer = setTimeout(() => {
@@ -106,9 +109,10 @@ export default function WorkshopOfferPage() {
             }
           },
           { threshold: 0.3 }
-        )
-      : null;
-    if (observer && section) observer.observe(section);
+        );
+        observer.observe(section);
+      }
+    }
 
     return () => {
       document.removeEventListener("mouseleave", handleMouseLeave);
