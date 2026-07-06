@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
 import {
   HiCheck,
   HiXMark,
@@ -243,6 +242,7 @@ export default function WorkshopOfferPage() {
                   muted
                   loop
                   playsInline
+                  preload="metadata"
                   className="w-full h-full object-cover"
                 />
                 {/* Controls overlay */}
