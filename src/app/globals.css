@@ -221,8 +221,9 @@
     filter: none;
   }
 
-  /* GPU-accelerate ticker on mobile */
+  /* Simplify ticker on mobile — reduce GPU load */
   .ticker-scroll {
+    will-change: auto;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
