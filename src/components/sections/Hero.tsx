@@ -76,9 +76,17 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Mobile: single hero image */}
-        <div className="md:hidden mt-12 flex justify-center">
-          <PhoneMockup src="/images/preview-1.jpg" alt="OptionScore command center" className="w-[200px]" priority />
+        {/* Mobile: 3-phone staggered layout */}
+        <div className="md:hidden mt-12 flex items-end justify-center gap-3">
+          <div className="self-end mt-8">
+            <PhoneMockup src="/images/preview-2.jpg" alt="OptionScore market overview" className="w-[100px]" />
+          </div>
+          <div>
+            <PhoneMockup src="/images/preview-1.jpg" alt="OptionScore command center" className="w-[140px]" priority />
+          </div>
+          <div className="self-end mt-8">
+            <PhoneMockup src="/images/preview-3.jpg" alt="OptionScore options intelligence" className="w-[100px]" />
+          </div>
         </div>
       </div>
 
