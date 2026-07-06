@@ -77,8 +77,9 @@ export default function WorkshopOfferPage() {
     setLeadState(stored);
   }, [router]);
 
-  /* ─── Exit-intent: show webinar modal when cursor leaves viewport ─── */
+  /* ─── Exit-intent: desktop (cursor leave) + mobile (5s after register section visible) ─── */
   useEffect(() => {
+    // Desktop: cursor leaves viewport
     const handleMouseLeave = (e: MouseEvent) => {
       if (e.clientY <= 0 && !exitIntentShown.current && !showWebinarModal) {
         exitIntentShown.current = true;
@@ -86,7 +87,34 @@ export default function WorkshopOfferPage() {
       }
     };
     document.addEventListener("mouseleave", handleMouseLeave);
-    return () => document.removeEventListener("mouseleave", handleMouseLeave);
+
+    // Mobile + Desktop: show popup 5s after user scrolls to the register section
+    let timer: ReturnType<typeof setTimeout>;
+    const section = document.getElementById("register");
+    const observer = section
+      ? new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting && !exitIntentShown.current) {
+              timer = setTimeout(() => {
+                if (!exitIntentShown.current) {
+                  exitIntentShown.current = true;
+                  setShowWebinarModal(true);
+                }
+              }, 5000);
+            } else {
+              clearTimeout(timer);
+            }
+          },
+          { threshold: 0.3 }
+        )
+      : null;
+    if (observer && section) observer.observe(section);
+
+    return () => {
+      document.removeEventListener("mouseleave", handleMouseLeave);
+      clearTimeout(timer);
+      if (observer) observer.disconnect();
+    };
   }, [showWebinarModal]);
 
   /* ─── Sticky bar scroll listener ─── */
