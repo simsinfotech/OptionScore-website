@@ -79,39 +79,44 @@ export default function WorkshopOfferPage() {
 
   /* ─── Exit-intent: desktop (cursor leave) + mobile (5s after register section visible) ─── */
   useEffect(() => {
+    if (exitIntentShown.current) return;
+
     // Desktop: cursor leaves viewport
     const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !exitIntentShown.current && !showWebinarModal) {
+      if (e.clientY <= 0 && !exitIntentShown.current) {
         exitIntentShown.current = true;
         setShowWebinarModal(true);
       }
     };
     document.addEventListener("mouseleave", handleMouseLeave);
 
-    // Mobile only: show popup 5s after user scrolls to the register section
+    // Mobile: show popup 5s after user scrolls to the register section
     let timer: ReturnType<typeof setTimeout>;
     let observer: IntersectionObserver | null = null;
-    const isMobile = window.innerWidth < 768;
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
     if (isMobile) {
-      const section = document.getElementById("register");
-      if (section) {
-        observer = new IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting && !exitIntentShown.current) {
-              timer = setTimeout(() => {
-                if (!exitIntentShown.current) {
-                  exitIntentShown.current = true;
-                  setShowWebinarModal(true);
-                }
-              }, 5000);
-            } else {
-              clearTimeout(timer);
-            }
-          },
-          { threshold: 0.3 }
-        );
-        observer.observe(section);
-      }
+      // Small delay to ensure DOM is ready
+      setTimeout(() => {
+        const section = document.getElementById("register");
+        if (section) {
+          observer = new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting && !exitIntentShown.current) {
+                timer = setTimeout(() => {
+                  if (!exitIntentShown.current) {
+                    exitIntentShown.current = true;
+                    setShowWebinarModal(true);
+                  }
+                }, 5000);
+              } else {
+                clearTimeout(timer);
+              }
+            },
+            { threshold: 0.2 }
+          );
+          observer.observe(section);
+        }
+      }, 1000);
     }
 
     return () => {
@@ -119,7 +124,7 @@ export default function WorkshopOfferPage() {
       clearTimeout(timer);
       if (observer) observer.disconnect();
     };
-  }, [showWebinarModal]);
+  }, []);
 
   /* ─── Sticky bar scroll listener ─── */
   useEffect(() => {
