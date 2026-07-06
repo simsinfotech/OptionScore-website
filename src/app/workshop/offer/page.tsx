@@ -1024,7 +1024,7 @@ const WEBINAR_QUESTIONS = [
   },
   {
     question: "Are you committed to attending the full live webinar?",
-    options: ["Yes, I'll be there live", "I'll try my best"],
+    options: ["Yes, I'll be there live", "No"],
   },
 ];
 
