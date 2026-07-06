@@ -92,7 +92,7 @@ export default function WebinarPage() {
           <div className="flex justify-center gap-3 md:gap-4 flex-wrap mt-4 text-[0.7rem] md:text-[0.8rem] text-[#6b7280]">
             <span><HiLockClosed className="inline align-middle mr-0.5" size={12} /> 256-bit SSL</span>
             <span><HiCheckCircle className="inline align-middle mr-0.5 text-[#22c55e]" size={12} /> Razorpay</span>
-            <span><HiCreditCard className="inline align-middle mr-0.5" size={12} /> Cards, UPI, EMI</span>
+            <span><HiCreditCard className="inline align-middle mr-0.5" size={12} /> Cards, UPI</span>
           </div>
         </div>
 
