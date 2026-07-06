@@ -57,6 +57,7 @@ export default function WorkshopOfferPage() {
   const [error, setError] = useState("");
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [showWebinarModal, setShowWebinarModal] = useState(false);
+  const exitIntentShown = useRef(false);
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -75,6 +76,18 @@ export default function WorkshopOfferPage() {
     }
     setLeadState(stored);
   }, [router]);
+
+  /* ─── Exit-intent: show webinar modal when cursor leaves viewport ─── */
+  useEffect(() => {
+    const handleMouseLeave = (e: MouseEvent) => {
+      if (e.clientY <= 0 && !exitIntentShown.current && !showWebinarModal) {
+        exitIntentShown.current = true;
+        setShowWebinarModal(true);
+      }
+    };
+    document.addEventListener("mouseleave", handleMouseLeave);
+    return () => document.removeEventListener("mouseleave", handleMouseLeave);
+  }, [showWebinarModal]);
 
   /* ─── Sticky bar scroll listener ─── */
   useEffect(() => {
