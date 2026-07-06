@@ -1039,9 +1039,9 @@ function WebinarModal({ onClose }: { onClose: () => void }) {
     if (step < WEBINAR_QUESTIONS.length - 1) {
       setStep(step + 1);
     } else {
-      // All answered — redirect to Razorpay
-      window.open("https://rzp.io/rzp/vvLHj0gp", "_blank");
+      // All answered — redirect to webinar landing page
       onClose();
+      window.location.href = "/webinar";
     }
   };
 
