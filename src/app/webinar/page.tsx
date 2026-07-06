@@ -4,7 +4,9 @@ import { HiCheck, HiClock, HiUser, HiPresentationChartLine, HiBolt, HiLockClosed
 import { FunnelShell } from "@/components/funnel/FunnelShell";
 import { WORKSHOP } from "@/lib/workshop";
 
-const RAZORPAY_URL = "https://rzp.io/rzp/vvLHj0gp";
+// Rs. 299 hosted payment link. Same-tab navigation so Razorpay can redirect
+// the buyer back to /webinar/confirmed (set that as the link's callback URL).
+const RAZORPAY_URL = "https://rzp.io/rzp/nRF8OrN";
 
 const WHAT_YOU_LEARN = [
   "How institutions move price and hunt your stop loss",
@@ -15,7 +17,7 @@ const WHAT_YOU_LEARN = [
 ];
 
 const DETAILS = [
-  { icon: HiClock, label: "Date & Time", value: "Saturday, 12 July · 10:00 AM IST" },
+  { icon: HiClock, label: "Date & Time", value: "Saturday, 11 July · 10:00 AM IST" },
   { icon: HiUser, label: "Hosted By", value: "Shamiq, OptionScore Academy" },
   { icon: HiPresentationChartLine, label: "Format", value: "Live Online Webinar" },
   { icon: HiBolt, label: "Duration", value: "90 Minutes" },
@@ -82,8 +84,6 @@ export default function WebinarPage() {
 
           <a
             href={RAZORPAY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
             className="block w-full bg-[#0bb158] text-black font-bold text-base md:text-lg py-4 rounded-xl hover:bg-[#0ed668] transition-colors"
           >
             Register Now for Rs. 299
@@ -118,8 +118,6 @@ export default function WebinarPage() {
         <div className="text-center">
           <a
             href={RAZORPAY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-block bg-[#0bb158] text-black font-bold text-base md:text-lg px-10 py-4 rounded-xl hover:bg-[#0ed668] transition-colors"
           >
             Register Now for Rs. 299

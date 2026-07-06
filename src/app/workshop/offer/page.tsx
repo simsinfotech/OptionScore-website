@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import {
   HiCheck,
@@ -28,6 +28,7 @@ import {
   HiAcademicCap,
   HiBolt,
   HiArrowRight,
+  HiChevronDown,
 } from "react-icons/hi2";
 import { PiCoffeeBold } from "react-icons/pi";
 import { FaWhatsapp } from "react-icons/fa6";
@@ -37,27 +38,23 @@ import { Button } from "@/components/ui/Button";
 import {
   getLead,
   isPaid,
-  setPaid,
-  loadRazorpay,
-  openRazorpay,
   type StoredLead,
-  type RazorpayResponse,
 } from "@/lib/funnel-client";
-import { trackInitiateCheckout, trackPurchase } from "@/lib/fbpixel";
 import { WORKSHOP, WORKSHOP_FEE_RUPEES } from "@/lib/workshop";
 
 const WS_LEAD_KEY = "os_ws_lead";
-const PRODUCT = "workshop";
 const PRICE = `Rs. ${WORKSHOP_FEE_RUPEES.toLocaleString("en-IN")}`;
+
+/* The Rs. 5,999 workshop seat pays via a Razorpay hosted payment link.
+ * The "any doubt" option sends people to the /webinar details page first
+ * (it already explains the webinar and carries its own payment button). */
+const WORKSHOP_PAY_LINK = "https://rzp.io/rzp/LZkT3tY";
+const WEBINAR_PAGE = "/webinar";
 
 export default function WorkshopOfferPage() {
   const router = useRouter();
   const [lead, setLeadState] = useState<StoredLead | null>(null);
-  const [paying, setPaying] = useState(false);
-  const [error, setError] = useState("");
   const [showStickyBar, setShowStickyBar] = useState(false);
-  const [showWebinarModal, setShowWebinarModal] = useState(false);
-  const exitIntentShown = useRef(false);
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -77,55 +74,6 @@ export default function WorkshopOfferPage() {
     setLeadState(stored);
   }, [router]);
 
-  /* ─── Exit-intent: desktop (cursor leave) + mobile (5s after register section visible) ─── */
-  useEffect(() => {
-    if (exitIntentShown.current) return;
-
-    // Desktop: cursor leaves viewport
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !exitIntentShown.current) {
-        exitIntentShown.current = true;
-        setShowWebinarModal(true);
-      }
-    };
-    document.addEventListener("mouseleave", handleMouseLeave);
-
-    // Mobile: show popup 5s after user scrolls to the register section
-    let timer: ReturnType<typeof setTimeout>;
-    let observer: IntersectionObserver | null = null;
-    const isMobile = window.matchMedia("(max-width: 767px)").matches;
-    if (isMobile) {
-      // Small delay to ensure DOM is ready
-      setTimeout(() => {
-        const section = document.getElementById("register");
-        if (section) {
-          observer = new IntersectionObserver(
-            ([entry]) => {
-              if (entry.isIntersecting && !exitIntentShown.current) {
-                timer = setTimeout(() => {
-                  if (!exitIntentShown.current) {
-                    exitIntentShown.current = true;
-                    setShowWebinarModal(true);
-                  }
-                }, 3000);
-              } else {
-                clearTimeout(timer);
-              }
-            },
-            { threshold: 0.2 }
-          );
-          observer.observe(section);
-        }
-      }, 1000);
-    }
-
-    return () => {
-      document.removeEventListener("mouseleave", handleMouseLeave);
-      clearTimeout(timer);
-      if (observer) observer.disconnect();
-    };
-  }, []);
-
   /* ─── Sticky bar scroll listener ─── */
   useEffect(() => {
     const handleScroll = () => {
@@ -139,77 +87,10 @@ export default function WorkshopOfferPage() {
   }, []);
 
 
-  /* ─── Payment handler ─── */
-  const handlePay = useCallback(async () => {
-    if (!lead) return;
-    setError("");
-    setPaying(true);
-    trackInitiateCheckout(WORKSHOP_FEE_RUPEES);
-
-    const loaded = await loadRazorpay();
-    if (!loaded) {
-      setError("Could not load the payment window. Check your connection.");
-      setPaying(false);
-      return;
-    }
-
-    try {
-      const orderRes = await fetch("/api/razorpay/order", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ product: PRODUCT }),
-      });
-      const order = await orderRes.json();
-      if (!order.ok) {
-        setError(order.error || "Could not start payment.");
-        setPaying(false);
-        return;
-      }
-
-      openRazorpay({
-        key: order.keyId,
-        order_id: order.orderId,
-        amount: order.amount,
-        currency: order.currency,
-        name: "OptionScore",
-        description: `${WORKSHOP.title} Registration`,
-        image: `${window.location.origin}/images/logo.png`,
-        prefill: { name: lead.name, email: lead.email, contact: lead.mobile },
-        notes: { purpose: "workshop-registration" },
-        theme: { color: "#0bb158" },
-        handler: async (response: RazorpayResponse) => {
-          try {
-            const verifyRes = await fetch("/api/razorpay/verify", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ ...response, lead, product: PRODUCT }),
-            });
-            const verify = await verifyRes.json();
-            if (verify.ok) {
-              setPaid(WS_LEAD_KEY, response.razorpay_payment_id);
-              trackPurchase(WORKSHOP_FEE_RUPEES);
-              router.push("/workshop/confirmed");
-            } else {
-              setError(verify.error || "Payment could not be verified.");
-              setPaying(false);
-            }
-          } catch {
-            setError("Payment verification error. Please contact support.");
-            setPaying(false);
-          }
-        },
-        modal: { ondismiss: () => setPaying(false) },
-      });
-    } catch {
-      setError("Something went wrong. Please try again.");
-      setPaying(false);
-    }
-  }, [lead, router]);
-
   const scrollToCta = () => {
     document
-      .getElementById("register")
-      ?.scrollIntoView({ behavior: "smooth" });
+      .getElementById("reserve")
+      ?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
   if (!lead) return null;
@@ -324,21 +205,15 @@ export default function WorkshopOfferPage() {
               </div>
             </div>
 
-{/* Price Box */}
-            <div className="inline-block bg-[#050505] border border-[rgba(11,177,88,0.3)] rounded-xl md:rounded-2xl px-6 md:px-12 py-4 md:py-6 mb-5 md:mb-6 text-center">
-              <div className="text-[0.82rem] md:text-[0.95rem] text-[#6b7280] line-through">Rs. {WORKSHOP.totalValue.toLocaleString("en-IN")}</div>
-              <div className="text-[1.8rem] md:text-[3rem] font-extrabold text-[#0bb158]">
-                {PRICE}
+{/* Countdown + Reserve — the single reservation point on the page */}
+            <div id="reserve" className="scroll-mt-24 flex flex-col items-center gap-4 md:gap-5 mb-5 md:mb-6">
+              <div className="bg-[#050505] border border-[rgba(11,177,88,0.3)] rounded-xl md:rounded-2xl px-6 md:px-12 py-4 md:py-6 text-center">
+                <div className="text-[0.7rem] md:text-[0.82rem] text-[#6b7280] uppercase tracking-[0.1em] font-semibold">Workshop begins in</div>
+                <CountdownTimer />
               </div>
-              <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280] mt-1 md:mt-2">for the full 2-day workshop · Inclusive of all taxes</div>
-              <CountdownTimer />
+              <ReserveDropdown />
             </div>
-
-            <br />
-            <button onClick={scrollToCta} className="cta-button inline-block">
-              Reserve My Seat for {PRICE}
-            </button>
-            <div className="text-center mt-2 text-[0.7rem] md:text-[0.78rem] text-[#6b7280]">Inclusive of all taxes (GST)</div>
+            <div className="text-center mt-3 text-[0.7rem] md:text-[0.78rem] text-[#6b7280]">Inclusive of all taxes (GST)</div>
             <div className="text-center mt-1 md:mt-2 text-[0.7rem] md:text-[0.82rem] text-[#6b7280]">
               Secure payment via Razorpay · UPI, Cards, EMI
             </div>
@@ -629,33 +504,13 @@ export default function WorkshopOfferPage() {
                   <div className="text-[0.75rem] md:text-[0.85rem] text-white font-semibold mt-1">Inclusive of all taxes (GST)</div>
                 </div>
 
-                {error && (
-                  <div className="bg-[#0a0a0a] border border-red-500/30 p-3 mb-4 rounded">
-                    <p className="text-sm text-red-400">{error}</p>
-                  </div>
-                )}
-
                 <button
-                  onClick={handlePay}
-                  disabled={paying}
-                  className="cta-button w-full !text-[0.95rem] md:!text-[1.2rem] !py-4 md:!py-5 my-4 md:my-5 disabled:opacity-70"
+                  onClick={scrollToCta}
+                  className="cta-button w-full !text-[0.95rem] md:!text-[1.2rem] !py-4 md:!py-5 my-4 md:my-5"
                 >
-                  {paying ? "Processing..." : `Reserve My Seat for ${PRICE}`}
+                  Reserve My Seat for {PRICE}
                 </button>
                 <div className="text-center text-[0.7rem] md:text-[0.8rem] text-[#9CA3AF] mb-3">Inclusive of all taxes (GST)</div>
-
-                <div className="flex items-center gap-3 my-3">
-                  <div className="flex-1 h-px bg-[#ffffff10]" />
-                  <span className="text-[#6b7280] text-[0.7rem] uppercase tracking-wider">or</span>
-                  <div className="flex-1 h-px bg-[#ffffff10]" />
-                </div>
-
-                <button
-                  onClick={() => setShowWebinarModal(true)}
-                  className="block w-full text-center border border-[#0bb158]/40 text-[#0bb158] font-bold text-[0.85rem] md:text-[1rem] py-3 md:py-4 rounded-lg hover:bg-[#0bb158]/10 transition-colors mb-3"
-                >
-                  Join the Webinar for just Rs. 299
-                </button>
 
                 <div className="flex justify-center gap-3 md:gap-4 flex-wrap mb-4 md:mb-6 text-[0.7rem] md:text-[0.8rem] text-[#6b7280]">
                   <span><HiLockClosed className="inline align-middle mr-0.5" size={12} /> 256-bit SSL</span>
@@ -776,11 +631,6 @@ export default function WorkshopOfferPage() {
         <FaWhatsapp size={24} className="text-white md:!w-7 md:!h-7" />
       </a>
 
-      {/* ═══════════ Webinar Modal ═══════════ */}
-      {showWebinarModal && (
-        <WebinarModal onClose={() => setShowWebinarModal(false)} />
-      )}
-
       {/* ═══════════ Custom Styles ═══════════ */}
       <style jsx global>{`
         @keyframes marquee {
@@ -844,6 +694,61 @@ export default function WorkshopOfferPage() {
           .ws-card-red { border-radius: 16px; }
         }
       `}</style>
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════════════
+   Reserve-your-seat dropdown
+   Two hosted Razorpay payment links: Rs. 5,999 workshop and Rs. 299 webinar.
+   ═══════════════════════════════════════════════════ */
+
+function ReserveDropdown() {
+  const [open, setOpen] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
+  }, []);
+
+  const option =
+    "flex items-center justify-between gap-3 px-5 py-4 text-left hover:bg-[rgba(11,177,88,0.08)] transition-colors border-b border-[rgba(255,255,255,0.06)] last:border-b-0";
+
+  return (
+    <div ref={wrapRef} className="relative w-full max-w-[420px] mx-auto text-left">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="w-full flex items-center justify-center gap-2 bg-[#0bb158] hover:bg-[#0ed668] text-[#010101] font-bold text-[0.95rem] md:text-[1.15rem] py-4 md:py-[18px] px-6 rounded-lg transition-colors shadow-[0_4px_16px_rgba(11,177,88,0.25)]"
+      >
+        Reserve your seat
+        <HiChevronDown className={`transition-transform ${open ? "rotate-180" : ""}`} size={18} />
+      </button>
+
+      {open && (
+        <div className="absolute left-0 right-0 mt-2 bg-[#0a0a0a] border border-[rgba(11,177,88,0.3)] rounded-xl overflow-hidden z-30 shadow-[0_12px_36px_rgba(0,0,0,0.65)]">
+          <a href={WORKSHOP_PAY_LINK} className={option}>
+            <span>
+              <span className="block text-white text-[0.9rem] font-bold">Proceed to Workshop</span>
+              <span className="block text-[#6b7280] text-[0.72rem]">2-day live workshop</span>
+            </span>
+            <span className="text-[#0bb158] font-extrabold text-[0.95rem] flex-shrink-0">Rs. 5,999</span>
+          </a>
+          <a href={WEBINAR_PAGE} className={option}>
+            <span>
+              <span className="block text-white text-[0.9rem] font-bold">Any doubt? Join Webinar</span>
+              <span className="block text-[#6b7280] text-[0.72rem]">See the webinar details first</span>
+            </span>
+            <span className="text-[#0bb158] font-extrabold text-[0.95rem] flex-shrink-0">Rs. 299</span>
+          </a>
+        </div>
+      )}
     </div>
   );
 }
@@ -1054,40 +959,3 @@ function MarqueeText({ text }: { text: string }) {
   );
 }
 
-/* ═══════════════════════════════════════════════════
-   Webinar Rs. 299 Modal
-   ═══════════════════════════════════════════════════ */
-
-function WebinarModal({ onClose }: { onClose: () => void }) {
-  return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4" onClick={onClose}>
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
-      <div
-        className="relative bg-[#0a0a0a] border border-[rgba(11,177,88,0.2)] rounded-2xl w-full max-w-md p-6 md:p-8"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 text-[#6b7280] hover:text-white transition-colors"
-        >
-          <HiXMark size={20} />
-        </button>
-
-        <p className="text-[#0bb158] text-xs font-bold uppercase tracking-[0.15em] mb-2">Webinar Access · Rs. 299</p>
-        <h3 className="text-white font-bold text-lg md:text-xl leading-tight">
-          Can&apos;t invest Rs. 5,999 right now? No worries.
-        </h3>
-        <p className="text-[#9CA3AF] text-sm mt-2 leading-relaxed mb-6">
-          Join the live webinar for just Rs. 299 and experience the institutional framework firsthand.
-        </p>
-
-        <a
-          href="/webinar"
-          className="block w-full text-center bg-[#0bb158] text-black font-bold text-base py-3.5 rounded-xl hover:bg-[#0ed668] transition-colors"
-        >
-          Join Webinar for Rs. 299
-        </a>
-      </div>
-    </div>
-  );
-}

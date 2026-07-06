@@ -10,7 +10,7 @@
 import { MASTERCLASS_FEE_PAISE, MASTERCLASS_FEE_RUPEES } from "@/lib/masterclass";
 import { WORKSHOP_FEE_PAISE, WORKSHOP_FEE_RUPEES } from "@/lib/workshop";
 
-export type ProductId = "masterclass" | "workshop";
+export type ProductId = "masterclass" | "workshop" | "webinar";
 
 export type ProductConfig = {
   id: ProductId;
@@ -40,6 +40,17 @@ export const PRODUCTS: Record<ProductId, ProductConfig> = {
     sheetUrlEnv: "APPS_SCRIPT_URL_WORKSHOP",
     receiptPrefix: "ws",
     notesPurpose: "workshop-registration",
+  },
+  webinar: {
+    id: "webinar",
+    feePaise: 29900,
+    feeRupees: 299,
+    // Its own sheet endpoint. Set APPS_SCRIPT_URL_WEBINAR, or point it at an
+    // existing sheet var to reuse one. If unset, the sheet write is skipped
+    // (best-effort) but the confirmation still shows.
+    sheetUrlEnv: "APPS_SCRIPT_URL_WEBINAR",
+    receiptPrefix: "wb",
+    notesPurpose: "webinar-registration",
   },
 };
 

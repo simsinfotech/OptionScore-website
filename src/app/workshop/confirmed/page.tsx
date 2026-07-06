@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa6";
 import { FunnelShell } from "@/components/funnel/FunnelShell";
-import { getLead, isPaid } from "@/lib/funnel-client";
+import { getLead, isPaid, setPaid } from "@/lib/funnel-client";
 import { WORKSHOP, isWsPlaceholder } from "@/lib/workshop";
 
 const WS_LEAD_KEY = "os_ws_lead";
@@ -22,13 +22,61 @@ export default function WorkshopConfirmedPage() {
       router.replace("/workshop");
       return;
     }
+
+    const admit = () => {
+      if (lead.name) setName(lead.name.split(" ")[0]);
+      setReady(true);
+    };
+
+    // If we arrived from a Razorpay hosted payment link, the callback carries
+    // signed params. Verify them server-side before admitting — this is what
+    // stops anyone from opening /workshop/confirmed directly without paying.
+    const params = new URLSearchParams(window.location.search);
+    const paymentId = params.get("razorpay_payment_id");
+    const linkId = params.get("razorpay_payment_link_id");
+    const status = params.get("razorpay_payment_link_status");
+    const signature = params.get("razorpay_signature");
+
+    if (paymentId && linkId && signature) {
+      (async () => {
+        try {
+          const res = await fetch("/api/razorpay/verify-link", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              razorpay_payment_id: paymentId,
+              razorpay_payment_link_id: linkId,
+              razorpay_payment_link_reference_id: params.get(
+                "razorpay_payment_link_reference_id"
+              ),
+              razorpay_payment_link_status: status,
+              razorpay_signature: signature,
+              lead,
+              product: "workshop",
+            }),
+          });
+          const data = await res.json();
+          if (data.ok) {
+            setPaid(WS_LEAD_KEY, paymentId);
+            // Strip the params so the URL can't be re-shared/bookmarked as "paid".
+            window.history.replaceState({}, "", "/workshop/confirmed");
+            admit();
+          } else {
+            router.replace("/workshop/offer");
+          }
+        } catch {
+          router.replace("/workshop/offer");
+        }
+      })();
+      return;
+    }
+
     if (!isPaid(WS_LEAD_KEY)) {
       // Form filled but not paid — can't reach confirmation yet.
       router.replace("/workshop/offer");
       return;
     }
-    if (lead.name) setName(lead.name.split(" ")[0]);
-    setReady(true);
+    admit();
   }, [router]);
 
   const s = WORKSHOP.session;
