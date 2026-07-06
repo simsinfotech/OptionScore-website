@@ -65,15 +65,15 @@ export function Hero() {
         {/* Desktop: 3-phone staggered layout */}
         <div className="hidden md:flex mt-20 items-end justify-center gap-10">
           <div className="self-end mt-12 animate-float-delayed animate-fade-in [animation-delay:700ms]">
-            <PhoneMockup src="/images/preview-2.jpg" alt="OptionScore market overview" className="w-[200px]" loading="lazy" />
+            <PhoneMockup src="/images/preview-2.jpg" alt="OptionScore market overview" className="w-[200px]" />
           </div>
 
           <div className="animate-float animate-fade-in [animation-delay:600ms]">
-            <PhoneMockup src="/images/preview-1.jpg" alt="OptionScore command center" className="w-[260px]" priority />
+            <PhoneMockup src="/images/preview-1.jpg" alt="OptionScore command center" className="w-[260px]" />
           </div>
 
           <div className="self-end mt-12 animate-float-delayed animate-fade-in [animation-delay:700ms]" style={{ animationDelay: "1s" }}>
-            <PhoneMockup src="/images/preview-3.jpg" alt="OptionScore options intelligence" className="w-[200px]" loading="lazy" />
+            <PhoneMockup src="/images/preview-3.jpg" alt="OptionScore options intelligence" className="w-[200px]" />
           </div>
         </div>
 
