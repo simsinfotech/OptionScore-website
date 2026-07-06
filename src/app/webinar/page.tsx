@@ -15,7 +15,7 @@ const WHAT_YOU_LEARN = [
 ];
 
 const DETAILS = [
-  { icon: HiClock, label: "Date & Time", value: `${WORKSHOP.announcement.date} · 10:00 AM IST` },
+  { icon: HiClock, label: "Date & Time", value: "Saturday, 11 July · 10:00 AM IST" },
   { icon: HiUser, label: "Hosted By", value: "Shamiq, OptionScore Academy" },
   { icon: HiPresentationChartLine, label: "Format", value: "Live Online Webinar" },
   { icon: HiBolt, label: "Duration", value: "90 Minutes" },
@@ -34,8 +34,8 @@ export default function WebinarPage() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-4xl text-white leading-tight mb-4 md:whitespace-nowrap">
-          Learn the Institutional Framework{" "}
+        <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-4xl text-white leading-tight mb-4">
+          Learn the Institutional Framework<br className="md:hidden" />{" "}
           <span className="text-[#0bb158]">That Changed Everything</span>
         </h1>
 
