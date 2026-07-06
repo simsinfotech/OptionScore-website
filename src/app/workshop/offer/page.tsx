@@ -593,6 +593,21 @@ export default function WorkshopOfferPage() {
                 </button>
                 <div className="text-center text-[0.7rem] md:text-[0.8rem] text-[#9CA3AF] mb-3">Inclusive of all taxes (GST)</div>
 
+                <div className="flex items-center gap-3 my-3">
+                  <div className="flex-1 h-px bg-[#ffffff10]" />
+                  <span className="text-[#6b7280] text-[0.7rem] uppercase tracking-wider">or</span>
+                  <div className="flex-1 h-px bg-[#ffffff10]" />
+                </div>
+
+                <a
+                  href="https://rzp.io/rzp/vvLHj0gp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center border border-[#0bb158]/40 text-[#0bb158] font-bold text-[0.85rem] md:text-[1rem] py-3 md:py-4 rounded-lg hover:bg-[#0bb158]/10 transition-colors mb-3"
+                >
+                  Join the Webinar for just Rs. 299
+                </a>
+
                 <div className="flex justify-center gap-3 md:gap-4 flex-wrap mb-4 md:mb-6 text-[0.7rem] md:text-[0.8rem] text-[#6b7280]">
                   <span><HiLockClosed className="inline align-middle mr-0.5" size={12} /> 256-bit SSL</span>
                   <span><HiCheckCircle className="inline align-middle mr-0.5 text-[#22c55e]" size={12} /> Razorpay</span>
