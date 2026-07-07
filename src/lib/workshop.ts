@@ -227,8 +227,8 @@ export const WORKSHOP = {
       location: "Bangalore · 5 weeks ago",
     },
     {
-      headline: "The chart review was worth the entire Rs. 5,999.",
-      quote: "The chart review on Day 2 was what did it for me. Shamiq looked at my analysis and told me exactly where I was reading it right and where I slipped back into retail logic. That one feedback session was worth the entire Rs. 5,999.",
+      headline: "The chart review was worth every rupee.",
+      quote: "The chart review on Day 2 was what did it for me. Shamiq looked at my analysis and told me exactly where I was reading it right and where I slipped back into retail logic. That one feedback session was worth every single rupee.",
       initials: "DM",
       name: "Deepak M.",
       location: "Hyderabad · 4 weeks ago",
@@ -243,7 +243,7 @@ export const WORKSHOP = {
   ],
 
   testimonialHighlights: [
-    { value: '"Best Rs. 5,999 investment"', label: "mentioned 12+ times" },
+    { value: '"Best investment I\'ve made"', label: "mentioned 12+ times" },
     { value: "96%", label: "attend both days" },
     { value: "40%", label: "upgrade to full course" },
   ],
@@ -260,7 +260,7 @@ export const WORKSHOP = {
     { q: "Is EMI available?", a: "Yes. Razorpay EMI available at checkout. Full access from Day 1 regardless of payment plan." },
     { q: "How do I access the workshop after payment?", a: "Immediately after payment you receive a confirmation email with the Zoom link, pre-workshop material, and Telegram community invite. Everything sent to your registered email within 5 minutes." },
     { q: "Will Shamiq personally review my charts?", a: "Yes. Every registered participant gets their chart analysis reviewed by Shamiq live on screen during Day 2. This is the reason seats are capped. Personal review requires a small group." },
-    { q: "What's the difference between the workshop and the full course?", a: "Workshop: 2 days live, complete institutional framework, live market session, personal chart review for Rs. 5,999. Full Course: 6 months of weekly live sessions with Shamiq, monthly personal chart reviews, complete 3-level curriculum, lifetime access for Rs. 74,999. Workshop is the perfect starting point. 68% of workshop attendees enroll in the full course." },
+    { q: "What's the difference between the workshop and the full course?", a: "Workshop: 2 days live, complete institutional framework, live market session, personal chart review. Full Course: 6 months of weekly live sessions with Shamiq, monthly personal chart reviews, complete 3-level curriculum, lifetime access. Workshop is the perfect starting point. 68% of workshop attendees enroll in the full course." },
     { q: "Can I upgrade to the full course after the workshop?", a: "Yes. Workshop attendees get a special rate on the full course, shared at the end of Day 2." },
   ],
 
