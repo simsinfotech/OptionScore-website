@@ -130,7 +130,7 @@ export default function WorkshopOfferPage() {
 
       {/* ═══════════ Marquee Announcement Bar ═══════════ */}
       <div className="bg-[rgba(11,177,88,0.05)] border-b border-[rgba(11,177,88,0.12)] overflow-hidden whitespace-nowrap py-1.5 md:py-2 text-[0.7rem] md:text-[0.8rem] text-[#9CA3AF] relative z-[1]">
-        <MarqueeText text={`Next Batch: ${WORKSHOP.announcement.date}  ·  ${WORKSHOP.announcement.seats} of ${WORKSHOP.announcement.totalSeats} seats remaining  ·  Rs. ${WORKSHOP_FEE_RUPEES.toLocaleString("en-IN")}`} />
+        <MarqueeText text={`Next Batch: ${WORKSHOP.announcement.date}  ·  ${WORKSHOP.announcement.seats} of ${WORKSHOP.announcement.totalSeats} seats remaining`} />
       </div>
 
       <main className="flex-1 w-full relative z-[1]">
@@ -328,7 +328,7 @@ export default function WorkshopOfferPage() {
         </WSection>
 
         {/* ═══════════ Value Stack ═══════════ */}
-        <WSection title={`Everything Included in Your ${PRICE} Workshop Seat`} alt>
+        <WSection title={"Everything Included in Your Workshop Seat"} alt>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5 mb-6 md:mb-8">
             {WORKSHOP.valueStack.map((item) => (
               <div key={item.label} className="ws-card flex gap-3 md:gap-4 p-3.5 md:p-5">
@@ -353,14 +353,10 @@ export default function WorkshopOfferPage() {
             </div>
           </div>
           <div className="ws-card text-center p-5 md:p-8">
-            <div className="text-[0.85rem] md:text-[1rem] text-[#6b7280]">All of the above for just</div>
-            <div className="text-[2rem] md:text-[3rem] font-extrabold text-[#0bb158] my-1 md:my-2">{PRICE}</div>
-            <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280]">
-              instead of Rs. {WORKSHOP.totalValue.toLocaleString("en-IN")} if purchased separately · Inclusive of all taxes
-            </div>
+            <div className="text-[0.85rem] md:text-[1rem] text-[#6b7280]">All of the above included in your workshop seat</div>
           </div>
           <div className="text-center mt-6 md:mt-8">
-            <button onClick={scrollToCta} className="cta-button">Register Now for {PRICE}</button>
+            <button onClick={scrollToCta} className="cta-button">Register Now</button>
             <div className="text-[0.7rem] md:text-[0.8rem] text-[#9CA3AF] mt-2">Inclusive of all taxes (GST)</div>
           </div>
         </WSection>
@@ -499,16 +495,14 @@ export default function WorkshopOfferPage() {
                 </div>
 
                 <div className="my-4 md:my-5">
-                  <div className="text-[2.2rem] md:text-[3.5rem] font-extrabold text-[#0bb158]">{PRICE}</div>
                   <div className="text-[0.75rem] md:text-[0.85rem] text-[#6b7280]">one-time · no recurring charges</div>
-                  <div className="text-[0.75rem] md:text-[0.85rem] text-white font-semibold mt-1">Inclusive of all taxes (GST)</div>
                 </div>
 
                 <button
                   onClick={scrollToCta}
                   className="cta-button w-full !text-[0.95rem] md:!text-[1.2rem] !py-4 md:!py-5 my-4 md:my-5"
                 >
-                  Reserve My Seat for {PRICE}
+                  Reserve My Seat
                 </button>
                 <div className="text-center text-[0.7rem] md:text-[0.8rem] text-[#9CA3AF] mb-3">Inclusive of all taxes (GST)</div>
 
@@ -576,7 +570,7 @@ export default function WorkshopOfferPage() {
               ))}
             </div>
 
-            <button onClick={scrollToCta} className="cta-button mb-1">Register Now for {PRICE}</button>
+            <button onClick={scrollToCta} className="cta-button mb-1">Register Now</button>
             <div className="text-[0.7rem] md:text-[0.78rem] text-[#6b7280] mb-2">Inclusive of all taxes (GST)</div>
             <div className="text-[0.75rem] md:text-[0.85rem] text-[#9CA3AF]">Only {WORKSHOP.announcement.seats} of {WORKSHOP.announcement.totalSeats} spots left for {WORKSHOP.announcement.date} batch</div>
             <div className="mt-3 md:mt-4 text-[0.78rem] md:text-[0.88rem] text-[#6b7280] italic px-2">{WORKSHOP.finalPS}</div>
@@ -609,8 +603,7 @@ export default function WorkshopOfferPage() {
         <div className="bg-[rgba(8,8,8,0.95)] backdrop-blur-[12px] border-t border-[rgba(255,255,255,0.08)] py-2.5 md:py-3 px-4 md:px-8">
           <div className="max-w-5xl mx-auto flex justify-between items-center gap-3 md:gap-6">
             <div className="flex items-center gap-2 md:gap-3">
-              <span className="text-[1rem] md:text-[1.2rem] text-[#0bb158] font-bold">{PRICE}</span>
-              <span className="text-[0.7rem] md:text-[0.82rem] text-[#6b7280]">· {WORKSHOP.announcement.seats}/{WORKSHOP.announcement.totalSeats} seats left</span>
+              <span className="text-[0.8rem] md:text-[0.95rem] text-white font-semibold">{WORKSHOP.announcement.seats}/{WORKSHOP.announcement.totalSeats} seats left</span>
             </div>
             <button onClick={scrollToCta} className="bg-[#0bb158] hover:bg-[#0ed668] text-[#010101] font-bold text-[0.75rem] md:text-[0.9rem] py-2.5 md:py-3 px-5 md:px-8 rounded-lg cursor-pointer border-none transition-colors">
               Reserve Now
@@ -738,14 +731,14 @@ function ReserveDropdown() {
               <span className="block text-white text-[0.9rem] font-bold">Proceed to Workshop</span>
               <span className="block text-[#6b7280] text-[0.72rem]">2-day live workshop</span>
             </span>
-            <span className="text-[#0bb158] font-extrabold text-[0.95rem] flex-shrink-0">Rs. 5,999</span>
+            <HiArrowRight className="text-[#0bb158] flex-shrink-0" size={18} />
           </a>
           <a href={WEBINAR_PAGE} className={option}>
             <span>
               <span className="block text-white text-[0.9rem] font-bold">Any doubt? Join Webinar</span>
               <span className="block text-[#6b7280] text-[0.72rem]">See the webinar details first</span>
             </span>
-            <span className="text-[#0bb158] font-extrabold text-[0.95rem] flex-shrink-0">Rs. 299</span>
+            <HiArrowRight className="text-[#0bb158] flex-shrink-0" size={18} />
           </a>
         </div>
       )}
