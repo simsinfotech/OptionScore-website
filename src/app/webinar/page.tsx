@@ -130,7 +130,8 @@ export default function WebinarPage() {
           {/* Headline */}
           <h1 className="font-extrabold text-[1.8rem] sm:text-[2.4rem] md:text-[3.6rem] lg:text-[4.2rem] leading-[1.08] text-white mb-5 md:mb-7 uppercase tracking-tight">
             Stopped Out Again?<br className="hidden md:block" /> Right Before the Reversal?{" "}
-            <span className="text-[#0bb158]">There&apos;s a Reason.<br /> It&apos;s Called Liquidity.</span>
+            <br /><span className="text-[#0bb158]">There&apos;s a Reason.</span>
+            <br /><span className="text-[#0bb158]">It&apos;s Called Liquidity.</span>
           </h1>
 
           {/* Sub-headline */}
