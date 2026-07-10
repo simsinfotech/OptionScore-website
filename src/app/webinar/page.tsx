@@ -37,15 +37,9 @@ const FAQS = [
    2. Urgency text in uppercase below
    3. Stock-level depletion bar (colored blocks like their GIF) ─── */
 function CtaBlock({ className = "" }: { className?: string }) {
-  /* Stock bar: 30 blocks. First ~22 are grey (sold/depleted),
-     last ~8 go from red→orange→yellow→green (remaining, low stock).
-     This replicates the selllikecrazy stock-levels GIF exactly. */
   const totalBlocks = 30;
   const getBlockColor = (i: number) => {
-    if (i < 22) return "bg-[#2a2a2a]"; // grey — depleted
-    if (i < 24) return "bg-[#dc2626]"; // red
-    if (i < 26) return "bg-[#ea580c]"; // orange
-    if (i < 28) return "bg-[#eab308]"; // yellow
+    if (i < 28) return "bg-[#2a2a2a]"; // grey — depleted
     return "bg-[#0bb158]"; // green — remaining
   };
 
