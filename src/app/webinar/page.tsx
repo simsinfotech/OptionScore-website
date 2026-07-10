@@ -32,46 +32,49 @@ const FAQS = [
   { q: "Is my payment secure? Will I get a confirmation?", a: "Yes — instant confirmation on WhatsApp and email with your Zoom link and calendar invite. Payment is processed securely via Razorpay." },
 ];
 
-/* ─── Reusable CTA block — mirrors selllikecrazy's exact CTA design:
-   Black rounded box with bold italic white text button,
-   red urgency banner below, and a stock/seat depletion bar ─── */
+/* ─── Reusable CTA block — exact selllikecrazy.co design:
+   1. Large dark rounded button with bold white text
+   2. Urgency text in uppercase below
+   3. Stock-level depletion bar (colored blocks like their GIF) ─── */
 function CtaBlock({ className = "" }: { className?: string }) {
+  /* Stock bar: 30 blocks. First ~22 are grey (sold/depleted),
+     last ~8 go from red→orange→yellow→green (remaining, low stock).
+     This replicates the selllikecrazy stock-levels GIF exactly. */
+  const totalBlocks = 30;
+  const getBlockColor = (i: number) => {
+    if (i < 22) return "bg-[#2a2a2a]"; // grey — depleted
+    if (i < 24) return "bg-[#dc2626]"; // red
+    if (i < 26) return "bg-[#ea580c]"; // orange
+    if (i < 28) return "bg-[#eab308]"; // yellow
+    return "bg-[#0bb158]"; // green — remaining
+  };
+
   return (
     <div className={`flex flex-col items-center ${className}`}>
-      {/* Black pill button — like selllikecrazy's "RUSH ME A FREE COPY" */}
+      {/* Button — large dark rounded box, bold white text */}
       <a
         href={RAZORPAY_URL}
-        className="block w-full max-w-md bg-black text-white font-extrabold italic text-[1rem] md:text-[1.3rem] py-4 md:py-5 px-8 rounded-full text-center uppercase tracking-wide border-2 border-[#0bb158] hover:bg-[#0a1a0f] transition-all hover:-translate-y-0.5 shadow-[0_4px_20px_rgba(11,177,88,0.2)]"
+        className="block w-full max-w-[520px] bg-[#111111] text-white font-extrabold text-[1.05rem] md:text-[1.35rem] py-[18px] md:py-[22px] px-8 rounded-xl text-center uppercase tracking-wide border border-[rgba(255,255,255,0.1)] hover:bg-[#1a1a1a] transition-all hover:-translate-y-0.5 shadow-[0_6px_25px_rgba(0,0,0,0.5)]"
       >
         Reserve My Seat — ₹299 →
       </a>
 
-      {/* Red urgency banner — like selllikecrazy's "HURRY! STOCK IS LOW" */}
-      <div className="w-full max-w-md mt-3 bg-gradient-to-r from-red-700 via-red-600 to-red-700 rounded-lg py-2.5 px-4 text-center">
-        <p className="text-white font-extrabold text-[0.7rem] md:text-[0.82rem] uppercase tracking-wide">
-          <HiFire className="inline mr-1 align-text-bottom" size={14} />
-          Hurry! Seats for the July 12 session are limited
-        </p>
-      </div>
+      {/* Urgency text — uppercase, centered, like selllikecrazy */}
+      <p className="mt-3 md:mt-4 text-[0.78rem] md:text-[0.88rem] font-bold uppercase tracking-wide text-center text-red-400">
+        Hurry! Seats As Of July 12 Are Running Low
+      </p>
 
-      {/* Seat depletion bar — like selllikecrazy's stock level indicator */}
-      <div className="w-full max-w-md mt-2.5">
-        <div className="flex gap-[3px] md:gap-1">
-          {/* 20 blocks total: 15 filled (dark/depleted) + 5 remaining (green) */}
-          {Array.from({ length: 20 }).map((_, i) => (
+      {/* Stock level indicator bar — colored blocks like selllikecrazy's GIF */}
+      <div className="w-[90%] max-w-sm mx-auto mt-2.5 md:mt-3">
+        <div className="flex gap-[2px]">
+          {Array.from({ length: totalBlocks }).map((_, i) => (
             <div
               key={i}
-              className={`h-2 md:h-2.5 flex-1 rounded-[2px] ${
-                i < 15
-                  ? "bg-[rgba(255,255,255,0.08)]"
-                  : "bg-[#0bb158] shadow-[0_0_4px_rgba(11,177,88,0.5)]"
-              }`}
+              className={`h-[10px] md:h-[12px] flex-1 ${getBlockColor(i)} ${
+                i === 0 ? "rounded-l-sm" : ""
+              } ${i === totalBlocks - 1 ? "rounded-r-sm" : ""}`}
             />
           ))}
-        </div>
-        <div className="flex justify-between mt-1.5">
-          <span className="text-[0.6rem] md:text-[0.68rem] text-[#555] uppercase tracking-wider">Seats Filling Up</span>
-          <span className="text-[0.6rem] md:text-[0.68rem] text-[#0bb158] font-bold uppercase tracking-wider">Few Left</span>
         </div>
       </div>
     </div>
