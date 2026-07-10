@@ -93,7 +93,7 @@ export default function WebinarPage() {
 
       {/* ═══════════ Navbar ═══════════ */}
       <nav className="sticky top-0 z-[1000] bg-black border-b border-[rgba(11,177,88,0.15)] py-2 md:py-3">
-        <div className="max-w-full mx-auto px-4 md:px-16 flex items-center justify-between">
+        <div className="w-full px-4 md:px-10 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <Image src="/images/logo.png" alt="OptionScore" width={64} height={64} className="h-6 w-6 md:h-8 md:w-8" />
             <Image src="/images/logo-text.png" alt="OptionScore" width={320} height={56} className="h-4 md:h-5 w-auto" />
