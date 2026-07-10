@@ -113,7 +113,7 @@ export default function WebinarPage() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_100%_50%,rgba(11,177,88,0.12)_0%,transparent_60%)]" />
         </div>
 
-        <div className="relative z-10 max-w-3xl mx-auto px-5 md:px-8 pt-10 md:pt-20 pb-12 md:pb-20 text-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-5 md:px-8 pt-10 md:pt-20 pb-12 md:pb-20 text-center">
           {/* Top badge */}
           <div className="mb-4 md:mb-6">
             <span className="inline-block bg-[rgba(11,177,88,0.15)] text-[#0bb158] text-[0.65rem] md:text-[0.8rem] font-bold tracking-[0.08em] uppercase px-4 md:px-6 py-2 rounded-full border border-[rgba(11,177,88,0.3)]">
@@ -128,13 +128,13 @@ export default function WebinarPage() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-extrabold text-[1.6rem] sm:text-[2rem] md:text-[3rem] lg:text-[3.4rem] leading-[1.1] text-white mb-5 md:mb-7 uppercase tracking-tight">
+          <h1 className="font-extrabold text-[1.8rem] sm:text-[2.4rem] md:text-[3.6rem] lg:text-[4.2rem] leading-[1.08] text-white mb-5 md:mb-7 uppercase tracking-tight">
             Stopped Out Again?<br className="hidden md:block" /> Right Before the Reversal?{" "}
             <span className="text-[#0bb158]">There&apos;s a Reason.<br /> It&apos;s Called Liquidity.</span>
           </h1>
 
           {/* Sub-headline */}
-          <p className="text-[0.95rem] md:text-[1.25rem] text-[#b0b0b0] max-w-2xl mx-auto mb-8 md:mb-10 leading-[1.6]">
+          <p className="text-[1rem] md:text-[1.4rem] text-[#b0b0b0] max-w-3xl mx-auto mb-8 md:mb-10 leading-[1.6]">
             <strong className="text-white">In 2 hours, learn to read market structure the way smart money does.</strong> No indicators, no tips, no ₹50,000 course. Just ₹299.
           </p>
 
