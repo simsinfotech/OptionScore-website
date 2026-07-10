@@ -92,13 +92,13 @@ export default function WebinarPage() {
     <div className="min-h-screen bg-[#030a06] text-[#d1d5db] flex flex-col relative overflow-x-hidden">
 
       {/* ═══════════ Navbar ═══════════ */}
-      <nav className="sticky top-0 z-[1000] bg-black border-b border-[rgba(11,177,88,0.15)] py-2 md:py-3">
-        <div className="w-full px-4 md:px-10 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/images/logo.png" alt="OptionScore" width={64} height={64} className="h-6 w-6 md:h-8 md:w-8" />
-            <Image src="/images/logo-text.png" alt="OptionScore" width={320} height={56} className="h-4 md:h-5 w-auto" />
+      <nav className="sticky top-0 z-[1000] bg-black border-b border-[rgba(11,177,88,0.15)] py-3 md:py-4">
+        <div className="w-full px-5 md:px-12 lg:px-16 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2.5">
+            <Image src="/images/logo.png" alt="OptionScore" width={64} height={64} className="h-8 w-8 md:h-10 md:w-10" />
+            <Image src="/images/logo-text.png" alt="OptionScore" width={320} height={56} className="h-5 md:h-7 w-auto" />
           </Link>
-          <a href={RAZORPAY_URL} className="bg-[#0bb158] text-black text-[0.7rem] md:text-xs font-bold px-3 md:px-5 py-1.5 md:py-2 rounded-md hover:bg-[#0ed668] transition-colors">
+          <a href={RAZORPAY_URL} className="bg-[#0bb158] text-black text-[0.75rem] md:text-sm font-bold px-4 md:px-6 py-2 md:py-2.5 rounded-md hover:bg-[#0ed668] transition-colors">
             Reserve Seat
           </a>
         </div>
