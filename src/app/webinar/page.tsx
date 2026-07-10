@@ -58,15 +58,13 @@ function CtaBlock({ className = "" }: { className?: string }) {
         Hurry! Seats As Of July 12 Are Running Low
       </p>
 
-      {/* Stock level indicator bar — colored blocks like selllikecrazy's GIF */}
+      {/* Stock level indicator — vertical rectangles */}
       <div className="w-[90%] max-w-sm mx-auto mt-2.5 md:mt-3">
-        <div className="flex gap-[2px]">
+        <div className="flex gap-[3px] justify-center">
           {Array.from({ length: totalBlocks }).map((_, i) => (
             <div
               key={i}
-              className={`h-[10px] md:h-[12px] flex-1 ${getBlockColor(i)} ${
-                i === 0 ? "rounded-l-sm" : ""
-              } ${i === totalBlocks - 1 ? "rounded-r-sm" : ""}`}
+              className={`w-[6px] md:w-[8px] h-[18px] md:h-[22px] rounded-[1px] ${getBlockColor(i)}`}
             />
           ))}
         </div>
