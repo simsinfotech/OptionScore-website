@@ -36,39 +36,46 @@ const FAQS = [
    1. Large dark rounded button with bold white text
    2. Urgency text in uppercase below
    3. Stock-level depletion bar (colored blocks like their GIF) ─── */
-function CtaBlock({ className = "" }: { className?: string }) {
+/* Full CTA with urgency text + stock bar — hero section only */
+function HeroCtaBlock({ className = "" }: { className?: string }) {
   const totalBlocks = 30;
-  const getBlockColor = (i: number) => {
-    if (i < 28) return "bg-[#2a2a2a]"; // grey — depleted
-    return "bg-[#0bb158]"; // green — remaining
-  };
-
   return (
     <div className={`flex flex-col items-center ${className}`}>
-      {/* Button — large dark rounded box, bold white text */}
       <a
         href={RAZORPAY_URL}
         className="block w-full max-w-[520px] bg-[#111111] text-white font-extrabold text-[1.05rem] md:text-[1.35rem] py-[18px] md:py-[22px] px-8 rounded-xl text-center uppercase tracking-wide border border-[rgba(255,255,255,0.1)] hover:bg-[#1a1a1a] transition-all hover:-translate-y-0.5 shadow-[0_6px_25px_rgba(0,0,0,0.5)]"
       >
         Reserve My Seat — ₹299 →
       </a>
-
-      {/* Urgency text — uppercase, centered, like selllikecrazy */}
       <p className="mt-3 md:mt-4 text-[0.78rem] md:text-[0.88rem] font-bold uppercase tracking-wide text-center text-red-400">
         Hurry! Seats As Of July 12 Are Running Low
       </p>
-
-      {/* Stock level indicator — vertical rectangles */}
       <div className="w-[90%] max-w-sm mx-auto mt-2.5 md:mt-3">
         <div className="flex gap-[3px] justify-center">
           {Array.from({ length: totalBlocks }).map((_, i) => (
             <div
               key={i}
-              className={`w-[6px] md:w-[8px] h-[18px] md:h-[22px] rounded-[1px] ${getBlockColor(i)}`}
+              className={`w-[6px] md:w-[8px] h-[18px] md:h-[22px] rounded-[1px] ${
+                i < 28 ? "bg-[#2a2a2a]" : "bg-[#0bb158]"
+              }`}
             />
           ))}
         </div>
       </div>
+    </div>
+  );
+}
+
+/* Simple CTA button — used in all other sections */
+function CtaBlock({ className = "" }: { className?: string }) {
+  return (
+    <div className={`text-center ${className}`}>
+      <a
+        href={RAZORPAY_URL}
+        className="inline-block w-full max-w-[520px] bg-[#111111] text-white font-extrabold text-[1.05rem] md:text-[1.35rem] py-[18px] md:py-[22px] px-8 rounded-xl text-center uppercase tracking-wide border border-[rgba(255,255,255,0.1)] hover:bg-[#1a1a1a] transition-all hover:-translate-y-0.5 shadow-[0_6px_25px_rgba(0,0,0,0.5)]"
+      >
+        Reserve My Seat — ₹299 →
+      </a>
     </div>
   );
 }
@@ -149,7 +156,7 @@ export default function WebinarPage() {
           </div>
 
           {/* Primary CTA — like selllikecrazy's "Rush Me A Free Copy" */}
-          <CtaBlock />
+          <HeroCtaBlock />
 
           {/* Session info below CTA */}
           <p className="mt-4 text-[0.72rem] md:text-[0.82rem] text-[#6b7280]">
