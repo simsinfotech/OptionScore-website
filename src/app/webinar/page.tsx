@@ -52,7 +52,7 @@ function HeroCtaBlock({ className = "" }: { className?: string }) {
             <div
               key={i}
               className={`w-[6px] md:w-[8px] h-[18px] md:h-[22px] rounded-[1px] ${
-                i < 28 ? "bg-[#2a2a2a]" : "bg-[#0bb158]"
+                i < 28 ? "bg-[#2a2a2a]" : "bg-[#0bb158] animate-[blink_1s_ease-in-out_infinite]"
               }`}
             />
           ))}
