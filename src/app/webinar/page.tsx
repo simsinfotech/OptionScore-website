@@ -32,22 +32,47 @@ const FAQS = [
   { q: "Is my payment secure? Will I get a confirmation?", a: "Yes — instant confirmation on WhatsApp and email with your Zoom link and calendar invite. Payment is processed securely via Razorpay." },
 ];
 
-/* ─── Reusable CTA block (like selllikecrazy's repeated Rush Me A Free Copy) ─── */
+/* ─── Reusable CTA block — mirrors selllikecrazy's exact CTA design:
+   Black rounded box with bold italic white text button,
+   red urgency banner below, and a stock/seat depletion bar ─── */
 function CtaBlock({ className = "" }: { className?: string }) {
   return (
-    <div className={`text-center ${className}`}>
+    <div className={`flex flex-col items-center ${className}`}>
+      {/* Black pill button — like selllikecrazy's "RUSH ME A FREE COPY" */}
       <a
         href={RAZORPAY_URL}
-        className="inline-block w-full max-w-md bg-[#0bb158] text-black font-extrabold text-[1rem] md:text-[1.25rem] py-4 md:py-5 px-8 rounded-lg hover:bg-[#0ed668] transition-all hover:-translate-y-0.5 shadow-[0_4px_20px_rgba(11,177,88,0.3)] uppercase tracking-wide"
+        className="block w-full max-w-md bg-black text-white font-extrabold italic text-[1rem] md:text-[1.3rem] py-4 md:py-5 px-8 rounded-full text-center uppercase tracking-wide border-2 border-[#0bb158] hover:bg-[#0a1a0f] transition-all hover:-translate-y-0.5 shadow-[0_4px_20px_rgba(11,177,88,0.2)]"
       >
-        Reserve My Seat — ₹299 <HiArrowRight className="inline ml-1.5" size={20} />
+        Reserve My Seat — ₹299 →
       </a>
-      {/* Urgency indicator — like selllikecrazy stock bar */}
-      <div className="mt-3 flex items-center justify-center gap-2">
-        <HiFire className="text-red-500" size={14} />
-        <span className="text-red-400 text-[0.72rem] md:text-[0.8rem] font-semibold">
-          Hurry! Seats for the July 12 session are filling fast
-        </span>
+
+      {/* Red urgency banner — like selllikecrazy's "HURRY! STOCK IS LOW" */}
+      <div className="w-full max-w-md mt-3 bg-gradient-to-r from-red-700 via-red-600 to-red-700 rounded-lg py-2.5 px-4 text-center">
+        <p className="text-white font-extrabold text-[0.7rem] md:text-[0.82rem] uppercase tracking-wide">
+          <HiFire className="inline mr-1 align-text-bottom" size={14} />
+          Hurry! Seats for the July 12 session are limited
+        </p>
+      </div>
+
+      {/* Seat depletion bar — like selllikecrazy's stock level indicator */}
+      <div className="w-full max-w-md mt-2.5">
+        <div className="flex gap-[3px] md:gap-1">
+          {/* 20 blocks total: 15 filled (dark/depleted) + 5 remaining (green) */}
+          {Array.from({ length: 20 }).map((_, i) => (
+            <div
+              key={i}
+              className={`h-2 md:h-2.5 flex-1 rounded-[2px] ${
+                i < 15
+                  ? "bg-[rgba(255,255,255,0.08)]"
+                  : "bg-[#0bb158] shadow-[0_0_4px_rgba(11,177,88,0.5)]"
+              }`}
+            />
+          ))}
+        </div>
+        <div className="flex justify-between mt-1.5">
+          <span className="text-[0.6rem] md:text-[0.68rem] text-[#555] uppercase tracking-wider">Seats Filling Up</span>
+          <span className="text-[0.6rem] md:text-[0.68rem] text-[#0bb158] font-bold uppercase tracking-wider">Few Left</span>
+        </div>
       </div>
     </div>
   );
