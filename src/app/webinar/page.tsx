@@ -95,8 +95,8 @@ export default function WebinarPage() {
       <nav className="sticky top-0 z-[1000] bg-black border-b border-[rgba(11,177,88,0.15)] py-3 md:py-4">
         <div className="w-full px-5 md:px-12 lg:px-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/images/logo.png" alt="OptionScore" width={64} height={64} className="h-8 w-8 md:h-10 md:w-10" />
-            <Image src="/images/logo-text.png" alt="OptionScore" width={320} height={56} className="h-5 md:h-7 w-auto" />
+            <Image src="/images/logo.png" alt="OptionScore" width={64} height={64} className="h-6 w-6 md:h-7 md:w-7" />
+            <Image src="/images/logo-text.png" alt="OptionScore" width={320} height={56} className="h-4 md:h-5 w-auto" />
           </Link>
           <a href={RAZORPAY_URL} className="bg-[#0bb158] text-black text-[0.75rem] md:text-sm font-bold px-4 md:px-6 py-2 md:py-2.5 rounded-md hover:bg-[#0ed668] transition-colors">
             Reserve Seat
